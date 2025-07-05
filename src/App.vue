@@ -1,6 +1,5 @@
 <template>
   <router-view/>
-  <div>{{ mainStore.test }} <br> fkkfkfkf</div>
 </template>
 
 <script setup lang="ts">

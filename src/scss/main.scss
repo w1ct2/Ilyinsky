@@ -73,6 +73,7 @@ legend {
 body {
     height: 100%;
     scroll-behavior: smooth;
+    color: #FFF;
     font-family: var(--nunito);
 }
 html {
@@ -127,4 +128,7 @@ main {
         animation: blackAnim .5s forwards;
         cursor: pointer;
     }
+}
+@function rem($pixels) {
+    @return calc($pixels / 16) * 1rem;
 }

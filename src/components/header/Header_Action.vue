@@ -1,0 +1,191 @@
+<template>
+    <div class="navigation__action">
+        <div class="navigation__icon">
+            <img :src="icon" alt="Ильинский онлайн">
+        </div>
+        <div class="navigation__catalog">
+            <div class="navigation__catalog-btn"><span></span></div>
+            <p>Каталог</p>
+        </div>
+        <div class="navigation__search">
+            <input type="text" placeholder="Начать поиск">
+            <img :src="search" alt="">
+        </div>
+        <div class="navigation__delivery">
+            <div class="navigation__delivery-icon">
+                <img :src="compass" alt="">
+                <p>MCK</p>
+            </div>
+            <div class="navigation__delivery-title">
+                <p>Выберите способ получения</p>
+                <h4>Доставка или самовывоз</h4>
+            </div>
+        </div>
+        <div class="navigation__favorites">
+            <img :src="favorites" alt="">
+        </div>
+        <div class="navigation__contacts">
+            <img :src="contacts" alt="">
+        </div>
+        <div class="navigation__basket">
+            <img :src="basket" alt="">
+            <p>Корзина</p>
+        </div>
+    </div>
+</template>
+
+<script setup> 
+import icon from '@/assets/img/mainImage/mainIcon.svg'
+import search from '@/assets/img/svg/search1.svg'
+import compass from '@/assets/img/svg/compass1.svg'
+import favorites from '@/assets/img/svg/favorites1.svg'
+import contacts from '@/assets/img/svg/contacts1.svg'
+import basket from '@/assets/img/svg/basket1.svg'
+</script>
+
+<style lang="scss" scoped>
+@function rem($pixels) {
+    @return calc($pixels / 16) * 1rem;
+}
+.navigation {
+    &__action {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+    &__catalog {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border-radius: 30px;
+        background-color: var(--red);
+        width: rem(130);
+        height: 100%;
+        cursor: pointer;
+        &-btn {
+            width: rem(18);
+            height: rem(12);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            & span {
+                width: rem(14);
+                height: rem(2);
+                background-color: #fff;
+                &::after, &::before {
+                    position: absolute;
+                    width: rem(14);
+                    height: rem(2);
+                    background-color: #fff;
+                    content: '';
+                }
+                &::after {
+                    top: 0;
+                }
+                &::before {
+                    bottom: 0;
+                }
+            }
+        }
+    }
+    &__search {
+        width: rem(315);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        & input {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #E1E1E1;
+            border-radius: 16px;
+            padding-left: 15px;
+            padding-right: 40px;
+            color: #6B6B6B;
+        }
+        & img {
+            position: absolute;
+            right: 15px;
+        }
+    }
+    &__delivery {
+        width: rem(300);
+        height: 100%;
+        display: flex;
+        border-radius: 16px;
+        align-items: center;
+        cursor: pointer;
+        &-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #FFA900B2;
+            width: rem(65);
+            height: 100%;
+            border-top-left-radius: 16px;
+            border-bottom-left-radius: 16px;
+            & img {
+                width: 14px;
+                height: 14px;
+            }
+        }
+        &-title {
+            flex-grow: 1;
+            height: 100%;
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #FFA900;
+            & h4 {
+                font-weight: 600;
+            }
+        }
+    }
+    &__favorites {
+        width: rem(50);
+        height: rem(50);
+        border-radius: 16px;
+        cursor: pointer;
+        border: 1px solid #E1E1E1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -10px;
+    }
+    &__contacts {
+        width: rem(50);
+        height: rem(50);
+        border-radius: 16px;
+        background-color: #FFF8EB;
+        cursor: pointer;
+        border: 1px solid #FFA900;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -10px;
+    }
+    &__basket {
+        width: rem(130);
+        height: rem(50);
+        border-radius: 16px;
+        background-color: var(--red);
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -10px;
+        gap: 10px;
+    }
+    &__icon {
+        max-width: rem(200);
+        max-height: rem(55);
+    }
+}
+</style>
