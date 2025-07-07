@@ -42,6 +42,7 @@ const mainStore = useMainStore()
         border: 1px solid #fff;
         width: rem(140);
         height: rem(45);
+        margin-top: 10px;
     }
     &__checkbox {
         margin-top: 12px;
@@ -80,6 +81,12 @@ const mainStore = useMainStore()
             font-size: 14px;
             color: #FFFFFF80;
             user-select: none;
+        }
+    }
+    @media (max-width: 769px) {
+        &__title {
+            font-size: 16px;
+            font-weight: 400;
         }
     }
 }

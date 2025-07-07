@@ -2,11 +2,17 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__inner">
-                <Footer_Links :strong="'Ильинский онлайн'" :links="links1"></Footer_Links>
-                <Footer_Links :strong="'ильинский онлайн'" :links="links2"></Footer_Links>
-                <Footer_Contacts></Footer_Contacts>
-                <Footer_Form></Footer_Form>
-                <Footer_Bottom></Footer_Bottom>
+                <Footer_Links 
+                    :strong="'Ильинский онлайн'" 
+                    :links="links1"
+                    class="footer__links-1"></Footer_Links>
+                <Footer_Links 
+                    :strong="'Ильинский клуб'" 
+                    :links="links2"
+                    class="footer__links-2"></Footer_Links>
+                <Footer_Contacts class="footer__contacts"></Footer_Contacts>
+                <Footer_Form class="footer__form"></Footer_Form>
+                <Footer_Bottom class="footer__bottom"></Footer_Bottom>
             </div>
         </div>
     </footer>
@@ -78,7 +84,7 @@ const mainStore = useMainStore()
 }
 .footer {
     width: 100%;
-    height: rem(285);
+    min-height: rem(285);
     background-color: var(--red);
     padding-top: 35px;
     padding-bottom: 20px;
@@ -88,6 +94,28 @@ const mainStore = useMainStore()
         display: grid;
         justify-content: space-between;
         grid-template-columns: repeat(4, auto);
+        grid-template-rows: auto auto;
+    }
+    @media (max-width: 1200px) {
+        &__inner {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, auto);
+            gap: 30px;
+        }
+        &__bottom {
+            grid-column: 1/3;
+            justify-content: center;
+        }
+    }
+    @media (max-width: 560px) {
+        &__contacts {
+            grid-row: 1/2;
+            grid-column: 1/3;
+        }
+        &__form {
+            grid-row: 2/3;
+            grid-column: 1/3;
+        }
     }
 }
 </style>

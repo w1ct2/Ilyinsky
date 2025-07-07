@@ -2,7 +2,9 @@
     <ul class="navigation-sections">
         <li 
             class="navigation-sections__item"
-            v-for="item in buttons"
+            :class="{'navigation-sections__item--active': activeSection === index}"
+            @click="selectSection(index)"
+            v-for="(item, index) in buttons"
             :key="item.id">
             <img :src="item.link" alt="">
             <button>{{ item.name }}</button>
@@ -50,6 +52,10 @@ const buttons = ref([
         link: pear
     }
 ])
+const activeSection = ref(null)
+const selectSection = (index)=>{
+    activeSection.value = index
+}
 </script>
 
 <style lang="scss" scoped>
@@ -63,6 +69,7 @@ const buttons = ref([
     margin-top: 18px;
     width: 100%;
     height: rem(50);
+    overflow: scroll;
     &__item {
         display: flex;
         align-items: center;
@@ -74,6 +81,9 @@ const buttons = ref([
         border-radius: 16px;
         border: 1px solid #FFA90073;
         padding: 0 16px;
+        &--active {
+            background-color: #FFE8BC;
+        }
         & img {
             width: 24px;
             height: 24px;
