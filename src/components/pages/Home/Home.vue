@@ -1,7 +1,7 @@
 <template>
     <Header></Header>
     <main class="main">
-        
+        fdfd
     </main>
     <Footer></Footer>
 </template>
