@@ -68,8 +68,14 @@ const selectSection = (index)=>{
     gap: 14px;
     margin-top: 18px;
     width: 100%;
-    height: rem(50);
+    height: rem(60);
+    padding-bottom: 10px;
     overflow: scroll;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;
     &__item {
         display: flex;
         align-items: center;

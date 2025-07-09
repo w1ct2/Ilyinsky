@@ -60,7 +60,7 @@ import basket from '@/assets/img/svg/basket1.svg'
         gap: 8px;
         border-radius: 30px;
         background-color: var(--red);
-        width: rem(130);
+        min-width: rem(130);
         height: 100%;
         cursor: pointer;
         &-btn {
@@ -114,6 +114,8 @@ import basket from '@/assets/img/svg/basket1.svg'
     &__delivery {
         width: rem(300);
         height: 100%;
+        max-height: 50px;
+        overflow: hidden;
         display: flex;
         border-radius: 16px;
         align-items: center;
@@ -184,8 +186,26 @@ import basket from '@/assets/img/svg/basket1.svg'
         gap: 10px;
     }
     &__icon {
-        max-width: rem(200);
-        max-height: rem(55);
+        min-width: rem(200);
+        min-height: rem(55);
+    }
+    @media (max-width: 1300px) {
+        &__delivery {
+            width: auto;
+            margin-left: auto;
+            &-title {
+                display: none;
+            }
+        }
+        &__basket {
+            width: rem(50);
+            & p {
+                display: none;
+            }
+        }
+        &__search {
+            width: 280px;
+        }
     }
 }
 </style>

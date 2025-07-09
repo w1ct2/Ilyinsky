@@ -1,6 +1,9 @@
 import { defineStore } from "pinia";
-import { ref } from "vue";
+import { computed, ref } from "vue";
+import { useWindowSize } from '@vueuse/core'
+
 export const useMainStore = defineStore('mainStore', ()=>{
-    const test = ref(1)
-    return {test}
+    const { width } = useWindowSize()
+    const isMobile1000 = computed(()=> width.value < 1000)
+    return {width, isMobile1000}
 })

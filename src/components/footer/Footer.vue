@@ -78,7 +78,7 @@ const links2 = ref([
 const mainStore = useMainStore()
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @function rem($pixels) {
     @return calc($pixels / 16) * 1rem;
 }

@@ -72,6 +72,24 @@ const emit = defineEmits({
             border-radius: 9px;
         }
     }
+    @media (max-width: 769px) {
+        & {
+            height: auto;
+        }
+        &__inner {
+            flex-direction: column;
+            height: auto;
+            gap: 15px;
+            padding: 10px 10px;
+            align-items: start;
+        }
+        &__btn {
+            font-size: 18px;
+        }
+        & h2 {
+            font-size: 20px;
+        }
+    }
 }
 .closeBtn {
     width: 20px;
