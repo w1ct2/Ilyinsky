@@ -40,7 +40,6 @@ const emit = defineEmits({
     height: rem(80);
     display: flex;
     align-items: center;
-    z-index: 2;
     background: radial-gradient(62.38% 214.22% at 78.22% 32.11%, #FF0000 0%, #FF3103 100%);
     &__inner {
         display: flex;
@@ -48,7 +47,6 @@ const emit = defineEmits({
         height: rem(52);
         gap: 25px;
         align-items: center;
-        z-index: 2;
     }
     &__btn {
         border-radius: 31px;

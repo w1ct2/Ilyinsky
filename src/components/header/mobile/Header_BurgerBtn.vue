@@ -29,7 +29,7 @@ const mainStore = useMainStore()
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 3;
+    z-index: 6;
     position: relative;
     transition: all 0.5s ease 0s;
     & span {
@@ -45,6 +45,11 @@ const mainStore = useMainStore()
         width: 38px;
         background-color: var(--red);
         transition: all 0.5s ease 0s;
+    }
+    &.active {
+        position: fixed;
+        top: 40px;
+        left: 20px;
     }
     &::before {
         bottom: 0;

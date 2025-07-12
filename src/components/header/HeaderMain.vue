@@ -5,6 +5,7 @@
                 <Header_Action v-if="!mainStore.isMobile1000"></Header_Action>
                 <Header_ActionMobile v-else></Header_ActionMobile>
                 <Header_Sections></Header_Sections>
+                <Header_SectionsMobile v-if="mainStore.isMobile1000"></Header_SectionsMobile>
             </div>
         </div>
     </nav>
@@ -14,6 +15,7 @@
 import Header_Action from './Header_Action.vue';
 import Header_Sections from './Header_Sections.vue';
 import Header_ActionMobile from './mobile/Header_Action-Mobile.vue';
+import Header_SectionsMobile from './mobile/Header_Sections-Mobile.vue';
 
 import { useMainStore } from '@/store/MainStore'
 const mainStore = useMainStore()

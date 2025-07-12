@@ -1,6 +1,7 @@
 <template>
     <div class="navigation__action" :class="{'navigation__action--active': isActive}">
         <Header_BurgerBtn :isActive="isActive" @funActive="funActive(n)"></Header_BurgerBtn>
+        <Header_BurgerMenu :isActive="isActive"></Header_BurgerMenu>
         <div class="navigation__icon">
             <img :src="icon" alt="Ильинский онлайн">
         </div>
@@ -14,7 +15,6 @@
             <img :src="search" alt="">
         </div>
     </div>
-    <Header_BurgerMenu :isActive="isActive"></Header_BurgerMenu>
 </template>
 
 <script setup>
@@ -42,10 +42,8 @@ const funActive = (n)=>{
         display: flex;
         align-items: center;
         gap: 25px;
-        z-index: 3;
         position: relative;
         width: 100%;
-        transition: top 0.5s ease 0s;
         &--active {
             position: fixed;
             left: 0;

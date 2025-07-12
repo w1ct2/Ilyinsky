@@ -107,6 +107,9 @@ const mainStore = useMainStore()
             justify-content: center;
         }
     }
+    @media (max-width: 1000px) {
+        padding-bottom: 75px;
+    }
     @media (max-width: 560px) {
         &__contacts {
             grid-row: 1/2;

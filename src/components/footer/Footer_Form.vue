@@ -57,12 +57,10 @@ const mainStore = useMainStore()
             background-color: #FFFFFF80;
             border: none;
             appearance: none;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             &::after {
-                position: absolute;
                 content: '';
                 width: 6px;
                 height: 6px;
