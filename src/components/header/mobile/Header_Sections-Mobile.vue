@@ -1,6 +1,6 @@
 <template>
     <div class="bottom-bar">
-        <div class="bottom-bar__item">
+        <div class="bottom-bar__item" @click="activeBurgerMenu">
             <span></span>
             <p>Каталог</p>
         </div>
@@ -34,6 +34,10 @@ import basket from '@/assets/img/bottomBar/basket.svg'
 
 import { useMainStore } from '@/store/MainStore'
 const mainStore = useMainStore()
+
+const activeBurgerMenu = (n)=>{
+    mainStore.activeBurgerMenu()
+}
 </script>
 
 <style lang="scss" scoped>
@@ -99,6 +103,7 @@ const mainStore = useMainStore()
         justify-content: center;
         color: #6B6B6B;
         font-size: 14px;
+        min-width: rem(70);
         & span {
             background-color: #FFD481;
             width: 18px;
@@ -126,6 +131,32 @@ const mainStore = useMainStore()
             width: 25px;
             height: 25px;
         }
+    }
+    @media (max-width: 768px) {
+        height: rem(60);
+        &__item {
+            font-size: 10px;
+        }
+    }
+    @media (max-width: 480px) {
+        &__item {
+            font-size: 9px;
+            min-width: rem(50);
+        }
+        &__basket {
+            min-width: rem(110);
+            height: rem(35);
+            border-radius: 10px;
+            & img {
+                width: 24px;
+                height: auto;
+            }
+            & p {
+                font-weight: 600;
+                font-size: 14px;
+            }
+        }
+        padding: 0;
     }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div class="burger-menu" v-show="isActive">
         <div class="burger-menu__inner">
-            <div class="navigation__action" :class="{'navigation__action--active': isActive}">
+            <div class="navigation__action">
                 <div class="navigation__icon">
                     <img :src="icon" alt="Ильинский онлайн">
                 </div>
@@ -15,9 +15,9 @@
                     <img :src="search" alt="">
                 </div>
             </div>
-            <Header_BurgerCatalog :title="'каталог'" :labels="links1"></Header_BurgerCatalog>
-            <Header_BurgerProfile :title="'профиль'"></Header_BurgerProfile>
-            <Header_BurgerCatalog :title="'ильинский клуб'" :labels="links2"></Header_BurgerCatalog>
+            <Header_BurgerCatalog :title="'каталог'" :labels="links1" class="catalog"></Header_BurgerCatalog>
+            <Header_BurgerProfile :title="'профиль'" class="profile"></Header_BurgerProfile>
+            <Header_BurgerCatalog :title="'ильинский клуб'" :labels="links2" class="catalog"></Header_BurgerCatalog>
             <div class="burger-menu__bottom">
                 <img :src="phone" alt="">
                 <div class="burger-menu__bottom-title">
@@ -114,7 +114,7 @@ const links2 = [
     flex-direction: column;
     position: fixed;
     background-color: #fff;
-    z-index: 5;
+    z-index: 5 !important;
     left: 0;
     right: 0;
     top: 0;
@@ -126,6 +126,12 @@ const links2 = [
         row-gap: 30px;
         column-gap: 20px;
         margin-top: 25px;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
     &__bottom {
         display: flex;
@@ -202,6 +208,26 @@ const links2 = [
                 font-size: 12px;
             }
         }
+    }
+}
+@media (max-width: 768px) {
+    .burger-menu__inner {
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 80px;
+    }
+    .burger-menu__bottom {
+        grid-column: 1/2;
+    }
+    .navigation__action {
+        grid-column: 1/2;
+    }
+    .profile {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    .catalog {
+        height: 100%;
+        margin: 0;
     }
 }
 </style>

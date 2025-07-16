@@ -84,7 +84,6 @@ const mainStore = useMainStore()
 }
 .footer {
     width: 100%;
-    min-height: rem(285);
     background-color: var(--red);
     padding-top: 35px;
     padding-bottom: 20px;

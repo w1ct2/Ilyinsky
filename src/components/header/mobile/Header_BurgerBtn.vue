@@ -68,5 +68,15 @@ const mainStore = useMainStore()
         bottom: 48%;
         transform: rotate(45deg) translate(0, 50%);
     }
+    @media (max-width: 768px) {
+        width: 30px;
+        height: 20px;
+        & span {
+            width: inherit;
+        }
+        &::after, &::before {
+            width: inherit;
+        }
+    }
 }
 </style>

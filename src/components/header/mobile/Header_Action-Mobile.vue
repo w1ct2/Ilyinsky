@@ -24,12 +24,12 @@ import compass from '@/assets/img/svg/compass1.svg'
 import Header_BurgerMenu from './Header_BurgerMenu.vue'
 import Header_BurgerBtn from '@/components/header/mobile/Header_BurgerBtn.vue'
 import { useMainStore } from '@/store/MainStore'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 const mainStore = useMainStore()
 
-const isActive = ref(false)
+const isActive = computed(() => mainStore.isActiveBurgerMenu)
 const funActive = (n)=>{
-    isActive.value = !isActive.value
+    mainStore.activeBurgerMenu()
 }
 </script>
 
@@ -44,16 +44,17 @@ const funActive = (n)=>{
         gap: 25px;
         position: relative;
         width: 100%;
-        &--active {
-            position: fixed;
-            left: 0;
-            margin: 0 20px;
-            right: 0;
-            width: auto;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #E7EFEE;
-            // top: 25px;
-        }
+        // &--active {
+        //     position: fixed;
+        //     left: 0;
+        //     margin: 0 20px;
+        //     right: 0;
+        //     width: auto;
+        //     padding-bottom: 20px;
+        //     border-bottom: 1px solid #E7EFEE;
+        //     // top: 25px;
+        // }
+        // РАЗОБРАТЬСЯ ПОЧЕМУ ТУТ ВОЗНИКАЛ БАГ 
     }
     &__search {
         width: rem(50);
