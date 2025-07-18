@@ -43,16 +43,16 @@ const item2Text = ref({
     background: 'radial-gradient(62.38% 214.22% at 78.22% 32.11%, #FF0000 0%, #FF3103 100%)',
 })
 const item1Img = ref({
-    width: '300px',
-    height: '100%',
+    width: '70%',
+    height: 'auto',
     right: '0',
     bottom: '0'
 })
 const item2Img = ref({
-    width: '120px',
-    height: '120px',
+    width: '100px',
+    height: '100px',
     right: '20px',
-    top: '30px'
+    top: '20px'
 })
 </script>
 
@@ -65,11 +65,12 @@ const item2Img = ref({
     margin-bottom: rem(50);
     height: rem(460);
     max-height: rem(460);
+    user-select: none;
     &__inner {
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-columns: auto 400px;
+        grid-template-columns: auto 365px;
         grid-template-rows: repeat(2, 1fr);
         gap: 25px;
     }
