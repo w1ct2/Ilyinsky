@@ -44,13 +44,13 @@ const item2Text = ref({
 })
 const item1Img = ref({
     width: '70%',
-    height: 'auto',
+    height: '100%',
     right: '0',
     bottom: '0'
 })
 const item2Img = ref({
-    width: '100px',
-    height: '100px',
+    width: '20%',
+    height: '35%',
     right: '20px',
     top: '20px'
 })
@@ -64,19 +64,44 @@ const item2Img = ref({
     margin-top: rem(25);
     margin-bottom: rem(50);
     height: rem(460);
+    min-height: 0;
     max-height: rem(460);
     user-select: none;
     &__inner {
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-columns: auto 365px;
+        grid-template-columns: 1fr minmax(300px, 365px);
         grid-template-rows: repeat(2, 1fr);
         gap: 25px;
     }
     &__slider {
         grid-row: 1/3;
         grid-column: 1/2;
+    }
+    @media (max-width:1000px) {
+        & {
+            max-height: none;
+            height: auto;
+        }
+        &__inner {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 2fr 1fr;
+        }
+        &__slider {
+            grid-row: 1/2;
+            grid-column: 1/3;
+            max-height: rem(420);
+        }
+        &__item {
+            max-height: rem(210);
+        }
+    }
+    @media (max-width: 480px) {
+        &__inner {
+            grid-template-rows: 200px 90px;
+            gap: 20px;
+        }
     }
 }
 </style>

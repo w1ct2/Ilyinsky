@@ -37,7 +37,7 @@ const props = defineProps({
     height: 100%;
     position: relative;
     display: flex;
-    max-width: rem(860);
+    // max-width: rem(860);
     padding: 50px;
     flex-direction: column;
     justify-content: end;
@@ -66,6 +66,35 @@ const props = defineProps({
         position: absolute;
         right: 0;
         bottom: 0;
+    }
+    @media (max-width: 768px) {
+        & {
+            padding: 33px;
+        }
+        &__title {
+            font-size: 25px;
+            max-width: rem(240);
+        }
+        &__button {
+            font-size: 16px;
+            width: rem(200);
+            height: auto;
+        }
+    }
+    @media (max-width: 480px) {
+        & {
+            padding: 25px;
+        }
+        &__title {
+            font-size: 18px;
+            line-height: 1.2;
+            max-width: rem(180);
+        }
+        &__button {
+            font-size: 15px;
+            width: rem(130);
+            height: rem(40);
+        }
     }
 }
 </style>

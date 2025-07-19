@@ -1,7 +1,7 @@
 <template>
-    <div class="panorama-slider__wrapper">
+    <div class="panorama-slider">
         <swiper
-            class="panorama-slider"
+            class="panorama-slider__wrapper"
             :slides-per-view="1"
             :space-between="20"
             :modules="modules"
@@ -64,20 +64,32 @@ const imgStyles = ref({
 }
 .panorama-slider {
     width: 100%;
-    height: 100%;
-    border-radius: inherit;
+    position: relative;
+    height: auto;
+    min-width: 0;
+    min-height: 0;
+    max-height: rem(460);
+    max-width: rem(860);
+    border-radius: 26px;
+    display: flex;
+    border-radius: 26px;
+    align-items: center;
     &__wrapper {
         width: 100%;
-        position: relative;
-        height: auto;
-        max-height: rem(460);
-        min-width: rem(860);
-        border-radius: 26px;
-        display: flex;
-        border-radius: 26px;
-        align-items: center;
+        height: 100%;
+        border-radius: inherit;
         &__item {
             border-radius: inherit;
+        }
+    }
+    @media (max-width: 1000px) {
+        & {
+            max-width: none;
+        }
+    }
+    @media (max-width: 480px) {
+        & {
+            max-height: none;
         }
     }
 }
@@ -97,6 +109,11 @@ const imgStyles = ref({
     z-index: 3 !important;
     top: 50%;
     transform: translateY(-50%);
+    @media (max-width: 480px) {
+        & {
+            display: none;
+        }
+    }
 }
 .swiper-button-prev {
     left: -25px;

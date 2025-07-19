@@ -40,11 +40,26 @@ const props = defineProps({
     position: relative;
     &__title {
         font-weight: 700;
+        z-index: 2;
         font-size: 28px;
     }
     &__img {
         position: absolute;
         max-width: 100%;
+    }
+    @media (max-width: 768px) {
+        &__title {
+            font-size: 18px;
+        }
+    }
+    @media (max-width: 480px) {
+        & {
+            padding: 10px;
+            border-radius: 10px;
+            &__title {
+                font-size: 12px;
+            }
+        }
     }
 }
 </style>
