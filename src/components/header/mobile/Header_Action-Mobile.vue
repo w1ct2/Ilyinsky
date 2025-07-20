@@ -34,9 +34,7 @@ const funActive = (n)=>{
 </script>
 
 <style lang="scss" scoped>
-@function rem($pixels) {
-    @return calc($pixels / 16) * 1rem;
-}
+@import "@/scss/remFunction";
 .navigation {
     &__action {
         display: flex;

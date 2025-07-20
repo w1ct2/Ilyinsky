@@ -57,9 +57,7 @@ const item2Img = ref({
 </script>
 
 <style lang="scss" scoped>
-@function rem($pixels) {
-    @return calc($pixels / 16) * 1rem;
-}
+@import "@/scss/remFunction";
 .panorama {
     margin-top: rem(25);
     margin-bottom: rem(50);

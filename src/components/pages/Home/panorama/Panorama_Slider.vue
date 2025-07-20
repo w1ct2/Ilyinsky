@@ -3,6 +3,7 @@
         <swiper
             class="panorama-slider__wrapper"
             :slides-per-view="1"
+            :loop="true"
             :space-between="20"
             :modules="modules"
             :navigation="{
@@ -59,9 +60,7 @@ const imgStyles = ref({
 </script>
 
 <style lang="scss" scoped>
-@function rem($pixels) {
-    @return calc($pixels / 16) * 1rem;
-}
+@import "@/scss/remFunction";
 .panorama-slider {
     width: 100%;
     position: relative;

@@ -1,0 +1,103 @@
+@import "@/scss/remFunction";
+.catalog-title {
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: 700;
+    color: #000000;
+}
+.catalog-button {
+    color: #DA9000;
+    font-family: var(--ubuntu);
+    font-size: 22px;
+    font-weight: 500;
+    background-color: #FFF8EB;
+    border: 1px solid #FFE7B9;
+    border-radius: 16px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: rem(210);
+    height: rem(45);
+    transition: all .3s ease;
+    position: relative;
+    &:hover {
+        background-color: #FFA900;
+        color: #fff;
+        &::after, &::before {
+            background-color: #fff;
+        } 
+    }
+    &::after, &::before {
+        content: '';
+        position: absolute;
+        background-color: #DA9000;
+        height: 2px;
+        width: 7px;
+        right: 20px;
+    }
+    &::after {
+        transform: rotate(-45deg) translate(0, -50%);
+        margin-top: 5px;
+    }
+    &::before {
+        transform: rotate(45deg) translate(0, 50%);
+        margin-bottom: 5px;
+    }
+}
+.catalog-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: rem(80);
+    height: rem(45);
+    background-color:#FFF8EB;
+    border: 1px solid #FFE7B9;
+    border-radius: 58px;
+    margin-left: auto;
+    padding: 0 9px;
+    & div {
+        width: rem(29);
+        height: rem(29);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .2s ease;
+        position: relative;
+        cursor: pointer;
+        &:hover {
+            background-color: #FFA900;
+            &::after, &::before {
+                background-color: #fff;
+            }
+        }
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            background-color: #FFA900;
+            height: 2px;
+            width: 7px;
+        }
+        &:last-child {
+            &::after {
+                transform: rotate(-45deg) translate(0, -50%);
+                margin-top: 5px;
+            }
+            &::before {
+                transform: rotate(45deg) translate(0, 50%);
+                margin-bottom: 5px;
+            }
+        }
+        &:first-child {
+            &::after {
+                margin-top: 2.5px;
+                transform: rotate(45deg) translate(0, 50%);
+            }
+            &::before {
+                transform: rotate(-45deg) translate(0, -50%);
+                margin-bottom: 2.5px;
+            }
+        }
+    }
+}

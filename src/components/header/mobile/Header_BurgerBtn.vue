@@ -17,9 +17,7 @@ const mainStore = useMainStore()
 </script>
 
 <style lang="scss" scoped>
-@function rem($pixels) {
-    @return calc($pixels / 16) * 1rem;
-}
+@import "@/scss/remFunction";
 
 .burger-btn {
     width: 40px;

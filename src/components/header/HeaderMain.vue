@@ -22,9 +22,7 @@ const mainStore = useMainStore()
 </script>
 
 <style lang="scss" scoped>
-@function rem($pixels) {
-    @return calc($pixels / 16) * 1rem;
-}
+@import "@/scss/remFunction";
 .navigation {
     margin: 25px 0;
     &__inner {

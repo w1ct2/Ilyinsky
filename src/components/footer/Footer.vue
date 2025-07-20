@@ -79,9 +79,7 @@ const mainStore = useMainStore()
 </script>
 
 <style lang="scss" scoped>
-@function rem($pixels) {
-    @return calc($pixels / 16) * 1rem;
-}
+@import "@/scss/remFunction";
 .footer {
     width: 100%;
     background-color: var(--red);

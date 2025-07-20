@@ -31,9 +31,7 @@ const mainStore = useMainStore()
 </script>
 
 <style lang="scss" scoped>
-@function rem($pixels) {
-    @return calc($pixels / 16) * 1rem;
-}
+@import "@/scss/remFunction";
 .footer-contacts {
     display: flex;
     flex-direction: column;
