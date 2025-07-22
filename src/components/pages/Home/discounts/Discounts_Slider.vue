@@ -19,11 +19,13 @@
                     nextEl: '.nextButton',
                     prevEl: '.prevButton'
                 }">
-                <swiper-slide class="iscounts-slider__item"><Discounts_SliderItem></Discounts_SliderItem></swiper-slide>
-                <swiper-slide class="iscounts-slider__item"><Discounts_SliderItem></Discounts_SliderItem></swiper-slide>
-                <swiper-slide class="iscounts-slider__item"><Discounts_SliderItem></Discounts_SliderItem></swiper-slide>
-                <swiper-slide class="iscounts-slider__item"><Discounts_SliderItem></Discounts_SliderItem></swiper-slide>
-                <swiper-slide class="iscounts-slider__item"><Discounts_SliderItem></Discounts_SliderItem></swiper-slide>
+                <swiper-slide 
+                    class="iscounts-slider__item"
+                    v-for="(card, index) in data"
+                    :key="card.id"
+                >
+                    <Discounts_SliderItem :indexCard="index"></Discounts_SliderItem>
+                </swiper-slide>
             </swiper>
         </div>
     </div>
@@ -37,6 +39,7 @@ import Discounts_SliderItem from './Discounts_Slider-Item.vue';
 import 'swiper/css';
 const modules = [Navigation];
 const mainStore = useMainStore()
+const data = mainStore.discounts
 </script>
 
 <style lang="scss" scoped>
@@ -54,7 +57,6 @@ const mainStore = useMainStore()
     max-height: rem(400);
     height: 100%;
     margin-top: rem(35);
-    border: 1px solid red;
     &__wrapper {
         display: flex;
         justify-content: space-between;
