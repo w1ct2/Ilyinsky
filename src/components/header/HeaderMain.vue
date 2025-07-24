@@ -30,7 +30,7 @@ const mainStore = useMainStore()
         position: relative;
         flex-direction: column;
         max-width: rem(1290);
-        height: rem(150);
+        // height: rem(150);
         // border: 1px solid red;
     }
 }

@@ -4,6 +4,15 @@
     font-size: 32px;
     font-weight: 700;
     color: #000000;
+    @media (max-width: 1000px) {
+        font-size: 26px;
+    }
+    @media (max-width: 768px) {
+        font-size: 22px;
+    }
+    @media (max-width: 480px) {
+        font-size: 18px;
+    }
 }
 .catalog-button {
     color: #DA9000;
@@ -43,6 +52,22 @@
     &::before {
         transform: rotate(45deg) translate(0, 50%);
         margin-bottom: 5px;
+    }
+    @media (max-width: 1000px) {
+        font-size: 20px;
+        min-width: rem(190);
+    }
+    @media (max-width: 768px) {
+        font-size: 16px;
+        min-width: rem(180);
+        height: rem(40);
+        border-radius: 13px;
+    }
+    @media (max-width: 480px) {
+        font-size: 14px;
+        border-radius: 8px;
+        height: rem(30);
+        min-width: rem(150);
     }
 }
 .catalog-navigation {

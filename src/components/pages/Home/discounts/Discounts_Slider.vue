@@ -13,7 +13,7 @@
                 class="discounts-slider__wrapper"
                 :loop="true"
                 :space-between="25"
-                :slides-per-view="4"
+                :slides-per-view="slidesPerView"
                 :modules="modules"
                 :navigation="{
                     nextEl: '.nextButton',
@@ -37,9 +37,28 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation } from 'swiper/modules';
 import Discounts_SliderItem from './Discounts_Slider-Item.vue';
 import 'swiper/css';
+import { onBeforeUnmount, onMounted, ref } from 'vue';
 const modules = [Navigation];
 const mainStore = useMainStore()
 const data = mainStore.discounts
+const {width} = mainStore
+const slidesPerView = ref(4)
+const updateSlides = ()=>{
+    if (width <= 480) {
+        slidesPerView.value = 2
+    } else if (width <= 768) {
+        slidesPerView.value = 3
+    } else {
+        slidesPerView.value = 4
+    }
+}
+onMounted(()=>{
+    updateSlides()
+    window.addEventListener('resize', updateSlides)
+})
+onBeforeUnmount(() => {
+    window.removeEventListener('resize', updateSlides)
+})
 </script>
 
 <style lang="scss" scoped>
@@ -65,6 +84,11 @@ const data = mainStore.discounts
         min-width: 0;
         width: 100% !important;
         min-height: 0;
+    }
+}
+@media (max-width: 480px) {
+    .discounts-header__navigation {
+        display: none;
     }
 }
 </style>

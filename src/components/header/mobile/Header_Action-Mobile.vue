@@ -93,5 +93,12 @@ const funActive = (n)=>{
             }
         }
     }
+    @media (max-width: 768px) {
+        &__delivery,  &__search {
+            width: rem(40);
+            height: rem(40);
+            border-radius: 12px;
+        }
+    }
 }
 </style>

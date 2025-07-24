@@ -64,6 +64,7 @@ const item2Img = ref({
     height: rem(460);
     min-height: 0;
     max-height: rem(460);
+    overflow: hidden;
     user-select: none;
     &__inner {
         width: 100%;

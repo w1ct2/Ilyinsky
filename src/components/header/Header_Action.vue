@@ -50,6 +50,7 @@ import basket from '@/assets/img/svg/basket1.svg'
         display: flex;
         align-items: center;
         gap: 25px;
+        height: rem(55);
     }
     &__catalog {
         display: flex;

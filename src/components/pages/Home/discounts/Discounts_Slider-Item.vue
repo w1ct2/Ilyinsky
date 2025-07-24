@@ -113,6 +113,7 @@ const toggleFavorite = () => {
         grid-row: 4/5;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         color: #000;
         &--active {
             color: var(--red);
@@ -143,6 +144,117 @@ const toggleFavorite = () => {
         &:hover {
             background-color: var(--red);
             color: #fff;
+        }
+    }
+    @media (max-width: 1300px) {
+        & {
+            grid-template-rows: 45% 20px auto auto 40px;
+        }
+        &__title {
+            font-size: 16px;
+        }
+        &__price {
+            grid-row: 4/5;
+            grid-column: 1/3;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            &-title {
+                font-size: 20px;
+            }
+        }
+        &__button {
+            grid-row: 5/6;
+            grid-column: 1/3;
+            margin: auto;
+        }
+        &__availability-title {
+            white-space: nowrap;
+        }
+    }
+    @media (max-width: 1000px) {
+        & {
+            padding: 12px;
+            height: rem(350);
+        }
+        &__title {
+            font-size: 14px;
+        }
+        &__price {
+            &-title {
+                font-size: 16px;
+            }
+            & p {
+                font-size: 12px;
+            }
+        }  
+        &__availability-title {
+            font-size: 12px;
+        }
+        &__availability-price {
+            font-size: 10px;
+        }
+        &__discount {
+            font-size: 18px;
+            width: 40px;
+            height: 30px;
+        }
+        &__button {
+            height: rem(35);
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 768px) {
+        & {
+            padding: 10px;
+            border-radius: 16px;
+            height: rem(340);
+            grid-template-rows: 45% 15px auto 20px 40px;
+        }
+        &__availability-title {
+            font-size: 9px;
+        }
+        &__favorite {
+            width: 18px;
+            height: 18px;
+            right: 10px;
+            top: 10px;
+        }
+        &__title {
+            font-size: 12px;
+        }
+        &__price {
+            &-title {
+                font-size: 14px;
+            }
+            & p {
+                font-size: 10px;
+            }
+        } 
+    }
+    @media (max-width: 480px) {
+        & {
+            height: rem(250);
+        }
+        &__favorite {
+            width: 15px;
+            height: 15px;
+            right: 10px;
+            top: 10px;
+        }
+        &__price {
+            &-title {
+                font-size: 14px;
+            }
+            & p {
+                font-size: 9px;
+            }
+        } 
+        &__availability-title {
+            font-size: 9px;
+        }
+        &__availability-price {
+            font-size: 9px;
         }
     }
 }

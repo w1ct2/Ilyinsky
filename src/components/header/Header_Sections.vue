@@ -97,5 +97,37 @@ const selectSection = (index)=>{
             color: #0A0A0A;
         }
     }
+    @media (max-width: 1000px) {
+        margin-top: 15px;
+        height: rem(50);
+        &__item {
+            border-radius: 12px;
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 768px) {
+        margin-top: 10px;
+        height: rem(40);
+        &__item {
+            border-radius: 9px;
+            font-size: 12px;
+            & img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    @media (max-width: 480px) {
+        margin-top: 10px;
+        height: rem(35);
+        &__item {
+            border-radius: 8px;
+            font-size: 10px;
+            & img {
+                width: 18px;
+                height: 18px;
+            }
+        }
+    }
 }
 </style>
