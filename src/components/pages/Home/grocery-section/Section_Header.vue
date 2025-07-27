@@ -25,5 +25,8 @@ const props = defineProps({
     width: 100%;
     height: rem(45);
     margin-bottom: 30px;
+    @media (max-width: 768px) {
+        margin-bottom: 20px;
+    }
 }
 </style>

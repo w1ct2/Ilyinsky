@@ -28,16 +28,15 @@ const props = defineProps({
 @import "@/scss/remFunction";
 .section-content {
     width: 100%;
-    min-height: rem(300);
     display: grid;
     gap: 25px;
     justify-content: space-between;
     grid-template-columns: repeat(4, 1fr);
     &__item {
         cursor: pointer;
-        max-width: rem(300);
-        max-height: rem(300);
-        height: rem(300);
+        width: 100%; 
+        aspect-ratio: 1 / 1;
+        min-width: 0;
         border: 1px solid #000;
         border-radius: 58px;
         font-size: 30px;
@@ -46,6 +45,41 @@ const props = defineProps({
         background-size: contain;
         background-repeat: no-repeat;
         background-position: bottom right;
+    }
+    &__title {
+        overflow: hidden;
+    }
+    @media (max-width: 1300px) {
+        &__item {
+            font-size: 26px;
+            padding: 35px;
+            border-radius: 50px;
+        }
+    }
+    @media (max-width: 1000px) {
+        &__item {
+            font-size: 22px;
+            padding: 30px;
+            border-radius: 40px;
+        }   
+    }
+    @media (max-width: 768px) {
+        & {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        &__item {
+            font-size: 18px;
+            padding: 20px;
+            border-radius: 30px;
+        }
+    }
+    @media (max-width: 480px) {
+        &__item { 
+            font-size: 12px;
+            padding: 15px;
+            border-radius: 20px;
+        }
     }
 }
 </style>
