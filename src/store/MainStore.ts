@@ -3,6 +3,11 @@ import { computed, Ref, ref } from "vue";
 import { useWindowSize } from '@vueuse/core'
 import card1 from '@/assets/img/discounts/card1.png'
 import card2 from '@/assets/img/discounts/card2.png'
+
+import promotions1 from '@/assets/img/promotions/img1.png'
+import promotions2 from '@/assets/img/promotions/img2.png'
+import promotions3 from '@/assets/img/promotions/img3.png'
+import promotions4 from '@/assets/img/promotions/img4.png'
 interface DiscountItem {
     id: number
     discount: boolean
@@ -96,8 +101,65 @@ export const useMainStore = defineStore('mainStore', ()=>{
             oldPrice: null
         },
     ])
+    const promotions = ref([
+        {
+            id: 1,
+            title: 'Сделай предзаказ в кулинарии со скидкой',
+            styles: {
+                backgroundColor: '#CD5A7E',
+                backgroundImage: `url(${promotions1})`
+            },
+            article: null
+        },
+        {
+            id: 2,
+            title: 'Праздник к нам приходит',
+            styles: {
+                backgroundColor: '#FF594D',
+                backgroundImage: `url(${promotions2})`
+            },
+            article: '15% скидка'
+        },
+        {
+            id: 3,
+            title: 'Скидка на третий товар в корзине «Чистая линия»',
+            styles: {
+                backgroundColor: '#FFA68A',
+                backgroundImage: `url(${promotions3})`
+            },
+            article: null
+        },
+        {
+            id: 4,
+            title: 'Комбо-набор 3 пиццы за 1500₽',
+            styles: {
+                backgroundColor: '#FFC425',
+                backgroundImage: `url(${promotions4})`,
+                backgroundSize: '150%'
+            },
+            article: 'trio1500'
+        },
+        {
+            id: 5,
+            title: 'Скидка на третий товар в корзине «Чистая линия»',
+            styles: {
+                backgroundColor: '#FFA68A',
+                backgroundImage: `url(${promotions3})`
+            },
+            article: null
+        },
+    ])
     const toggleFavorite = (index: number) => {
         discounts.value[index].favorite = !discounts.value[index].favorite
     }
-    return {width, isMobile1000, isMobile768, isActiveBurgerMenu, activeBurgerMenu, discounts, toggleFavorite}
+    return {
+        width, 
+        isMobile1000, 
+        isMobile768, 
+        isActiveBurgerMenu, 
+        activeBurgerMenu, 
+        discounts, 
+        toggleFavorite,
+        promotions
+    }
 })

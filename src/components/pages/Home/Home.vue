@@ -7,11 +7,13 @@
         <Section :title="'Кулинария'" :data="sectionCookingStore.cooking"></Section>
         <Section :title="'Заморозка'" :data="sectionFreezingStore.freezing"></Section>
         <Section :title="'Другое'" :data="sectionOtherStore.other"></Section>
+        <Promotions></Promotions>
     </main>
     <Footer></Footer>
 </template>
 
 <script lang="ts" setup>
+import Promotions from "./promotions/Promotions.vue"
 import Discounts from "./discounts/Discounts.vue"
 import Section from "./grocery-section/Section.vue"
 import Panorama from "@/components/pages/Home/panorama/Panorama.vue"

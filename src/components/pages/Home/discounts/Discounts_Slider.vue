@@ -20,7 +20,7 @@
                     prevEl: '.prevButton'
                 }">
                 <swiper-slide 
-                    class="iscounts-slider__item"
+                    class="discounts-slider__item"
                     v-for="(card, index) in data"
                     :key="card.id"
                 >
@@ -79,11 +79,6 @@ onBeforeUnmount(() => {
     &__wrapper {
         display: flex;
         justify-content: space-between;
-    }
-    &__item {
-        min-width: 0;
-        width: 100% !important;
-        min-height: 0;
     }
 }
 @media (max-width: 480px) {
