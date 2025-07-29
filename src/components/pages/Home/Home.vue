@@ -8,11 +8,17 @@
         <Section :title="'Заморозка'" :data="sectionFreezingStore.freezing"></Section>
         <Section :title="'Другое'" :data="sectionOtherStore.other"></Section>
         <Promotions></Promotions>
+        <Delivery></Delivery>
+        <GetPromo></GetPromo>
+        <RateStore></RateStore>
     </main>
     <Footer></Footer>
 </template>
 
 <script lang="ts" setup>
+import RateStore from "./rate-store/Rate-Store.vue"
+import GetPromo from "./get-promo/Get-Promo.vue"
+import Delivery from "./delivery/Delivery.vue"
 import Promotions from "./promotions/Promotions.vue"
 import Discounts from "./discounts/Discounts.vue"
 import Section from "./grocery-section/Section.vue"
