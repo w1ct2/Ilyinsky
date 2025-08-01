@@ -1,8 +1,8 @@
 <template>
     <div class="navigation__action">
-        <div class="navigation__icon">
+        <RouterLink :to="'/'" class="navigation__icon">
             <img :src="icon" alt="Ильинский онлайн">
-        </div>
+        </RouterLink>
         <div class="navigation__catalog">
             <div class="navigation__catalog-btn"><span></span></div>
             <p>Каталог</p>

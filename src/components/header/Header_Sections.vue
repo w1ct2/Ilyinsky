@@ -7,12 +7,13 @@
             v-for="(item, index) in buttons"
             :key="item.id">
             <img :src="item.link" alt="">
-            <button>{{ item.name }}</button>
+            <RouterLink :to="item.url">{{ item.name }}</RouterLink>
         </li>
     </ul>
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router'
 import apple from '@/assets/img/fruits/green-apple_1f34f.png'
 import pizza from '@/assets/img/fruits/pizza.png'
 import meat from '@/assets/img/fruits/cut-of-meat_1f969.png'
@@ -24,32 +25,38 @@ const buttons = ref([
     {
         id: 1,
         name: 'Супермаркет',
-        link: apple
+        link: apple,
+        url: ''
     },
     {
         id: 2,
         name: 'Кулинария',
-        link: pizza
+        link: pizza,
+        url: ''
     },
     {
         id: 3,
         name: 'Заморозка',
-        link: meat
+        link: meat,
+        url: ''
     },
     {
         id: 4,
         name: 'Другое',
-        link: sponge
+        link: sponge,
+        url: ''
     },
     {
         id: 5,
         name: 'Акции',
-        link: fire
+        link: fire,
+        url: 'promotions'
     },
     {
         id: 6,
         name: 'Магазины',
-        link: pear
+        link: pear,
+        url: ''
     }
 ])
 const activeSection = ref(null)
@@ -92,7 +99,7 @@ const selectSection = (index)=>{
             width: 24px;
             height: 24px;
         }
-        & button {
+        & a {
             font-weight: 600;
             color: #0A0A0A;
         }

@@ -2,7 +2,7 @@
     <section class="discounts">
         <div class="container">
             <div class="discounts__inner">
-                <Discounts_Slider></Discounts_Slider>
+                <Discounts_Slider :title="title"></Discounts_Slider>
             </div>
         </div>
     </section>
@@ -10,9 +10,11 @@
 
 <script setup>
 import Discounts_Slider from './Discounts_Slider.vue';
-
-import { useMainStore } from '@/store/MainStore'
-const mainStore = useMainStore()
+const props = defineProps({
+    title: {
+        type: String
+    }
+})
 </script>
 
 <style lang="scss" scoped>

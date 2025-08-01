@@ -2,9 +2,9 @@
     <div class="navigation__action" :class="{'navigation__action--active': isActive}">
         <Header_BurgerBtn :isActive="isActive" @funActive="funActive(n)"></Header_BurgerBtn>
         <Header_BurgerMenu :isActive="isActive"></Header_BurgerMenu>
-        <div class="navigation__icon">
+        <RouterLink :to="'/'" class="navigation__icon">
             <img :src="icon" alt="Ильинский онлайн">
-        </div>
+        </RouterLink>
         <div class="navigation__delivery">
             <div class="navigation__delivery-icon">
                 <img :src="compass" alt="">
@@ -24,6 +24,7 @@ import compass from '@/assets/img/svg/compass1.svg'
 import Header_BurgerMenu from './Header_BurgerMenu.vue'
 import Header_BurgerBtn from '@/components/header/mobile/Header_BurgerBtn.vue'
 import { useMainStore } from '@/store/MainStore'
+import { RouterLink } from 'vue-router'
 import { computed, ref } from 'vue'
 const mainStore = useMainStore()
 

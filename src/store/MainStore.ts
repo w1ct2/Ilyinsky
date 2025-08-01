@@ -100,6 +100,20 @@ export const useMainStore = defineStore('mainStore', ()=>{
             price: '70,90 грн',
             oldPrice: null
         },
+        {
+            id: 6,
+            discount: true, 
+            favorite: false,
+            imgUrl: card1,
+            availability: 2,
+            get availabilityTitle():string {
+                if(this.availability){return `В наличии ${this.availability}`}
+                else return 'Нет в наличии'
+            },
+            title: 'Гранола Мюсли Bionova ягодные запечённые хрустящие, 400г',
+            price: '99,90 грн',
+            oldPrice: '129,00 грн'
+        },
     ])
     const promotions = ref([
         {
@@ -109,7 +123,12 @@ export const useMainStore = defineStore('mainStore', ()=>{
                 backgroundColor: '#CD5A7E',
                 backgroundImage: `url(${promotions1})`
             },
-            article: null
+            stylesDescription: {
+                backgroundColor: '#FFE2EB',
+                border: '1px solid #CD5A7E'
+            },
+            article: null,
+            description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
         },
         {
             id: 2,
@@ -118,7 +137,12 @@ export const useMainStore = defineStore('mainStore', ()=>{
                 backgroundColor: '#FF594D',
                 backgroundImage: `url(${promotions2})`
             },
-            article: '15% скидка'
+            stylesDescription: {
+                backgroundColor: '#FFE9E8',
+                border: '1px solid #FF594D'
+            },
+            article: '15% скидка',
+            description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
         },
         {
             id: 3,
@@ -127,7 +151,12 @@ export const useMainStore = defineStore('mainStore', ()=>{
                 backgroundColor: '#FFA68A',
                 backgroundImage: `url(${promotions3})`
             },
-            article: null
+            stylesDescription: {
+                backgroundColor: '#FFEDE8',
+                border: '1px solid #FFA68A'
+            },
+            article: null,
+            description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
         },
         {
             id: 4,
@@ -137,7 +166,12 @@ export const useMainStore = defineStore('mainStore', ()=>{
                 backgroundImage: `url(${promotions4})`,
                 backgroundSize: '150%'
             },
-            article: 'trio1500'
+            stylesDescription: {
+                backgroundColor: '#FFFBEF',
+                border: '1px solid #FFC425'
+            },
+            article: 'trio1500',
+            description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
         },
         {
             id: 5,
@@ -146,7 +180,26 @@ export const useMainStore = defineStore('mainStore', ()=>{
                 backgroundColor: '#FFA68A',
                 backgroundImage: `url(${promotions3})`
             },
-            article: null
+            stylesDescription: {
+                backgroundColor: '#FFEDE8',
+                border: '1px solid #FFA68A'
+            },
+            article: null,
+            description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
+        },
+        {
+            id: 6,
+            title: 'Праздник к нам приходит',
+            styles: {
+                backgroundColor: '#FF594D',
+                backgroundImage: `url(${promotions2})`
+            },
+            stylesDescription: {
+                backgroundColor: '#FFE9E8',
+                border: '1px solid #FF594D'
+            },
+            article: '15% скидка',
+            description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
         },
     ])
     const toggleFavorite = (index: number) => {

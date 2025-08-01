@@ -1,7 +1,7 @@
 <template>
     <div class="discounts">
         <div class="discounts-header">
-            <h2 class="discounts-header__title catalog-title">скидки</h2>
+            <h2 class="discounts-header__title catalog-title">{{ title }}</h2>
             <button class="discounts-header__button catalog-button">Смотреть все</button>
             <div class="discounts-header__navigation catalog-navigation">
                 <div class="prevButton"></div>
@@ -38,6 +38,13 @@ import { Navigation } from 'swiper/modules';
 import Discounts_SliderItem from './Discounts_Slider-Item.vue';
 import 'swiper/css';
 import { onBeforeUnmount, onMounted, ref } from 'vue';
+const props = defineProps({
+    title: {
+        type: String, 
+        required: true,
+        default: 'скидки'
+    }
+})
 const modules = [Navigation];
 const mainStore = useMainStore()
 const data = mainStore.discounts
