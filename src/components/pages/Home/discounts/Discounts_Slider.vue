@@ -88,6 +88,12 @@ onBeforeUnmount(() => {
         justify-content: space-between;
     }
 }
+@media (max-width: 768px) {
+    .discounts-header__title {
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
 @media (max-width: 480px) {
     .discounts-header__navigation {
         display: none;

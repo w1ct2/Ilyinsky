@@ -48,7 +48,7 @@ const links1 = [
     {
         id: 1,
         name: "Акции",
-        url: ""
+        url: "/promotions"
     },
     {
         id: 2,
@@ -205,6 +205,20 @@ const links2 = [
             & p {
                 font-size: 12px;
             }
+        }
+    }
+    @media (max-width: 768px) {
+        &__delivery,  &__search {
+            width: rem(40);
+            height: rem(40);
+            border-radius: 12px;
+        }
+    }
+    @media (max-width: 480px) {
+        &__delivery,  &__search {
+            min-width: rem(35);
+            min-height: rem(35);
+            border-radius: 11px;
         }
     }
 }

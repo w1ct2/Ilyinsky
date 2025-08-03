@@ -4,10 +4,10 @@
             <span></span>
             <p>Каталог</p>
         </div>
-        <div class="bottom-bar__item">
+        <RouterLink class="bottom-bar__item" :to="'/promotions'">
             <img :src="actions" alt="">
             <p>Акции</p>
-        </div>
+        </RouterLink>
         <div class="bottom-bar__basket">
             <div class="bottom-bar__basket-img">
                 <img :src="basket" alt="">

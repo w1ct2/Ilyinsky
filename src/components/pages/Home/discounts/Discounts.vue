@@ -21,5 +21,8 @@ const props = defineProps({
 @import "@/scss/remFunction";
 .discounts {
     margin-bottom: rem(200);
+    @media (max-width: 768px) {
+        margin-bottom: rem(120);
+    }
 }
 </style>

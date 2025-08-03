@@ -45,8 +45,18 @@ const props = defineProps({
         display: grid;
         row-gap: rem(40);
         column-gap: rem(25);
+        min-width: 0px;
         grid-template-columns: repeat(2, 1fr);
         width: 100%;
+    }    
+    @media (max-width: 480px) {
+        &__container {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        &__inner {
+            gap: 30px;
+        }
     }
 }
 </style>

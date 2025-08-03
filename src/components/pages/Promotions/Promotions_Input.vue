@@ -35,6 +35,7 @@ const mainStore = useMainStore()
     &__container {
         display: grid;
         width: 100%;
+        min-width: 0;
         grid-template-columns: auto auto 1fr;
         grid-template-rows: 1fr 55px;
         column-gap: 35px;
@@ -124,6 +125,106 @@ const mainStore = useMainStore()
         }
         & p {
             font-size: 20px;
+        }
+    }
+    @media (max-width: 1300px) {
+        &__inner {
+            padding: 25px 30px;
+        }
+        &__title {
+            gap: 10px;
+            & h2 {
+                font-size: 30px;
+            }
+            & p {
+                font-size: 18px;
+            }
+        }
+        &__container {
+            max-width: 470px;
+            grid-template-rows: 1fr 40px;
+            column-gap: 20px;
+            button {
+                font-size: 18px;
+            }
+        }
+        &__checkbox label {
+            font-size: 20px;
+        }
+    }
+    @media (max-width: 1000px) {
+        &__inner {
+            flex-direction: column;
+            align-items: start;
+            height: auto;
+            gap: 20px;
+        }
+        &__container {
+            max-width: 600px;
+        }
+        &__title {
+            & h2 {
+                font-size: 26px;
+            }
+            & p {
+                font-size: 16px;
+            }
+        }
+        &__checkbox label {
+            font-size: 18px;
+        }
+        & input[type="text"] {
+            font-size: 18px;
+        }
+    }
+    @media (max-width: 768px) {
+        &__container {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: 1fr 1fr 1fr;
+            & button {
+                grid-row: 3/4;
+            }
+            & input[type="text"] {
+                grid-row: 2/3;
+                grid-column: 1/6;
+                max-width: 380px;
+            }
+        }
+        &__title {
+            & h2 {
+                font-size: 22px;
+            }
+            & p {
+                font-size: 14px;
+            }
+        }
+        &__checkbox label {
+            font-size: 16px;
+        }
+        & input[type="text"] {
+            font-size: 16px;
+        }
+        &__container {
+            button {
+                font-size: 16px;
+            }
+        }
+    }
+    @media (max-width: 480px) {
+        &__inner {
+            padding: 15px;
+            border-radius: 11px;
+        }
+        &__checkbox label {
+            font-size: 14px;
+        }
+        & input[type="text"] {
+            font-size: 14px;
+        }
+        &__container {
+            button {
+                font-size: 13px;
+            }
         }
     }
 }

@@ -6,7 +6,7 @@
                 class="catalog__item"
                 v-for="(label, index) in labels"
                 :key="label.id"
-                >{{ label.name }}
+                ><router-link :to="label.url" @click="mainStore.activeBurgerMenu">{{ label.name }}</router-link>
             </li>
         </ul>
     </div>
@@ -56,6 +56,9 @@ const props = defineProps({
         max-width: rem(260);
         // overflow: hidden;
         // white-space: nowrap;
+        & a {
+            color: inherit;
+        }
         &:hover {
             color: var(--red);
             &::after:hover, &::before:hover {

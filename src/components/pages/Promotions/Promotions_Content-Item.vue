@@ -25,6 +25,7 @@ const props = defineProps({
 .item {
     display: flex;
     border-radius: 30px;
+    min-width: 0;
     &__description {
         padding: 30px;
         display: flex;
@@ -43,6 +44,7 @@ const props = defineProps({
         font-size: 22px;
         height: rem(55);
         padding: 0 25px;
+        white-space: nowrap;
     }
     &__preview {
         max-width: rem(310);
@@ -76,33 +78,67 @@ const props = defineProps({
         justify-content: center;
         width: fit-content;
     }
-    @media (max-width: 1000px) {
-        padding: 30px;
+    @media (max-width: 1300px) {
+        &__description {
+            padding: 25px;
+        }
+        &__p {
+            font-size: 18px;
+        }
+        &__button {
+            font-size: 20px;
+            height: rem(50);
+        }
         &__title {
             font-size: 22px;
         }
+        &__article {
+            font-size: 15px;
+        }
+    }
+    @media (max-width: 1000px) {
+        & {
+            flex-direction: column;
+            max-height: 500px;
+            height: 100vh;
+        }
+        &__preview {
+            width: 100%;
+            height: 50%;
+            max-width: none;
+            background-size: 60% !important;
+            background-position: bottom right;
+        }
+        &__description {
+            height: 50%;
+        }
     }
     @media (max-width: 768px) {
-        padding: 25px;
-        height: rem(390);
-        border-radius: 25px;
-        &__article {
-            font-size: 14px;
-            height: rem(35);
+        & {
+            max-height: 400px;
+            border-radius: 20px;
         }
-        &__title {
-            font-size: 20px;
+        &__preview {
+            padding: 20px;
         }
-    }
-    @media (max-width: 480px) {
-        height: rem(320);
-        &__article {
-            font-size: 12px;
-            height: rem(30);
+        &__description {
+            padding: 20px;
+        }
+        &__p {
+            font-size: 16px;
+        }
+        &__button {
+            font-size: 16px;
+            height: rem(40);
         }
         &__title {
             font-size: 18px;
         }
+        &__article {
+            font-size: 13px;
+        }
+    }
+    @media (max-width: 480px) {
     }
 }
 </style>

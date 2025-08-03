@@ -101,5 +101,12 @@ const funActive = (n)=>{
             border-radius: 12px;
         }
     }
+    @media (max-width: 480px) {
+        &__delivery,  &__search {
+            min-width: rem(35);
+            min-height: rem(35);
+            border-radius: 11px;
+        }
+    }
 }
 </style>
