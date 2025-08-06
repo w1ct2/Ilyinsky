@@ -11,9 +11,12 @@
                         :style="vacancy.styles">
                         <h4 class="vacancies__item-title">{{ vacancy.name }}</h4>
                         <p class="vacancies__item-p" v-html="vacancy.income"></p>
-                        <button class="vacancies__item-button">Подробнее</button>
+                        <button class="vacancies__item-button" @click="setActiveModal(index)">Подробнее</button>
                         <img :src="vacancy.imgUrl" class="vacancies__item-img" :style="vacancy.imgPosition">
-                        <Vacancies_Modal v-show="isActiveModal" :data="vacancy"></Vacancies_Modal>
+                        <Vacancies_Modal 
+                            v-show="isActiveModal === index" 
+                            :data="vacancy"
+                            @resetModal="resetActiveModal"></Vacancies_Modal>
                     </div>
                 </div>
             </div>
@@ -26,7 +29,14 @@ import { useVacanciesStore } from '@/store/VacanciesStore'
 import Vacancies_Modal from './Vacancies_Modal.vue';
 import { ref } from 'vue';
 const vacanciesStore = useVacanciesStore()
-const isActiveModal = ref(false)
+const isActiveModal = ref(null)
+const setActiveModal = (index) => {
+    isActiveModal.value = index
+}
+const resetActiveModal = ()=>{
+    setActiveModal(null)
+}
+
 </script>
 
 <style lang="scss" scoped>
