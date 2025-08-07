@@ -78,8 +78,8 @@
         gap: 12px;
         align-items: center;
         & input {
-            width: rem(24);
-            height: rem(24);
+            min-width: rem(24);
+            min-height: rem(24);
             background-color: #fff;
             appearance: none;
             display: flex;
@@ -117,6 +117,31 @@
         width: 100%;
         margin: 0 auto;
         margin-top: auto;
+    }
+    @media (max-width: 480px) {
+        &__input {
+            font-size: 18px;
+            height: rem(50);
+        }
+        &__select {
+            height: rem(50);
+            & select {
+                font-size: 18px;
+            }
+        }
+        &__checkbox label {
+            font-size: 16px;
+        }
+        &__button {
+            margin-top: rem(30);
+        }
+    }
+    @media (max-width: 480px) {
+        & {
+            max-width: none;
+            width: 100%;
+            border-radius: 0;
+        }
     }
 }
 </style>

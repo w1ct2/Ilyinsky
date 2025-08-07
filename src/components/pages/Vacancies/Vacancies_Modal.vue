@@ -21,7 +21,7 @@
                     <p class="vacancy__p" v-for="paragraph in data.info.p_3">{{ paragraph }}</p>
                 </div>
             </div>
-            <Vacancies_Form></Vacancies_Form>
+            <Vacancies_Form class="vacancy__form"></Vacancies_Form>
         </div>
     </div>
 </template>
@@ -61,6 +61,7 @@ const props = defineProps({
     background-color: rgba(0, 0, 0, .5);
     animation: opacity .5s;
     &__inner {
+        overscroll-behavior: contain;
         background-color: #fff;
         max-width: rem(1290);
         width: 100%;
@@ -95,12 +96,14 @@ const props = defineProps({
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        gap: 30px;
         width: 100%;
     }
     &__content-block {
         display: flex;
         flex-direction: column;
         gap: 12px;
+        min-height: fit-content;
     }
     &__title {
         font-size: 32px;
@@ -134,6 +137,81 @@ const props = defineProps({
         }
         &::before {
             transform: rotate(45deg);
+        }
+    }
+    @media (max-width: 1300px) {
+        &__title {
+            font-size: 28px;
+        }
+        &__p {
+            font-size: 19px;
+        }
+        &__inner {
+            grid-template-columns: rem(100) 1fr;
+            grid-template-rows: rem(100) auto auto;
+            row-gap: 40px;
+        }
+        &__icon {
+            grid-row: 1/4;
+        }
+        &__content {
+            grid-column: 2/3;
+            grid-row: 1/3;
+        }
+        &__form {
+            grid-column: 2/3;
+            grid-row: 3/4;
+        }
+    }
+    @media (max-width: 1000px) {
+        &__inner {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            border-radius: 0;
+            padding-bottom: rem(80);
+        }
+        &__title {
+            font-size: 26px;
+        }
+        &__p {
+            font-size: 18px;
+        }
+    }
+    @media (max-width: 768px) {
+        &__title {
+            font-size: 24px;
+        }
+        &__inner {
+            grid-template-columns: repeat(1, 1fr);
+            padding: 40px;
+            padding-bottom: rem(70);
+        }
+        &__icon {
+            grid-row: 1/2;
+        }
+        &__content {
+            grid-column: 1/2;
+            grid-row: 2/3;
+        }
+        &__form {
+            grid-column: 1/2;
+            grid-row: 3/4;
+        }
+    }
+    @media (max-width: 480px) {
+        &__inner {
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: rem(40);
+            padding-bottom: rem(70);
+        }
+        &__icon, &__content {
+            margin: 0 30px;
+        }
+        &__content {
+            min-width: 0;
+            max-width: 90%;
         }
     }
 }

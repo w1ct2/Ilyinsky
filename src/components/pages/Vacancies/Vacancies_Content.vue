@@ -70,9 +70,13 @@ const resetActiveModal = ()=>{
         &-title {
             font-size: 22px;
             font-weight: 500;
+            overflow: hidden;
+            white-space: nowrap;
+            z-index: 2;
         }
         &-p {
             font-size: 18px;
+            z-index: 2;
         }
         &-button {
             font-size: 22px;
@@ -80,6 +84,82 @@ const resetActiveModal = ()=>{
             border-radius: 30px;
             max-width: 200px;
             aspect-ratio: 200/55;
+            margin-top: auto;
+            z-index: 2;
+        }
+    }
+    @media (max-width: 1300px) {
+        &__list {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: rem(1000);
+            margin: 0 auto;
+            margin-top: rem(70);
+        }
+    }
+    @media (max-width: 1000px) {
+        &__item {
+            padding: 25px;
+            aspect-ratio: 0;
+            min-width: 0;
+            min-height: rem(260);
+            // &-title {
+            //     font-size: 20px;
+            // }
+            // &-p {
+            //     font-size: 18px;
+            // }
+            &-button {
+                font-size: 20px;
+            }
+            &-img {
+                max-width: rem(70);
+                max-height: rem(70);
+                top: -10px !important;
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        & {
+            margin-top: rem(20);
+        }
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: rem(520);
+        }
+        &__item {
+            min-height: rem(200);
+            &-title {
+                white-space: wrap;
+            }
+            &-img {
+                max-width: rem(60);
+                max-height: rem(60);
+            }
+            &-p {
+                font-size: 16px;
+            }
+        }
+    }
+    @media (max-width: 480px) {
+        &__title {
+            font-size: 22px;
+        }
+        &__list {
+            grid-template-columns: 1fr;
+            margin-top: rem(30);
+        }
+        &__item {
+            padding: 30px;
+            &-p {
+                font-size: 18px;
+            }
+            &-img {
+                max-width: rem(90);
+                max-height: rem(90);
+                top: 50% !important;
+                right: 10px !important;
+                transform: translateY(-50%);
+            }
         }
     }
 }
