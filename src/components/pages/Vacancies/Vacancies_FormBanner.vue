@@ -19,8 +19,8 @@
                         </select>
                     </div>
                     <div class="form__checkbox">
-                        <input type="checkbox" id="checkbox">
-                        <label for="checkbox">согласие на <span>обработку персональных данных</span></label>
+                        <input type="checkbox" id="checkbox_mainBanner">
+                        <label for="checkbox_mainBanner">согласие на <span>обработку персональных данных</span></label>
                         <button class="form__button" @click.prevent>Откликнуться</button>
                     </div>
                 </form>
@@ -45,9 +45,12 @@ const mainStore = useMainStore()
         background-color: #FFECCA;
         border: 1px solid #FFE7B9;
         border-radius: 16px;
+        gap: 20px;
         width: 100%;
         padding: 50px;
-        aspect-ratio: 1290/460;
+        // aspect-ratio: 1290/460;
+        max-height: rem(460);
+        height: 100vh;
     }
     &__title-container {
         color: #2E0505;
@@ -117,9 +120,12 @@ const mainStore = useMainStore()
         display: flex;
         gap: 12px;
         align-items: center;
+        margin-top: auto;
         & input {
             min-width: rem(24);
             min-height: rem(24);
+            max-width: rem(24);
+            max-height: rem(24);
             background-color: #fff;
             appearance: none;
             display: flex;
@@ -159,6 +165,56 @@ const mainStore = useMainStore()
         margin: 0 auto;
         margin-top: auto;
     }
+    @media (max-width: 1300px) {
+        &__title {
+            font-size: 34px;
+        }
+    }
+    @media (max-width: 1000px) {
+        & {
+            margin-bottom: 0;
+        }
+        &__inner {
+            border-radius: 0;
+            padding: 40px 20px;
+        }
+        &__title {
+            font-size: 30px;
+        }
+        &__p {
+            font-size: 16px;
+        }
+        .container {
+            padding: 0;
+        }
+        &__checkbox {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: 1fr rem(55);
+            max-width: rem(380);
+        }
+        &__button {
+            grid-column: 1/3;
+            grid-row: 2/3;
+        }
+    }
+    @media (max-width: 768px) {
+        &__inner {
+            flex-direction: column;
+            max-height: none;
+            height: 100%;
+        }
+        &__title-container {
+            width: 100%;
+            max-width: none;
+            background-size: 20%;
+            background-position: center right;
+        }
+        &__title {
+            max-width: 80%;
+            font-size: 26px;
+        }
+    }
     @media (max-width: 480px) {
         &__input {
             font-size: 18px;
@@ -176,12 +232,13 @@ const mainStore = useMainStore()
         &__button {
             margin-top: rem(30);
         }
-    }
-    @media (max-width: 480px) {
         & {
             max-width: none;
             width: 100%;
             border-radius: 0;
+        }
+        &__title {
+            font-size: 24px;
         }
     }
 }
