@@ -1,3 +1,4 @@
+import Contacts from '@/components/pages/Contacts/Contacts.vue'
 import Home from '@/components/pages/Home/Home.vue'
 import Promotions from '@/components/pages/Promotions/Promotions.vue'
 import Vacancies from '@/components/pages/Vacancies/Vacancies.vue'
@@ -22,6 +23,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/vacancies',
     name: 'vacansies',
     component: Vacancies
+  },
+  {
+    path: '/contacts',
+    name: 'contacts',
+    component: Contacts
   }
 ]
 
