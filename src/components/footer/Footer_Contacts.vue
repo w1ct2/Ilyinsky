@@ -7,7 +7,7 @@
         </div>
         <div class="footer-contacts__item">
             <img :src="compass" alt="">
-            <a href="">Адреса магазинов</a>
+            <RouterLink :to="'/contacts'">Адреса магазинов</RouterLink>
         </div>
         <div class="footer-contacts__item">
             <img :src="insta" alt="">
@@ -25,6 +25,7 @@ import compass from '@/assets/img/footer/compass.svg'
 import insta from '@/assets/img/footer/insta.svg'
 import phone from '@/assets/img/footer/phone-call.svg'
 import mail from '@/assets/img/footer/mail.svg'
+import { RouterLink } from 'vue-router'
 
 import { useMainStore } from '@/store/MainStore'
 const mainStore = useMainStore()

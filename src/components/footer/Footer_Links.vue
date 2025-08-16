@@ -5,12 +5,13 @@
             v-for="(link, index) in links"
             :key="link.id"
             class="footer-links__item">
-            <a href="#">{{ link.name }}</a>
+            <RouterLink :to="link.url">{{ link.name }}</RouterLink>
         </li>
     </ul>
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router'
 import { useMainStore } from '@/store/MainStore'
 const mainStore = useMainStore()
 const props = defineProps({

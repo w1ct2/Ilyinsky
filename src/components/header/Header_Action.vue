@@ -3,10 +3,7 @@
         <RouterLink :to="'/'" class="navigation__icon">
             <img :src="icon" alt="Ильинский онлайн">
         </RouterLink>
-        <div class="navigation__catalog">
-            <div class="navigation__catalog-btn"><span></span></div>
-            <p>Каталог</p>
-        </div>
+        <Header_CatalogBtn></Header_CatalogBtn>
         <div class="navigation__search">
             <input type="text" placeholder="Начать поиск">
             <img :src="search" alt="">
@@ -41,6 +38,10 @@ import compass from '@/assets/img/svg/compass1.svg'
 import favorites from '@/assets/img/svg/favorites1.svg'
 import contacts from '@/assets/img/svg/contacts1.svg'
 import basket from '@/assets/img/svg/basket1.svg'
+import { ref } from 'vue'
+import Header_CatalogBtn from './Header_CatalogBtn.vue'
+const isHoverCatalog = ref(false)
+const isActiveCatalog = ref(false)
 </script>
 
 <style lang="scss" scoped>
@@ -51,44 +52,6 @@ import basket from '@/assets/img/svg/basket1.svg'
         align-items: center;
         gap: 25px;
         height: rem(55);
-    }
-    &__catalog {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border-radius: 30px;
-        background-color: var(--red);
-        min-width: rem(130);
-        height: 100%;
-        cursor: pointer;
-        &-btn {
-            width: rem(18);
-            height: rem(12);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            & span {
-                width: rem(14);
-                height: rem(2);
-                background-color: #fff;
-                &::after, &::before {
-                    position: absolute;
-                    width: rem(14);
-                    height: rem(2);
-                    background-color: #fff;
-                    content: '';
-                }
-                &::after {
-                    top: 0;
-                }
-                &::before {
-                    bottom: 0;
-                }
-            }
-        }
     }
     &__search {
         width: rem(315);

@@ -52,7 +52,7 @@ const links2 = ref([
     {
         id: 1,
         name: 'Акции',
-        url: ''
+        url: '/promotions'
     },
     {
         id: 2,
@@ -61,8 +61,8 @@ const links2 = ref([
     },
     {
         id: 3,
-        name: 'Программа лояльности',
-        url: ''
+        name: 'Контакты',
+        url: '/contacts'
     },
     {
         id: 4,
@@ -72,7 +72,7 @@ const links2 = ref([
     {
         id: 5,
         name: 'Вакансии',
-        url: ''
+        url: '/vacancies'
     },
 ])
 const mainStore = useMainStore()

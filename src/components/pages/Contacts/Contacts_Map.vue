@@ -102,7 +102,7 @@
             }
         }
         &__map {
-            aspect-ratio: 1290/800;
+            aspect-ratio: 1290/800; 
         }
     }
     @media (max-width: 480px) {
