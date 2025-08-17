@@ -1,11 +1,5 @@
 <template>
     <header class="header">
-        <!-- <HeaderSpecialOffer
-            v-if="active === true"
-            :btn="'Получить скидку'" 
-            :title="'Питайтесь разнообразно и копите <span>скидку</span> до 10%'"
-            @closeBlock="closeBlock(n)">
-        </HeaderSpecialOffer> -->
         <HeaderMain></HeaderMain>
     </header>
 </template>

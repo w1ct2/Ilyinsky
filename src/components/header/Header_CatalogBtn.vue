@@ -64,8 +64,8 @@ const isHoverCatalog = ref(false)
         }
     }
     &__btn {
-        width: rem(18);
-        height: rem(10);
+        width: rem(20);
+        height: rem(14);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -73,12 +73,12 @@ const isHoverCatalog = ref(false)
         position: relative;
         transition: all .5s ease;
         & span {
-            width: rem(14);
+            width: rem(18);
             height: rem(2);
             background-color: #fff;
             &::after, &::before {
                 position: absolute;
-                width: rem(14);
+                width: rem(18);
                 height: rem(2);
                 background-color: #fff;
                 content: '';
