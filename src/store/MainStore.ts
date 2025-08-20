@@ -205,6 +205,13 @@ export const useMainStore = defineStore('mainStore', ()=>{
     const toggleFavorite = (index: number) => {
         discounts.value[index].favorite = !discounts.value[index].favorite
     }
+    const addressesDelivery: Ref<object[]> = ref([
+        {
+            id: Date.now(),
+            address: 'ул. Новая, д. 13, посёлок Ильинское-Усово, городской округ Красногорск',
+        }
+    ])
+    const addressesPickup = ref([])
     return {
         width, 
         isMobile1000, 
@@ -213,6 +220,8 @@ export const useMainStore = defineStore('mainStore', ()=>{
         activeBurgerMenu, 
         discounts, 
         toggleFavorite,
-        promotions
+        promotions,
+        addressesDelivery,
+        addressesPickup
     }
 })

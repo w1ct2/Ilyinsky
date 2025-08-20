@@ -19,7 +19,6 @@ const props = defineProps({
     },
     styles: {
         type: Object,
-        required: true,
     }
 })
 </script>

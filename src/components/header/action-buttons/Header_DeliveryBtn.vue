@@ -1,5 +1,5 @@
 <template>
-    <div class="delivery">
+    <div class="delivery" @click="isActiveModal = true">
         <div class="delivery__icon">
             <img :src="compass" alt="">
             <p>MCK</p>
@@ -8,11 +8,21 @@
             <p>Выберите способ получения</p>
             <h4>Доставка или самовывоз</h4>
         </div>
+        <Header_DeliveryMenu
+            @click.stop
+            v-show="isActiveModal"
+            @resetModal="resetActiveModal"></Header_DeliveryMenu>
     </div>
 </template>
 
 <script setup>
 import compass from '@/assets/img/svg/compass1.svg'
+import Header_DeliveryMenu from './Header_DeliveryMenu.vue';
+import { ref } from 'vue';
+const isActiveModal = ref(1)
+const resetActiveModal = ()=>{
+    isActiveModal.value = false
+}
 </script>
 
 <style lang="scss" scoped>
@@ -26,6 +36,7 @@ import compass from '@/assets/img/svg/compass1.svg'
     border-radius: 16px;
     align-items: center;
     cursor: pointer;
+    position: relative;
     &__icon {
         display: flex;
         flex-direction: column;

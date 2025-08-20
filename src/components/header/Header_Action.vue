@@ -5,7 +5,7 @@
         </RouterLink>
         <Header_CatalogBtn></Header_CatalogBtn>
         <Header_Search></Header_Search>
-        <Header_Delivery></Header_Delivery>
+        <Header_DeliveryBtn></Header_DeliveryBtn>
         <Header_Favorites></Header_Favorites>
         <Header_ContactBtn></Header_ContactBtn>
         <Header_Basket></Header_Basket>
@@ -14,12 +14,12 @@
 
 <script setup> 
 import icon from '@/assets/img/mainImage/mainIcon.svg'
-import Header_CatalogBtn from './Header_CatalogBtn.vue'
-import Header_Search from './Header_Search.vue'
-import Header_Delivery from './mobile/Header_Delivery.vue'
-import Header_Favorites from './Header_Favorites.vue'
-import Header_ContactBtn from './mobile/Header_ContactBtn.vue'
-import Header_Basket from './Header_Basket.vue'
+import Header_CatalogBtn from './action-buttons/Header_CatalogBtn.vue'
+import Header_Search from './action-buttons/Header_Search.vue'
+import Header_DeliveryBtn from './action-buttons/Header_DeliveryBtn.vue'
+import Header_Favorites from './action-buttons/Header_Favorites.vue'
+import Header_ContactBtn from './action-buttons/Header_ContactBtn.vue'
+import Header_Basket from './action-buttons/Header_Basket.vue'
 </script>
 
 <style lang="scss" scoped>
