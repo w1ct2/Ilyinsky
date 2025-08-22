@@ -47,7 +47,7 @@ const setDeliveryMethod = (method) => {
     animation: opacity .5s;
     &__inner {
         overscroll-behavior: contain;
-        overflow-y: scroll;
+        // overflow-y: scroll;
         background-color: #fff;
         color: #000;
         max-width: rem(1290);

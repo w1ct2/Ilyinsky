@@ -19,7 +19,6 @@ interface DiscountItem {
     price: string
     oldPrice: string | null
 }
-
 export const useMainStore = defineStore('mainStore', ()=>{
     const { width } = useWindowSize()
     const isMobile1000 = computed(()=> width.value < 1000)
@@ -28,6 +27,9 @@ export const useMainStore = defineStore('mainStore', ()=>{
     const activeBurgerMenu = ()=>{
         isActiveBurgerMenu.value = !isActiveBurgerMenu.value
         console.log("Catalog is open");
+    }
+    const toggleFavorite = (index: number) => {
+        discounts.value[index].favorite = !discounts.value[index].favorite
     }
     const discounts: Ref<DiscountItem[]>  = ref([
         {
@@ -202,16 +204,6 @@ export const useMainStore = defineStore('mainStore', ()=>{
             description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
         },
     ])
-    const toggleFavorite = (index: number) => {
-        discounts.value[index].favorite = !discounts.value[index].favorite
-    }
-    const addressesDelivery: Ref<object[]> = ref([
-        {
-            id: Date.now(),
-            address: 'ул. Новая, д. 13, посёлок Ильинское-Усово, городской округ Красногорск',
-        }
-    ])
-    const addressesPickup = ref([])
     return {
         width, 
         isMobile1000, 
@@ -221,7 +213,5 @@ export const useMainStore = defineStore('mainStore', ()=>{
         discounts, 
         toggleFavorite,
         promotions,
-        addressesDelivery,
-        addressesPickup
     }
 })
