@@ -162,7 +162,9 @@ const selected2 = ref(selectOptions2.value[0]);
                 width: 20px;
             }
             // & :deep(.vs__selected) { 
-            //     justify-content: end !important;
+            //     // justify-content: end !important;
+            //     text-align: end;
+            //     height: fit-content;
             // }
             & :deep(.vs__selected-options) { 
                 flex-wrap: nowrap;

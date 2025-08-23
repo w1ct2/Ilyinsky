@@ -7,7 +7,7 @@
         <Header_Search></Header_Search>
         <Header_DeliveryBtn></Header_DeliveryBtn>
         <Header_Favorites></Header_Favorites>
-        <Header_ContactBtn></Header_ContactBtn>
+        <Header_ProfileBtn></Header_ProfileBtn>
         <Header_Basket></Header_Basket>
     </div>
 </template>
@@ -18,7 +18,7 @@ import Header_CatalogBtn from './action-buttons/Header_CatalogBtn.vue'
 import Header_Search from './action-buttons/Header_Search.vue'
 import Header_DeliveryBtn from './action-buttons/Header_DeliveryBtn.vue'
 import Header_Favorites from './action-buttons/Header_Favorites.vue'
-import Header_ContactBtn from './action-buttons/Header_ContactBtn.vue'
+import Header_ProfileBtn from './action-buttons/Header_ProfileBtn.vue'
 import Header_Basket from './action-buttons/Header_Basket.vue'
 </script>
 

@@ -1,11 +1,15 @@
 <template>
-    <div class="contacts">
+    <div class="contacts" @click.stop="isActiveMenu = !isActiveMenu">
         <img :src="contacts" class="contacts__img">
+        <Profile_Container v-show="isActiveMenu" class="contacts__container"></Profile_Container>
     </div>
 </template>
 
 <script setup>
 import contacts from '@/assets/img/svg/contacts1.svg'
+import Profile_Container from './profile-menu/Profile_Container.vue';
+import { ref } from 'vue';
+const isActiveMenu = ref(false)
 </script>
 
 <style lang="scss" scoped>
@@ -21,9 +25,15 @@ import contacts from '@/assets/img/svg/contacts1.svg'
     justify-content: center;
     align-items: center;
     margin-left: -10px;
+    position: relative;
     &:hover {
         .contacts__img {
             animation: people .5s;
+        }
+    }
+    &__container:hover {
+        .contacts__img {
+            animation: none;
         }
     }
 }
