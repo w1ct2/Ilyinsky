@@ -3,7 +3,6 @@ import { computed, Ref, ref } from "vue";
 import { useWindowSize } from '@vueuse/core'
 import card1 from '@/assets/img/discounts/card1.png'
 import card2 from '@/assets/img/discounts/card2.png'
-
 import promotions1 from '@/assets/img/promotions/img1.png'
 import promotions2 from '@/assets/img/promotions/img2.png'
 import promotions3 from '@/assets/img/promotions/img3.png'
@@ -20,14 +19,34 @@ interface DiscountItem {
     oldPrice: string | null
 }
 export const useMainStore = defineStore('mainStore', ()=>{
+
     const { width } = useWindowSize()
     const isMobile1000 = computed(()=> width.value < 1000)
     const isMobile768 = computed(()=> width.value < 768)
+
     const isActiveBurgerMenu = ref(false)
     const activeBurgerMenu = ()=>{
         isActiveBurgerMenu.value = !isActiveBurgerMenu.value
         console.log("Catalog is open");
     }
+
+    const mainPhoneUser = ref('')
+    const STORAGE_PHONE_KEY = ref('mainPhone')
+    const setMainPhoneUser = (value: string)=>{
+        mainPhoneUser.value = value
+        localStorage.setItem(STORAGE_PHONE_KEY.value, mainPhoneUser.value)
+    }
+
+    const isAuthUser = ref('notAuth')
+    const STORAGE_AUTH_KEY = ref('UserAuthorization')
+    const setAuthUser = ()=>{
+        isAuthUser.value = 'isAuth'
+        localStorage.setItem(STORAGE_AUTH_KEY.value, 'isAuth')
+        console.log('User is Authorized')
+    }
+
+    const userFullName = ref('Имя Фамилия')
+
     const toggleFavorite = (index: number) => {
         discounts.value[index].favorite = !discounts.value[index].favorite
     }
@@ -204,6 +223,7 @@ export const useMainStore = defineStore('mainStore', ()=>{
             description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
         },
     ])
+
     return {
         width, 
         isMobile1000, 
@@ -213,5 +233,12 @@ export const useMainStore = defineStore('mainStore', ()=>{
         discounts, 
         toggleFavorite,
         promotions,
+        mainPhoneUser,
+        setMainPhoneUser,
+        isAuthUser,
+        setAuthUser,
+        STORAGE_AUTH_KEY,
+        STORAGE_PHONE_KEY,
+        userFullName
     }
 })

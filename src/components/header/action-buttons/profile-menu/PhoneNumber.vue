@@ -2,7 +2,7 @@
     <div class="phone">
         <div class="phone__input">
             <p class="phone__input-p">Ваш телефон</p>
-            <PhoneField></PhoneField>
+            <PhoneField @input-change="handleInputChange"></PhoneField>
         </div>
         <div class="phone__checkbox">
             <div class="phone__checkbox-item">
@@ -14,15 +14,44 @@
                 <label for="phone__checkbox-input2" class="phone__checkbox-label">Соглашаюсь получать новости и специальные предложения</label>
             </div>
         </div>
-        <button class="phone__button" :disabled="!privacyPolicy" @click="$emit('nextPage', true)"  :class="{'phone__button--active': privacyPolicy}">Получить код по SMS</button>
+        <button 
+            class="phone__button" 
+            :disabled="!privacyPolicy || !isValidPhone" 
+            @click="handleButtonClick"  
+            :class="{'phone__button--active': privacyPolicy && isValidPhone}"
+            >Получить код по SMS
+        </button>
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import PhoneField from './PhoneField.vue';
-
+import { useMainStore } from '@/store/MainStore';
+const MainStore = useMainStore()
+const emits = defineEmits(['nextPage'])
+const phoneNumber = ref('')
 const privacyPolicy = ref(false)
+const isValidPhone = computed(() => {
+    if (!phoneNumber.value.includes('_') && phoneNumber.value.length > 1) {
+        return true
+    }
+    return false;
+});
+const handleInputChange = (value)=>{
+    if (value.length > 11) {
+        phoneNumber.value = value.substring(0, 16);
+    } else {
+        console.log('Передан некорректный номер')
+    }
+}
+const setPhoneNumber = ()=>{
+    MainStore.setMainPhoneUser(phoneNumber.value)
+}
+const handleButtonClick = () => {
+    emits('nextPage', true);
+    setPhoneNumber();
+}
 </script>
 
 <style lang="scss" scoped>
@@ -94,6 +123,9 @@ const privacyPolicy = ref(false)
         border-radius: 16px;
         color: #6B6B6B;
         background-color: #F2F3F5;
+        &:disabled {
+            cursor: not-allowed;
+        }
         &--active {
             background-color: var(--red);
             color: #fff;

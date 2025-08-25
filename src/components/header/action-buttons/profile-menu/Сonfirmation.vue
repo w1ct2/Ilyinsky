@@ -1,21 +1,95 @@
 <template>
     <div class="confirmation">
-        <p class="confirmation__p">Код подтверждения отправлен на номер  +7 999 999 99 99</p>
+        <p class="confirmation__p">Код подтверждения отправлен на номер  {{ phone }}</p>
         <article class="confirmation__article">Введите код подтверждения</article>
         <div class="confirmation__input-container">
-            <input type="text" class="confirmation__input">
-            <input type="text" class="confirmation__input">
-            <input type="text" class="confirmation__input">
-            <input type="text" class="confirmation__input">
+            <input
+                ref="firstInput"
+                type="text" 
+                class="confirmation__input" 
+                maxlength="10" 
+                @input="handleInput(0, $event)"
+                @keydown="handleKeydown(0, $event)"
+                v-model="codeArray[0]">
+            <input 
+                type="text" 
+                class="confirmation__input" 
+                maxlength="10"
+                @input="handleInput(1, $event)"
+                @keydown="handleKeydown(1, $event)"
+                v-model="codeArray[1]">
+            <input 
+                type="text" 
+                class="confirmation__input" 
+                maxlength="10"
+                @input="handleInput(2, $event)"
+                @keydown="handleKeydown(2, $event)"
+                v-model="codeArray[2]">
+            <input 
+                type="text" 
+                class="confirmation__input" 
+                maxlength="10"
+                @input="handleInput(3, $event)"
+                @keydown="handleKeydown(3, $event)"
+                v-model="codeArray[3]">
         </div>
-        <button class="confirmation__button" :disabled="!codeValid">Подтвердить</button>
+        <button 
+            class="confirmation__button" 
+            :disabled="!isCodeValid"
+            :class="{'confirmation__button--active': isCodeValid}"
+            @click="confirmationAuth">Подтвердить</button>
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
-const codeValid = ref(false)
+import { useMainStore } from '@/store/MainStore';
+import { computed, nextTick, onMounted, ref } from 'vue';
+const emits = defineEmits(['close-auth'])
+const MainStore = useMainStore()
+const firstInput = ref(null)
+onMounted(()=>{
+    firstInput.value.focus()
+})
+const phone = localStorage.getItem('mainPhone')
+const codeArray = ref(['','','',''])
+const handleInput = (index, event)=>{
+    let value = event.target.value.replace(/\D/g, '')
+    if (value.length > 1){
+        value = value.slice(-1)
+    }
+    codeArray.value[index] = value;
+    if(value && index < 3){
+        nextTick(()=>{
+            const nextInput = event.target.nextElementSibling
+            if(nextInput){
+                nextInput.focus()
+            }
+        })
+    }
+}
+const handleKeydown = (index, event) => {
+    if (event.key === "Backspace") {
+        if(codeArray.value[index] && index > 0){
+            event.preventDefault()
+            codeArray.value[index] = '';
+            nextTick(()=>{
+                const prevInput = event.target.previousElementSibling
+                if (prevInput) {
+                    prevInput.focus()
+                }
+            })
+        }
+    }
+}
+const isCodeValid = computed(()=>{
+    return codeArray.value.every(digit => digit !== '') &&
+        codeArray.value.join('').length === 4
+})
+const confirmationAuth = ()=>{
+    MainStore.setAuthUser()
+    codeArray.value = ['']
+    emits('close-auth')
+}
 </script>
 
 <style lang="scss" scoped>
@@ -31,6 +105,13 @@ const codeValid = ref(false)
         border-radius: 16px;
         color: #6B6B6B;
         background-color: #F2F3F5;
+        &:disabled {
+            cursor: not-allowed;
+        }
+        &--active {
+            background-color: var(--red);
+            color: #fff;
+        }
     }
     &__p {
         font-size: 14px;
@@ -51,7 +132,7 @@ const codeValid = ref(false)
     &__input {
         width: rem(60);
         height: rem(60);
-        padding: 0 25px;
+        text-align: center;
         border-radius: 16px;
         border: 1px solid #C4C4C4;
         color: #000;

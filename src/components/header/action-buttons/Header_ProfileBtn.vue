@@ -1,15 +1,24 @@
 <template>
     <div class="contacts" @click.stop="isActiveMenu = !isActiveMenu">
         <img :src="contacts" class="contacts__img">
-        <Profile_Container v-show="isActiveMenu" class="contacts__container"></Profile_Container>
+        <Profile_AuthContainer
+            v-if="isAuth === 'notAuth' && isActiveMenu"
+            class="contacts__container"
+            @close-auth="isActiveMenu = false"></Profile_AuthContainer>
+        <Profile_Container v-else-if="isAuth === 'isAuth'"></Profile_Container>
     </div>
 </template>
 
 <script setup>
 import contacts from '@/assets/img/svg/contacts1.svg'
-import Profile_Container from './profile-menu/Profile_Container.vue';
+import Profile_AuthContainer from './profile-menu/Profile_AuthContainer.vue';
 import { ref } from 'vue';
+import Profile_Container from './profile-menu/Profile_Container.vue';
+import { useMainStore } from '@/store/MainStore';
+const MainStore = useMainStore()
 const isActiveMenu = ref(false)
+const isAuth = ref(MainStore.isAuthUser)
+console.log(isAuth.value);
 </script>
 
 <style lang="scss" scoped>
