@@ -1,24 +1,54 @@
 <template>
-    <div class="contacts" @click.stop="isActiveMenu = !isActiveMenu">
+    <div class="contacts" @click.stop="toggleMenu">
         <img :src="contacts" class="contacts__img">
         <Profile_AuthContainer
-            v-if="isAuth === 'notAuth' && isActiveMenu"
+            v-if="!isAuth"
+            v-show="isActiveMenu"
             class="contacts__container"
-            @close-auth="isActiveMenu = false"></Profile_AuthContainer>
-        <Profile_Container v-else-if="isAuth === 'isAuth'"></Profile_Container>
+            @close-auth="handleCloseAuth"></Profile_AuthContainer>
+        <Profile_Container 
+            @close-modal="isActiveMenu = false"
+            v-else-if="isAuth"
+            v-show="isActiveMenu"></Profile_Container>
+        <Profile_AfterAuth
+            v-if="authAlert"
+            @close-alert="authAlert=false"></Profile_AfterAuth>
     </div>
 </template>
 
 <script setup>
 import contacts from '@/assets/img/svg/contacts1.svg'
 import Profile_AuthContainer from './profile-menu/Profile_AuthContainer.vue';
-import { ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import Profile_Container from './profile-menu/Profile_Container.vue';
-import { useMainStore } from '@/store/MainStore';
-const MainStore = useMainStore()
+import Profile_AfterAuth from './profile-menu/Profile_AfterAuth.vue';
 const isActiveMenu = ref(false)
-const isAuth = ref(MainStore.isAuthUser)
-console.log(isAuth.value);
+const authAlert = ref(false)
+const isAuth = ref(false)
+const checkAuthStatus = () => {
+    isAuth.value = localStorage.getItem('UserAuthorization') === 'isAuth';
+};
+onMounted(()=>{
+    checkAuthStatus()
+    window.addEventListener('storage', checkAuthStatus);
+})
+onUnmounted(() => {
+    window.removeEventListener('storage', checkAuthStatus);
+});
+const toggleMenu = ()=>{
+    isActiveMenu.value = !isActiveMenu.value
+    checkAuthStatus()
+}
+const handleCloseAuth = () => {
+    isActiveMenu.value = false;
+    viewAuthAlert();
+};
+const viewAuthAlert = ()=>{
+    authAlert.value = true
+    setTimeout(()=>{
+        authAlert.value = false
+    }, 3000)
+}
 </script>
 
 <style lang="scss" scoped>

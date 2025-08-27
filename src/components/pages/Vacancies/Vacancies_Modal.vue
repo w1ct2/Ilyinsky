@@ -39,13 +39,6 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 @import "@/scss/remFunction";
-@keyframes opacity {
-    0% {
-        opacity: 0;
-    } 100% {
-        opacity: 1;
-    }
-}
 .vacancy {
     display: flex;
     align-items: center;

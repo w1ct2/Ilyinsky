@@ -29,16 +29,15 @@ export const useMainStore = defineStore('mainStore', ()=>{
         isActiveBurgerMenu.value = !isActiveBurgerMenu.value
         console.log("Catalog is open");
     }
-
-    const mainPhoneUser = ref('')
     const STORAGE_PHONE_KEY = ref('mainPhone')
+    let mainPhoneUser = localStorage.getItem(STORAGE_PHONE_KEY.value)
     const setMainPhoneUser = (value: string)=>{
-        mainPhoneUser.value = value
-        localStorage.setItem(STORAGE_PHONE_KEY.value, mainPhoneUser.value)
+        mainPhoneUser = value
+        localStorage.setItem(STORAGE_PHONE_KEY.value, mainPhoneUser)
     }
 
-    const isAuthUser = ref('notAuth')
     const STORAGE_AUTH_KEY = ref('UserAuthorization')
+    const isAuthUser = ref(localStorage.getItem(STORAGE_AUTH_KEY.value))
     const setAuthUser = ()=>{
         isAuthUser.value = 'isAuth'
         localStorage.setItem(STORAGE_AUTH_KEY.value, 'isAuth')
@@ -62,8 +61,8 @@ export const useMainStore = defineStore('mainStore', ()=>{
                 else return 'Нет в наличии'
             },
             title: 'Гранола Мюсли Bionova ягодные запечённые хрустящие, 400г',
-            price: '99,90 грн',
-            oldPrice: '129,00 грн'
+            price: '99,90 руб',
+            oldPrice: '129,00 руб'
         },
         {
             id: 2,
@@ -76,7 +75,7 @@ export const useMainStore = defineStore('mainStore', ()=>{
                 else return 'Нет в наличии'
             },
             title: 'Сок Ideas тыквенно-апельсиновый, 1л',
-            price: '70,90 грн',
+            price: '70,90 руб',
             oldPrice: null
         },
         {
@@ -90,7 +89,7 @@ export const useMainStore = defineStore('mainStore', ()=>{
                 else return 'Нет в наличии'
             },
             title: 'Гранола Мюсли Bionova ягодные запечённые хрустящие, 400г',
-            price: '99,90 грн',
+            price: '99,90 руб',
             oldPrice: null
         },
         {
@@ -104,7 +103,7 @@ export const useMainStore = defineStore('mainStore', ()=>{
                 else return 'Нет в наличии'
             },
             title: 'Сок Ideas тыквенно-апельсиновый, 1л',
-            price: '70,90 грн',
+            price: '70,90 руб',
             oldPrice: null
         },
         {
@@ -118,7 +117,7 @@ export const useMainStore = defineStore('mainStore', ()=>{
                 else return 'Нет в наличии'
             },
             title: 'Сок Ideas тыквенно-апельсиновый, 1л',
-            price: '70,90 грн',
+            price: '70,90 руб',
             oldPrice: null
         },
         {
@@ -132,8 +131,8 @@ export const useMainStore = defineStore('mainStore', ()=>{
                 else return 'Нет в наличии'
             },
             title: 'Гранола Мюсли Bionova ягодные запечённые хрустящие, 400г',
-            price: '99,90 грн',
-            oldPrice: '129,00 грн'
+            price: '99,90 руб',
+            oldPrice: '129,00 руб'
         },
     ])
     const promotions = ref([

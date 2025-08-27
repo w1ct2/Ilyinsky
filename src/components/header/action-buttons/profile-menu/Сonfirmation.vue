@@ -89,6 +89,8 @@ const confirmationAuth = ()=>{
     MainStore.setAuthUser()
     codeArray.value = ['']
     emits('close-auth')
+    console.log(MainStore.isAuthUser);
+    
 }
 </script>
 
