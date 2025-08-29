@@ -1,6 +1,6 @@
 <template>
     <div class="personal-data">
-        <form class="personal-data__form">
+        <form class="personal-data__form" @submit.prevent>
             <div class="personal-data__item">
                 <label for="" class="personal-data__label">Имя</label>
                 <input type="text" class="personal-data__input">

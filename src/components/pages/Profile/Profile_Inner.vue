@@ -11,7 +11,7 @@
                     @click="selectTab(index)">{{ tab.title }}</li>
             </ul>
             <PersonalData v-if="activeTab === 0"></PersonalData>
-            <div v-else-if="activeTab === 1">Test1</div>
+            <PersonalHistory v-else-if="activeTab === 1"></PersonalHistory>
             <div v-else-if="activeTab === 2">Test2</div>
         </div>
     </section>
@@ -20,7 +20,8 @@
 <script setup>
 import { ref } from 'vue';
 import PersonalData from './PersonalData.vue';
-const activeTab = ref(0)
+import PersonalHistory from './PersonalHistory.vue';
+const activeTab = ref(1)
 const tabs = ref([
     {
         id: 1,

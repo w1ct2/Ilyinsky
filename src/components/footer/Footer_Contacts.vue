@@ -2,7 +2,7 @@
     <div class="footer-contacts">
         <div class="footer-contacts__phone">
             <img :src="phone" alt="">
-            <h4>+38 (000) 49-09-99</h4>
+            <h4>+7 (000) 00-00-00</h4>
             <p>Ежедневно c 09:00 до 21:00</p>
         </div>
         <div class="footer-contacts__item">
