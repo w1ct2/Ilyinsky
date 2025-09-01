@@ -1,7 +1,14 @@
 <template>
 <form class="form">
         <h4 class="title">Выберите адрес самовывоза</h4>
-        <div class="form__input"></div>
+        <div class="form__input">
+            <input type="text" placeholder="Введите адрес доставки">
+            <div class="form__list" @click="isActiveList = !isActiveList">
+                <div class="form__list-btn"><span></span></div>
+                <p>Список</p>
+            </div>
+            <Pickup_List v-show="isActiveList" @close-list="isActiveList = false"></Pickup_List>
+        </div>
         <h4 class="title">Последние адреса</h4>
         <div class="form__addresses"></div>
         <h4 class="title">Когда зайдете в магазин?</h4>
@@ -24,6 +31,8 @@
 import { ref } from 'vue';
 import vSelect from 'vue-select'
 import 'vue-select/dist/vue-select.css'
+import Pickup_List from './Pickup_List.vue';
+const isActiveList = ref(1)
 const selectOptions1 = ref([
     { id: 1, name: 'Сегодня' },
     { id: 2, name: 'Завтра' },
@@ -50,6 +59,7 @@ const selected2 = ref(selectOptions2.value[0]);
         position: relative;
         display: flex;
         align-items: center;
+        gap: 8px;
         & input {
             height: rem(45);
             width: 100%;
@@ -147,6 +157,43 @@ const selected2 = ref(selectOptions2.value[0]);
             }
             & :deep(.vs__dropdown-toggle:focus-within) {
                 border: 1px solid var(--red);
+            }
+        }
+    }
+    &__list {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        width: rem(125);
+        height: 100%;
+        border: 1px solid #E1E1E1;
+        border-radius: 16px;
+        padding: 0 10px;
+        cursor: pointer;
+    }
+    &__list-btn {
+        width: rem(16);
+        height: rem(14);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & span {
+            background-color: #AAAAAA;
+            width: 100%;
+            height: rem(2.5);
+            position: relative;
+            &::after, &::before {
+                content: '';
+                width: 100%;
+                height: inherit;
+                background-color: #AAAAAA;
+                position: absolute;
+            }
+            &::after {
+                bottom: -5px;
+            }
+            &::before {
+                top: -5px;
             }
         }
     }

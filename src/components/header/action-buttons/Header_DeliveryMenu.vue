@@ -16,7 +16,7 @@ import { ref } from 'vue';
 import Checkbox from './delivery-menu/Checkbox.vue';
 import Delivery from './delivery-menu/Delivery.vue';
 import Pickup from './delivery-menu/Pickup.vue';
-const deliveryMethod = ref('delivery')
+const deliveryMethod = ref('pickup')
 const setDeliveryMethod = (method) => {
     deliveryMethod.value = method
 }
