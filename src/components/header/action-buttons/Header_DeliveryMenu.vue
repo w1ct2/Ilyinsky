@@ -16,7 +16,7 @@ import { ref } from 'vue';
 import Checkbox from './delivery-menu/Checkbox.vue';
 import Delivery from './delivery-menu/Delivery.vue';
 import Pickup from './delivery-menu/Pickup.vue';
-const deliveryMethod = ref('pickup')
+const deliveryMethod = ref('delivery')
 const setDeliveryMethod = (method) => {
     deliveryMethod.value = method
 }
@@ -40,7 +40,7 @@ const setDeliveryMethod = (method) => {
     animation: opacity .5s;
     &__inner {
         overscroll-behavior: contain;
-        // overflow-y: scroll;
+        overflow-y: scroll;
         background-color: #fff;
         color: #000;
         max-width: rem(1290);
@@ -57,7 +57,7 @@ const setDeliveryMethod = (method) => {
         row-gap: rem(25);
     }
     &__map {
-        margin: -30px 0;
+        margin: -23px 0;
         margin-right: -30px;
         border-top-right-radius: 16px;
         border-bottom-right-radius: 16px;

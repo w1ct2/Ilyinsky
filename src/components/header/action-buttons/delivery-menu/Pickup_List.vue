@@ -8,11 +8,12 @@
                 <img :src="search">
             </div>
             <div class="list__addresses">
-                <Contact_AddressesItem
+                <Pickup_ListItem
                     v-for="address in searchAddresses"
                     :key="address.id"
                     :data="address"
-                    class="list__addresses-item"></Contact_AddressesItem>
+                    class="list__addresses-item"
+                    @close-list="$emit('close-list')"></Pickup_ListItem>
             </div>
         </div>
     </div>
@@ -21,9 +22,9 @@
 <script setup>
 import close from '@/assets/img/svg/close2.svg'
 import search from '@/assets/img/svg/search1.svg'
-import Contact_AddressesItem from '@/components/pages/Contacts/Contact_Addresses-Item.vue';
 import { computed, ref } from 'vue';
 import { useAddressesStore } from '@/store/AddressesStore';
+import Pickup_ListItem from './Pickup_List-Item.vue';
 const AddressesStore = useAddressesStore()
 const addresses = AddressesStore.storesAddresses
 const searchAddresses = computed(()=>{
@@ -123,6 +124,9 @@ const searchValue = ref('')
         margin-top: rem(30);
         &-item {
             cursor: pointer;
+            &:hover h6 {
+                color: var(--red);
+            }
         }
     }
 }

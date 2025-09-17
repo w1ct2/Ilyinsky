@@ -19,7 +19,7 @@
 import compass from '@/assets/img/svg/compass1.svg'
 import Header_DeliveryMenu from './Header_DeliveryMenu.vue';
 import { ref } from 'vue';
-const isActiveModal = ref(true)
+const isActiveModal = ref(false)
 const resetActiveModal = ()=>{
     isActiveModal.value = false
 }

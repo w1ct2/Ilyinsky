@@ -7,6 +7,10 @@ interface DeliveryAddress {
 export const useAddressesStore = defineStore('addressesStore', ()=>{
     const addressesDelivery: Ref<DeliveryAddress[]> = ref([])
     const STORAGE_DELIVERY_KEY = ref('delivery_addresses')
+    const saveAddressesToStorage = (storageKey: string, data: unknown)=>{
+        localStorage.setItem(storageKey, JSON.stringify(data))
+    }
+
     const loadDeliveryFromStorage = ()=>{
         const storedAddresses = localStorage.getItem(STORAGE_DELIVERY_KEY.value)
         if (storedAddresses){
@@ -16,25 +20,21 @@ export const useAddressesStore = defineStore('addressesStore', ()=>{
                 id: Date.now(),
                 address: 'ул. Новая, д. 13, посёлок Ильинское-Усово, городской округ Красногорск',
             }];
-            saveAddressesToStorage();
+            saveAddressesToStorage(STORAGE_DELIVERY_KEY.value, addressesDelivery.value);
         }
-    }
-    const saveAddressesToStorage = ()=>{
-        localStorage.setItem(STORAGE_DELIVERY_KEY.value, JSON.stringify(addressesDelivery.value))
     }
     const addAddressesDelivery = (address: string)=>{
         addressesDelivery.value.push({
             id: Date.now(),
             address: address
         })
-        saveAddressesToStorage()
+        saveAddressesToStorage(STORAGE_DELIVERY_KEY.value, addressesDelivery.value)
         console.log(addressesDelivery);
     }
     const deleteAddressDelivery = (address: DeliveryAddress) => {
         addressesDelivery.value = addressesDelivery.value.filter(item => item.id !== address.id)
-        saveAddressesToStorage()
+        saveAddressesToStorage(STORAGE_DELIVERY_KEY.value, addressesDelivery.value)
     }
-    loadDeliveryFromStorage()
     const storesAddresses = ref([
         {
             id: 1,
@@ -85,11 +85,12 @@ export const useAddressesStore = defineStore('addressesStore', ()=>{
             time: '8:00-00:00'
         }
     ])
+    loadDeliveryFromStorage()
     return {
         deleteAddressDelivery,
         addAddressesDelivery,
         addressesDelivery,
         STORAGE_DELIVERY_KEY,
-        storesAddresses
+        storesAddresses,
     }
 })
