@@ -42,7 +42,6 @@ export const useRecentAddressesStore = defineStore('recentAddressesStore', ()=>{
     const addAddressesPickup = (address: StoreAddress)=>{
         const addressExists = addressesPickup.value.some(item => item.text === address.text)
         if (addressExists) {
-            alert('Адрес повторяется')
             setActiveAddress('Выберите правильный адрес!')
             return
         }

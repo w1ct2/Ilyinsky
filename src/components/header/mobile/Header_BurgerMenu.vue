@@ -1,20 +1,7 @@
 <template>
     <div class="burger-menu" v-show="isActive">
         <div class="burger-menu__inner">
-            <div class="navigation__action">
-                <div class="navigation__icon">
-                    <img :src="icon" alt="Ильинский онлайн">
-                </div>
-                <div class="navigation__delivery">
-                    <div class="navigation__delivery-icon">
-                        <img :src="compass" alt="">
-                        <p>MCK</p>
-                    </div>
-                </div>
-                <div class="navigation__search">
-                    <img :src="search" alt="">
-                </div>
-            </div>
+            <Header_Action class="burger-menu__header"></Header_Action>
             <Header_BurgerCatalog :title="'каталог'" :labels="links1" class="catalog"></Header_BurgerCatalog>
             <Header_BurgerProfile :title="'профиль'" class="profile"></Header_BurgerProfile>
             <Header_BurgerCatalog :title="'ильинский клуб'" :labels="links2" class="catalog"></Header_BurgerCatalog>
@@ -30,14 +17,11 @@
 </template>
 
 <script setup>
-import icon from '@/assets/img/mainImage/mainIcon.svg'
-import search from '@/assets/img/svg/search2.svg'
-import compass from '@/assets/img/svg/compass1.svg'
 import phone from '@/assets/img/svg/phone1.svg'
 import Header_BurgerCatalog from './Header_BurgerCatalog.vue'
 import Header_BurgerProfile from './Header_BurgerProfile.vue'
 import { useMainStore } from '@/store/MainStore'
-const mainStore = useMainStore()
+import Header_Action from '../Header_Action.vue'
 const props = defineProps({
     isActive: {
         type: Boolean,
@@ -117,6 +101,13 @@ const links2 = [
     right: 0;
     top: 0;
     bottom: 0;
+    &__header {
+        grid-column: 1/4;
+        padding-left: rem(65);
+        border-bottom: 1px solid #E7EFEE;
+        padding-bottom: rem(15);
+        box-sizing: content-box;
+    }
     &__inner {
         margin: 0 20px;
         display: grid;
@@ -155,73 +146,6 @@ const links2 = [
         }
     }
 }
-.navigation {
-    &__action {
-        padding-left: 65px;
-        display: flex;
-        align-items: center;
-        gap: 25px;
-        position: relative;
-        max-height: 65px;
-        border-bottom: 1px solid #E7EFEE;
-        padding-bottom: 10px;
-
-        grid-column: 1/4;
-    }
-    &__search {
-        width: rem(50);
-        height: 50px;
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #FFA900B2;
-        & img {
-            width: 15px;
-            height: 15px;
-        }
-    }
-    &__delivery {
-        width: rem(50);
-        height: 50px;
-        overflow: hidden;
-        display: flex;
-        border-radius: 16px;
-        align-items: center;
-        cursor: pointer;
-        margin-left: auto;
-        &-icon {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: #FFA900B2;
-            width: rem(65);
-            height: 100%;
-            & img {
-                width: 9px;
-                height: 9px;
-            }
-            & p {
-                font-size: 12px;
-            }
-        }
-    }
-    @media (max-width: 768px) {
-        &__delivery,  &__search {
-            width: rem(40);
-            height: rem(40);
-            border-radius: 12px;
-        }
-    }
-    @media (max-width: 480px) {
-        &__delivery,  &__search {
-            min-width: rem(35);
-            min-height: rem(35);
-            border-radius: 11px;
-        }
-    }
-}
 @media (max-width: 768px) {
     .burger-menu__inner {
         grid-template-columns: repeat(1, 1fr);
@@ -240,6 +164,14 @@ const links2 = [
     .catalog {
         height: 100%;
         margin: 0;
+    }
+    .burger-menu__header {
+        padding-left: rem(50);
+    }
+}
+@media (max-width: 480px) {
+    .burger-menu__header {
+        padding-left: rem(32);
     }
 }
 </style>

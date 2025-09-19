@@ -1,14 +1,16 @@
 <template>
     <div class="navigation__action">
+        <slot name="burger-btn"></slot>
         <RouterLink :to="'/'" class="navigation__icon">
             <img :src="icon" alt="Ильинский онлайн">
         </RouterLink>
-        <Header_CatalogBtn></Header_CatalogBtn>
+        <Header_CatalogBtn class="breakpoint1000"></Header_CatalogBtn>
         <Header_Search></Header_Search>
         <Header_DeliveryBtn></Header_DeliveryBtn>
-        <Header_Favorites></Header_Favorites>
-        <Header_ProfileBtn></Header_ProfileBtn>
-        <Header_Basket></Header_Basket>
+        <Header_Favorites class="breakpoint1000"></Header_Favorites>
+        <Header_ProfileBtn class="breakpoint1000"></Header_ProfileBtn>
+        <Header_Basket class="breakpoint1000"></Header_Basket>
+        <slot name="burger-menu"></slot>
     </div>
 </template>
 
@@ -33,25 +35,43 @@ import Header_Basket from './action-buttons/Header_Basket.vue'
     }
     &__icon {
         min-width: rem(200);
-        min-height: rem(55);
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    @media (max-width: 1300px) {
-        &__delivery {
-            width: auto;
-            margin-left: auto;
-            &-title {
-                display: none;
-            }
+    @media (max-width: 1000px) {
+        &__action {
+            height: rem(50);
         }
-        &__basket {
-            width: rem(50);
-            & p {
-                display: none;
-            }
+        &__icon {
+            max-width: rem(180);
+            width: 100%;
+            min-width: auto;
         }
-        &__search {
-            width: 280px;
+    }
+    @media (max-width: 769px) {
+        &__action {
+            height: rem(45);
+            gap: 20px;
         }
+        &__icon {
+            max-width: rem(160);
+        }
+    }
+    @media (max-width: 480px) {
+        &__action {
+            height: rem(40);
+            gap: 12px;
+        }
+        &__icon {
+            max-width: rem(140);
+        }
+    }
+}
+@media (max-width: 1000px) {
+    .breakpoint1000 {
+        display: none;
     }
 }
 </style>

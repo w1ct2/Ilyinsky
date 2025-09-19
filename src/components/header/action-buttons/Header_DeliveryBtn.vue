@@ -30,7 +30,6 @@ const resetActiveModal = ()=>{
 .delivery {
     width: rem(300);
     height: 100%;
-    max-height: 50px;
     overflow: hidden;
     display: flex;
     border-radius: 16px;
@@ -84,6 +83,37 @@ const resetActiveModal = ()=>{
         }
         &__title {
             display: none;
+        }
+    }
+    @media (max-width:1000px){
+        & {
+            border-radius: 14px;
+            margin-left: 0;
+        }
+        &__icon {
+            & p {
+                font-size: 14px;
+            }
+            & img {
+                width: rem(11);
+                height: rem(11);
+                top: 8px;
+            }
+        }
+    }
+    @media (max-width:769px){
+        width: rem(50);
+    }
+    @media (max-width:480px) {
+        width: rem(40);
+        &__icon {
+            & p {
+                font-size: 12px;
+            }
+            & img {
+                width: rem(10);
+                height: rem(10);
+            }
         }
     }
 }
