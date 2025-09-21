@@ -12,16 +12,19 @@
             </ul>
             <PersonalData v-if="activeTab === 0"></PersonalData>
             <PersonalHistory v-else-if="activeTab === 1"></PersonalHistory>
-            <div v-else-if="activeTab === 2">Test2</div>
+            <PersonalFavorites v-else-if="activeTab === 2"></PersonalFavorites>
         </div>
     </section>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import PersonalData from './PersonalData.vue';
 import PersonalHistory from './PersonalHistory.vue';
-const activeTab = ref(1)
+import { useAllData } from '@/store/AllData';
+import PersonalFavorites from './PersonalFavorites.vue';
+const AllData = useAllData()
+const activeTab = ref(2)
 const tabs = ref([
     {
         id: 1,

@@ -53,7 +53,7 @@ export const useMainStore = defineStore('mainStore', ()=>{
         {
             id: 1,
             discount: true, 
-            favorite: false,
+            favorite: true,
             imgUrl: card1,
             availability: 2,
             get availabilityTitle():string {
@@ -81,10 +81,10 @@ export const useMainStore = defineStore('mainStore', ()=>{
         {
             id: 3,
             discount: false, 
-            favorite: false,
+            favorite: true,
             imgUrl: card1,
             availability: 0,
-            get availabilityTitle() {
+            get availabilityTitle(): any {
                 if(this.availability){return `В наличии ${this.availability}`}
                 else return 'Нет в наличии'
             },
