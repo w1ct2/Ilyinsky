@@ -11,6 +11,7 @@ export const useAllData = defineStore('alldata', ()=>{
         return [...allData.value].filter(item => item.favorite === true)
     })
     console.log(favoriteData.value);
+    const STORAGE_FAV_KEY = 'favorite_cards'
     
     return {
         allData,

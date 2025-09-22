@@ -1,5 +1,7 @@
+import Catalog from '@/components/pages/Catalog/Catalog.vue'
 import Contacts from '@/components/pages/Contacts/Contacts.vue'
 import Home from '@/components/pages/Home/Home.vue'
+import NotFound from '@/components/pages/NotFound/NotFound.vue'
 import Profile from '@/components/pages/Profile/Profile.vue'
 import Promotions from '@/components/pages/Promotions/Promotions.vue'
 import Vacancies from '@/components/pages/Vacancies/Vacancies.vue'
@@ -34,6 +36,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/personal-account',
     name: 'personal-account',
     component: Profile 
+  },
+  {
+    path: '/catalog',
+    name: 'catalog',
+    component: Catalog
+  },
+  {
+    path: '/:param(.*)*',
+    name: 'not-found',
+    component: NotFound
   }
 ]
 const router = createRouter({
