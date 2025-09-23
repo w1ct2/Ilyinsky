@@ -19,21 +19,23 @@
 <script setup>
 import favorUnactive from '@/assets/img/discounts/favorActive.svg'
 import favorActive from '@/assets/img/discounts/favorUnactive.svg'
+import { useAllData } from '@/store/AllData'
 import { useMainStore } from '@/store/MainStore'
 import { computed, ref } from 'vue'
 const mainStore = useMainStore()
+const AllData = useAllData()
 const props = defineProps({
     indexCard: {
         type: Number,
     }
 })
-const data = computed(() => mainStore.discounts[props.indexCard])
+const data = computed(() => AllData.discounts[props.indexCard])
 const isActiveFavoriteUrl = computed(() => {
     return data.value.favorite ? favorActive : favorUnactive
 })
-const toggleFavorite = () => {
-    mainStore.toggleFavorite(props.indexCard) 
-}
+// const toggleFavorite = () => {
+//     mainStore.toggleFavorite(props.indexCard) 
+// }
 </script>
 
 <style lang="scss" scoped>

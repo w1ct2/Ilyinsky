@@ -38,6 +38,7 @@ import { Navigation } from 'swiper/modules';
 import Discounts_SliderItem from './Discounts_Slider-Item.vue';
 import 'swiper/css';
 import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { useAllData } from '@/store/AllData';
 const props = defineProps({
     title: {
         type: String, 
@@ -47,7 +48,8 @@ const props = defineProps({
 })
 const modules = [Navigation];
 const mainStore = useMainStore()
-const data = mainStore.discounts
+const AllDataStore = useAllData()
+const data = AllDataStore.discounts
 const {width} = mainStore
 const slidesPerView = ref(4)
 const updateSlides = ()=>{
@@ -62,6 +64,8 @@ const updateSlides = ()=>{
 onMounted(()=>{
     updateSlides()
     window.addEventListener('resize', updateSlides)
+    console.log(data);
+    
 })
 onBeforeUnmount(() => {
     window.removeEventListener('resize', updateSlides)

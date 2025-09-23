@@ -1,7 +1,14 @@
 <template>
     <div class="favorites">
-        <PersonalFavorites_Item
+        <!-- <PersonalFavorites_Item
             v-for="(card, index) in cards"
+            :key="card.id"
+            :dataCard="card"
+            :indexCard="index">
+        </PersonalFavorites_Item> -->
+
+        <PersonalFavorites_Item
+            v-for="(card, index) in ddd"
             :key="card.id"
             :dataCard="card"
             :indexCard="index">
@@ -15,6 +22,7 @@ import { computed, onMounted } from 'vue';
 import { useAllData } from '@/store/AllData';
 const AllData = useAllData()
 const cards = computed(()=> AllData.favoriteData)
+const ddd = computed(()=> AllData.allData)
 </script>
 
 <style lang="scss" scoped>
