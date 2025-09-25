@@ -30,7 +30,6 @@ const ddd = computed(()=> AllData.allData)
 .favorites {
     margin-top: rem(65);
     margin-bottom: rem(180);
-    border: 1px solid red;
     width: 100%;
     height: auto;
     min-height: 0;
