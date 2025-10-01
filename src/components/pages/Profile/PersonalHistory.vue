@@ -7,14 +7,25 @@
                 :key="card.id"
                 :data="card"/>
         </div>
+        <PersonalFavorites_Item
+            v-for="(card, index) in ddd"
+            :key="card.id"
+            :dataCard="card"
+            :indexCard="index">
+        </PersonalFavorites_Item>
     </div>
 </template>
 
 <script setup>
+import PersonalFavorites_Item from './PersonalFavorites_Item.vue';
 import PersonalHistory_Item from './PersonalHistory_Item.vue';
 import { usePersonalHistory } from '@/store/PersonalHistory';
 const PersonalHistory = usePersonalHistory()
 const cards = PersonalHistory.history
+import { useAllData } from '@/store/AllData';
+import { computed } from 'vue';
+const AllData = useAllData()
+const ddd = computed(()=> AllData.allData)
 </script>
 
 <style lang="scss" scoped>

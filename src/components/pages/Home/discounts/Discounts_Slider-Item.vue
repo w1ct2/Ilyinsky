@@ -29,7 +29,7 @@ const props = defineProps({
         type: Number,
     }
 })
-const data = computed(() => AllData.discounts[props.indexCard])
+const data = computed(() => AllData.discountsData[props.indexCard])
 const isActiveFavoriteUrl = computed(() => {
     return data.value.favorite ? favorActive : favorUnactive
 })

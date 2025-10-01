@@ -29,9 +29,26 @@ import { appliances } from './products/other/appliances';
 import { usefulStuff } from './products/other/usefullStuff';
 import { cleaningLaundry } from './products/other/cleaningLaundry';
 import { beautyHygiene} from './products/other/beautyHygiene';
+import { jsx } from 'vue/jsx-runtime';
+
+interface Product {
+    id: number
+    title: string
+    discount: boolean
+    favorite: boolean
+    availability: number
+    price: string
+    oldPrice: string
+    imgUrl: string
+    compound: string
+    shelfLife: string
+    nutritionalValue: string
+    readonly availabilityTitle: string
+}
 
 export const useAllData = defineStore('alldata', ()=>{
     const discountsData = ref(discounts)
+    
     const bakeryData = ref(bakery)
     const pizzaData = ref(pizza)
     const grillData = ref(grill)
@@ -90,12 +107,42 @@ export const useAllData = defineStore('alldata', ()=>{
         ...usefulStuffData.value,
         ...appliancesData.value
     ])
-    const favoriteData = computed(()=>{
-        return [...allData.value].filter(item => item.favorite === true)
+    const productsMap = computed(()=>{
+        return new Map(allData.value.map(product => [product.id, product]))
     })
+    const favoriteData: Ref<Product[]> = ref([])
+    const getProductById = (id: number) => productsMap.value.get(id)
+    const toggleFavorite = (id: number) => {
+        const product: any = getProductById(id)
+        if (product) {
+            product.favorite = !product.favorite
+            if (product.favorite) {
+                favoriteData.value.push(product)
+            } else {
+                favoriteData.value = favoriteData.value.filter(item => item.id !== id)
+            }
+            saveToStorage(STORAGE_FAVORITE_KEY, favoriteData.value)
+        }
+    }
+    const STORAGE_FAVORITE_KEY = 'favorite_data'
+    const loadFromStorage = ()=>{
+        const storedData = localStorage.getItem(STORAGE_FAVORITE_KEY)
+        if (storedData) {
+            favoriteData.value = JSON.parse(storedData)
+        } else {
+            console.log('Лист избранного пуст')
+        }
+    }
+    const saveToStorage = (key: string, data: unknown)=>{
+        localStorage.setItem(key, JSON.stringify(data))
+    }
+    loadFromStorage()
     
     return {
         allData,
         favoriteData,
+        discountsData,
+        getProductById,
+        toggleFavorite
     }
 })

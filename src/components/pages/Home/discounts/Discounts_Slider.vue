@@ -39,6 +39,7 @@ import Discounts_SliderItem from './Discounts_Slider-Item.vue';
 import 'swiper/css';
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { useAllData } from '@/store/AllData';
+import { discounts } from '@/store/products/discounts';
 const props = defineProps({
     title: {
         type: String, 
@@ -49,7 +50,7 @@ const props = defineProps({
 const modules = [Navigation];
 const mainStore = useMainStore()
 const AllDataStore = useAllData()
-const data = AllDataStore.discounts
+const data = AllDataStore.discountsData
 const {width} = mainStore
 const slidesPerView = ref(4)
 const updateSlides = ()=>{

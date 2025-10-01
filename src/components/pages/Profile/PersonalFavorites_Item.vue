@@ -1,15 +1,35 @@
 <template>
     <div class="card">
-        <div class="card__discount" v-if="dataCard.discount">%</div>
-        <img :src="isActiveFavoriteUrl" class="card__favorite" @click="toggleFavorite(indexCard)"></img>
+        <div 
+            class="card__discount" 
+            v-if="dataCard.discount">
+            %
+        </div>
+        <img 
+            :src="isActiveFavoriteUrl" 
+            class="card__favorite" 
+            @click="toggleFavorite(dataCard.id)">
+        </img>
         <div class="card__img">
             <img :src="dataCard.imgUrl" alt="">
         </div>
-        <p class="card__availability-title" :class="{'card__availability-title--active' : !dataCard.availability}">{{ dataCard.availabilityTitle }}</p>
-        <p class="card__availability-price">{{ dataCard.price }}</p>
-        <h3 class="card__title">{{ dataCard.title }}</h3>
+        <p 
+            class="card__availability-title" 
+            :class="{'card__availability-title--active' : !dataCard.availability}">
+            {{ dataCard.availabilityTitle }}
+        </p>
+        <p class="card__availability-price">
+            {{ dataCard.price }}
+        </p>
+        <h3 class="card__title">
+            {{ dataCard.title }}
+        </h3>
         <div class="card__price">
-            <h4 :class="{'card__price--active' : dataCard.discount}" class="card__price-title">{{ dataCard.price }}</h4>
+            <h4 
+                :class="{'card__price--active' : dataCard.discount}" 
+                class="card__price-title">
+                {{ dataCard.price }}
+            </h4>
             <p v-if="dataCard.discount">{{ dataCard.oldPrice }}</p>
         </div>
         <button class="card__button">В корзину</button>
@@ -33,8 +53,8 @@ const props = defineProps({
 const isActiveFavoriteUrl = computed(() => {
     return props.dataCard.favorite ? favorActive : favorUnactive
 })
-const toggleFavorite = (index)=>{
-    AllData.favoriteData[index].favorite = false
+const toggleFavorite = (id)=>{
+    AllData.toggleFavorite(id)
 }
 </script>
 

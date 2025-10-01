@@ -1,14 +1,7 @@
 <template>
     <div class="favorites">
-        <!-- <PersonalFavorites_Item
-            v-for="(card, index) in cards"
-            :key="card.id"
-            :dataCard="card"
-            :indexCard="index">
-        </PersonalFavorites_Item> -->
-
         <PersonalFavorites_Item
-            v-for="(card, index) in ddd"
+            v-for="(card, index) in cards"
             :key="card.id"
             :dataCard="card"
             :indexCard="index">
