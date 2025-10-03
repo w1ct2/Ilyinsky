@@ -1,172 +1,129 @@
+import img1 from '@/assets/products-img/cooking/meat/pork_neck.png'
+import img2 from '@/assets/products-img/cooking/meat/chicken_fillets.webp'
+import img3 from '@/assets/products-img/cooking/meat/lamb.png'
+import img4 from '@/assets/products-img/cooking/meat/turkey.jpeg'
+import img5 from '@/assets/products-img/cooking/meat/pork_ribs.png'
+import img6 from '@/assets/products-img/cooking/meat/ground_beef.webp'
+import img7 from '@/assets/products-img/cooking/meat/duck.png'
 export const meat = [
     {
-        id: 501,
-        title: "Салат Цезарь",
-        discount: false,
+        id: 402,
+        title: "Свиная шея",
+        discount: true,
         favorite: false,
         availability: 8,
-        price: "320 руб",
-        oldPrice: null,
-        imgUrl: "",
-        compound: "салат айсберг, куриное филе, сыр пармезан, сухарики, соус цезарь",
-        shelfLife: "24 часа",
-        nutritionalValue: "Белки: 12г, Жиры: 15г, Углеводы: 18г (на 100г)",
+        price: "450 руб",
+        oldPrice: "520 руб",
+        imgUrl: img1,
+        compound: "свиная шея охлажденная",
+        shelfLife: "72 часа",
+        nutritionalValue: "Белки: 18г, Жиры: 20г, Углеводы: 0г (на 100г)",
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
         }
     },
     {
-        id: 502,
-        title: "Греческий салат",
-        discount: true,
+        id: 403,
+        title: "Куриное филе",
+        discount: false,
         favorite: false,
         availability: 12,
-        price: "280 руб",
-        oldPrice: "330 руб",
-        imgUrl: "",
-        compound: "помидоры, огурцы, перец, маслины, сыр фета, лук, оливковое масло",
-        shelfLife: "24 часа",
-        nutritionalValue: "Белки: 6г, Жиры: 12г, Углеводы: 8г (на 100г)",
+        price: "320 руб",
+        oldPrice: null,
+        imgUrl: img2,
+        compound: "куриное филе охлажденное",
+        shelfLife: "48 часов",
+        nutritionalValue: "Белки: 23г, Жиры: 2г, Углеводы: 0г (на 100г)",
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
         }
     },
     {
-        id: 503,
-        title: "Оливье",
+        id: 404,
+        title: "Бараний окорок",
         discount: false,
         favorite: false,
-        availability: 15,
-        price: "250 руб",
+        availability: 3,
+        price: "750 руб",
         oldPrice: null,
-        imgUrl: "",
-        compound: "картофель, морковь, яйцо, колбаса, огурцы, горошек, майонез",
-        shelfLife: "24 часа",
-        nutritionalValue: "Белки: 8г, Жиры: 14г, Углеводы: 20г (на 100г)",
+        imgUrl: img3,
+        compound: "бараний окорок охлажденный",
+        shelfLife: "72 часа",
+        nutritionalValue: "Белки: 20г, Жиры: 18г, Углеводы: 0г (на 100г)",
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
         }
     },
     {
-        id: 504,
-        title: "Салат с тунцом",
-        discount: false,
-        favorite: false,
-        availability: 6,
-        price: "350 руб",
-        oldPrice: null,
-        imgUrl: "",
-        compound: "тунец, яйцо, помидоры, листовой салат, оливки, оливковое масло",
-        shelfLife: "24 часа",
-        nutritionalValue: "Белки: 14г, Жиры: 10г, Углеводы: 6г (на 100г)",
-        get availabilityTitle() {
-        if (this.availability) { return `В наличии ${this.availability}` }
-        else return 'Нет в наличии'
-        }
-    },
-    {
-        id: 505,
-        title: "Винегрет",
-        discount: false,
-        favorite: false,
-        availability: 10,
-        price: "190 руб",
-        oldPrice: null,
-        imgUrl: "",
-        compound: "свекла, картофель, морковь, огурцы, горошек, масло растительное",
-        shelfLife: "24 часа",
-        nutritionalValue: "Белки: 3г, Жиры: 5г, Углеводы: 15г (на 100г)",
-        get availabilityTitle() {
-        if (this.availability) { return `В наличии ${this.availability}` }
-        else return 'Нет в наличии'
-        }
-    },
-    {
-        id: 506,
-        title: "Салат с креветками",
-        discount: true,
-        favorite: false,
-        availability: 5,
-        price: "420 руб",
-        oldPrice: "480 руб",
-        imgUrl: "",
-        compound: "креветки, авокадо, руккола, помидоры черри, лимонный сок",
-        shelfLife: "24 часа",
-        nutritionalValue: "Белки: 11г, Жиры: 12г, Углеводы: 7г (на 100г)",
-        get availabilityTitle() {
-        if (this.availability) { return `В наличии ${this.availability}` }
-        else return 'Нет в наличии'
-        }
-    },
-    {
-        id: 507,
-        title: "Сельдь под шубой",
-        discount: false,
-        favorite: false,
-        availability: 9,
-        price: "270 руб",
-        oldPrice: null,
-        imgUrl: "",
-        compound: "сельдь, картофель, морковь, свекла, яйцо, майонез",
-        shelfLife: "24 часа",
-        nutritionalValue: "Белки: 7г, Жиры: 13г, Углеводы: 16г (на 100г)",
-        get availabilityTitle() {
-        if (this.availability) { return `В наличии ${this.availability}` }
-        else return 'Нет в наличии'
-        }
-    },
-    {
-        id: 508,
-        title: "Салат Мимоза",
+        id: 405,
+        title: "Индейка грудка",
         discount: false,
         favorite: false,
         availability: 7,
-        price: "290 руб",
+        price: "480 руб",
         oldPrice: null,
-        imgUrl: "",
-        compound: "рыбные консервы, картофель, морковь, яйцо, сыр, майонез",
-        shelfLife: "24 часа",
-        nutritionalValue: "Белки: 9г, Жиры: 16г, Углеводы: 14г (на 100г)",
+        imgUrl: img4,
+        compound: "филе грудки индейки охлажденное",
+        shelfLife: "48 часов",
+        nutritionalValue: "Белки: 24г, Жиры: 3г, Углеводы: 0г (на 100г)",
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
         }
     },
     {
-        id: 509,
-        title: "Салат с бужениной",
-        discount: false,
-        favorite: false,
-        availability: 11,
-        price: "380 руб",
-        oldPrice: null,
-        imgUrl: "",
-        compound: "буженина, огурцы, помидоры, перец, листовой салат, сметанный соус",
-        shelfLife: "24 часа",
-        nutritionalValue: "Белки: 15г, Жиры: 12г, Углеводы: 9г (на 100г)",
-        get availabilityTitle() {
-        if (this.availability) { return `В наличии ${this.availability}` }
-        else return 'Нет в наличии'
-        }
-    },
-    {
-        id: 510,
-        title: "Капрезе",
+        id: 406,
+        title: "Свиные ребрышки",
         discount: true,
         favorite: false,
-        availability: 8,
-        price: "310 руб",
-        oldPrice: "360 руб",
-        imgUrl: "",
-        compound: "помидоры, моцарелла, базилик, оливковое масло, бальзамик",
-        shelfLife: "24 часа",
-        nutritionalValue: "Белки: 10г, Жиры: 18г, Углеводы: 6г (на 100г)",
+        availability: 6,
+        price: "380 руб",
+        oldPrice: "430 руб",
+        imgUrl: img5,
+        compound: "свиные ребрышки охлажденные",
+        shelfLife: "72 часа",
+        nutritionalValue: "Белки: 16г, Жиры: 25г, Углеводы: 0г (на 100г)",
+        get availabilityTitle() {
+        if (this.availability) { return `В наличии ${this.availability}` }
+        else return 'Нет в наличии'
+        }
+    },
+    {
+        id: 407,
+        title: "Говяжий фарш",
+        discount: false,
+        favorite: false,
+        availability: 10,
+        price: "420 руб",
+        oldPrice: null,
+        imgUrl: img6,
+        compound: "говяжий фарш охлажденный",
+        shelfLife: "48 часов",
+        nutritionalValue: "Белки: 20г, Жиры: 15г, Углеводы: 0г (на 100г)",
+        get availabilityTitle() {
+        if (this.availability) { return `В наличии ${this.availability}` }
+        else return 'Нет в наличии'
+        }
+    },
+    {
+        id: 408,
+        title: "Утиная грудка",
+        discount: false,
+        favorite: false,
+        availability: 4,
+        price: "680 руб",
+        oldPrice: null,
+        imgUrl: img7,
+        compound: "утиная грудка охлажденная",
+        shelfLife: "72 часа",
+        nutritionalValue: "Белки: 19г, Жиры: 22г, Углеводы: 0г (на 100г)",
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
         }
     }
+
 ]

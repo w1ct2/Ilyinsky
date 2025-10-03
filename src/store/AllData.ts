@@ -78,11 +78,11 @@ export const useAllData = defineStore('alldata', ()=>{
     const appliancesData = ref(appliances)
 
     const allData = ref([
-        ...discountsData.value,
-        ...bakeryData.value,
-        ...pizzaData.value,
-        ...grillData.value,
-        ...meatData.value,
+        // ...discountsData.value,
+        // ...bakeryData.value,
+        // ...pizzaData.value,
+        // ...grillData.value,
+        // ...meatData.value,
         ...saladData.value,
         ...soupData.value,
         ...hotDishData.value,
@@ -115,11 +115,12 @@ export const useAllData = defineStore('alldata', ()=>{
     const toggleFavorite = (id: number) => {
         const product: any = getProductById(id)
         if (product) {
-            product.favorite = !product.favorite
             if (product.favorite) {
-                favoriteData.value.push(product)
-            } else {
                 favoriteData.value = favoriteData.value.filter(item => item.id !== id)
+                product.favorite = false
+            } else {
+                favoriteData.value.push(product)
+                product.favorite = true
             }
             saveToStorage(STORAGE_FAVORITE_KEY, favoriteData.value)
         }
@@ -133,6 +134,7 @@ export const useAllData = defineStore('alldata', ()=>{
             console.log('Лист избранного пуст')
         }
     }
+    //переделать данные в скидках discount и изменить там логику добавления в избранное. найти картинки для товаров. начать делать каталог
     const saveToStorage = (key: string, data: unknown)=>{
         localStorage.setItem(key, JSON.stringify(data))
     }

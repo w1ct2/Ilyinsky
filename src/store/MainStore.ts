@@ -1,8 +1,6 @@
 import { defineStore } from "pinia";
 import { computed, Ref, ref } from "vue";
 import { useWindowSize } from '@vueuse/core'
-import card1 from '@/assets/img/discounts/card1.png'
-import card2 from '@/assets/img/discounts/card2.png'
 import promotions1 from '@/assets/img/promotions/img1.png'
 import promotions2 from '@/assets/img/promotions/img2.png'
 import promotions3 from '@/assets/img/promotions/img3.png'
