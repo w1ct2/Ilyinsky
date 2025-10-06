@@ -64,14 +64,6 @@ export const useSectionSupermarketStore = defineStore('sectionSupermarketStore',
             }
         },
         {
-            id: 6,
-            name: 'Хлеб и выпечка',
-            styles: {
-                backgroundImage: `url(${img1_6})`,
-                ...SuperMarketBaseStyles
-            }
-        },
-        {
             id: 7,
             name: 'Масло, соусы и специи',
             styles: {

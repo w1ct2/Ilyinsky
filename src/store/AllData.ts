@@ -78,11 +78,11 @@ export const useAllData = defineStore('alldata', ()=>{
     const appliancesData = ref(appliances)
 
     const allData = ref([
-        // ...discountsData.value,
-        // ...bakeryData.value,
-        // ...pizzaData.value,
-        // ...grillData.value,
-        // ...meatData.value,
+        ...discountsData.value,
+        ...bakeryData.value,
+        ...pizzaData.value,
+        ...grillData.value,
+        ...meatData.value,
         ...saladData.value,
         ...soupData.value,
         ...hotDishData.value,

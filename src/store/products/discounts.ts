@@ -15,7 +15,7 @@ export const discounts: DiscountItem[] = [
         {
             id: 1,
             discount: true, 
-            favorite: true,
+            favorite: false,
             imgUrl: card1,
             availability: 2,
             get availabilityTitle():string {
@@ -43,7 +43,7 @@ export const discounts: DiscountItem[] = [
         {
             id: 3,
             discount: false, 
-            favorite: true,
+            favorite: false,
             imgUrl: card1,
             availability: 0,
             get availabilityTitle(): any {

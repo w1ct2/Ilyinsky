@@ -1,3 +1,10 @@
+import img1 from '@/assets/products-img/cooking/soup/borshch.png'
+import img2 from '@/assets/products-img/cooking/soup/solyanka.png'
+import img3 from '@/assets/products-img/cooking/soup/ chicken_soup.png'
+import img4 from '@/assets/products-img/cooking/soup/mushroom_soup.png'
+import img5 from '@/assets/products-img/cooking/soup/rassolnik.png'
+import img6 from '@/assets/products-img/cooking/soup/tom_yum.png'
+
 export const soup = [
         {
             id: 601,
@@ -7,7 +14,7 @@ export const soup = [
             availability: 8,
             price: "280 руб",
             oldPrice: null,
-            imgUrl: "",
+            imgUrl: img1,
             compound: "говядина, свекла, капуста, картофель, морковь, лук, сметана",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 8г, Жиры: 6г, Углеводы: 12г (на 100г)",
@@ -24,7 +31,7 @@ export const soup = [
             availability: 6,
             price: "320 руб",
             oldPrice: "370 руб",
-            imgUrl: "",
+            imgUrl: img2,
             compound: "говядина, ветчина, колбаса, огурцы, маслины, лимон, сметана",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 10г, Жиры: 9г, Углеводы: 8г (на 100г)",
@@ -41,7 +48,7 @@ export const soup = [
             availability: 12,
             price: "240 руб",
             oldPrice: null,
-            imgUrl: "",
+            imgUrl: img3,
             compound: "куриное филе, лапша, морковь, лук, зелень, специи",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 9г, Жиры: 4г, Углеводы: 15г (на 100г)",
@@ -58,7 +65,7 @@ export const soup = [
             availability: 7,
             price: "290 руб",
             oldPrice: null,
-            imgUrl: "",
+            imgUrl: img4,
             compound: "шампиньоны, сливки, картофель, лук, чеснок, сухарики",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 5г, Жиры: 12г, Углеводы: 10г (на 100г)",
@@ -75,7 +82,7 @@ export const soup = [
             availability: 9,
             price: "260 руб",
             oldPrice: null,
-            imgUrl: "",
+            imgUrl: img5,
             compound: "говядина, перловая крупа, огурцы, картофель, морковь, сметана",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 7г, Жиры: 5г, Углеводы: 14г (на 100г)",
@@ -92,7 +99,7 @@ export const soup = [
             availability: 4,
             price: "380 руб",
             oldPrice: "430 руб",
-            imgUrl: "",
+            imgUrl: img6,
             compound: "креветки, грибы, кокосовое молоко, лемонграсс, лайм, чили",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 11г, Жиры: 8г, Углеводы: 9г (на 100г)",

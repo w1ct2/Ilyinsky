@@ -1,3 +1,11 @@
+import img1 from '@/assets/products-img/supermarket/coffie-tea/jardin.webp'
+import img2 from '@/assets/products-img/supermarket/coffie-tea/ahmad-tea.webp'
+import img3 from '@/assets/products-img/supermarket/coffie-tea/alpen-gold.webp'
+import img4 from '@/assets/products-img/supermarket/coffie-tea/yubileynoe.webp'
+import img5 from '@/assets/products-img/supermarket/coffie-tea/nescafe.webp'
+import img6 from '@/assets/products-img/supermarket/coffie-tea/green-tea.webp'
+import img7 from '@/assets/products-img/supermarket/coffie-tea/rot-front.webp'
+import img8 from '@/assets/products-img/supermarket/coffie-tea/gold-dust.webp'
 export const coffeeTeaSweets = [
     {
         id: 1301,
@@ -7,7 +15,7 @@ export const coffeeTeaSweets = [
         availability: 16,
         price: "420 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img1,
         compound: "кофе арабика 100%",
         shelfLife: "18 месяцев",
         nutritionalValue: "Белки: 0г, Жиры: 0г, Углеводы: 0г (на 100г)",
@@ -24,7 +32,7 @@ export const coffeeTeaSweets = [
         availability: 24,
         price: "280 руб",
         oldPrice: "320 руб",
-        imgUrl: "",
+        imgUrl: img2,
         compound: "чай черный байховый",
         shelfLife: "24 месяца",
         nutritionalValue: "Белки: 0г, Жиры: 0г, Углеводы: 0г (на 100г)",
@@ -41,7 +49,7 @@ export const coffeeTeaSweets = [
         availability: 35,
         price: "95 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img3,
         compound: "какао-масло, сахар, сухое молоко, какао тертое, лецитин",
         shelfLife: "12 месяцев",
         nutritionalValue: "Белки: 7г, Жиры: 30г, Углеводы: 58г (на 100г)",
@@ -58,7 +66,7 @@ export const coffeeTeaSweets = [
         availability: 28,
         price: "85 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img4,
         compound: "мука пшеничная, сахар, масло растительное, патока, сода",
         shelfLife: "9 месяцев",
         nutritionalValue: "Белки: 7г, Жиры: 15г, Углеводы: 72г (на 100г)",
@@ -75,7 +83,7 @@ export const coffeeTeaSweets = [
         availability: 12,
         price: "390 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img5,
         compound: "кофе молотый, капсула пищевой алюминий",
         shelfLife: "15 месяцев",
         nutritionalValue: "Белки: 0г, Жиры: 0г, Углеводы: 0г (на 100г)",
@@ -92,7 +100,7 @@ export const coffeeTeaSweets = [
         availability: 20,
         price: "180 руб",
         oldPrice: "210 руб",
-        imgUrl: "",
+        imgUrl: img6,
         compound: "чай зеленый, цветки жасмина",
         shelfLife: "24 месяца",
         nutritionalValue: "Белки: 0г, Жиры: 0г, Углеводы: 0г (на 100г)",
@@ -109,7 +117,7 @@ export const coffeeTeaSweets = [
         availability: 22,
         price: "320 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img7,
         compound: "сахар, какао-масло, сухое молоко, орехи, вафли",
         shelfLife: "10 месяцев",
         nutritionalValue: "Белки: 6г, Жиры: 25г, Углеводы: 62г (на 100г)",
@@ -126,7 +134,7 @@ export const coffeeTeaSweets = [
         availability: 15,
         price: "150 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img8,
         compound: "какао-порошок натуральный",
         shelfLife: "18 месяцев",
         nutritionalValue: "Белки: 24г, Жиры: 15г, Углеводы: 10г (на 100г)",

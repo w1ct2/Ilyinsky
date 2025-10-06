@@ -1,3 +1,11 @@
+import img1 from '@/assets/products-img/supermarket/pastaCereals/barilla-spagetti.webp'
+import img2 from '@/assets/products-img/supermarket/pastaCereals/buckwheat-groats.webp'
+import img3 from '@/assets/products-img/supermarket/pastaCereals/rice.webp'
+import img4 from '@/assets/products-img/supermarket/pastaCereals/hercules.webp'
+import img5 from '@/assets/products-img/supermarket/pastaCereals/makfa.webp'
+import img6 from '@/assets/products-img/supermarket/pastaCereals/millet.webp'
+import img7 from '@/assets/products-img/supermarket/pastaCereals/pearl.webp'
+
 export const pastaCereals= [
     {
         id: 1401,
@@ -7,7 +15,7 @@ export const pastaCereals= [
         availability: 25,
         price: "135 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img1,
         compound: "мука из твердых сортов пшеницы, вода",
         shelfLife: "24 месяца",
         nutritionalValue: "Белки: 13г, Жиры: 1.5г, Углеводы: 71г (на 100г)",
@@ -24,7 +32,7 @@ export const pastaCereals= [
         availability: 30,
         price: "95 руб",
         oldPrice: "110 руб",
-        imgUrl: "",
+        imgUrl: img2,
         compound: "крупа гречневая нежареная",
         shelfLife: "18 месяцев",
         nutritionalValue: "Белки: 13г, Жиры: 3г, Углеводы: 62г (на 100г)",
@@ -35,13 +43,13 @@ export const pastaCereals= [
     },
     {
         id: 1403,
-        title: "Рис шлифованный Jasmine",
+        title: "Рис шлифованный",
         discount: false,
         favorite: false,
         availability: 22,
         price: "120 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img3,
         compound: "рис белый длиннозерный",
         shelfLife: "16 месяцев",
         nutritionalValue: "Белки: 7г, Жиры: 1г, Углеводы: 79г (на 100г)",
@@ -58,7 +66,7 @@ export const pastaCereals= [
         availability: 28,
         price: "65 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img4,
         compound: "хлопья овсяные",
         shelfLife: "12 месяцев",
         nutritionalValue: "Белки: 12г, Жиры: 6г, Углеводы: 62г (на 100г)",
@@ -75,7 +83,7 @@ export const pastaCereals= [
         availability: 18,
         price: "85 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img5,
         compound: "мука в/с, вода",
         shelfLife: "24 месяца",
         nutritionalValue: "Белки: 11г, Жиры: 1г, Углеводы: 72г (на 100г)",
@@ -92,7 +100,7 @@ export const pastaCereals= [
         availability: 15,
         price: "55 руб",
         oldPrice: "65 руб",
-        imgUrl: "",
+        imgUrl: img6,
         compound: "крупа пшеничная",
         shelfLife: "14 месяцев",
         nutritionalValue: "Белки: 11г, Жиры: 1г, Углеводы: 68г (на 100г)",
@@ -109,7 +117,7 @@ export const pastaCereals= [
         availability: 20,
         price: "45 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img7,
         compound: "крупа перловая",
         shelfLife: "16 месяцев",
         nutritionalValue: "Белки: 9г, Жиры: 1г, Углеводы: 73г (на 100г)",
@@ -118,21 +126,4 @@ export const pastaCereals= [
         else return 'Нет в наличии'
         }
     },
-    {
-        id: 1408,
-        title: "Макароны с отрубями",
-        discount: false,
-        favorite: false,
-        availability: 12,
-        price: "110 руб",
-        oldPrice: null,
-        imgUrl: "",
-        compound: "мука из твердых сортов пшеницы, пшеничные отруби",
-        shelfLife: "18 месяцев",
-        nutritionalValue: "Белки: 14г, Жиры: 2г, Углеводы: 65г (на 100г)",
-        get availabilityTitle() {
-        if (this.availability) { return `В наличии ${this.availability}` }
-        else return 'Нет в наличии'
-        }
-    }
 ]
