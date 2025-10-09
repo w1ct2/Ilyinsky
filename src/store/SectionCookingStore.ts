@@ -49,15 +49,6 @@ export const useSectionCookingStore = defineStore('sectionCookingStore', ()=>{
             }
         },
         {
-            id: 4,
-            name: 'Свежее мясо',
-            styles: {
-                backgroundImage: `url(${img4})`,
-                ...CookingBaseStyles,
-                backgroundSize: '80%'
-            }
-        },
-        {
             id: 5,
             name: 'Салаты',
             styles: {

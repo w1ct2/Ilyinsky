@@ -1,3 +1,10 @@
+import img1 from '@/assets/products-img/freeze/fish/salmon-fillet.webp'
+import img2 from '@/assets/products-img/freeze/fish/shrimp.webp'
+import img3 from '@/assets/products-img/freeze/fish/pollock-fillet.webp'
+import img4 from '@/assets/products-img/freeze/fish/squids.webp'
+import img5 from '@/assets/products-img/freeze/fish/trout.webp'
+import img6 from '@/assets/products-img/freeze/fish/mussels.webp'
+import img7 from '@/assets/products-img/freeze/fish/octopus.webp'
 export const fishSeafood = [
     {
         id: 2101,
@@ -7,7 +14,7 @@ export const fishSeafood = [
         availability: 12,
         price: "890 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img1,
         compound: "филе семги",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 20г, Жиры: 15г, Углеводы: 0г (на 100г)",
@@ -24,7 +31,7 @@ export const fishSeafood = [
         availability: 8,
         price: "650 руб",
         oldPrice: "750 руб",
-        imgUrl: "",
+        imgUrl: img2,
         compound: "креветки тигровые замороженные",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 24г, Жиры: 2г, Углеводы: 0г (на 100г)",
@@ -41,7 +48,7 @@ export const fishSeafood = [
         availability: 25,
         price: "280 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img3,
         compound: "филе минтая",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 16г, Жиры: 1г, Углеводы: 0г (на 100г)",
@@ -58,7 +65,7 @@ export const fishSeafood = [
         availability: 15,
         price: "420 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img4,
         compound: "кальмары замороженные",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 18г, Жиры: 2г, Углеводы: 2г (на 100г)",
@@ -75,7 +82,7 @@ export const fishSeafood = [
         availability: 10,
         price: "580 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img5,
         compound: "стейки форели",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 19г, Жиры: 10г, Углеводы: 0г (на 100г)",
@@ -92,27 +99,10 @@ export const fishSeafood = [
         availability: 18,
         price: "320 руб",
         oldPrice: "380 руб",
-        imgUrl: "",
+        imgUrl: img6,
         compound: "мидии замороженные",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 12г, Жиры: 2г, Углеводы: 3г (на 100г)",
-        get availabilityTitle() {
-        if (this.availability) { return `В наличии ${this.availability}` }
-        else return 'Нет в наличии'
-        }
-    },
-    {
-        id: 2107,
-        title: "Филе пангасиуса",
-        discount: false,
-        favorite: false,
-        availability: 20,
-        price: "190 руб",
-        oldPrice: null,
-        imgUrl: "",
-        compound: "филе пангасиуса",
-        shelfLife: "6 месяцев",
-        nutritionalValue: "Белки: 15г, Жиры: 3г, Углеводы: 0г (на 100г)",
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -126,7 +116,7 @@ export const fishSeafood = [
         availability: 6,
         price: "720 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img7,
         compound: "осьминоги замороженные",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 15г, Жиры: 1г, Углеводы: 4г (на 100г)",

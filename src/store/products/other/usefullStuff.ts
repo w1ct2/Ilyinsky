@@ -1,3 +1,10 @@
+import img1 from '@/assets/products-img/other/usefullStuff/AA-Duracell.webp'
+import img2 from '@/assets/products-img/other/usefullStuff/kosmos.webp'
+import img3 from '@/assets/products-img/other/usefullStuff/duct-tape.webp'
+import img4 from '@/assets/products-img/other/usefullStuff/balloons.webp'
+import img5 from '@/assets/products-img/other/usefullStuff/moment.webp'
+import img6 from '@/assets/products-img/other/usefullStuff/stationery-set.webp'
+import img7 from '@/assets/products-img/other/usefullStuff/candle.webp'
 export const usefulStuff = [
     {
         id: 2401,
@@ -7,7 +14,7 @@ export const usefulStuff = [
         availability: 45,
         price: "280 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img1,
         compound: "щелочные элементы, стальной корпус",
         shelfLife: "60 месяцев",
         nutritionalValue: "4 шт",
@@ -16,15 +23,15 @@ export const usefulStuff = [
         else return 'Нет в наличии'
         }
     },
-    {
+    { 
         id: 2402,
-        title: "Лампочка LED 10W",
+        title: "Лампочка Космос",
         discount: true,
         favorite: false,
         availability: 30,
         price: "150 руб",
         oldPrice: "190 руб",
-        imgUrl: "",
+        imgUrl: img2,
         compound: "светодиоды, алюминиевый радиатор, пластиковый корпус",
         shelfLife: "84 месяца",
         nutritionalValue: "Эквивалент 75W",
@@ -41,7 +48,7 @@ export const usefulStuff = [
         availability: 35,
         price: "85 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img3,
         compound: "полипропиленовая основа, акриловый клей",
         shelfLife: "36 месяцев",
         nutritionalValue: "Длина: 50 м",
@@ -58,7 +65,7 @@ export const usefulStuff = [
         availability: 28,
         price: "120 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img4,
         compound: "латекс натуральный, красители",
         shelfLife: "24 месяца",
         nutritionalValue: "10 шт",
@@ -75,27 +82,10 @@ export const usefulStuff = [
         availability: 20,
         price: "190 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img5,
         compound: "цианоакрилат, стабилизаторы",
         shelfLife: "24 месяца",
         nutritionalValue: "Объем: 30 г",
-        get availabilityTitle() {
-        if (this.availability) { return `В наличии ${this.availability}` }
-        else return 'Нет в наличии'
-        }
-    },
-    {
-        id: 2406,
-        title: "Фонарик карманный",
-        discount: true,
-        favorite: false,
-        availability: 15,
-        price: "320 руб",
-        oldPrice: "380 руб",
-        imgUrl: "",
-        compound: "пластиковый корпус, светодиоды, батарейный отсек",
-        shelfLife: "120 месяцев",
-        nutritionalValue: "3 режима работы",
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -109,7 +99,7 @@ export const usefulStuff = [
         availability: 25,
         price: "180 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img6,
         compound: "ручка шариковая, карандаш, ластик, точилка",
         shelfLife: "48 месяцев",
         nutritionalValue: "4 предмета",
@@ -126,7 +116,7 @@ export const usefulStuff = [
         availability: 40,
         price: "95 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img7,
         compound: "керамический изолятор, металлический электрод",
         shelfLife: "60 месяцев",
         nutritionalValue: "1 шт",

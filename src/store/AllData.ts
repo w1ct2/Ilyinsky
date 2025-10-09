@@ -4,7 +4,7 @@ import { computed, Ref, ref } from 'vue';
 import { bakery} from './products/cooking/bakery';
 import { pizza } from './products/cooking/pizza';
 import { grill } from './products/cooking/grill';
-import { meat } from './products/cooking/meat';
+import { meat } from './products/freeze/meat';
 import { salad } from './products/cooking/salad';
 import { soup } from './products/cooking/soup';
 import { hotDish } from './products/cooking/hotDish';
@@ -82,7 +82,6 @@ export const useAllData = defineStore('alldata', ()=>{
         ...bakeryData.value,
         ...pizzaData.value,
         ...grillData.value,
-        ...meatData.value,
         ...saladData.value,
         ...soupData.value,
         ...hotDishData.value,
@@ -101,6 +100,7 @@ export const useAllData = defineStore('alldata', ()=>{
         ...semiFinishedData.value,
         ...frozenVegetablesData.value,
         ...fishSeafoodData.value,
+        ...meatData.value,
 
         ...beautyHygieneData.value,
         ...cleaningLaundryData.value,

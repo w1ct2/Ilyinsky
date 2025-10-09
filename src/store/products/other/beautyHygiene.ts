@@ -1,3 +1,11 @@
+import img1 from '@/assets/products-img/other/beautyHygiene/clear.webp'
+import img2 from '@/assets/products-img/other/beautyHygiene/colgate.webp'
+import img3 from '@/assets/products-img/other/beautyHygiene/nivea-men.webp'
+import img4 from '@/assets/products-img/other/beautyHygiene/rexona.webp'
+import img5 from '@/assets/products-img/other/beautyHygiene/evo-cream.webp'
+import img6 from '@/assets/products-img/other/beautyHygiene/librederm.webp'
+import img7 from '@/assets/products-img/other/beautyHygiene/Safeguard.webp'
+import img8 from '@/assets/products-img/other/beautyHygiene/farmstay.webp'
 export const beautyHygiene = [
     {
         id: 2201,
@@ -7,7 +15,7 @@ export const beautyHygiene = [
         availability: 35,
         price: "280 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img1,
         compound: "вода, ПАВ, кондиционирующие компоненты, витамины",
         shelfLife: "36 месяцев",
         nutritionalValue: "Объем: 400 мл",
@@ -24,7 +32,7 @@ export const beautyHygiene = [
         availability: 50,
         price: "150 руб",
         oldPrice: "180 руб",
-        imgUrl: "",
+        imgUrl: img2,
         compound: "фторид натрия, ксилит, абразивные компоненты",
         shelfLife: "36 месяцев",
         nutritionalValue: "Объем: 100 мл",
@@ -41,7 +49,7 @@ export const beautyHygiene = [
         availability: 28,
         price: "220 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img3,
         compound: "вода, ПАВ, ментол, экстракт бамбука",
         shelfLife: "36 месяцев",
         nutritionalValue: "Объем: 250 мл",
@@ -58,7 +66,7 @@ export const beautyHygiene = [
         availability: 40,
         price: "190 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img4,
         compound: "пропелленты, спирт, парфюмерная композиция",
         shelfLife: "36 месяцев",
         nutritionalValue: "Объем: 150 мл",
@@ -69,13 +77,13 @@ export const beautyHygiene = [
     },
     {
         id: 2205,
-        title: "Крем для рук Neutrogena",
+        title: "Крем для рук",
         discount: false,
         favorite: false,
         availability: 25,
         price: "320 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img5,
         compound: "глицерин, масло ши, витамин E, гиалуроновая кислота",
         shelfLife: "24 месяца",
         nutritionalValue: "Объем: 75 мл",
@@ -92,7 +100,7 @@ export const beautyHygiene = [
         availability: 30,
         price: "180 руб",
         oldPrice: "210 руб",
-        imgUrl: "",
+        imgUrl: img6,
         compound: "воски, масла, витамины A и E, SPF 15",
         shelfLife: "24 месяца",
         nutritionalValue: "Объем: 4.5 г",
@@ -109,7 +117,7 @@ export const beautyHygiene = [
         availability: 45,
         price: "120 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img7,
         compound: "вода, ПАВ, глицерин, триклозан",
         shelfLife: "36 месяцев",
         nutritionalValue: "Объем: 300 мл",
@@ -126,7 +134,7 @@ export const beautyHygiene = [
         availability: 20,
         price: "85 руб",
         oldPrice: null,
-        imgUrl: "",
+        imgUrl: img8,
         compound: "тканевая основа, гиалуроновая кислота, экстракт алоэ",
         shelfLife: "24 месяца",
         nutritionalValue: "1 шт",
