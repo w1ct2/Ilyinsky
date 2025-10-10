@@ -89,6 +89,7 @@ const toggleFavorite = (id)=>{
     }
     &__favorite {
         position: absolute;
+        cursor: pointer;
         top: 15px;
         right: 15px;
         width: 22px;
