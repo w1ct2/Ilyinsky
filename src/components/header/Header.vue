@@ -11,4 +11,8 @@ import HeaderMain from './HeaderMain.vue';
 
 <style lang="scss" scoped>
 @import "@/scss/remFunction";
+.header {
+    z-index: 11;
+    position: relative;
+}
 </style>

@@ -65,8 +65,6 @@ const updateSlides = ()=>{
 onMounted(()=>{
     updateSlides()
     window.addEventListener('resize', updateSlides)
-    console.log(data);
-    
 })
 onBeforeUnmount(() => {
     window.removeEventListener('resize', updateSlides)

@@ -13,9 +13,9 @@ import PersonalFavorites_Item from '../Profile/PersonalFavorites_Item.vue';
 import { useAllData } from '@/store/AllData';
 const AllData = useAllData()
 const cards = computed(()=> AllData.allData)
-const sortedData = (filter)=>{
-    return [...cards].filter(item => item.category === filter)
-}
+// const sortedData = (filter)=>{
+//     return [...cards.value].filter(item => item.category === filter)
+// }
 </script>
 
 <style lang="scss" scoped>

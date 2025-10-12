@@ -1,14 +1,51 @@
 <template>
     <div class="search">
-        <input type="text" placeholder="Начать поиск" class="search__input">
-        <svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" class="search__img">
+        <input 
+            type="text" 
+            placeholder="Начать поиск" 
+            class="search__input"
+            :class="{'search__input--active': isFocus}"
+            @focus="handleFocus"
+            v-model="searchQuery"
+        >
+        <svg
+            v-if="!isFocus"
+            width="22" 
+            height="22" 
+            viewBox="0 0 22 22" 
+            xmlns="http://www.w3.org/2000/svg" 
+            class="search__img">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5427 14.5201C16.564 14.539 16.5848 14.5586 16.6052 14.579L20.8607 18.8345C21.414 19.3877 21.406 20.2766 20.843 20.8199C20.28 21.3632 19.3751 21.3551 18.8218 20.8019L14.5663 16.5464C14.5591 16.5392 14.5519 16.5319 14.5449 16.5245C13.0316 17.6337 11.1645 18.2888 9.14441 18.2888C4.09408 18.2888 -3.05176e-05 14.1947 -3.05176e-05 9.14432C-3.05176e-05 4.09398 4.09408 -0.00012207 9.14441 -0.00012207C14.1948 -0.00012207 18.2889 4.09398 18.2889 9.14432C18.2889 11.1534 17.6409 13.0112 16.5427 14.5201ZM2.39997 9.14432C2.39997 5.41947 5.41956 2.39988 9.14441 2.39988C12.8693 2.39988 15.8889 5.41947 15.8889 9.14432C15.8889 12.8692 12.8693 15.8888 9.14441 15.8888C5.41956 15.8888 2.39997 12.8692 2.39997 9.14432Z"/>
         </svg>
+        <div 
+            class="search__close-btn"
+            @click="handleClose"
+            v-else>
+            <span></span>
+        </div>
+        <SearchMenu 
+            v-show="isFocus"
+            :searchQuery="searchQuery"></SearchMenu>
     </div>
 </template>
 
 <script setup>
-import search from '@/assets/img/svg/search1.svg'
+import { onUnmounted, ref } from 'vue';
+import SearchMenu from './search-menu/Search-Menu.vue';
+const isFocus = ref(false)
+const searchQuery = ref('')
+const handleFocus = () => {
+    isFocus.value = true;
+    document.body.classList.add('no-scroll');
+};
+const handleClose = () => {
+    isFocus.value = false;
+    searchQuery.value = ''
+    document.body.classList.remove('no-scroll');
+};
+onUnmounted(()=>{
+    document.body.classList.remove('no-scroll')
+})
 </script>
 
 <style lang="scss" scoped>
@@ -19,6 +56,38 @@ import search from '@/assets/img/svg/search1.svg'
     display: flex;
     align-items: center;
     position: relative;
+    &__close-btn {
+        position: absolute;
+        right: 15px;
+        width: rem(22);
+        height: rem(22);
+        animation: opacity .5s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        & span {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &::after, &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                background-color: #6B6B6B;
+                height: rem(2);
+            }
+            &::after {
+                transform: rotate(45deg);
+            }
+            &::before {
+                transform: rotate(-45deg);
+            }
+        }
+    }
     &__input {
         width: 100%;
         height: 100%;
@@ -27,6 +96,9 @@ import search from '@/assets/img/svg/search1.svg'
         padding-left: 15px;
         padding-right: 40px;
         color: #6B6B6B;
+        &--active {
+            border: 1px solid var(--red);
+        }
     }
     &__img {
         position: absolute;
