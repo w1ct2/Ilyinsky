@@ -30,22 +30,22 @@ const links1 = ref([
     {
         id: 1,
         name: 'Кулинария',
-        url: ''
+        url: '/catalog'
     },
     {
         id: 2,
         name: 'Супермаркет',
-        url: ''
+        url: '/catalog'
     },
     {
         id: 3,
         name: 'Заморозка',
-        url: ''
+        url: '/catalog'
     },
     {
         id: 4,
         name: 'Другое',
-        url: ''
+        url: '/catalog'
     },
 ])
 const links2 = ref([

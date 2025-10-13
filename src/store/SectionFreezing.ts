@@ -9,6 +9,7 @@ import img6 from '@/assets/img/grocery-section3/img6.png'
 interface SectionItem {
     id: number
     name: string
+    category: string
     styles: object
 }
 export const useSectionFreezingStore = defineStore('sectionFreezingStore', ()=>{
@@ -22,6 +23,7 @@ export const useSectionFreezingStore = defineStore('sectionFreezingStore', ()=>{
         {
             id: 1,
             name: 'Пельмени, вареники и равиоли',
+            category: 'dumplings',
             styles: {
                 backgroundImage: `url(${img1})`,
                 ...FreezingBaseStyles,
@@ -31,6 +33,7 @@ export const useSectionFreezingStore = defineStore('sectionFreezingStore', ()=>{
         {
             id: 2,
             name: 'Хинкали и манты',
+            category: 'khinkaliManty',
             styles: {
                 backgroundImage: `url(${img2})`,
                 ...FreezingBaseStyles,
@@ -40,6 +43,7 @@ export const useSectionFreezingStore = defineStore('sectionFreezingStore', ()=>{
         {
             id: 3,
             name: 'Полуфабрикаты',
+            category: 'semiFinished',
             styles: {
                 backgroundImage: `url(${img3})`,
                 ...FreezingBaseStyles,
@@ -49,6 +53,7 @@ export const useSectionFreezingStore = defineStore('sectionFreezingStore', ()=>{
         {
             id: 4,
             name: 'Замороженные овощи',
+            category: 'frozenVegetables',
             styles: {
                 backgroundImage: `url(${img4})`,
                 ...FreezingBaseStyles,
@@ -58,6 +63,7 @@ export const useSectionFreezingStore = defineStore('sectionFreezingStore', ()=>{
         {
             id: 5,
             name: 'Рыба и морепродукты',
+            category: 'fish',
             styles: {
                 backgroundImage: `url(${img5})`,
                 ...FreezingBaseStyles,
@@ -66,6 +72,7 @@ export const useSectionFreezingStore = defineStore('sectionFreezingStore', ()=>{
         {
             id: 6,
             name: 'Мясо',
+            category: 'meat',
             styles: {
                 backgroundImage: `url(${img6})`,
                 ...FreezingBaseStyles,

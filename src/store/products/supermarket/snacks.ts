@@ -21,6 +21,7 @@ export const snacksDriedFruits = [
         compound: "картофель, масло подсолнечное, сметано-луковый вкус, соль",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 6г, Жиры: 35г, Углеводы: 53г (на 100г)",
+        category: 'snacks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -38,6 +39,7 @@ export const snacksDriedFruits = [
         compound: "абрикосы сушеные без косточки",
         shelfLife: "12 месяцев",
         nutritionalValue: "Белки: 5г, Жиры: 0.5г, Углеводы: 63г (на 100г)",
+        category: 'snacks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -55,6 +57,7 @@ export const snacksDriedFruits = [
         compound: "кешью жареный, соль",
         shelfLife: "9 месяцев",
         nutritionalValue: "Белки: 18г, Жиры: 44г, Углеводы: 30г (на 100г)",
+        category: 'snacks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -72,6 +75,7 @@ export const snacksDriedFruits = [
         compound: "кукуруза, пальмовое масло, соль",
         shelfLife: "8 месяцев",
         nutritionalValue: "Белки: 7г, Жиры: 28г, Углеводы: 57г (на 100г)",
+        category: 'snacks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -89,6 +93,7 @@ export const snacksDriedFruits = [
         compound: "финики сушеные с косточкой",
         shelfLife: "18 месяцев",
         nutritionalValue: "Белки: 2г, Жиры: 0.5г, Углеводы: 75г (на 100г)",
+        category: 'snacks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -106,6 +111,7 @@ export const snacksDriedFruits = [
         compound: "хлеб, масло растительное, вкусоароматическая добавка 'пицца'",
         shelfLife: "5 месяцев",
         nutritionalValue: "Белки: 10г, Жиры: 25г, Углеводы: 55г (на 100г)",
+        category: 'snacks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -123,6 +129,7 @@ export const snacksDriedFruits = [
         compound: "виноград сушеный без косточек",
         shelfLife: "12 месяцев",
         nutritionalValue: "Белки: 3г, Жиры: 0.6г, Углеводы: 79г (на 100г)",
+        category: 'snacks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -140,6 +147,7 @@ export const snacksDriedFruits = [
         compound: "овсяные хлопья, мед, сухофрукты, орехи, семечки",
         shelfLife: "7 месяцев",
         nutritionalValue: "Белки: 8г, Жиры: 12г, Углеводы: 60г (на 100г)",
+        category: 'snacks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -157,6 +165,7 @@ export const snacksDriedFruits = [
         compound: "сливы сушеные без косточки",
         shelfLife: "12 месяцев",
         nutritionalValue: "Белки: 2г, Жиры: 0.7г, Углеводы: 57г (на 100г)",
+        category: 'snacks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -174,6 +183,7 @@ export const snacksDriedFruits = [
         compound: "семена подсолнечника жареные, соль",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 21г, Жиры: 53г, Углеводы: 11г (на 100г)",
+        category: 'snacks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

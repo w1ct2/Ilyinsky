@@ -18,6 +18,7 @@ export const fishSeafood = [
         compound: "филе семги",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 20г, Жиры: 15г, Углеводы: 0г (на 100г)",
+        category: 'fish',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -35,6 +36,7 @@ export const fishSeafood = [
         compound: "креветки тигровые замороженные",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 24г, Жиры: 2г, Углеводы: 0г (на 100г)",
+        category: 'fish',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -52,6 +54,7 @@ export const fishSeafood = [
         compound: "филе минтая",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 16г, Жиры: 1г, Углеводы: 0г (на 100г)",
+        category: 'fish',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -69,6 +72,7 @@ export const fishSeafood = [
         compound: "кальмары замороженные",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 18г, Жиры: 2г, Углеводы: 2г (на 100г)",
+        category: 'fish',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -86,6 +90,7 @@ export const fishSeafood = [
         compound: "стейки форели",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 19г, Жиры: 10г, Углеводы: 0г (на 100г)",
+        category: 'fish',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -103,6 +108,7 @@ export const fishSeafood = [
         compound: "мидии замороженные",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 12г, Жиры: 2г, Углеводы: 3г (на 100г)",
+        category: 'fish',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -120,6 +126,7 @@ export const fishSeafood = [
         compound: "осьминоги замороженные",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 15г, Жиры: 1г, Углеводы: 4г (на 100г)",
+        category: 'fish',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

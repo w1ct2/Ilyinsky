@@ -18,6 +18,7 @@ export const meat = [
         compound: "свиная шея охлажденная",
         shelfLife: "72 часа",
         nutritionalValue: "Белки: 18г, Жиры: 20г, Углеводы: 0г (на 100г)",
+        category: 'meat',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -35,6 +36,7 @@ export const meat = [
         compound: "куриное филе охлажденное",
         shelfLife: "48 часов",
         nutritionalValue: "Белки: 23г, Жиры: 2г, Углеводы: 0г (на 100г)",
+        category: 'meat',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -52,6 +54,7 @@ export const meat = [
         compound: "бараний окорок охлажденный",
         shelfLife: "72 часа",
         nutritionalValue: "Белки: 20г, Жиры: 18г, Углеводы: 0г (на 100г)",
+        category: 'meat',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -69,6 +72,7 @@ export const meat = [
         compound: "филе грудки индейки охлажденное",
         shelfLife: "48 часов",
         nutritionalValue: "Белки: 24г, Жиры: 3г, Углеводы: 0г (на 100г)",
+        category: 'meat',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -86,6 +90,7 @@ export const meat = [
         compound: "свиные ребрышки охлажденные",
         shelfLife: "72 часа",
         nutritionalValue: "Белки: 16г, Жиры: 25г, Углеводы: 0г (на 100г)",
+        category: 'meat',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -103,6 +108,7 @@ export const meat = [
         compound: "говяжий фарш охлажденный",
         shelfLife: "48 часов",
         nutritionalValue: "Белки: 20г, Жиры: 15г, Углеводы: 0г (на 100г)",
+        category: 'meat',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -120,6 +126,7 @@ export const meat = [
         compound: "утиная грудка охлажденная",
         shelfLife: "72 часа",
         nutritionalValue: "Белки: 19г, Жиры: 22г, Углеводы: 0г (на 100г)",
+        category: 'meat',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

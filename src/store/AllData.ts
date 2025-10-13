@@ -26,7 +26,7 @@ import { fishSeafood } from './products/freeze/fish';
 import { khinkaliManty } from './products/freeze/khinkaliManty';
 
 import { appliances } from './products/other/appliances';
-import { usefulStuff } from './products/other/usefullStuff';
+import { usefullStuff } from './products/other/usefullStuff';
 import { cleaningLaundry } from './products/other/cleaningLaundry';
 import { beautyHygiene} from './products/other/beautyHygiene';
 import { jsx } from 'vue/jsx-runtime';
@@ -44,6 +44,7 @@ interface Product {
     shelfLife: string
     nutritionalValue: string
     readonly availabilityTitle: string
+    category: string
 }
 
 export const useAllData = defineStore('alldata', ()=>{
@@ -74,7 +75,7 @@ export const useAllData = defineStore('alldata', ()=>{
 
     const beautyHygieneData = ref(beautyHygiene)
     const cleaningLaundryData = ref(cleaningLaundry)
-    const usefulStuffData = ref(usefulStuff)
+    const usefulStuffData = ref(usefullStuff)
     const appliancesData = ref(appliances)
 
     const allData = ref([
@@ -134,7 +135,6 @@ export const useAllData = defineStore('alldata', ()=>{
             console.log('Лист избранного пуст')
         }
     }
-    //переделать данные в скидках discount и изменить там логику добавления в избранное. найти картинки для товаров. начать делать каталог
     const saveToStorage = (key: string, data: unknown)=>{
         localStorage.setItem(key, JSON.stringify(data))
     }

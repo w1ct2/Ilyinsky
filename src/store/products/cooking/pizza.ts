@@ -21,6 +21,7 @@ export const pizza = [
         compound: "томатный соус, сыр моцарелла, пепперони, орегано",
         shelfLife: "24 часа",
         nutritionalValue: "Белки: 12г, Жиры: 18г, Углеводы: 28г (на 100г)",
+        category: 'pizza',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -38,6 +39,7 @@ export const pizza = [
         compound: "томатный соус, сыр моцарелла, свежие томаты, базилик",
         shelfLife: "24 часа",
         nutritionalValue: "Белки: 10г, Жиры: 15г, Углеводы: 25г (на 100г)",
+        category: 'pizza',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -55,6 +57,7 @@ export const pizza = [
         compound: "сыр моцарелла, горгонзола, пармезан, рикотта, сливочный соус",
         shelfLife: "24 часа",
         nutritionalValue: "Белки: 15г, Жиры: 22г, Углеводы: 20г (на 100г)",
+        category: 'pizza',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -72,6 +75,7 @@ export const pizza = [
         compound: "томатный соус, сыр моцарелла, ветчина, ананасы",
         shelfLife: "24 часа",
         nutritionalValue: "Белки: 11г, Жиры: 16г, Углеводы: 30г (на 100г)",
+        category: 'pizza',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -89,6 +93,7 @@ export const pizza = [
         compound: "сливочный соус, сыр моцарелла, бекон, яйцо, пармезан",
         shelfLife: "24 часа",
         nutritionalValue: "Белки: 14г, Жиры: 20г, Углеводы: 22г (на 100г)",
+        category: 'pizza',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -106,6 +111,7 @@ export const pizza = [
         compound: "острый томатный соус, сыр моцарелла, салями, перец халапеньо, чили",
         shelfLife: "24 часа",
         nutritionalValue: "Белки: 13г, Жиры: 17г, Углеводы: 26г (на 100г)",
+        category: 'pizza',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -123,6 +129,7 @@ export const pizza = [
         compound: "томатный соус, сыр моцарелла, болгарский перец, грибы, маслины, кукуруза",
         shelfLife: "24 часа",
         nutritionalValue: "Белки: 9г, Жиры: 12г, Углеводы: 32г (на 100г)",
+        category: 'pizza',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -140,6 +147,7 @@ export const pizza = [
         compound: "томатный соус, сыр моцарелла, ветчина, пепперони, бекон, куриное филе",
         shelfLife: "24 часа",
         nutritionalValue: "Белки: 16г, Жиры: 25г, Углеводы: 18г (на 100г)",
+        category: 'pizza',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -157,6 +165,7 @@ export const pizza = [
         compound: "сливочный соус, сыр моцарелла, креветки, мидии, кальмары",
         shelfLife: "24 часа",
         nutritionalValue: "Белки: 14г, Жиры: 15г, Углеводы: 24г (на 100г)",
+        category: 'pizza',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -174,6 +183,7 @@ export const pizza = [
         compound: "томатный соус, сыр моцарелла, картофель, колбаски, лук, грибы",
         shelfLife: "24 часа",
         nutritionalValue: "Белки: 11г, Жиры: 19г, Углеводы: 35г (на 100г)",
+        category: 'pizza',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

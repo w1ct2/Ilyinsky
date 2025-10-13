@@ -18,6 +18,7 @@ export const khinkaliManty = [
         compound: "мука, говядина, свинина, лук, чеснок, зелень, специи",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 14г, Жиры: 16г, Углеводы: 22г (на 100г)",
+        category: 'khinkaliManty',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -35,6 +36,7 @@ export const khinkaliManty = [
         compound: "мука, говядина, лук, курдючное сало, специи",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 13г, Жиры: 18г, Углеводы: 20г (на 100г)",
+        category: 'khinkaliManty',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -52,6 +54,7 @@ export const khinkaliManty = [
         compound: "мука, баранина, лук, кинза, зира, перец",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 15г, Жиры: 20г, Углеводы: 21г (на 100г)",
+        category: 'khinkaliManty',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -69,6 +72,7 @@ export const khinkaliManty = [
         compound: "мука, тыква, лук, курдючное сало, специи",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 6г, Жиры: 8г, Углеводы: 28г (на 100г)",
+        category: 'khinkaliManty',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -86,6 +90,7 @@ export const khinkaliManty = [
         compound: "мука, куриное филе, лук, зелень, специи",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 16г, Жиры: 12г, Углеводы: 23г (на 100г)",
+        category: 'khinkaliManty',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -103,6 +108,7 @@ export const khinkaliManty = [
         compound: "мука, говядина, лук, специи",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 12г, Жиры: 15г, Углеводы: 18г (на 100г)",
+        category: 'khinkaliManty',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

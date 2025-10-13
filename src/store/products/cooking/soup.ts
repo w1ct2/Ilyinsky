@@ -18,6 +18,7 @@ export const soup = [
             compound: "говядина, свекла, капуста, картофель, морковь, лук, сметана",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 8г, Жиры: 6г, Углеводы: 12г (на 100г)",
+            category: 'soup',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -35,6 +36,7 @@ export const soup = [
             compound: "говядина, ветчина, колбаса, огурцы, маслины, лимон, сметана",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 10г, Жиры: 9г, Углеводы: 8г (на 100г)",
+            category: 'soup',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -52,6 +54,7 @@ export const soup = [
             compound: "куриное филе, лапша, морковь, лук, зелень, специи",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 9г, Жиры: 4г, Углеводы: 15г (на 100г)",
+            category: 'soup',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -69,6 +72,7 @@ export const soup = [
             compound: "шампиньоны, сливки, картофель, лук, чеснок, сухарики",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 5г, Жиры: 12г, Углеводы: 10г (на 100г)",
+            category: 'soup',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -86,6 +90,7 @@ export const soup = [
             compound: "говядина, перловая крупа, огурцы, картофель, морковь, сметана",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 7г, Жиры: 5г, Углеводы: 14г (на 100г)",
+            category: 'soup',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -103,6 +108,7 @@ export const soup = [
             compound: "креветки, грибы, кокосовое молоко, лемонграсс, лайм, чили",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 11г, Жиры: 8г, Углеводы: 9г (на 100г)",
+            category: 'soup',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'

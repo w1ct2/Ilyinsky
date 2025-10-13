@@ -4,21 +4,33 @@
         <ul class="category__list">
             <li 
                 class="category__item"
+                :style="{backgroundColor: category === item.category ? item.styles.backgroundColor : ''}"
                 v-for="item in data"
-                :key="item.id">{{ item.name }}</li>
+                :key="item.id"
+                @click="selectCategory(item.category, item.name)">{{ item.name }}</li>
         </ul>
     </div>
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
 const props = defineProps({
     title: {
         type: String
     },
     data: {
         type: Array
+    },
+    category: {
+        type: String
     }
 })
+const emits = defineEmits(['selectCategory'])
+const selectCategory = (category, categoryTextName) => {
+    emits('selectCategory', category, categoryTextName)
+}
+
 </script>
 
 <style lang="scss" scoped>
@@ -39,7 +51,7 @@ const props = defineProps({
         color: #000;
         font-size: 20px;
         font-weight: 300;
-        margin-left: rem(25);
+        padding-left: rem(25);
         height: rem(32);
         cursor: pointer;
     }

@@ -19,6 +19,7 @@ export const semiFinished = [
         compound: "говядина, свинина, лук, хлеб, яйцо, специи",
         shelfLife: "3 месяца",
         nutritionalValue: "Белки: 15г, Жиры: 20г, Углеводы: 8г (на 100г)",
+        category: 'semiFinished',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -36,6 +37,7 @@ export const semiFinished = [
         compound: "говядина",
         shelfLife: "3 месяца",
         nutritionalValue: "Белки: 18г, Жиры: 15г, Углеводы: 0г (на 100г)",
+        category: 'semiFinished',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -53,6 +55,7 @@ export const semiFinished = [
         compound: "мука, яйцо, молоко, говядина, лук, специи",
         shelfLife: "3 месяца",
         nutritionalValue: "Белки: 12г, Жиры: 14г, Углеводы: 22г (на 100г)",
+        category: 'semiFinished',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -70,6 +73,7 @@ export const semiFinished = [
         compound: "говяжий фарш, рис, томатный соус, лук, специи",
         shelfLife: "3 месяца",
         nutritionalValue: "Белки: 11г, Жиры: 12г, Углеводы: 18г (на 100г)",
+        category: 'semiFinished',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -87,6 +91,7 @@ export const semiFinished = [
         compound: "капуста, говяжий фарш, рис, морковь, томатный соус",
         shelfLife: "3 месяца",
         nutritionalValue: "Белки: 10г, Жиры: 8г, Углеводы: 15г (на 100г)",
+        category: 'semiFinished',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -104,6 +109,7 @@ export const semiFinished = [
         compound: "куриное филе",
         shelfLife: "3 месяца",
         nutritionalValue: "Белки: 20г, Жиры: 8г, Углеводы: 0г (на 100г)",
+        category: 'semiFinished',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -121,6 +127,7 @@ export const semiFinished = [
         compound: "говяжий фарш, лук, зелень, специи",
         shelfLife: "3 месяца",
         nutritionalValue: "Белки: 16г, Жиры: 18г, Углеводы: 3г (на 100г)",
+        category: 'semiFinished',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

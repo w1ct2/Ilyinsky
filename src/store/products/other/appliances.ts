@@ -19,6 +19,7 @@ export const appliances = [
         compound: "пластиковый корпус, металлический нагревательный элемент, терморегулятор",
         shelfLife: "120 месяцев",
         nutritionalValue: "Мощность: 2200W, Объем: 1.7л",
+        category: 'appliances',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -36,6 +37,7 @@ export const appliances = [
         compound: "пластиковый корпус, стеклянная колба, нагревательный элемент, фильтр",
         shelfLife: "120 месяцев",
         nutritionalValue: "Мощность: 1000W, Объем: 1.2л",
+        category: 'appliances',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -53,6 +55,7 @@ export const appliances = [
         compound: "металлический корпус, стеклянная дверца, магнетрон, поворотный стол",
         shelfLife: "120 месяцев",
         nutritionalValue: "Мощность: 800W, Объем: 20л",
+        category: 'appliances',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -70,6 +73,7 @@ export const appliances = [
         compound: "металлический двигатель, пластиковая насадка, ножи из нержавейки",
         shelfLife: "120 месяцев",
         nutritionalValue: "Мощность: 600W, Скоростей: 12",
+        category: 'appliances',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -87,6 +91,7 @@ export const appliances = [
         compound: "металлический корпус, нагревательные элементы, таймер",
         shelfLife: "120 месяцев",
         nutritionalValue: "Мощность: 900W, Отсеки: 2",
+        category: 'appliances',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -104,6 +109,7 @@ export const appliances = [
         compound: "металлический корпус, нагревательные элементы, таймер, терморегулятор",
         shelfLife: "120 месяцев",
         nutritionalValue: "Мощность: 1200W, Объем: 15л",
+        category: 'appliances',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -121,6 +127,7 @@ export const appliances = [
         compound: "пластиковый корпус, стальные ножи, двигатель",
         shelfLife: "120 месяцев",
         nutritionalValue: "Мощность: 150W, Емкость: 50г",
+        category: 'appliances',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

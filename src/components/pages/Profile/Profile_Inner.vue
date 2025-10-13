@@ -24,7 +24,7 @@ import PersonalHistory from './PersonalHistory.vue';
 import { useAllData } from '@/store/AllData';
 import PersonalFavorites from './PersonalFavorites.vue';
 const AllData = useAllData()
-const activeTab = ref(2)
+const activeTab = ref(0)
 const tabs = ref([
     {
         id: 1,

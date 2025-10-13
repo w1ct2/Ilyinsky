@@ -26,25 +26,25 @@ const buttons = ref([
         id: 1,
         name: 'Супермаркет',
         link: apple,
-        url: ''
+        url: 'catalog'
     },
     {
         id: 2,
         name: 'Кулинария',
         link: pizza,
-        url: ''
+        url: 'catalog'
     },
     {
         id: 3,
         name: 'Заморозка',
         link: meat,
-        url: ''
+        url: 'catalog'
     },
     {
         id: 4,
         name: 'Другое',
         link: sponge,
-        url: ''
+        url: 'catalog'
     },
     {
         id: 5,
@@ -56,7 +56,7 @@ const buttons = ref([
         id: 6,
         name: 'Магазины',
         link: pear,
-        url: ''
+        url: 'contacts'
     }
 ])
 const activeSection = ref(null)

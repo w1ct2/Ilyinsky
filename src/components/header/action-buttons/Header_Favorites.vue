@@ -1,11 +1,14 @@
 <template>
     <div class="favorites">
-        <img :src="favorites" class="favorites__img">
+        <RouterLink :to="'/personal-account'">
+            <img :src="favorites" class="favorites__img">
+        </RouterLink>
     </div>
 </template>
 
 <script setup>
 import favorites from '@/assets/img/svg/favorites1.svg'
+import { RouterLink } from 'vue-router';
 </script>
 
 <style lang="scss" scoped>

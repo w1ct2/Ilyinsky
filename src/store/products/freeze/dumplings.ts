@@ -18,6 +18,7 @@ export const dumplings = [
         compound: "мука, говядина, лук, вода, соль, перец",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 12г, Жиры: 15г, Углеводы: 25г (на 100г)",
+        category: 'dumplings',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -35,6 +36,7 @@ export const dumplings = [
         compound: "мука, картофель, лук, масло, соль",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 5г, Жиры: 8г, Углеводы: 35г (на 100г)",
+        category: 'dumplings',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -52,6 +54,7 @@ export const dumplings = [
         compound: "мука, сыр рикотта, шпинат, яйцо, пармезан, мускатный орех",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 11г, Жиры: 10г, Углеводы: 30г (на 100г)",
+        category: 'dumplings',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -69,6 +72,7 @@ export const dumplings = [
         compound: "мука, куриное филе, лук, вода, соль, специи",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 14г, Жиры: 10г, Углеводы: 26г (на 100г)",
+        category: 'dumplings',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -86,6 +90,7 @@ export const dumplings = [
         compound: "мука, вишня, сахар, крахмал, ванилин",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 5г, Жиры: 3г, Углеводы: 45г (на 100г)",
+        category: 'dumplings',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -103,6 +108,7 @@ export const dumplings = [
         compound: "мука, свинина, говядина, лук, чеснок, специи",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 13г, Жиры: 18г, Углеводы: 24г (на 100г)",
+        category: 'dumplings',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -120,6 +126,7 @@ export const dumplings = [
         compound: "мука, творог, яйцо, сахар, ванилин",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 10г, Жиры: 6г, Углеводы: 32г (на 100г)",
+        category: 'dumplings',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

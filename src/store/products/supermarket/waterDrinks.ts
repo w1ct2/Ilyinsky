@@ -21,6 +21,7 @@ export const waterDrinks = [
         compound: "минеральная вода натуральная газированная",
         shelfLife: "12 месяцев",
         nutritionalValue: "Кальций: 20мг, Магний: 15мг, Натрий: 120мг (на 1л)",
+        category: 'waterDrinks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -38,6 +39,7 @@ export const waterDrinks = [
         compound: "апельсиновый сок восстановленный, мякоть",
         shelfLife: "9 месяцев",
         nutritionalValue: "Углеводы: 11г, Витамин C: 25мг (на 100мл)",
+        category: 'waterDrinks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -55,6 +57,7 @@ export const waterDrinks = [
         compound: "вода, сахар, лимонная кислота, ароматизатор",
         shelfLife: "6 месяцев",
         nutritionalValue: "Углеводы: 10г, Белки: 0г, Жиры: 0г (на 100мл)",
+        category: 'waterDrinks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -72,6 +75,7 @@ export const waterDrinks = [
         compound: "вода, сахар, таурин, кофеин, витамины группы B",
         shelfLife: "12 месяцев",
         nutritionalValue: "Углеводы: 11г, Кофеин: 32мг (на 100мл)",
+        category: 'waterDrinks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -89,6 +93,7 @@ export const waterDrinks = [
         compound: "вода питьевая негазированная",
         shelfLife: "12 месяцев",
         nutritionalValue: "Кальций: 5мг, Магний: 2мг (на 1л)",
+        category: 'waterDrinks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -106,6 +111,7 @@ export const waterDrinks = [
         compound: "клюквенный сок, вода, сахар, натуральный ароматизатор",
         shelfLife: "8 месяцев",
         nutritionalValue: "Углеводы: 12г, Витамин C: 15мг (на 100мл)",
+        category: 'waterDrinks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -123,6 +129,7 @@ export const waterDrinks = [
         compound: "вода, сахар, диоксид углерода, краситель, кофеин",
         shelfLife: "9 месяцев",
         nutritionalValue: "Углеводы: 10.6г, Кофеин: 10мг (на 100мл)",
+        category: 'waterDrinks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -140,6 +147,7 @@ export const waterDrinks = [
         compound: "трава иван-чая ферментированная",
         shelfLife: "24 месяца",
         nutritionalValue: "Белки: 0г, Жиры: 0г, Углеводы: 0г (на 100мл заваренного)",
+        category: 'waterDrinks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -157,6 +165,7 @@ export const waterDrinks = [
         compound: "вода, сахар, хинин, лимонная кислота, натуральные ароматизаторы",
         shelfLife: "12 месяцев",
         nutritionalValue: "Углеводы: 8.9г, Хинин: 0.005% (на 100мл)",
+        category: 'waterDrinks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -174,6 +183,7 @@ export const waterDrinks = [
         compound: "яблочный сок прямого отжима, витамин C",
         shelfLife: "12 месяцев",
         nutritionalValue: "Углеводы: 11г, Витамин C: 30мг (на 100мл)",
+        category: 'waterDrinks',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

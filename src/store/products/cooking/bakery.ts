@@ -21,6 +21,7 @@ export const bakery = [
         compound: "мука пшеничная, масло сливочное, шоколадная начинка (10%), вода, сахар, дрожжи, соль, яичный меланж",
         shelfLife: "24 часа",
         nutritionalValue: "Белки: 6г, Жиры: 19г, Углеводы: 42г (на 100г)",
+        category: 'bakery',
         get availabilityTitle():string {
             if(this.availability){return `В наличии ${this.availability}`}
             else return 'Нет в наличии'
@@ -38,6 +39,7 @@ export const bakery = [
         compound: "тесто слоеное, начинка яблочная (15%), сахар, корица, глазурь сахарная",
         shelfLife: "36 часов",
         nutritionalValue: "Белки: 5г, Жиры: 12г, Углеводы: 45г (на 100г)",
+        category: 'bakery',
         get availabilityTitle():string {
             if(this.availability){return `В наличии ${this.availability}`}
             else return 'Нет в наличии'
@@ -55,6 +57,7 @@ export const bakery = [
         compound: "тесто дрожжевое, начинка вишневая (20%), сахар, крахмал кукурузный",
         shelfLife: "24 часа",
         nutritionalValue: "Белки: 5г, Жиры: 8г, Углеводы: 38г (на 100г)",
+        category: 'bakery',
         get availabilityTitle():string {
             if(this.availability){return `В наличии ${this.availability}`}
             else return 'Нет в наличии'
@@ -72,6 +75,7 @@ export const bakery = [
         compound: "мука пшеничная высший сорт, вода, дрожжи, соль, солод",
         shelfLife: "48 часов",
         nutritionalValue: "Белки: 8г, Жиры: 1г, Углеводы: 52г (на 100г)",
+        category: 'bakery',
         get availabilityTitle():string {
             if(this.availability){return `В наличии ${this.availability}`}
             else return 'Нет в наличии'
@@ -89,6 +93,7 @@ export const bakery = [
         compound: "мука, сахар, яйцо, масло растительное, молоко, дрожжи, сахарная пудра, ванилин",
         shelfLife: "48 часов",
         nutritionalValue: "Белки: 6г, Жиры: 15г, Углеводы: 50г (на 100г)",
+        category: 'bakery',
         get availabilityTitle():string {
             if(this.availability){return `В наличии ${this.availability}`}
             else return 'Нет в наличии'
@@ -106,6 +111,7 @@ export const bakery = [
         compound: "тесто дрожжевое, филе куриное, шампиньоны, лук, сливки, соль, перец, зелень",
         shelfLife: "36 часов",
         nutritionalValue: "Белки: 12г, Жиры: 15г, Углеводы: 25г (на 100г)",
+        category: 'bakery',
         get availabilityTitle():string {
             if(this.availability){return `В наличии ${this.availability}`}
             else return 'Нет в наличии'
@@ -123,6 +129,7 @@ export const bakery = [
         compound: "мука, мак, молоко, масло сливочное, сахар, дрожжи, яйцо, ванилин",
         shelfLife: "72 часа",
         nutritionalValue: "Белки: 7г, Жиры: 10г, Углеводы: 48г (на 100г)",
+        category: 'bakery',
         get availabilityTitle():string {
             if(this.availability){return `В наличии ${this.availability}`}
             else return 'Нет в наличии'
@@ -140,6 +147,7 @@ export const bakery = [
         compound: "сыр чечил, соль",
         shelfLife: "45 суток",
         nutritionalValue: "Белки: 25г, Жиры: 25г, Углеводы: 0г (на 100г)",
+        category: 'bakery',
         get availabilityTitle():string {
             if(this.availability){return `В наличии ${this.availability}`}
             else return 'Нет в наличии'
@@ -157,6 +165,7 @@ export const bakery = [
         compound: "мука, изюм, цукаты, масло сливочное, яйца, молоко, дрожжи, сахар, ванилин, глазурь",
         shelfLife: "120 часов",
         nutritionalValue: "Белки: 8г, Жиры: 14г, Углеводы: 55г (на 100г)",
+        category: 'bakery',
         get availabilityTitle():string {
             if(this.availability){return `В наличии ${this.availability}`}
             else return 'Нет в наличии'
@@ -174,6 +183,7 @@ export const bakery = [
         compound: "печенье сахарное, масло сливочное, сгущенное молоко, какао, орехи грецкие, коньяк",
         shelfLife: "96 часов",
         nutritionalValue: "Белки: 5г, Жиры: 20г, Углеводы: 45г (на 100г)",
+        category: 'bakery',
         get availabilityTitle():string {
             if(this.availability){return `В наличии ${this.availability}`}
             else return 'Нет в наличии'

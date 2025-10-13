@@ -19,6 +19,7 @@ export const cannedPickled = [
         compound: "тунец, соль, вода",
         shelfLife: "36 месяцев",
         nutritionalValue: "Белки: 26г, Жиры: 1г, Углеводы: 0г (на 100г)",
+        category: 'cannedPickled',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -36,6 +37,7 @@ export const cannedPickled = [
         compound: "кукуруза зерновая, вода, сахар, соль",
         shelfLife: "24 месяца",
         nutritionalValue: "Белки: 3г, Жиры: 1г, Углеводы: 14г (на 100г)",
+        category: 'cannedPickled',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -53,6 +55,7 @@ export const cannedPickled = [
         compound: "огурцы, вода, уксус, соль, сахар, специи, укроп",
         shelfLife: "24 месяца",
         nutritionalValue: "Белки: 1г, Жиры: 0г, Углеводы: 3г (на 100г)",
+        category: 'cannedPickled',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -70,6 +73,7 @@ export const cannedPickled = [
         compound: "шпроты, масло подсолнечное, соль",
         shelfLife: "24 месяца",
         nutritionalValue: "Белки: 17г, Жиры: 32г, Углеводы: 0г (на 100г)",
+        category: 'cannedPickled',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -87,6 +91,7 @@ export const cannedPickled = [
         compound: "фасоль стручковая, вода, соль",
         shelfLife: "24 месяца",
         nutritionalValue: "Белки: 2г, Жиры: 0г, Углеводы: 4г (на 100г)",
+        category: 'cannedPickled',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -104,6 +109,7 @@ export const cannedPickled = [
         compound: "кабачки, томатная паста, морковь, лук, масло, соль, специи",
         shelfLife: "18 месяцев",
         nutritionalValue: "Белки: 2г, Жиры: 7г, Углеводы: 9г (на 100г)",
+        category: 'cannedPickled',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -121,6 +127,7 @@ export const cannedPickled = [
         compound: "ананасы, вода, сахар",
         shelfLife: "36 месяцев",
         nutritionalValue: "Белки: 0г, Жиры: 0г, Углеводы: 16г (на 100г)",
+        category: 'cannedPickled',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -138,6 +145,7 @@ export const cannedPickled = [
         compound: "капуста белокочанная, морковь, соль",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 2г, Жиры: 0г, Углеводы: 5г (на 100г)",
+        category: 'cannedPickled',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

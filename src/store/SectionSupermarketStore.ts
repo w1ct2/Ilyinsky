@@ -11,6 +11,7 @@ import img1_8 from '@/assets/img/grocery-section1/img8.png'
 interface SectionItem {
     id: number
     name: string
+    category: string
     styles: object
 }
 export const useSectionSupermarketStore = defineStore('sectionSupermarketStore', ()=>{
@@ -24,6 +25,7 @@ export const useSectionSupermarketStore = defineStore('sectionSupermarketStore',
         {
             id: 1,
             name: 'Вода и напитки',
+            category: 'waterDrinks',
             styles: {
                 backgroundImage: `url(${img1_1})`, 
                 ...SuperMarketBaseStyles
@@ -32,6 +34,7 @@ export const useSectionSupermarketStore = defineStore('sectionSupermarketStore',
         {
             id: 2,
             name: 'Молоко, масло и яйца',
+            category: 'milkButterEggs',
             styles: {
                 backgroundImage: `url(${img1_2})`,
                 ...SuperMarketBaseStyles
@@ -40,6 +43,7 @@ export const useSectionSupermarketStore = defineStore('sectionSupermarketStore',
         {
             id: 3,
             name: 'Снэки и сухофрукты',
+            category: 'snacks',
             styles: {
                 backgroundImage: `url(${img1_3})`,
                 ...SuperMarketBaseStyles,
@@ -49,6 +53,7 @@ export const useSectionSupermarketStore = defineStore('sectionSupermarketStore',
         {
             id: 4,
             name: 'Кофе, чай и сладости',
+            category: 'coffeeTeaSweets',
             styles: {
                 backgroundImage: `url(${img1_4})`,
                 ...SuperMarketBaseStyles
@@ -57,6 +62,7 @@ export const useSectionSupermarketStore = defineStore('sectionSupermarketStore',
         {
             id: 5,
             name: 'Макароны и крупы',
+            category: 'pastaCereals',
             styles: {
                 backgroundImage: `url(${img1_5})`,
                 ...SuperMarketBaseStyles,
@@ -66,6 +72,7 @@ export const useSectionSupermarketStore = defineStore('sectionSupermarketStore',
         {
             id: 7,
             name: 'Масло, соусы и специи',
+            category: 'oilSaucesSpices',
             styles: {
                 backgroundImage: `url(${img1_7})`,
                 ...SuperMarketBaseStyles
@@ -74,6 +81,7 @@ export const useSectionSupermarketStore = defineStore('sectionSupermarketStore',
         {
             id: 8,
             name: 'Консервы и соления',
+            category: 'cannedPickled',
             styles: {
                 backgroundImage: `url(${img1_8})`,
                 ...SuperMarketBaseStyles,

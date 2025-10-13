@@ -1,13 +1,13 @@
 <template>
     <div class="section-header">
         <h2 class="section-header__title catalog-title">{{ title }}</h2>
-        <button class="section-header__button catalog-button">Смотреть все</button>
+        <RouterLink 
+            class="section-header__button catalog-button"
+            :to="'/catalog'">Смотреть все</RouterLink>
     </div>
 </template>
 
 <script setup>
-import { useMainStore } from '@/store/MainStore'
-const mainStore = useMainStore()
 const props = defineProps({
     title: {
         type: String,

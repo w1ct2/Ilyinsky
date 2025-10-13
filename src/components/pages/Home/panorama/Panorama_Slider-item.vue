@@ -1,7 +1,7 @@
 <template>
     <div class="slide" :style="blockStyles">
         <h1 class="slide__title">{{ title }}</h1>
-        <button class="slide__button">{{ button }}</button>
+        <RouterLink class="slide__button" :to="'/catalog'">{{ button }}</RouterLink>
         <img :src="imgUrl" :style="imgStyles" class="slide__img">
     </div>
 </template>
@@ -58,7 +58,9 @@ const props = defineProps({
         font-weight: 600;
         border: 1px solid #ffff;
         color: #FFFFFF;
-        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     &__img {
         position: absolute;

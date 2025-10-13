@@ -19,6 +19,7 @@ export const coffeeTeaSweets = [
         compound: "кофе арабика 100%",
         shelfLife: "18 месяцев",
         nutritionalValue: "Белки: 0г, Жиры: 0г, Углеводы: 0г (на 100г)",
+        category: 'coffeeTeaSweets',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -36,6 +37,7 @@ export const coffeeTeaSweets = [
         compound: "чай черный байховый",
         shelfLife: "24 месяца",
         nutritionalValue: "Белки: 0г, Жиры: 0г, Углеводы: 0г (на 100г)",
+        category: 'coffeeTeaSweets',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -53,6 +55,7 @@ export const coffeeTeaSweets = [
         compound: "какао-масло, сахар, сухое молоко, какао тертое, лецитин",
         shelfLife: "12 месяцев",
         nutritionalValue: "Белки: 7г, Жиры: 30г, Углеводы: 58г (на 100г)",
+        category: 'coffeeTeaSweets',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -70,6 +73,7 @@ export const coffeeTeaSweets = [
         compound: "мука пшеничная, сахар, масло растительное, патока, сода",
         shelfLife: "9 месяцев",
         nutritionalValue: "Белки: 7г, Жиры: 15г, Углеводы: 72г (на 100г)",
+        category: 'coffeeTeaSweets',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -87,6 +91,7 @@ export const coffeeTeaSweets = [
         compound: "кофе молотый, капсула пищевой алюминий",
         shelfLife: "15 месяцев",
         nutritionalValue: "Белки: 0г, Жиры: 0г, Углеводы: 0г (на 100г)",
+        category: 'coffeeTeaSweets',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -104,6 +109,7 @@ export const coffeeTeaSweets = [
         compound: "чай зеленый, цветки жасмина",
         shelfLife: "24 месяца",
         nutritionalValue: "Белки: 0г, Жиры: 0г, Углеводы: 0г (на 100г)",
+        category: 'coffeeTeaSweets',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -121,6 +127,7 @@ export const coffeeTeaSweets = [
         compound: "сахар, какао-масло, сухое молоко, орехи, вафли",
         shelfLife: "10 месяцев",
         nutritionalValue: "Белки: 6г, Жиры: 25г, Углеводы: 62г (на 100г)",
+        category: 'coffeeTeaSweets',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -138,6 +145,7 @@ export const coffeeTeaSweets = [
         compound: "какао-порошок натуральный",
         shelfLife: "18 месяцев",
         nutritionalValue: "Белки: 24г, Жиры: 15г, Углеводы: 10г (на 100г)",
+        category: 'coffeeTeaSweets',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

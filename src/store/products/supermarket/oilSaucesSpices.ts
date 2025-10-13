@@ -21,6 +21,7 @@ export const oilSaucesSpices = [
         compound: "масло подсолнечное, яичный желток, уксус, сахар, соль, горчица",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 1г, Жиры: 67г, Углеводы: 3г (на 100г)",
+        category: 'oilSaucesSpices',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -38,6 +39,7 @@ export const oilSaucesSpices = [
         compound: "томатная паста, сахар, уксус, соль, специи",
         shelfLife: "12 месяцев",
         nutritionalValue: "Белки: 2г, Жиры: 0г, Углеводы: 23г (на 100г)",
+        category: 'oilSaucesSpices',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -55,6 +57,7 @@ export const oilSaucesSpices = [
         compound: "соя, пшеница, соль, вода",
         shelfLife: "24 месяца",
         nutritionalValue: "Белки: 6г, Жиры: 0г, Углеводы: 11г (на 100мл)",
+        category: 'oilSaucesSpices',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -72,6 +75,7 @@ export const oilSaucesSpices = [
         compound: "оливковое масло первого холодного отжима",
         shelfLife: "18 месяцев",
         nutritionalValue: "Жиры: 100г, Витамин E: 15мг (на 100г)",
+        category: 'oilSaucesSpices',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -89,6 +93,7 @@ export const oilSaucesSpices = [
         compound: "перец черный, белый, душистый, розовый горошком",
         shelfLife: "36 месяцев",
         nutritionalValue: "Белки: 11г, Жиры: 6г, Углеводы: 64г (на 100г)",
+        category: 'oilSaucesSpices',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -106,6 +111,7 @@ export const oilSaucesSpices = [
         compound: "горчичный порошок, вода, уксус, сахар, соль, масло",
         shelfLife: "9 месяцев",
         nutritionalValue: "Белки: 5г, Жиры: 6г, Углеводы: 12г (на 100г)",
+        category: 'oilSaucesSpices',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -123,6 +129,7 @@ export const oilSaucesSpices = [
         compound: "куркума, паприка, чеснок сушеный, имбирь, кориандр",
         shelfLife: "24 месяца",
         nutritionalValue: "Белки: 8г, Жиры: 5г, Углеводы: 45г (на 100г)",
+        category: 'oilSaucesSpices',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -140,6 +147,7 @@ export const oilSaucesSpices = [
         compound: "томатная паста, мед, уксус, специи, чеснок, лук",
         shelfLife: "10 месяцев",
         nutritionalValue: "Белки: 1г, Жиры: 0г, Углеводы: 28г (на 100г)",
+        category: 'oilSaucesSpices',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -157,6 +165,7 @@ export const oilSaucesSpices = [
         compound: "соль поваренная, йодат калия",
         shelfLife: "24 месяца",
         nutritionalValue: "Натрий: 39г, Йод: 40мкг (на 100г)",
+        category: 'oilSaucesSpices',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -174,6 +183,7 @@ export const oilSaucesSpices = [
         compound: "виноградное сусло, уксус винный",
         shelfLife: "36 месяцев",
         nutritionalValue: "Углеводы: 17г, Белки: 1г, Жиры: 0г (на 100мл)",
+        category: 'oilSaucesSpices',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

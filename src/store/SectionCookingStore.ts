@@ -3,7 +3,6 @@ import { computed, Ref, ref } from "vue";
 import img1 from '@/assets/img/grocery-section2/img1.png'
 import img2 from '@/assets/img/grocery-section2/img2.png'
 import img3 from '@/assets/img/grocery-section2/img3.png'
-import img4 from '@/assets/img/grocery-section2/img4.png'
 import img5 from '@/assets/img/grocery-section2/img5.png'
 import img6 from '@/assets/img/grocery-section2/img6.png'
 import img7 from '@/assets/img/grocery-section2/img7.png'
@@ -11,6 +10,7 @@ import img8 from '@/assets/img/grocery-section2/img8.png'
 interface SectionItem {
     id: number
     name: string
+    category: string
     styles: object
 }
 export const useSectionCookingStore = defineStore('sectionCookingStore', ()=>{
@@ -24,6 +24,7 @@ export const useSectionCookingStore = defineStore('sectionCookingStore', ()=>{
         {
             id: 1,
             name: 'Выпечка',
+            category: 'bakery',
             styles: {
                 backgroundImage: `url(${img1})`,
                 ...CookingBaseStyles,
@@ -33,6 +34,7 @@ export const useSectionCookingStore = defineStore('sectionCookingStore', ()=>{
         {
             id: 2,
             name: 'Пиццы',
+            category: 'pizza',
             styles: {
                 backgroundImage: `url(${img2})`,
                 ...CookingBaseStyles,
@@ -42,6 +44,7 @@ export const useSectionCookingStore = defineStore('sectionCookingStore', ()=>{
         {
             id: 3,
             name: 'Гриль-меню',
+            category: 'grill',
             styles: {
                 backgroundImage: `url(${img3})`,
                 ...CookingBaseStyles,
@@ -51,6 +54,7 @@ export const useSectionCookingStore = defineStore('sectionCookingStore', ()=>{
         {
             id: 5,
             name: 'Салаты',
+            category: 'salad',
             styles: {
                 backgroundImage: `url(${img5})`,
                 ...CookingBaseStyles,
@@ -60,6 +64,7 @@ export const useSectionCookingStore = defineStore('sectionCookingStore', ()=>{
         {
             id: 6,
             name: 'Супы',
+            category: 'soup',
             styles: {
                 backgroundImage: `url(${img6})`,
                 ...CookingBaseStyles,
@@ -69,6 +74,7 @@ export const useSectionCookingStore = defineStore('sectionCookingStore', ()=>{
         {
             id: 7,
             name: 'Горячие блюда',
+            category: 'hotDish',
             styles: {
                 backgroundImage: `url(${img7})`,
                 ...CookingBaseStyles,
@@ -78,6 +84,7 @@ export const useSectionCookingStore = defineStore('sectionCookingStore', ()=>{
         {
             id: 8,
             name: 'Десерты',
+            category: 'dessert',
             styles: {
                 backgroundImage: `url(${img8})`,
                 ...CookingBaseStyles,
@@ -85,5 +92,5 @@ export const useSectionCookingStore = defineStore('sectionCookingStore', ()=>{
             }
         }
     ]);
-    return {cooking, CookingBaseStyles}
+    return {cooking}
 })

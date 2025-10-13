@@ -58,7 +58,7 @@ const searchProducts = computed(()=>{
     &__inner {
         margin-top: rem(30);
         width: 100%;
-        height: 100%;
+        height: calc(100% - rem(60));
         border-right: 1px solid #6B6B6B;
         border-left: 1px solid #6B6B6B;
         padding: rem(30) rem(10);

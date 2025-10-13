@@ -19,6 +19,7 @@ export const hotDish = [
             compound: "говяжья вырезка, лук, грибы, сметана, картофельное пюре",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 18г, Жиры: 14г, Углеводы: 22г (на 100г)",
+            category: 'hotDish',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -36,6 +37,7 @@ export const hotDish = [
             compound: "куриное филе, сыр, помидоры, лук, майонез, специи",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 16г, Жиры: 18г, Углеводы: 8г (на 100г)",
+            category: 'hotDish',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -53,6 +55,7 @@ export const hotDish = [
             compound: "свинина, картофель, морковь, лук, чеснок, специи",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 14г, Жиры: 16г, Углеводы: 20г (на 100г)",
+            category: 'hotDish',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -70,6 +73,7 @@ export const hotDish = [
             compound: "филе лосося, сливки, шпинат, лимон, рис басмати",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 19г, Жиры: 22г, Углеводы: 15г (на 100г)",
+            category: 'hotDish',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -87,6 +91,7 @@ export const hotDish = [
             compound: "капуста, говяжий фарш, рис, морковь, лук, томатный соус",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 12г, Жиры: 10г, Углеводы: 18г (на 100г)",
+            category: 'hotDish',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -104,6 +109,7 @@ export const hotDish = [
             compound: "баклажаны, кабачки, помидоры, перец, чеснок, прованские травы",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 4г, Жиры: 8г, Углеводы: 12г (на 100г)",
+            category: 'hotDish',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -121,6 +127,7 @@ export const hotDish = [
             compound: "говяжий фарш, рис, томатный соус, сметана, специи",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 13г, Жиры: 12г, Углеводы: 16г (на 100г)",
+            category: 'hotDish',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -138,6 +145,7 @@ export const hotDish = [
             compound: "утка, яблоки, мед, горчица, картофель, розмарин",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 17г, Жиры: 25г, Углеводы: 20г (на 100г)",
+            category: 'hotDish',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'

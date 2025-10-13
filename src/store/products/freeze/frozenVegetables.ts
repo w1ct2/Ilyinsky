@@ -16,6 +16,7 @@ export const frozenVegetables = [
         compound: "кукуруза, горошек, перец болгарский, фасоль стручковая, морковь",
         shelfLife: "12 месяцев",
         nutritionalValue: "Белки: 4г, Жиры: 1г, Углеводы: 12г (на 100г)",
+        category: 'frozenVegetables',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -33,6 +34,7 @@ export const frozenVegetables = [
         compound: "брокколи",
         shelfLife: "12 месяцев",
         nutritionalValue: "Белки: 3г, Жиры: 0г, Углеводы: 7г (на 100г)",
+        category: 'frozenVegetables',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -50,6 +52,7 @@ export const frozenVegetables = [
         compound: "шпинат",
         shelfLife: "12 месяцев",
         nutritionalValue: "Белки: 3г, Жиры: 1г, Углеводы: 4г (на 100г)",
+        category: 'frozenVegetables',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -67,6 +70,7 @@ export const frozenVegetables = [
         compound: "цветная капуста",
         shelfLife: "12 месяцев",
         nutritionalValue: "Белки: 2г, Жиры: 0г, Углеводы: 5г (на 100г)",
+        category: 'frozenVegetables',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -84,6 +88,7 @@ export const frozenVegetables = [
         compound: "баклажаны, кабачки, перец, помидоры, лук",
         shelfLife: "12 месяцев",
         nutritionalValue: "Белки: 2г, Жиры: 0г, Углеводы: 8г (на 100г)",
+        category: 'frozenVegetables',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

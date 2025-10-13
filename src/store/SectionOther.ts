@@ -7,6 +7,7 @@ import img4 from '@/assets/img/grocery-section4/img4.png'
 interface SectionItem {
     id: number
     name: string
+    category: string
     styles: object
 }
 export const useSectionOtherStore = defineStore('sectionOtherStore', ()=>{
@@ -20,6 +21,7 @@ export const useSectionOtherStore = defineStore('sectionOtherStore', ()=>{
         {
             id: 1,
             name: 'Красота и гигиена',
+            category: 'beautyHygiene',
             styles: {
                 backgroundImage: `url(${img1})`,
                 ...OtherBaseStyles,
@@ -29,6 +31,7 @@ export const useSectionOtherStore = defineStore('sectionOtherStore', ()=>{
         {
             id: 2,
             name: 'Стирка и уборка',
+            category: 'cleaningLaundry',
             styles: {
                 backgroundImage: `url(${img2})`,
                 ...OtherBaseStyles,
@@ -38,6 +41,7 @@ export const useSectionOtherStore = defineStore('sectionOtherStore', ()=>{
         {
             id: 3,
             name: 'Полезные мелочи',
+            category: 'usefullStuff',
             styles: {
                 backgroundImage: `url(${img3})`,
                 ...OtherBaseStyles,
@@ -47,6 +51,7 @@ export const useSectionOtherStore = defineStore('sectionOtherStore', ()=>{
         {
             id: 4,
             name: 'Бытовая техника',
+            category: 'appliances',
             styles: {
                 backgroundImage: `url(${img4})`,
                 ...OtherBaseStyles,

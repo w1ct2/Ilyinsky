@@ -1,19 +1,27 @@
 <template>
     <aside class="menu">
-        <button class="menu__all-data">Все товары</button>
+        <!-- <button class="menu__all-data">Все товары</button> -->
         <Catalog_Filters></Catalog_Filters>
         <Catalog_Category 
             :title="'Кулинария'"
-            :data="cooking"></Catalog_Category>
+            :data="cooking"
+            :category="selectedCategory"
+            @selectCategory="setCategory"></Catalog_Category>
         <Catalog_Category 
             :title="'Супермаркет'"
-            :data="supermarket"></Catalog_Category>
+            :data="supermarket"
+            :category="selectedCategory"
+            @selectCategory="setCategory"></Catalog_Category>
         <Catalog_Category 
             :title="'Заморозка'"
-            :data="freezing"></Catalog_Category>
+            :data="freezing"
+            :category="selectedCategory"
+            @selectCategory="setCategory"></Catalog_Category>
         <Catalog_Category 
             :title="'Другое'"
-            :data="other"></Catalog_Category>
+            :data="other"
+            :category="selectedCategory"
+            @selectCategory="setCategory"></Catalog_Category>
     </aside>
 </template>
 
@@ -21,7 +29,7 @@
 import { useSectionCookingStore } from '@/store/SectionCookingStore';
 import Catalog_Category from './Catalog_Category.vue';
 import Catalog_Filters from './Catalog_Filters.vue';
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useSectionSupermarketStore } from '@/store/SectionSupermarketStore';
 import { useSectionFreezingStore } from '@/store/SectionFreezing';
 import { useSectionOtherStore } from '@/store/SectionOther';
@@ -33,6 +41,17 @@ const sectionFreezing = useSectionFreezingStore()
 const freezing = computed(()=> sectionFreezing.freezing)
 const sectionOther = useSectionOtherStore()
 const other = computed(()=> sectionOther.other)
+
+const emits = defineEmits(['setCategory'])
+
+const selectedCategory = ref('bakery')
+const setCategory = (category, categoryTextName)=>{
+    selectedCategory.value = category
+    emits('setCategory', selectedCategory.value, categoryTextName)
+}
+onMounted(()=>{
+    setCategory('bakery', 'выпечка')
+})
 </script>
 
 <style lang="scss" scoped>

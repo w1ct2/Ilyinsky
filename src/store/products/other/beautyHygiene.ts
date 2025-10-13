@@ -19,6 +19,7 @@ export const beautyHygiene = [
         compound: "вода, ПАВ, кондиционирующие компоненты, витамины",
         shelfLife: "36 месяцев",
         nutritionalValue: "Объем: 400 мл",
+        category: 'beautyHygiene',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -36,6 +37,7 @@ export const beautyHygiene = [
         compound: "фторид натрия, ксилит, абразивные компоненты",
         shelfLife: "36 месяцев",
         nutritionalValue: "Объем: 100 мл",
+        category: 'beautyHygiene',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -53,6 +55,7 @@ export const beautyHygiene = [
         compound: "вода, ПАВ, ментол, экстракт бамбука",
         shelfLife: "36 месяцев",
         nutritionalValue: "Объем: 250 мл",
+        category: 'beautyHygiene',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -70,6 +73,7 @@ export const beautyHygiene = [
         compound: "пропелленты, спирт, парфюмерная композиция",
         shelfLife: "36 месяцев",
         nutritionalValue: "Объем: 150 мл",
+        category: 'beautyHygiene',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -87,6 +91,7 @@ export const beautyHygiene = [
         compound: "глицерин, масло ши, витамин E, гиалуроновая кислота",
         shelfLife: "24 месяца",
         nutritionalValue: "Объем: 75 мл",
+        category: 'beautyHygiene',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -104,6 +109,7 @@ export const beautyHygiene = [
         compound: "воски, масла, витамины A и E, SPF 15",
         shelfLife: "24 месяца",
         nutritionalValue: "Объем: 4.5 г",
+        category: 'beautyHygiene',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -121,6 +127,7 @@ export const beautyHygiene = [
         compound: "вода, ПАВ, глицерин, триклозан",
         shelfLife: "36 месяцев",
         nutritionalValue: "Объем: 300 мл",
+        category: 'beautyHygiene',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -138,6 +145,7 @@ export const beautyHygiene = [
         compound: "тканевая основа, гиалуроновая кислота, экстракт алоэ",
         shelfLife: "24 месяца",
         nutritionalValue: "1 шт",
+        category: 'beautyHygiene',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

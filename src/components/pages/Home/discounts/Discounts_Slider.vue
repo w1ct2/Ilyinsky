@@ -2,7 +2,7 @@
     <div class="discounts">
         <div class="discounts-header">
             <h2 class="discounts-header__title catalog-title">{{ title }}</h2>
-            <button class="discounts-header__button catalog-button">Смотреть все</button>
+            <RouterLink class="discounts-header__button catalog-button" :to="'/promotions'">Смотреть все</RouterLink>
             <div class="discounts-header__navigation catalog-navigation">
                 <div class="prevButton"></div>
                 <div class="nextButton"></div>
@@ -24,7 +24,8 @@
                     v-for="(card, index) in data"
                     :key="card.id"
                 >
-                    <Discounts_SliderItem :indexCard="index"></Discounts_SliderItem>
+                    <PersonalFavorites_Item
+                        :dataCard="card"></PersonalFavorites_Item>
                 </swiper-slide>
             </swiper>
         </div>
@@ -35,11 +36,10 @@
 import { useMainStore } from '@/store/MainStore'
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation } from 'swiper/modules';
-import Discounts_SliderItem from './Discounts_Slider-Item.vue';
 import 'swiper/css';
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { useAllData } from '@/store/AllData';
-import { discounts } from '@/store/products/discounts';
+import PersonalFavorites_Item from '../../Profile/PersonalFavorites_Item.vue';
 const props = defineProps({
     title: {
         type: String, 

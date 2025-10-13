@@ -19,6 +19,7 @@ export const cleaningLaundry = [
         compound: "ПАВ, энзимы, отбеливающие компоненты, отдушка",
         shelfLife: "36 месяцев",
         nutritionalValue: "Вес: 3 кг",
+        category: 'cleaningLaundry',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -36,6 +37,7 @@ export const cleaningLaundry = [
         compound: "катионные ПАВ, парфюмерная композиция, консерванты",
         shelfLife: "36 месяцев",
         nutritionalValue: "Объем: 1.5 л",
+        category: 'cleaningLaundry',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -53,6 +55,7 @@ export const cleaningLaundry = [
         compound: "ПАВ, лимонная кислота, консерванты, отдушка",
         shelfLife: "36 месяцев",
         nutritionalValue: "Объем: 450 мл",
+        category: 'cleaningLaundry',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -70,6 +73,7 @@ export const cleaningLaundry = [
         compound: "абразивные частицы, ПАВ, отбеливатель, ароматизатор",
         shelfLife: "36 месяцев",
         nutritionalValue: "Вес: 500 г",
+        category: 'cleaningLaundry',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -87,6 +91,7 @@ export const cleaningLaundry = [
         compound: "пропелленты, парфюмерная композиция, этанол",
         shelfLife: "36 месяцев",
         nutritionalValue: "Объем: 300 мл",
+        category: 'cleaningLaundry',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -104,6 +109,7 @@ export const cleaningLaundry = [
         compound: "изопропиловый спирт, ПАВ, аммиак, отдушка",
         shelfLife: "36 месяцев",
         nutritionalValue: "Объем: 500 мл",
+        category: 'cleaningLaundry',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -121,6 +127,7 @@ export const cleaningLaundry = [
         compound: "гипохлорит натрия, вода, стабилизаторы",
         shelfLife: "12 месяцев",
         nutritionalValue: "Объем: 1 л",
+        category: 'cleaningLaundry',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -138,6 +145,7 @@ export const cleaningLaundry = [
         compound: "полиэтилен высокого давления",
         shelfLife: "60 месяцев",
         nutritionalValue: "30 шт",
+        category: 'cleaningLaundry',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

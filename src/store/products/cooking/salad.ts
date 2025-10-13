@@ -21,6 +21,7 @@ export const salad = [
             compound: "салат айсберг, куриное филе, сыр пармезан, сухарики, соус цезарь",
             shelfLife: "24 часа",
             nutritionalValue: "Белки: 12г, Жиры: 15г, Углеводы: 18г (на 100г)",
+            category: 'salad',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -38,6 +39,7 @@ export const salad = [
             compound: "помидоры, огурцы, перец, маслины, сыр фета, лук, оливковое масло",
             shelfLife: "24 часа",
             nutritionalValue: "Белки: 6г, Жиры: 12г, Углеводы: 8г (на 100г)",
+            category: 'salad',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -55,6 +57,7 @@ export const salad = [
             compound: "картофель, морковь, яйцо, колбаса, огурцы, горошек, майонез",
             shelfLife: "24 часа",
             nutritionalValue: "Белки: 8г, Жиры: 14г, Углеводы: 20г (на 100г)",
+            category: 'salad',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -72,6 +75,7 @@ export const salad = [
             compound: "тунец, яйцо, помидоры, листовой салат, оливки, оливковое масло",
             shelfLife: "24 часа",
             nutritionalValue: "Белки: 14г, Жиры: 10г, Углеводы: 6г (на 100г)",
+            category: 'salad',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -89,6 +93,7 @@ export const salad = [
             compound: "свекла, картофель, морковь, огурцы, горошек, масло растительное",
             shelfLife: "24 часа",
             nutritionalValue: "Белки: 3г, Жиры: 5г, Углеводы: 15г (на 100г)",
+            category: 'salad',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -106,6 +111,7 @@ export const salad = [
             compound: "креветки, авокадо, руккола, помидоры черри, лимонный сок",
             shelfLife: "24 часа",
             nutritionalValue: "Белки: 11г, Жиры: 12г, Углеводы: 7г (на 100г)",
+            category: 'salad',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -123,6 +129,7 @@ export const salad = [
             compound: "сельдь, картофель, морковь, свекла, яйцо, майонез",
             shelfLife: "24 часа",
             nutritionalValue: "Белки: 7г, Жиры: 13г, Углеводы: 16г (на 100г)",
+            category: 'salad',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -140,6 +147,7 @@ export const salad = [
             compound: "рыбные консервы, картофель, морковь, яйцо, сыр, майонез",
             shelfLife: "24 часа",
             nutritionalValue: "Белки: 9г, Жиры: 16г, Углеводы: 14г (на 100г)",
+            category: 'salad',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -157,6 +165,7 @@ export const salad = [
             compound: "буженина, огурцы, помидоры, перец, листовой салат, сметанный соус",
             shelfLife: "24 часа",
             nutritionalValue: "Белки: 15г, Жиры: 12г, Углеводы: 9г (на 100г)",
+            category: 'salad',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -174,6 +183,7 @@ export const salad = [
             compound: "помидоры, моцарелла, базилик, оливковое масло, бальзамик",
             shelfLife: "24 часа",
             nutritionalValue: "Белки: 10г, Жиры: 18г, Углеводы: 6г (на 100г)",
+            category: 'salad',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'

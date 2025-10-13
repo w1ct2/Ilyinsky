@@ -5,7 +5,7 @@ import img4 from '@/assets/products-img/other/usefullStuff/balloons.webp'
 import img5 from '@/assets/products-img/other/usefullStuff/moment.webp'
 import img6 from '@/assets/products-img/other/usefullStuff/stationery-set.webp'
 import img7 from '@/assets/products-img/other/usefullStuff/candle.webp'
-export const usefulStuff = [
+export const usefullStuff = [
     {
         id: 2401,
         title: "Батарейки AA Duracell",
@@ -18,6 +18,7 @@ export const usefulStuff = [
         compound: "щелочные элементы, стальной корпус",
         shelfLife: "60 месяцев",
         nutritionalValue: "4 шт",
+        category: 'usefullStuff',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -35,6 +36,7 @@ export const usefulStuff = [
         compound: "светодиоды, алюминиевый радиатор, пластиковый корпус",
         shelfLife: "84 месяца",
         nutritionalValue: "Эквивалент 75W",
+        category: 'usefullStuff',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -52,6 +54,7 @@ export const usefulStuff = [
         compound: "полипропиленовая основа, акриловый клей",
         shelfLife: "36 месяцев",
         nutritionalValue: "Длина: 50 м",
+        category: 'usefullStuff',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -69,6 +72,7 @@ export const usefulStuff = [
         compound: "латекс натуральный, красители",
         shelfLife: "24 месяца",
         nutritionalValue: "10 шт",
+        category: 'usefullStuff',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -86,6 +90,7 @@ export const usefulStuff = [
         compound: "цианоакрилат, стабилизаторы",
         shelfLife: "24 месяца",
         nutritionalValue: "Объем: 30 г",
+        category: 'usefullStuff',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -103,6 +108,7 @@ export const usefulStuff = [
         compound: "ручка шариковая, карандаш, ластик, точилка",
         shelfLife: "48 месяцев",
         nutritionalValue: "4 предмета",
+        category: 'usefullStuff',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -120,6 +126,7 @@ export const usefulStuff = [
         compound: "керамический изолятор, металлический электрод",
         shelfLife: "60 месяцев",
         nutritionalValue: "1 шт",
+        category: 'usefullStuff',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

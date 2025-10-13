@@ -19,6 +19,7 @@ export const milkButterEggs = [
         compound: "молоко цельное пастеризованное",
         shelfLife: "10 суток",
         nutritionalValue: "Белки: 3г, Жиры: 3.2г, Углеводы: 4.7г (на 100мл)",
+        category: 'milkButterEggs',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -36,6 +37,7 @@ export const milkButterEggs = [
         compound: "яйца куриные пищевые",
         shelfLife: "30 суток",
         nutritionalValue: "Белки: 13г, Жиры: 11г, Углеводы: 1г (на 100г)",
+        category: 'milkButterEggs',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -53,6 +55,7 @@ export const milkButterEggs = [
         compound: "молоко нормализованное, закваска",
         shelfLife: "12 суток",
         nutritionalValue: "Белки: 3г, Жиры: 2.5г, Углеводы: 4г (на 100мл)",
+        category: 'milkButterEggs',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -70,6 +73,7 @@ export const milkButterEggs = [
         compound: "сливки нормализованные, закваска",
         shelfLife: "20 суток",
         nutritionalValue: "Белки: 3г, Жиры: 20г, Углеводы: 3г (на 100г)",
+        category: 'milkButterEggs',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -87,6 +91,7 @@ export const milkButterEggs = [
         compound: "творог из обезжиренного молока",
         shelfLife: "7 суток",
         nutritionalValue: "Белки: 18г, Жиры: 0г, Углеводы: 3г (на 100г)",
+        category: 'milkButterEggs',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -104,6 +109,7 @@ export const milkButterEggs = [
         compound: "масло подсолнечное рафинированное",
         shelfLife: "18 месяцев",
         nutritionalValue: "Жиры: 99.9г, Витамин E: 40мг (на 100г)",
+        category: 'milkButterEggs',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -121,6 +127,7 @@ export const milkButterEggs = [
         compound: "сыры, масло сливочное, сухое молоко, соли-плавители",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 20г, Жиры: 23г, Углеводы: 2г (на 100г)",
+        category: 'milkButterEggs',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'
@@ -138,6 +145,7 @@ export const milkButterEggs = [
         compound: "молоко цельное ультрапастеризованное",
         shelfLife: "6 месяцев",
         nutritionalValue: "Белки: 3.2г, Жиры: 3.5г, Углеводы: 4.8г (на 100мл)",
+        category: 'milkButterEggs',
         get availabilityTitle() {
         if (this.availability) { return `В наличии ${this.availability}` }
         else return 'Нет в наличии'

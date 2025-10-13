@@ -21,6 +21,7 @@ export const dessert = [
             compound: "сыр маскарпоне, кофе, печенье савоярди, какао, яйцо, сахар",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 8г, Жиры: 22г, Углеводы: 35г (на 100г)",
+            category: 'dessert',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -38,6 +39,7 @@ export const dessert = [
             compound: "сливочный сыр, песочное основание, сметана, яйцо, ваниль",
             shelfLife: "72 часа",
             nutritionalValue: "Белки: 7г, Жиры: 25г, Углеводы: 30г (на 100г)",
+            category: 'dessert',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -55,6 +57,7 @@ export const dessert = [
             compound: "слоеное тесто, заварной крем, сливочное масло, сахарная пудра",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 6г, Жиры: 28г, Углеводы: 40г (на 100г)",
+            category: 'dessert',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -72,6 +75,7 @@ export const dessert = [
             compound: "горький шоколад, масло сливочное, яйцо, сахар, мука, ванильное мороженое",
             shelfLife: "24 часа",
             nutritionalValue: "Белки: 7г, Жиры: 30г, Углеводы: 45г (на 100г)",
+            category: 'dessert',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -89,6 +93,7 @@ export const dessert = [
             compound: "сливки, сахар, желатин, ваниль, ягодный соус",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 4г, Жиры: 20г, Углеводы: 25г (на 100г)",
+            category: 'dessert',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -106,6 +111,7 @@ export const dessert = [
             compound: "мед, сметана, сгущенное молоко, яйцо, мука, грецкие орехи",
             shelfLife: "72 часа",
             nutritionalValue: "Белки: 6г, Жиры: 18г, Углеводы: 50г (на 100г)",
+            category: 'dessert',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -123,6 +129,7 @@ export const dessert = [
             compound: "заварное тесто, заварной крем, шоколадная глазурь",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 5г, Жиры: 15г, Углеводы: 35г (на 100г)",
+            category: 'dessert',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -140,6 +147,7 @@ export const dessert = [
             compound: "какао, пахта, пищевой краситель, сливочный сыр, масло",
             shelfLife: "72 часа",
             nutritionalValue: "Белки: 5г, Жиры: 22г, Углеводы: 42г (на 100г)",
+            category: 'dessert',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -157,6 +165,7 @@ export const dessert = [
             compound: "творог, яйцо, манка, изюм, сметана, ванилин",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 12г, Жиры: 8г, Углеводы: 25г (на 100г)",
+            category: 'dessert',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -174,6 +183,7 @@ export const dessert = [
             compound: "миндальная мука, сахар, яичный белок, ганаш, пищевые красители",
             shelfLife: "96 часов",
             nutritionalValue: "Белки: 9г, Жиры: 20г, Углеводы: 55г (на 100г)",
+            category: 'dessert',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
