@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card" @click="isActiveModal = true">
         <div 
             class="card__discount" 
             v-if="dataCard.discount">
@@ -8,7 +8,7 @@
         <img 
             :src="isActiveFavoriteUrl" 
             class="card__favorite" 
-            @click="toggleFavorite(dataCard.id)">
+            @click.stop="toggleFavorite(dataCard.id)">
         </img>
         <div class="card__img">
             <img :src="dataCard.imgUrl" alt="">
@@ -32,7 +32,15 @@
             </h4>
             <p v-if="dataCard.discount">{{ dataCard.oldPrice }}</p>
         </div>
-        <button class="card__button">В корзину</button>
+        <button class="card__button" @click.stop="">В корзину</button>
+        <Teleport to="body">
+            <ProductCard_Modal 
+                :data="dataCard" 
+                v-show="isActiveModal"
+                @close="isActiveModal = false"
+                @handleFavorite="toggleFavorite"
+            ></ProductCard_Modal>
+        </Teleport>
     </div>
 </template>
 
@@ -40,7 +48,8 @@
 import {useAllData} from '@/store/AllData.ts'
 import favorUnactive from '@/assets/img/discounts/favorActive.svg'
 import favorActive from '@/assets/img/discounts/favorUnactive.svg'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
+import ProductCard_Modal from './ProductCard_Modal.vue'
 const AllData = useAllData()
 const props = defineProps({
     dataCard: {
@@ -53,6 +62,7 @@ const props = defineProps({
 const isActiveFavoriteUrl = computed(() => {
     return props.dataCard.favorite ? favorActive : favorUnactive
 })
+const isActiveModal = ref(false)
 const toggleFavorite = (id)=>{
     AllData.toggleFavorite(id)
 }
@@ -73,6 +83,7 @@ const toggleFavorite = (id)=>{
     overflow: hidden;
     grid-template-rows: 45% 20px 30% 50px;
     row-gap: 5px;
+    cursor: pointer;
     &__discount {
         position: absolute;
         left: 0;

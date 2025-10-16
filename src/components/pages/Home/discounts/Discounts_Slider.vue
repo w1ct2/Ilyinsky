@@ -24,8 +24,8 @@
                     v-for="(card, index) in data"
                     :key="card.id"
                 >
-                    <PersonalFavorites_Item
-                        :dataCard="card"></PersonalFavorites_Item>
+                    <ProductCard
+                        :dataCard="card"></ProductCard>
                 </swiper-slide>
             </swiper>
         </div>
@@ -39,7 +39,7 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 import { useAllData } from '@/store/AllData';
-import PersonalFavorites_Item from '../../Profile/PersonalFavorites_Item.vue';
+import ProductCard from '@/components/product-card/ProductCard.vue';
 const props = defineProps({
     title: {
         type: String, 

@@ -11,7 +11,6 @@
 </template>
 
 <script setup>
-import PersonalFavorites_Item from './PersonalFavorites_Item.vue';
 import PersonalHistory_Item from './PersonalHistory_Item.vue';
 import { usePersonalHistory } from '@/store/PersonalHistory';
 const PersonalHistory = usePersonalHistory()

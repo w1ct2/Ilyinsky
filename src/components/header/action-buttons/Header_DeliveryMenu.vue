@@ -1,6 +1,6 @@
 <template>
-    <div class="modal" @click="$emit('resetModal', false)">
-        <div class="modal__inner" @click.stop>
+    <div class="modal modal-page" @click="$emit('resetModal', false)">
+        <div class="modal__inner modal-page__inner" @click.stop>
             <Checkbox @delivery-method="setDeliveryMethod"></Checkbox>
             <Delivery v-if="deliveryMethod === 'delivery'"></Delivery>
             <Pickup v-else-if="deliveryMethod === 'pickup'"></Pickup>
@@ -25,31 +25,11 @@ const setDeliveryMethod = (method) => {
 <style lang="scss" scoped>
 @import "@/scss/remFunction";
 .modal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, .5);
-    animation: opacity .5s;
     &__inner {
-        overscroll-behavior: contain;
-        overflow-y: scroll;
-        background-color: #fff;
         color: #000;
         max-width: rem(1290);
-        width: 100%;
-        aspect-ratio: 1290/800;
-        border-radius: 20px;
         padding: 30px;
         justify-content: space-between;
-        position: relative;
         display: grid;
         grid-template-columns: 1fr 1.7fr;
         grid-template-rows: rem(82) auto;

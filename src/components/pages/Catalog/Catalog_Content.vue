@@ -1,17 +1,17 @@
 <template>
     <div class="products">
-        <PersonalFavorites_Item
+        <ProductCard
             v-if="sortedData.length > 0"
             v-for="card in sortedData"
             :key="card.id"
-            :dataCard="card"></PersonalFavorites_Item>
+            :dataCard="card"></ProductCard>
         <h2 class="products__alert" v-else>Выберите категорию в меню</h2>
     </div>
 </template>
 
 <script setup>
 import { computed, ref } from 'vue';
-import PersonalFavorites_Item from '../Profile/PersonalFavorites_Item.vue';
+import ProductCard from '@/components/product-card/ProductCard.vue';
 import { useAllData } from '@/store/AllData';
 const AllData = useAllData()
 const cards = computed(()=> AllData.allData)

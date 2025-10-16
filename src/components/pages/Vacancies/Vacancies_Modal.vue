@@ -1,6 +1,6 @@
 <template>
-    <div class="vacancy" @click="$emit('resetModal', null)">
-        <div class="vacancy__inner" @click.stop>
+    <div class="vacancy modal-page" @click="$emit('resetModal', null)">
+        <div class="vacancy__inner modal-page__inner" @click.stop>
             <div class="vacancy__close-btn" @click="$emit('resetModal', null)"></div>
             <div class="vacancy__icon"><img :src="data.imgUrl" alt=""></div>
             <div class="vacancy__content">
@@ -40,34 +40,12 @@ const props = defineProps({
 <style lang="scss" scoped>
 @import "@/scss/remFunction";
 .vacancy {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, .5);
-    animation: opacity .5s;
     &__inner {
-        overscroll-behavior: contain;
-        background-color: #fff;
-        max-width: rem(1290);
-        width: 100%;
-        aspect-ratio: 1290/840;
-        border-radius: 20px;
         padding: 60px 70px;
-        margin: 0 40px;
         display: grid;
         grid-template-columns: rem(100) 1.2fr 1fr;
         justify-content: space-between;
         column-gap: 50px;
-        overflow-y: scroll;
-        position: relative;
     }
     &__icon {
         width: rem(100);

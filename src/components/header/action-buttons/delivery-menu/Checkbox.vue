@@ -55,6 +55,8 @@ watch(deliveryMethod, (newVal)=>{
         flex-direction: column;
         justify-content: space-between;
         color: #0A0A0A;
+        white-space: nowrap;
+        overflow: hidden;
     }
     & input:checked + label {
         color: #fff;

@@ -1,11 +1,11 @@
 <template>
     <div class="favorites">
-        <PersonalFavorites_Item
+        <ProductCard
             v-for="(card, index) in cards"
             :key="card.id"
             :dataCard="card"
             :indexCard="index">
-        </PersonalFavorites_Item>
+        </ProductCard>
         <h1 
             class="favorites__else"
             v-if="!cards.length"
@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import PersonalFavorites_Item from '@/components/pages/Profile/PersonalFavorites_Item.vue'
+import ProductCard from '@/components/product-card/ProductCard.vue'
 import { computed, onMounted } from 'vue';
 import { useAllData } from '@/store/AllData';
 const AllData = useAllData()

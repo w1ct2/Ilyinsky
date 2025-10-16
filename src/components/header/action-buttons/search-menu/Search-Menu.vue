@@ -2,11 +2,11 @@
     <div class="search-menu">
         <div class="container">
             <div class="search-menu__inner">
-                <PersonalFavorites_Item
+                <ProductCard
                     v-if="searchProducts.length > 0"
                     v-for="card in searchProducts"
                     :key="card.id"
-                    :dataCard="card"></PersonalFavorites_Item>
+                    :dataCard="card"></ProductCard>
                 <h2 
                     class="search-menu__alert"
                     v-else-if="searchQuery && searchProducts.length === 0">
@@ -28,7 +28,7 @@ const props = defineProps({
         type: String,
     }
 })
-import PersonalFavorites_Item from '@/components/pages/Profile/PersonalFavorites_Item.vue';
+import ProductCard from '@/components/product-card/ProductCard.vue';
 import { computed, ref } from 'vue';
 import { useAllData } from '@/store/AllData';
 const AllData = useAllData()
