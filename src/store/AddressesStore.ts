@@ -10,7 +10,10 @@ export const useAddressesStore = defineStore('addressesStore', ()=>{
     const saveAddressesToStorage = (storageKey: string, data: unknown)=>{
         localStorage.setItem(storageKey, JSON.stringify(data))
     }
-
+    const activeAddress = ref('')
+    const setActiveAddress = (address: string) => {
+        activeAddress.value = address
+    }
     const loadDeliveryFromStorage = ()=>{
         const storedAddresses = localStorage.getItem(STORAGE_DELIVERY_KEY.value)
         if (storedAddresses){
@@ -92,5 +95,8 @@ export const useAddressesStore = defineStore('addressesStore', ()=>{
         addressesDelivery,
         STORAGE_DELIVERY_KEY,
         storesAddresses,
+        
+        activeAddress,
+        setActiveAddress,
     }
 })

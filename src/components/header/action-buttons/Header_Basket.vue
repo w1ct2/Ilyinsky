@@ -1,12 +1,13 @@
 <template>
-    <div class="basket">
+    <RouterLink class="basket" :to="'/basket'">
         <img :src="basket" class="basket__img">
         <p>Корзина</p>
-    </div>
+    </RouterLink>
 </template>
 
 <script setup>
 import basket from '@/assets/img/svg/basket1.svg'
+import { RouterLink } from 'vue-router';
 </script>
 
 <style lang="scss" scoped>
@@ -22,6 +23,7 @@ import basket from '@/assets/img/svg/basket1.svg'
     align-items: center;
     margin-left: -10px;
     gap: 10px;
+    color: #fff;
     &__img {
         transition: all .3s ease;
     }

@@ -1,3 +1,4 @@
+import Basket from '@/components/pages/Basket/Basket.vue'
 import Catalog from '@/components/pages/Catalog/Catalog.vue'
 import Contacts from '@/components/pages/Contacts/Contacts.vue'
 import Home from '@/components/pages/Home/Home.vue'
@@ -41,6 +42,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/catalog',
     name: 'catalog',
     component: Catalog
+  },
+  {
+    path: '/basket',
+    name: 'basket',
+    component: Basket
   },
   {
     path: '/:param(.*)*',
