@@ -32,7 +32,7 @@
             </h4>
             <p v-if="dataCard.discount">{{ dataCard.oldPrice }}</p>
         </div>
-        <button class="card__button" @click.stop="">В корзину</button>
+        <button class="card__button" @click.stop="BasketData.addToStorage(dataCard)">В корзину</button>
         <Teleport to="body">
             <ProductCard_Modal 
                 :data="dataCard" 
@@ -50,7 +50,9 @@ import favorUnactive from '@/assets/img/discounts/favorActive.svg'
 import favorActive from '@/assets/img/discounts/favorUnactive.svg'
 import { computed, ref } from 'vue'
 import ProductCard_Modal from './ProductCard_Modal.vue'
+import { useBasketData } from '@/store/BasketData'
 const AllData = useAllData()
+const BasketData = useBasketData()
 const props = defineProps({
     dataCard: {
         type: Object

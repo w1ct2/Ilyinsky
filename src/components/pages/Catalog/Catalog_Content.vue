@@ -23,7 +23,7 @@ const props = defineProps({
 const sortedData = computed(()=>{
     return [...cards.value].filter(item => item.category === props.category)
 })
-console.log(sortedData);
+
 
 </script>
 
