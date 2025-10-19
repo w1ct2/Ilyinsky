@@ -120,8 +120,10 @@ export const useAllData = defineStore('alldata', ()=>{
                 favoriteData.value = favoriteData.value.filter(item => item.id !== id)
                 product.favorite = false
             } else {
-                favoriteData.value.push(product)
-                product.favorite = true
+                if (!favoriteData.value.some(item => item.id === id)) {
+                    favoriteData.value.push(product)
+                    product.favorite = true
+                }
             }
             saveToStorage(STORAGE_FAVORITE_KEY, favoriteData.value)
         }
@@ -130,7 +132,14 @@ export const useAllData = defineStore('alldata', ()=>{
     const loadFromStorage = ()=>{
         const storedData = localStorage.getItem(STORAGE_FAVORITE_KEY)
         if (storedData) {
-            favoriteData.value = JSON.parse(storedData)
+            const storedFavorites: Product[] = JSON.parse(storedData)
+            storedFavorites.forEach(favProd => {
+                const mainProduct = productsMap.value.get(favProd.id)
+                if (mainProduct) {
+                    mainProduct.favorite = true
+                }
+            })
+            favoriteData.value = storedFavorites
         } else {
             console.log('Лист избранного пуст')
         }

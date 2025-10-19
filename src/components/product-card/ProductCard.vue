@@ -32,7 +32,10 @@
             </h4>
             <p v-if="dataCard.discount">{{ dataCard.oldPrice }}</p>
         </div>
-        <button class="card__button" @click.stop="BasketData.addToStorage(dataCard)">В корзину</button>
+        <button 
+            class="card__button" 
+            @click.stop="BasketData.addToStorage(dataCard); basketBtnIsClicked = true"
+            :class="{'card__button--active': basketBtnIsClicked}">В корзину</button>
         <Teleport to="body">
             <ProductCard_Modal 
                 :data="dataCard" 
@@ -68,6 +71,7 @@ const isActiveModal = ref(false)
 const toggleFavorite = (id)=>{
     AllData.toggleFavorite(id)
 }
+const basketBtnIsClicked = ref(false)
 </script>
 
 <style lang="scss" scoped>
@@ -179,6 +183,10 @@ const toggleFavorite = (id)=>{
         margin-bottom: auto;
         padding: 0 15px;
         &:hover {
+            background-color: var(--red);
+            color: #fff;
+        }
+        &--active {
             background-color: var(--red);
             color: #fff;
         }

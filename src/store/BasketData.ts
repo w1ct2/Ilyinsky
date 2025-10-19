@@ -37,10 +37,19 @@ export const useBasketData = defineStore('basketData', ()=>{
             saveToStorage(STORAGE_BASKET_KEY, basketData.value)
         }
     }
+    const deleteFromStorage = (id:number) =>{
+        basketData.value = basketData.value.filter(item => item.id !== id)
+        saveToStorage(STORAGE_BASKET_KEY, basketData.value)
+    }
+    const clearStorage = ()=>{
+        basketData.value = []
+        localStorage.removeItem(STORAGE_BASKET_KEY)
+    }
     loadFromStorage()
-    // localStorage.removeItem(STORAGE_BASKET_KEY)
     return {
         basketData,
         addToStorage,
+        deleteFromStorage,
+        clearStorage
     }
 })
