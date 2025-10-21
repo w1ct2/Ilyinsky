@@ -6,7 +6,9 @@
             @click="selectSection(index)"
             v-for="(item, index) in buttons"
             :key="item.id">
-            <img :src="item.link" alt="">
+            <RouterLink :to="item.url">
+                <img :src="item.link" alt="">
+            </RouterLink>
             <RouterLink :to="item.url">{{ item.name }}</RouterLink>
         </li>
     </ul>
@@ -102,6 +104,10 @@ const selectSection = (index)=>{
         & a {
             font-weight: 600;
             color: #0A0A0A;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
         }
     }
     @media (max-width: 1000px) {

@@ -31,7 +31,7 @@
 <script setup>
 import favorUnactive from '@/assets/img/discounts/favorActive.svg'
 import favorActive from '@/assets/img/discounts/favorUnactive.svg'
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import Basket_ActionBlock from './Basket_ActionBlock.vue'
 import { useAllData } from '@/store/AllData'
 const AllData = useAllData()
@@ -45,6 +45,7 @@ const props = defineProps({
         type: Object,
     }
 })
+const emits = defineEmits(['finishPriceChange', 'quantityProductsChange'])
 const quantity = ref(1)
 const handleQuantity = (newVal) => {
     quantity.value = newVal
@@ -56,6 +57,28 @@ const toggleFavorite = ()=>{
 const priceCard = ref(parseInt(props.data.price))
 const finishPrice = computed(()=>{
     return priceCard.value * quantity.value
+})
+watch(finishPrice, (newVal)=>{
+    emits('finishPriceChange', {
+        id: props.data.id,
+        finishPrice: newVal,
+    })
+})
+watch(quantity, (newVal)=>{
+    emits('quantityProductsChange', {
+        id: props.data.id,
+        quantity: newVal
+    })
+})
+onMounted(() => {
+    emits('finishPriceChange', {
+        id: props.data.id,
+        finishPrice: finishPrice.value,
+    })
+    emits('quantityProductsChange', {
+        id: props.data.id,
+        quantity: quantity.value
+    })
 })
 
 </script>

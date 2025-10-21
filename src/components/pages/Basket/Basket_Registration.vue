@@ -8,7 +8,7 @@
                 <button class="basket-registration__promo-btn">Применить</button>
             </div>
             <div class="basket-registration__row">
-                <p class="basket-registration__row-title">Товары ({{ 'n' }})</p>
+                <p class="basket-registration__row-title">Товары ({{ totalProducts }})</p>
             </div>
             <div class="basket-registration__row">
                 <p class="basket-registration__row-title">Промокод:</p>
@@ -20,7 +20,7 @@
             </div>
             <div class="basket-registration__row basket-registration__row--price">
                 <p class="basket-registration__row-title">К оплате:</p>
-                <h3 class="basket-registration__price">{{ 'n' }} руб</h3>
+                <h3 class="basket-registration__price">{{ totalPrice }} руб</h3>
             </div>
             <button class="basket-registration__button">Оформить заказ</button>
         </div>
@@ -28,6 +28,14 @@
 </template>
 
 <script setup>
+const props = defineProps({
+    totalPrice: {
+        type: Number
+    },
+    totalProducts: {
+        type: Number
+    }
+})
 </script>
 
 <style lang="scss" scoped>
