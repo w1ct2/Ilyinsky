@@ -4,9 +4,13 @@
             <img :src="compass" alt="">
             <p>MCK</p>
         </div>
-        <div class="delivery__title">
+        <div class="delivery__title" v-if="!MainStore.userDeliveryMethod">
             <p>Выберите способ получения</p>
             <h4>Доставка или самовывоз</h4>
+        </div>
+        <div class="delivery__title" v-else>
+            <p>Способ получения: </p>
+            <h4>{{ methodTitle}}</h4>
         </div>
         <Header_DeliveryMenu
             @click.stop
@@ -18,9 +22,18 @@
 <script setup>
 import compass from '@/assets/img/svg/compass1.svg'
 import Header_DeliveryMenu from './Header_DeliveryMenu.vue';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
+import { useMainStore } from '@/store/MainStore';
+const methodTitle = computed(()=>{
+    if (MainStore.userDeliveryMethod === 'delivery') {
+        return "Доставка"
+    } else if (MainStore.userDeliveryMethod === 'pickup') {
+        return "Самовывоз"
+    }
+})
+const MainStore = useMainStore()
 const isActiveModal = ref(false)
-const resetActiveModal = ()=>{
+const resetActiveModal = (method)=>{
     isActiveModal.value = false
 }
 </script>
@@ -69,6 +82,7 @@ const resetActiveModal = ()=>{
         background-color: #FFA900;
         & h4 {
             font-weight: 600;
+            text-align: left;
         }
     }
     &:hover {

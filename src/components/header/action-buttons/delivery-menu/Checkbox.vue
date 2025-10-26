@@ -4,7 +4,6 @@
             type="radio" 
             name="delivery_checkbox" 
             id="delivery_checkbox1" 
-            checked
             value="delivery"
             v-model="deliveryMethod">
         <label for="delivery_checkbox1">
@@ -25,11 +24,14 @@
 </template>
 
 <script setup>
+import { useMainStore } from '@/store/MainStore';
 import { ref, watch } from 'vue';
+const MainStore = useMainStore()
 const emit = defineEmits(['deliveryMethod'])
-const deliveryMethod = ref('delivery')
+const deliveryMethod = ref(MainStore.userDeliveryMethod)
 watch(deliveryMethod, (newVal)=>{
     emit('deliveryMethod', newVal)
+    MainStore.setDeliveryMethod(newVal)
 })
 </script>
 

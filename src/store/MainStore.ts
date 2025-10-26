@@ -5,17 +5,6 @@ import promotions1 from '@/assets/img/promotions/img1.png'
 import promotions2 from '@/assets/img/promotions/img2.png'
 import promotions3 from '@/assets/img/promotions/img3.png'
 import promotions4 from '@/assets/img/promotions/img4.png'
-interface DiscountItem {
-    id: number
-    discount: boolean
-    favorite: boolean
-    imgUrl: string
-    availability: number
-    readonly availabilityTitle: string
-    title: string
-    price: string
-    oldPrice: string | null
-}
 export const useMainStore = defineStore('mainStore', ()=>{
 
     const { width } = useWindowSize()
@@ -28,10 +17,10 @@ export const useMainStore = defineStore('mainStore', ()=>{
         console.log("Catalog is open");
     }
     const STORAGE_PHONE_KEY = ref('mainPhone')
-    let mainPhoneUser = localStorage.getItem(STORAGE_PHONE_KEY.value)
+    const mainPhoneUser = ref(localStorage.getItem(STORAGE_PHONE_KEY.value))
     const setMainPhoneUser = (value: string)=>{
-        mainPhoneUser = value
-        localStorage.setItem(STORAGE_PHONE_KEY.value, mainPhoneUser)
+        mainPhoneUser.value = value
+        localStorage.setItem(STORAGE_PHONE_KEY.value, mainPhoneUser.value)
     }
 
     const STORAGE_AUTH_KEY = ref('UserAuthorization')
@@ -42,6 +31,15 @@ export const useMainStore = defineStore('mainStore', ()=>{
         console.log('User is Authorized')
     }
     const userFullName = ref('Имя Фамилия')
+
+    const userSelectedAddress = ref(null)
+    const STORAGE_DELIVERY_METHOD_KEY = 'delivery_method'
+    const userDeliveryMethod: Ref<null | string> = ref(localStorage.getItem(STORAGE_DELIVERY_METHOD_KEY))
+    const setDeliveryMethod = (method: string)=>{
+        userDeliveryMethod.value = method
+        localStorage.setItem(STORAGE_DELIVERY_METHOD_KEY, userDeliveryMethod.value)
+        console.log('Delivery method is changed')
+    }
     const promotions = ref([
         {
             id: 1,
@@ -129,7 +127,6 @@ export const useMainStore = defineStore('mainStore', ()=>{
             description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
         },
     ])
-
     return {
         width, 
         isMobile1000, 
@@ -141,8 +138,9 @@ export const useMainStore = defineStore('mainStore', ()=>{
         setMainPhoneUser,
         isAuthUser,
         setAuthUser,
-        STORAGE_AUTH_KEY,
-        STORAGE_PHONE_KEY,
-        userFullName
+        userFullName,
+        userDeliveryMethod,
+        userSelectedAddress,
+        setDeliveryMethod,
     }
 })
