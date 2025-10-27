@@ -1,10 +1,6 @@
 import { defineStore } from "pinia";
 import { computed, Ref, ref } from "vue";
 import { useWindowSize } from '@vueuse/core'
-import promotions1 from '@/assets/img/promotions/img1.png'
-import promotions2 from '@/assets/img/promotions/img2.png'
-import promotions3 from '@/assets/img/promotions/img3.png'
-import promotions4 from '@/assets/img/promotions/img4.png'
 export const useMainStore = defineStore('mainStore', ()=>{
 
     const { width } = useWindowSize()
@@ -30,7 +26,12 @@ export const useMainStore = defineStore('mainStore', ()=>{
         localStorage.setItem(STORAGE_AUTH_KEY.value, 'isAuth')
         console.log('User is Authorized')
     }
-    const userFullName = ref('Имя Фамилия')
+    const STORAGE_FULLNAME_KEY = 'userFullname'
+    const userFullName = ref(localStorage.getItem(STORAGE_FULLNAME_KEY))
+    const setUserFullname = (fullname: string)=> {
+        userFullName.value = fullname
+        localStorage.setItem(STORAGE_FULLNAME_KEY, userFullName.value)
+    }
 
     const userSelectedAddress = ref(null)
     const STORAGE_DELIVERY_METHOD_KEY = 'delivery_method'
@@ -40,100 +41,12 @@ export const useMainStore = defineStore('mainStore', ()=>{
         localStorage.setItem(STORAGE_DELIVERY_METHOD_KEY, userDeliveryMethod.value)
         console.log('Delivery method is changed')
     }
-    const promotions = ref([
-        {
-            id: 1,
-            title: 'Сделай предзаказ в кулинарии со скидкой',
-            styles: {
-                backgroundColor: '#CD5A7E',
-                backgroundImage: `url(${promotions1})`
-            },
-            stylesDescription: {
-                backgroundColor: '#FFE2EB',
-                border: '1px solid #CD5A7E'
-            },
-            article: null,
-            description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
-        },
-        {
-            id: 2,
-            title: 'Праздник к нам приходит',
-            styles: {
-                backgroundColor: '#FF594D',
-                backgroundImage: `url(${promotions2})`
-            },
-            stylesDescription: {
-                backgroundColor: '#FFE9E8',
-                border: '1px solid #FF594D'
-            },
-            article: '15% скидка',
-            description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
-        },
-        {
-            id: 3,
-            title: 'Скидка на третий товар в корзине «Чистая линия»',
-            styles: {
-                backgroundColor: '#FFA68A',
-                backgroundImage: `url(${promotions3})`
-            },
-            stylesDescription: {
-                backgroundColor: '#FFEDE8',
-                border: '1px solid #FFA68A'
-            },
-            article: null,
-            description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
-        },
-        {
-            id: 4,
-            title: 'Комбо-набор 3 пиццы за 1500₽',
-            styles: {
-                backgroundColor: '#FFC425',
-                backgroundImage: `url(${promotions4})`,
-                backgroundSize: '150%'
-            },
-            stylesDescription: {
-                backgroundColor: '#FFFBEF',
-                border: '1px solid #FFC425'
-            },
-            article: 'trio1500',
-            description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
-        },
-        {
-            id: 5,
-            title: 'Скидка на третий товар в корзине «Чистая линия»',
-            styles: {
-                backgroundColor: '#FFA68A',
-                backgroundImage: `url(${promotions3})`
-            },
-            stylesDescription: {
-                backgroundColor: '#FFEDE8',
-                border: '1px solid #FFA68A'
-            },
-            article: null,
-            description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
-        },
-        {
-            id: 6,
-            title: 'Праздник к нам приходит',
-            styles: {
-                backgroundColor: '#FF594D',
-                backgroundImage: `url(${promotions2})`
-            },
-            stylesDescription: {
-                backgroundColor: '#FFE9E8',
-                border: '1px solid #FF594D'
-            },
-            article: '15% скидка',
-            description: 'Оформите заказ на кулинарию за сутки и получите скидку. Заказу будет доставлено вовремя'
-        },
-    ])
     return {
         width, 
         isMobile1000, 
         isMobile768, 
         isActiveBurgerMenu, 
         activeBurgerMenu, 
-        promotions,
         mainPhoneUser,
         setMainPhoneUser,
         isAuthUser,
@@ -142,5 +55,6 @@ export const useMainStore = defineStore('mainStore', ()=>{
         userDeliveryMethod,
         userSelectedAddress,
         setDeliveryMethod,
+        setUserFullname,
     }
 })

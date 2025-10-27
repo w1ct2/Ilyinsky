@@ -16,8 +16,9 @@ import Promotions_Content from "./Promotions_Content.vue";
 
 import { useMainStore } from '@/store/MainStore'
 import Promotions_Input from "./Promotions_Input.vue";
-const mainStore = useMainStore()
-const data = mainStore.promotions
+import {usePromotionsStore} from '@/store/PromotionsStore.ts'
+const PromotionsStore = usePromotionsStore()
+const data = PromotionsStore.promotions
 </script>
 
 <style lang="scss" scoped>

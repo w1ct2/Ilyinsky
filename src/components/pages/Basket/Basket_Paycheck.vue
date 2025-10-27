@@ -2,7 +2,7 @@
     <div class="basket-paycheck">
         <div class="basket-paycheck__container">
             <h3 class="basket-paycheck__title">Доставка сегодня, 18:11</h3>
-            <p class="basket-paycheck__address">ул. Новая, д. 13, посёлок Ильинское-Усово, городской округ Красногорск</p>
+            <p class="basket-paycheck__address">{{ paycheckAddress }}</p>
             <div class="basket-paycheck__promo">
                 <input type="text" class="basket-paycheck__input" placeholder="Есть промокод?">
                 <button class="basket-paycheck__promo-btn">Применить</button>
@@ -30,10 +30,26 @@
                 class="basket-paycheck__button"
                 v-else-if="activePage === 'registration'">Оформить</button>
         </div>
+        <div 
+            class="basket-paycheck__regist-alert"
+            v-if="activePage === 'registration'"
+            :style="{backgroundImage: `url(${flag})`}">
+            <p>Стоимость заказа может измениться и будет списана только после того, как мы проверим наличие товара и соберём вашу покупку.</p>
+            <p>В заказ будет добавлено необходимое количество пакетов и их стоимость.</p>
+            <p>Мы вам позвоним, если товара нет в наличии. Будьте на связи.</p>
+        </div>
     </div>
 </template>
 
 <script setup>
+import flag from '@/assets/img/mainImage/flag-alert.png'
+import { useAddressesStore } from '@/store/AddressesStore';
+import { useMainStore } from '@/store/MainStore';
+import { useRecentAddressesStore } from '@/store/RecentAddressesStore';
+import { computed } from 'vue';
+const MainStore = useMainStore()
+const AddressesStore = useAddressesStore()
+const RecentAddressesStore = useRecentAddressesStore()
 const props = defineProps({
     totalPrice: {
         type: Number
@@ -43,6 +59,13 @@ const props = defineProps({
     },
     activePage: {
         type: String
+    }
+})
+const paycheckAddress = computed(()=>{
+    if (MainStore.userDeliveryMethod === 'delivery') {
+        return AddressesStore.activeAddress
+    } else if (MainStore.userDeliveryMethod === 'pickup') {
+        return RecentAddressesStore.activeAddress
     }
 })
 </script>
@@ -125,6 +148,23 @@ const props = defineProps({
         border-radius: rem(30);
         margin-top: rem(25);
         font-size: 22px;
+    }
+    &__regist-alert {
+        width: 100%;
+        min-height: rem(280);
+        margin-top: rem(20);
+        background-color: #FFEDED;
+        border: 1px solid var(--red);
+        border-radius: rem(16);
+        padding: rem(30) rem(15);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        & p {
+            font-size: 18px;
+        }
     }
 }
 </style>

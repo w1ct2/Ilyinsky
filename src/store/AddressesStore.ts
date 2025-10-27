@@ -5,34 +5,34 @@ interface DeliveryAddress {
     address: string;
 }
 export const useAddressesStore = defineStore('addressesStore', ()=>{
+    const STORAGE_USER_DELIVERY_ADDRESS_KEY = 'user_delivery_address'
+    const activeAddress = ref(localStorage.getItem(STORAGE_USER_DELIVERY_ADDRESS_KEY) || '') 
+    const setActiveAddress = (address: string) => {
+        activeAddress.value = address
+        localStorage.setItem(STORAGE_USER_DELIVERY_ADDRESS_KEY, activeAddress.value)
+    }
+
     const addressesDelivery: Ref<DeliveryAddress[]> = ref([])
     const STORAGE_DELIVERY_KEY = ref('delivery_addresses')
     const saveAddressesToStorage = (storageKey: string, data: unknown)=>{
         localStorage.setItem(storageKey, JSON.stringify(data))
-    }
-    const activeAddress = ref('')
-    const setActiveAddress = (address: string) => {
-        activeAddress.value = address
     }
     const loadDeliveryFromStorage = ()=>{
         const storedAddresses = localStorage.getItem(STORAGE_DELIVERY_KEY.value)
         if (storedAddresses){
             addressesDelivery.value = JSON.parse(storedAddresses)
         } else {
-            addressesDelivery.value = [{
-                id: Date.now(),
-                address: 'ул. Новая, д. 13, посёлок Ильинское-Усово, городской округ Красногорск',
-            }];
             saveAddressesToStorage(STORAGE_DELIVERY_KEY.value, addressesDelivery.value);
         }
     }
     const addAddressesDelivery = (address: string)=>{
-        addressesDelivery.value.push({
-            id: Date.now(),
-            address: address
-        })
+        if (!addressesDelivery.value.some(item => item.address === address)) {
+            addressesDelivery.value.push({
+                id: Date.now(),
+                address: address
+            })
+        }
         saveAddressesToStorage(STORAGE_DELIVERY_KEY.value, addressesDelivery.value)
-        console.log(addressesDelivery);
     }
     const deleteAddressDelivery = (address: DeliveryAddress) => {
         addressesDelivery.value = addressesDelivery.value.filter(item => item.id !== address.id)

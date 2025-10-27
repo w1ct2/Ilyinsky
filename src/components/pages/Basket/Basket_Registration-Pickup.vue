@@ -1,12 +1,14 @@
 <template>
     <div class="pickup">
         <h3 class="pickup__title">Самовывоз сегодня к nn:nn</h3>
-        <p class="pickup__p">«Ильинский Супермаркет», ул. Новая,Ильинское-Усово, городской округ Красногорск</p>
+        <p class="pickup__p"><span>Заберите по адресу: </span><br>{{ RecentAddressesStore.activeAddress }}</p>
     </div>
 </template>
 
 <script setup>
+import { useRecentAddressesStore } from '@/store/RecentAddressesStore';
 
+const RecentAddressesStore = useRecentAddressesStore()
 </script>
 
 <style lang="scss" scoped>
@@ -22,6 +24,9 @@
     }
     &__p {
         font-size: 20px;
+        & span {
+            font-weight: 600;
+        }
     }
 }
 </style>

@@ -6,13 +6,13 @@
             <button :style="{backgroundImage: `url(${accept})`}" @click.prevent="addNewAddress"></button>
         </div>
         <h4 class="title">Последние адреса</h4>
-        <div class="form__addresses" v-if="addressesStore.addressesDelivery.length">
+        <div class="form__addresses" v-if="data.length">
             <div 
                 class="form__address"
-                v-for="(address, index) in addressesStore.addressesDelivery"
+                v-for="address in data"
                 :key="address.id">
                 <img :src="addressImg">
-                <p>{{ address.address }}</p>
+                <p @click="setActiveAddress(address)">{{ address.address }}</p>
                 <img :src="deleteBtn" class="form__delete" @click="addressesStore.deleteAddressDelivery(address)">
             </div>
         </div>
@@ -40,13 +40,26 @@ import accept from '@/assets/img/svg/accept.svg'
 import addressImg from '@/assets/img/svg/address1.svg'
 import deleteBtn from '@/assets/img/svg/delete1.svg'
 import { useAddressesStore } from '@/store/AddressesStore';
-import { ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 const addressesStore = useAddressesStore()
+const data = computed(()=>addressesStore.addressesDelivery)
 const newAddress = ref('')
 const addNewAddress = () => {
     addressesStore.addAddressesDelivery(newAddress.value)
     newAddress.value = ''
 }
+const setActiveAddress = (object) => {
+    addressesStore.setActiveAddress(object.address)
+    newAddress.value = object.address
+    console.log(object.address);
+    
+}
+onMounted(()=>{
+    if (addressesStore.activeAddress) {
+        newAddress.value = addressesStore.activeAddress
+    }
+})
+
 
 const selectOptions1 = ref([
     { id: 1, name: 'Сегодня' },
@@ -108,6 +121,9 @@ const selected2 = ref(selectOptions2.value[0]);
         flex-direction: column;
         gap: 40px;
         margin-bottom: rem(55);
+        & p {
+            cursor: pointer;
+        }
         &--else {
             font-size: 14px;
             color: #6B6B6B;

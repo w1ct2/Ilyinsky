@@ -8,10 +8,11 @@ interface StoreAddress {
 }
 export const useRecentAddressesStore = defineStore('recentAddressesStore', ()=>{
     const addressesPickup: Ref<StoreAddress[]> = ref([])
-    const activeAddress = ref('')
+    const STORAGE_USER_PICKUP_ADDRESS_KEY = 'user_pickup_address'
+    const activeAddress = ref(localStorage.getItem(STORAGE_USER_PICKUP_ADDRESS_KEY))
     const setActiveAddress = (title: string) =>{
         activeAddress.value = title
-        console.log(activeAddress.value);
+        localStorage.setItem(STORAGE_USER_PICKUP_ADDRESS_KEY, activeAddress.value)
     }
     const STORAGE_PICKUP_KEY = ref('pickup_addresses')
     const saveAddressesToStorage = (storageKey: string, data: unknown)=>{
@@ -22,20 +23,6 @@ export const useRecentAddressesStore = defineStore('recentAddressesStore', ()=>{
         if (storedAddresses){
             addressesPickup.value = JSON.parse(storedAddresses)
         } else {
-            addressesPickup.value = [
-                {
-                    id: 1,
-                    title: 'Ильинский Супермаркет',
-                    text: 'ул. Центральная, 15, микрорайон Северный, г. Долгопрудный',
-                    time: '7:00-00:00'
-                },
-                {
-                    id: 2,
-                    title: 'Ильинский Супермаркет',
-                    text: 'пр-т Мира, 88, жилой комплекс "Солнечный", г. Химки',
-                    time: '8:00-23:00'
-                },
-            ];
             saveAddressesToStorage(STORAGE_PICKUP_KEY.value, addressesPickup.value);
         }
     }
@@ -60,7 +47,6 @@ export const useRecentAddressesStore = defineStore('recentAddressesStore', ()=>{
         activeAddress,
         setActiveAddress,
         addressesPickup,
-        STORAGE_PICKUP_KEY,
         addAddressesPickup,
         deleteAddressPickup,
     }

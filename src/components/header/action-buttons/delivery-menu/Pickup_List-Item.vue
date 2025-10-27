@@ -4,7 +4,9 @@
             <path d="M13.1943 0.0450275L0.362581 5.29437C-0.17709 5.51514 -0.0946037 6.30375 0.479078 6.40805L6.49767 7.50235L7.59196 13.5209C7.69627 14.0946 8.48487 14.1771 8.70565 13.6374L13.955 0.805717C14.1508 0.327043 13.673 -0.150811 13.1943 0.0450275Z"/>
         </svg>
         <h6 class="address__title">{{ data.title }}</h6>
-        <p class="address__p">{{ data.text }}</p>
+        <p 
+            class="address__p"
+            @click="setActiveAddress(data)">{{ data.text }}</p>
         <img :src="clock" alt="" class="address__img2">
         <p class="address__time">{{ data.time }}</p>
     </div>
@@ -24,6 +26,9 @@ const props = defineProps({
 const selectAddress = (data)=>{
     RecentAddressesStore.addAddressesPickup(data)
     emits('close-list')
+}
+const setActiveAddress = (data) => {
+    RecentAddressesStore.setActiveAddress(data.text)
 }
 </script>
 
