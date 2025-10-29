@@ -12,29 +12,34 @@
             }">
             {{ data.status }}
         </article>
-        <h4 class="card__number">{{ data.number }}</h4>
+        <h4 class="card__number">Заказ №{{ data.number }}</h4>
         <div class="card__about">
-            <h2 class="card__method">{{ data.method }}</h2>
+            <h2 class="card__method">{{ data.methodTitle }}</h2>
             <p class="card__date">{{ data.date }}</p>
         </div>
         <p class="card__address" v-html="data.address"></p>
         <div class="card__action">
-            <h2 class="card__price">{{ data.price }} <span>Оплачено</span></h2>
-            <button 
+            <h2 class="card__price">{{ data.price }} руб <span>Оплачено</span></h2>
+            <button
+                @click="isActiveTrackingPage = true"
                 class="card__button"
                 :class="{
                     'card__button--is-done': status === 'isDone',
                     'card__button--in-work': status === 'inProgress'
                 }">
-                {{ status === 'inWork' ? 'Отследить' : 'Повторить' }}
+                {{ status === 'inProgress' ? 'Отследить' : 'Повторить' }}
             </button>
         </div>
+        <PersonalHistory_Tracking
+            v-show="isActiveTrackingPage"
+            @closePage="isActiveTrackingPage = false"
+            :numberOrder="data.number"></PersonalHistory_Tracking>
     </div>
 </template>
 
 <script setup>
-import { computed } from 'vue';
-
+import { computed, ref } from 'vue';
+import PersonalHistory_Tracking from './PersonalHistory_ Tracking.vue';
 const props = defineProps({
     data: {
         type: Object,
@@ -48,6 +53,7 @@ const status = computed(()=>{
         return 'isDone'
     }
 })
+const isActiveTrackingPage = ref(false)
 </script>
 
 <style lang="scss" scoped>

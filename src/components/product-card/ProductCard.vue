@@ -42,7 +42,7 @@
                 v-show="isActiveModal"
                 @close="isActiveModal = false"
                 @handleFavorite="toggleFavorite"
-            ></ProductCard_Modal>
+            ></ProductCard_Modal> 
         </Teleport>
     </div>
 </template>

@@ -19,7 +19,13 @@
                         </h4>
                         <p v-if="data.discount">{{ data.oldPrice }}</p>
                     </div>
-                    <button class="card-modal__basket">В корзину</button>
+                    <button 
+                        class="card-modal__basket"
+                        @click.stop="
+                            BasketData.addToStorage(data); 
+                            basketBtnIsClicked = true"
+                        :class="{'card-modal__basket--active': basketBtnIsClicked}"
+                            >В корзину</button>
                     <button class="card-modal__favorite" @click="$emit('handleFavorite', data.id)">
                         <img :src="isActiveFavoriteUrl">
                     </button>
@@ -35,7 +41,8 @@
 <script setup>
 import favorUnactive from '@/assets/img/discounts/favorActive.svg'
 import favorActive from '@/assets/img/discounts/favorUnactive.svg'
-import { computed } from 'vue'
+import { useBasketData } from '@/store/BasketData'
+import { computed, ref } from 'vue'
 const isActiveFavoriteUrl = computed(() => {
     return props.data.favorite ? favorActive : favorUnactive
 })
@@ -45,6 +52,8 @@ const props = defineProps({
         required: true
     }
 })
+const basketBtnIsClicked = ref(false)
+const BasketData = useBasketData()
 </script>
 
 <style lang="scss" scoped>
@@ -119,6 +128,11 @@ const props = defineProps({
         font-size: 20px;
         padding: 0 25px;
         margin-right: rem(10);
+        &--active {
+            background-color: #fff;
+            color: var(--red);
+            border: 1px solid var(--red);
+        }
     }
     &__favorite {
         width: rem(43);

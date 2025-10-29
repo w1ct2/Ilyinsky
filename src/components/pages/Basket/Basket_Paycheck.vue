@@ -16,7 +16,7 @@
             </div>
             <div class="basket-paycheck__row">
                 <p class="basket-paycheck__row-title">Доставка:</p>
-                <p class="basket-paycheck__row-title">Бесплатно</p>
+                <p class="basket-paycheck__row-title">Бесплатно</p> 
             </div>
             <div class="basket-paycheck__row basket-paycheck__row--price">
                 <p class="basket-paycheck__row-title">К оплате:</p>
@@ -28,7 +28,8 @@
                 @click="$emit('changePage')">Оформление</button>
             <button 
                 class="basket-paycheck__button"
-                v-else-if="activePage === 'registration'">Оформить</button>
+                v-else-if="activePage === 'registration'"
+                @click="removeBasketData(numberOrder, totalPrice, date)">Оформить</button>
         </div>
         <div 
             class="basket-paycheck__regist-alert"
@@ -38,6 +39,10 @@
             <p>В заказ будет добавлено необходимое количество пакетов и их стоимость.</p>
             <p>Мы вам позвоним, если товара нет в наличии. Будьте на связи.</p>
         </div>
+        <Basket_RegistrationEnding
+            v-show="isActiveEndingPage"
+            :numberOrder="numberOrder"
+            @closePage="isActiveEndingPage = false"></Basket_RegistrationEnding>
     </div>
 </template>
 
@@ -45,11 +50,16 @@
 import flag from '@/assets/img/mainImage/flag-alert.png'
 import { useAddressesStore } from '@/store/AddressesStore';
 import { useMainStore } from '@/store/MainStore';
+import { usePersonalHistory } from '@/store/PersonalHistory';
 import { useRecentAddressesStore } from '@/store/RecentAddressesStore';
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
+import Basket_RegistrationEnding from './Basket_Registration-Ending.vue';
+import { useBasketData } from '@/store/BasketData';
 const MainStore = useMainStore()
 const AddressesStore = useAddressesStore()
 const RecentAddressesStore = useRecentAddressesStore()
+const PersonalHistory = usePersonalHistory()
+const BasketData = useBasketData()
 const props = defineProps({
     totalPrice: {
         type: Number
@@ -68,6 +78,20 @@ const paycheckAddress = computed(()=>{
         return RecentAddressesStore.activeAddress
     }
 })
+const formatDate = (date = new Date()) => {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;
+}
+const removeBasketData = (numberOrder, totalPrice, date) => {
+    PersonalHistory.addToStorage(numberOrder, totalPrice, date);
+    isActiveEndingPage.value = true
+    BasketData.clearStorage()
+}
+const date = formatDate()
+const numberOrder = ref(Date.now())
+const isActiveEndingPage = ref(0)
 </script>
 
 <style lang="scss" scoped>

@@ -2,7 +2,6 @@ import { defineStore } from "pinia";
 import { computed, Ref, ref } from "vue";
 import { useWindowSize } from '@vueuse/core'
 export const useMainStore = defineStore('mainStore', ()=>{
-
     const { width } = useWindowSize()
     const isMobile1000 = computed(()=> width.value < 1000)
     const isMobile768 = computed(()=> width.value < 768)
@@ -39,7 +38,7 @@ export const useMainStore = defineStore('mainStore', ()=>{
     const setDeliveryMethod = (method: string)=>{
         userDeliveryMethod.value = method
         localStorage.setItem(STORAGE_DELIVERY_METHOD_KEY, userDeliveryMethod.value)
-        console.log('Delivery method is changed')
+        console.log('Delivery method is changed, method:', userDeliveryMethod.value)
     }
     return {
         width, 

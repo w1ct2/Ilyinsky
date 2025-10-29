@@ -6,7 +6,7 @@
             'input--error': addressValue === 'Выберите правильный адрес!'}">
             <input 
                 type="text" 
-                placeholder="Введите адрес доставки" 
+                placeholder="Выберите адрес в списке" 
                 v-model="addressValue" 
                 disabled>
             <div 
