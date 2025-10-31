@@ -3,10 +3,22 @@
     <main class="main">
         <Panorama></Panorama>
         <Discounts></Discounts>
-        <Section :title="'Супермаркет'" :data="sectionSupermarketStore.superMarket"></Section>
-        <Section :title="'Кулинария'" :data="sectionCookingStore.cooking"></Section>
-        <Section :title="'Заморозка'" :data="sectionFreezingStore.freezing"></Section>
-        <Section :title="'Другое'" :data="sectionOtherStore.other"></Section>
+        <Section 
+            :title="'Кулинария'"
+            :data="sectionCookingStore.cooking"
+            :category="'bakery'"></Section>
+        <Section 
+            :title="'Супермаркет'"
+            :data="sectionSupermarketStore.superMarket"
+            :category="'waterDrinks'"></Section>
+        <Section 
+            :title="'Заморозка'"
+            :data="sectionFreezingStore.freezing"
+            :category="'dumplings'"></Section>
+        <Section 
+            :title="'Другое'"
+            :data="sectionOtherStore.other"
+            :category="'beautyHygiene'"></Section>
         <Promotions></Promotions>
         <Delivery></Delivery>
         <GetPromo></GetPromo>

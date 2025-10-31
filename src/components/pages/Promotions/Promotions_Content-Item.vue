@@ -6,12 +6,14 @@
         </div>
         <div class="item__description">
             <p class="item__p">{{ data.description }}</p>
-            <button class="item__button">К покупкам</button>
+            <RouterLink class="item__button" :to="'catalog'">К покупкам</RouterLink>
         </div>
     </div>
 </template>
 
 <script setup>
+import { RouterLink } from 'vue-router';
+
 const props = defineProps({
     data: {
         type: Object,
@@ -45,6 +47,10 @@ const props = defineProps({
         height: rem(55);
         padding: 0 25px;
         white-space: nowrap;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     &__preview {
         max-width: rem(310);

@@ -2,7 +2,7 @@
     <section class="section">
         <div class="container">
             <div class="section__inner">
-                <Section_Header :title="title"></Section_Header>
+                <Section_Header :title="title" :category="category"></Section_Header>
                 <Section_Content :data="data"></Section_Content>
             </div>
         </div>
@@ -20,7 +20,8 @@ const props = defineProps({
     data: {
         type: Array, 
         required: true
-    }
+    },
+    category: String
 })
 </script>
 

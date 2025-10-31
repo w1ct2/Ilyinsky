@@ -8,7 +8,7 @@
                     :key="tab.id"
                     class="profile__item"
                     :class="{'profile__item--active': activeTab === index}"
-                    @click="selectTab(index)">{{ tab.title }}</li>
+                    @click="AllData.setActivePagePersonalAccount(index)">{{ tab.title }}</li>
             </ul>
             <PersonalData v-if="activeTab === 0"></PersonalData>
             <PersonalHistory v-else-if="activeTab === 1"></PersonalHistory>
@@ -18,13 +18,13 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import PersonalData from './PersonalData.vue';
 import PersonalHistory from './PersonalHistory.vue';
 import { useAllData } from '@/store/AllData';
 import PersonalFavorites from './PersonalFavorites.vue';
 const AllData = useAllData()
-const activeTab = ref(0)
+const activeTab = computed(()=>AllData.activePagePersonalAccount)
 const tabs = ref([
     {
         id: 1,
@@ -39,9 +39,6 @@ const tabs = ref([
         title: 'Избранное'
     }
 ])
-const selectTab = (index)=>{
-    activeTab.value = index
-}
 </script>
 
 <style lang="scss" scoped>

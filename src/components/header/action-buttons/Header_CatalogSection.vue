@@ -6,14 +6,16 @@
                 class="section__item" 
                 v-for="link in links"
                 :key="link.id">
-                <RouterLink :to="link.url">{{ link.name }}</RouterLink>
+                <RouterLink :to="'/catalog'" @click="AllData.setCategory(link.category, link.name)">{{ link.name }}</RouterLink>
             </li>
         </ul>
     </div>
 </template>
 
 <script setup>
+import { useAllData } from '@/store/AllData';
 import { RouterLink } from 'vue-router';
+const AllData = useAllData()
 const props = defineProps({
     title: {
         type: String

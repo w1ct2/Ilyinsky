@@ -1,6 +1,6 @@
 <template>
     <div class="favorites">
-        <RouterLink :to="'/personal-account'">
+        <RouterLink :to="'/personal-account'" @click="AllData.setActivePagePersonalAccount(2)">
             <img :src="favorites" class="favorites__img">
         </RouterLink>
     </div>
@@ -8,7 +8,9 @@
 
 <script setup>
 import favorites from '@/assets/img/svg/favorites1.svg'
+import { useAllData } from '@/store/AllData';
 import { RouterLink } from 'vue-router';
+const AllData = useAllData()
 </script>
 
 <style lang="scss" scoped>
@@ -23,6 +25,13 @@ import { RouterLink } from 'vue-router';
     justify-content: center;
     align-items: center;
     margin-left: -10px;
+    & a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     &:hover {
         .favorites__img {
             animation: heart .8s;

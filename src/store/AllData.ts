@@ -147,13 +147,32 @@ export const useAllData = defineStore('alldata', ()=>{
     const saveToStorage = (key: string, data: unknown)=>{
         localStorage.setItem(key, JSON.stringify(data))
     }
+
+
+    const selectedCategory = ref({
+        category: 'bakery',
+        categoryTitle: 'Выпечка'
+    })
+    const setCategory = (category: string, categoryTitle: string) => {
+        selectedCategory.value.category = category
+        selectedCategory.value.categoryTitle = categoryTitle
+    }
+
+    const activePagePersonalAccount = ref(0)
+    const setActivePagePersonalAccount = (page: number) => {
+        activePagePersonalAccount.value = page
+    }
+
     loadFromStorage()
-    
     return {
         allData,
         favoriteData,
         discountsData,
         getProductById,
-        toggleFavorite
+        toggleFavorite,
+        selectedCategory,
+        setCategory,
+        activePagePersonalAccount,
+        setActivePagePersonalAccount
     }
 })

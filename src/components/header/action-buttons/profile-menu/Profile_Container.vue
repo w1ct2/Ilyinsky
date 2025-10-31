@@ -3,19 +3,15 @@
         <h4 class="profile-menu__title">{{ title }}</h4>
         <ul class="profile-menu__list">
             <li class="profile-menu__item">
-                <RouterLink :to="'/personal-account'">Войти</RouterLink>
-                <span>-5%</span>
+                <RouterLink :to="'/personal-account'" @click="AllData.setActivePagePersonalAccount(0)">Войти</RouterLink>
             </li>
             <li class="profile-menu__item">
-                <p>Заказы</p>
+                <RouterLink :to="'/personal-account'" @click="AllData.setActivePagePersonalAccount(1)">Заказы</RouterLink>
+                <span>{{ PersonalHistory.history.length }}</span>
             </li>
             <li class="profile-menu__item">
-                <p>Бонусы</p>
-                <span>12</span>
-            </li>
-            <li class="profile-menu__item">
-                <p>Избранное</p>
-                <span>16 тов.</span>
+                <RouterLink :to="'/personal-account'" @click="AllData.setActivePagePersonalAccount(2)">Избранное</RouterLink>
+                <span>{{ AllData.favoriteData.length }} тов.</span>
             </li>
         </ul>
         <button class="profile-menu__btn" @click="getOut">Выход</button>
@@ -23,7 +19,9 @@
 </template>
 
 <script setup>
+import { useAllData } from '@/store/AllData';
 import { useMainStore } from '@/store/MainStore'
+import { usePersonalHistory } from '@/store/PersonalHistory';
 import { ref } from 'vue';
 import { RouterLink } from 'vue-router';
 const emits = defineEmits(['close-modal'])
@@ -33,6 +31,8 @@ const getOut = ()=>{
     localStorage.setItem('UserAuthorization', 'notAuth')
     emits('close-modal')
 }
+const AllData = useAllData()
+const PersonalHistory = usePersonalHistory()
 </script>
 
 <style lang="scss" scoped>

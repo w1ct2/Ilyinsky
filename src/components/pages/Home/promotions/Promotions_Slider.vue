@@ -2,7 +2,7 @@
     <div class="promotions">
         <div class="promotions-header">
             <h2 class="catalog-title">акции</h2>
-            <button class="catalog-button">Смотреть все</button>
+            <RouterLink class="catalog-button" :to="'/promotions'">Смотреть все</RouterLink>
             <div class="catalog-navigation">
                 <div class="prevButton"></div>
                 <div class="nextButton"></div>
@@ -36,9 +36,12 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import Promotions_SliderItem from './Promotions_Slider-Item.vue';
 import { onBeforeUnmount, onMounted, ref } from 'vue';
+import { usePromotionsStore } from '@/store/PromotionsStore';
+import { RouterLink } from 'vue-router';
 const modules = [Navigation]
 const mainStore = useMainStore()
-const data = mainStore.promotions
+const Promotions = usePromotionsStore()
+const data = Promotions.promotions
 
 const {width} = mainStore
 const slidesPerView = ref(4)

@@ -1,27 +1,22 @@
 <template>
     <aside class="menu">
-        <!-- <button class="menu__all-data">Все товары</button> -->
         <Catalog_Filters></Catalog_Filters>
         <Catalog_Category 
             :title="'Кулинария'"
             :data="cooking"
-            :category="selectedCategory"
-            @selectCategory="setCategory"></Catalog_Category>
+            :category="selectedCategory"></Catalog_Category>
         <Catalog_Category 
             :title="'Супермаркет'"
             :data="supermarket"
-            :category="selectedCategory"
-            @selectCategory="setCategory"></Catalog_Category>
+            :category="selectedCategory"></Catalog_Category>
         <Catalog_Category 
             :title="'Заморозка'"
             :data="freezing"
-            :category="selectedCategory"
-            @selectCategory="setCategory"></Catalog_Category>
+            :category="selectedCategory"></Catalog_Category>
         <Catalog_Category 
             :title="'Другое'"
             :data="other"
-            :category="selectedCategory"
-            @selectCategory="setCategory"></Catalog_Category>
+            :category="selectedCategory"></Catalog_Category>
     </aside>
 </template>
 
@@ -33,6 +28,7 @@ import { computed, onMounted, ref } from 'vue';
 import { useSectionSupermarketStore } from '@/store/SectionSupermarketStore';
 import { useSectionFreezingStore } from '@/store/SectionFreezing';
 import { useSectionOtherStore } from '@/store/SectionOther';
+import { useAllData } from '@/store/AllData';
 const sectionCooking = useSectionCookingStore()
 const cooking = computed(()=> sectionCooking.cooking)
 const sectionSupermarket = useSectionSupermarketStore()
@@ -42,16 +38,8 @@ const freezing = computed(()=> sectionFreezing.freezing)
 const sectionOther = useSectionOtherStore()
 const other = computed(()=> sectionOther.other)
 
-const emits = defineEmits(['setCategory'])
-
-const selectedCategory = ref('bakery')
-const setCategory = (category, categoryTextName)=>{
-    selectedCategory.value = category
-    emits('setCategory', selectedCategory.value, categoryTextName)
-}
-onMounted(()=>{
-    setCategory('bakery', 'выпечка')
-})
+const AllData = useAllData()
+const selectedCategory = computed(()=>AllData.selectedCategory.category)
 </script>
 
 <style lang="scss" scoped>

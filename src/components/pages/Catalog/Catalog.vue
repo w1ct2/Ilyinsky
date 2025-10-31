@@ -3,10 +3,10 @@
     <main class="main">
         <section class="catalog">
             <div class="container">
-                <h1 class="catalog-title">{{ categoryName }} </h1>
+                <h1 class="catalog-title">{{ AllData.selectedCategory.categoryTitle }}</h1>
                 <div class="catalog__inner">
-                    <Catalog_Menu @setCategory="setCategory"></Catalog_Menu>
-                    <Catalog_Content :category="selectedCategory"></Catalog_Content>
+                    <Catalog_Menu></Catalog_Menu>
+                    <Catalog_Content></Catalog_Content>
                 </div>
             </div>
         </section>
@@ -23,14 +23,16 @@ import Discounts from '../Home/discounts/Discounts.vue';
 import Promotions_Input from '../Promotions/Promotions_Input.vue';
 import Catalog_Menu from './Catalog_Menu.vue';
 import Catalog_Content from './Catalog_Content.vue';
-import { ref } from 'vue';
-const selectedCategory = ref('')
-const categoryName = ref('каталог')
+import { onMounted, ref } from 'vue';
+import { useAllData } from '@/store/AllData';
+const AllData = useAllData()
+const selectedCategory = ref(AllData.selectedCategory.category)
+const categoryName = ref('выпечка')
 
-const setCategory = (category, categoryTextName)=>{
-    selectedCategory.value = category
-    categoryName.value = categoryTextName
-}
+// const setCategory = (category, categoryTextName)=>{
+//     selectedCategory.value = category
+//     categoryName.value = categoryTextName
+// }
 </script>
 
 <style lang="scss" scoped>

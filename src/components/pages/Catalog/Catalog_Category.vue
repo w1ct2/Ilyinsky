@@ -7,14 +7,15 @@
                 :style="{backgroundColor: category === item.category ? item.styles.backgroundColor : ''}"
                 v-for="item in data"
                 :key="item.id"
-                @click="selectCategory(item.category, item.name)">{{ item.name }}</li>
+                @click="AllData.setCategory(item.category, item.name)">{{ item.name }}</li>
         </ul>
     </div>
 </template>
 
 <script setup>
+import { useAllData } from '@/store/AllData';
 import { ref } from 'vue'
-
+const AllData = useAllData()
 const props = defineProps({
     title: {
         type: String
@@ -26,11 +27,6 @@ const props = defineProps({
         type: String
     }
 })
-const emits = defineEmits(['selectCategory'])
-const selectCategory = (category, categoryTextName) => {
-    emits('selectCategory', category, categoryTextName)
-}
-
 </script>
 
 <style lang="scss" scoped>

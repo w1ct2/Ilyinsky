@@ -15,15 +15,9 @@ import ProductCard from '@/components/product-card/ProductCard.vue';
 import { useAllData } from '@/store/AllData';
 const AllData = useAllData()
 const cards = computed(()=> AllData.allData)
-const props = defineProps({
-    category: {
-        type: String
-    }
-})
 const sortedData = computed(()=>{
-    return [...cards.value].filter(item => item.category === props.category)
+    return [...cards.value].filter(item => item.category === AllData.selectedCategory.category)
 })
-
 
 </script>
 

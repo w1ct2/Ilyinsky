@@ -1,17 +1,22 @@
 <template>
     <div class="section-content">
-        <div
-            v-for="(item, index) in data"
+        <RouterLink
+            v-for="(item) in data"
             :key="item.id"
             class="section-content__item"
             :style="[item.styles]"
+            :to="'catalog'"
+            @click="AllData.setCategory(item.category, item.name)"
             >
             <h4 class="section-content__title">{{ item.name }}</h4>
-        </div>
+        </RouterLink>
     </div>
 </template>
 
 <script setup>
+import { useAllData } from '@/store/AllData';
+import { RouterLink } from 'vue-router';
+const AllData = useAllData()
 const props = defineProps({
     data: {
         type: Array,
