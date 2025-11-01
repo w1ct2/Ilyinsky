@@ -138,7 +138,7 @@ export const hotDish = [
             title: "Утка с яблоками",
             discount: false,
             favorite: false,
-            availability: 4,
+            availability: 0,
             price: "580 руб",
             oldPrice: null,
             imgUrl: img8,

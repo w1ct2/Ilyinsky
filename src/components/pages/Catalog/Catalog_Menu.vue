@@ -1,6 +1,6 @@
 <template>
     <aside class="menu">
-        <Catalog_Filters></Catalog_Filters>
+        <Catalog_Filters @handleFilter="handleFilter"></Catalog_Filters>
         <Catalog_Category 
             :title="'Кулинария'"
             :data="cooking"
@@ -29,6 +29,7 @@ import { useSectionSupermarketStore } from '@/store/SectionSupermarketStore';
 import { useSectionFreezingStore } from '@/store/SectionFreezing';
 import { useSectionOtherStore } from '@/store/SectionOther';
 import { useAllData } from '@/store/AllData';
+const emits = defineEmits(['handleFilter'])
 const sectionCooking = useSectionCookingStore()
 const cooking = computed(()=> sectionCooking.cooking)
 const sectionSupermarket = useSectionSupermarketStore()
@@ -40,6 +41,9 @@ const other = computed(()=> sectionOther.other)
 
 const AllData = useAllData()
 const selectedCategory = computed(()=>AllData.selectedCategory.category)
+const handleFilter = (filter)=>{
+    emits('handleFilter', filter)
+}
 </script>
 
 <style lang="scss" scoped>

@@ -47,7 +47,7 @@ export const dumplings = [
         title: "Равиоли с рикоттой и шпинатом",
         discount: false,
         favorite: false,
-        availability: 12,
+        availability: 0,
         price: "390 руб",
         oldPrice: null,
         imgUrl: img3,

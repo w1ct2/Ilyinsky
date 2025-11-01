@@ -32,7 +32,7 @@ export const waterDrinks = [
         title: "Сок Rich апельсиновый",
         discount: true,
         favorite: false,
-        availability: 18,
+        availability: 0,
         price: "95 руб",
         oldPrice: "110 руб",
         imgUrl: img2,

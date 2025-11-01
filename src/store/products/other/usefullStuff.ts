@@ -29,7 +29,7 @@ export const usefullStuff = [
         title: "Лампочка Космос",
         discount: true,
         favorite: false,
-        availability: 30,
+        availability: 0,
         price: "150 руб",
         oldPrice: "190 руб",
         imgUrl: img2,

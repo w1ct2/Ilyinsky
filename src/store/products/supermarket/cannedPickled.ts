@@ -84,7 +84,7 @@ export const cannedPickled = [
         title: "Фасоль стручковая консервированная",
         discount: false,
         favorite: false,
-        availability: 12,
+        availability: 0,
         price: "75 руб",
         oldPrice: null,
         imgUrl: img5,

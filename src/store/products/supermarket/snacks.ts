@@ -32,7 +32,7 @@ export const snacksDriedFruits = [
         title: "Курага узбекская",
         discount: true,
         favorite: false,
-        availability: 15,
+        availability: 0,
         price: "320 руб",
         oldPrice: "380 руб",
         imgUrl: img2,

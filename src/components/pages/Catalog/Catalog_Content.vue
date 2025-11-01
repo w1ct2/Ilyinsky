@@ -10,15 +10,30 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import ProductCard from '@/components/product-card/ProductCard.vue';
 import { useAllData } from '@/store/AllData';
+const props = defineProps({
+    activeFilter: {
+        type: [String, null],
+        default: null
+    }
+})
 const AllData = useAllData()
 const cards = computed(()=> AllData.allData)
 const sortedData = computed(()=>{
-    return [...cards.value].filter(item => item.category === AllData.selectedCategory.category)
+    const categoryProducts = [...cards.value].filter(item => item.category === AllData.selectedCategory.category)
+    if (props.activeFilter === 'discount') {
+        return categoryProducts.filter(item => item.discount)
+    } else if (props.activeFilter === 'availability') {
+        return categoryProducts.filter(item => !item.availability)
+    } else if (props.activeFilter === 'up-to-200') {
+        return categoryProducts.filter(item => {
+            const price = parseFloat(item.price)
+            return !isNaN(price) && price < 200;
+        })
+    } else return categoryProducts
 })
-
 </script>
 
 <style lang="scss" scoped>

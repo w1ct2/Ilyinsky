@@ -66,7 +66,7 @@ export const beautyHygiene = [
         title: "Дезодорант Rexona аэрозоль",
         discount: false,
         favorite: false,
-        availability: 40,
+        availability: 0,
         price: "190 руб",
         oldPrice: null,
         imgUrl: img4,

@@ -5,8 +5,8 @@
             <div class="container">
                 <h1 class="catalog-title">{{ AllData.selectedCategory.categoryTitle }}</h1>
                 <div class="catalog__inner">
-                    <Catalog_Menu></Catalog_Menu>
-                    <Catalog_Content></Catalog_Content>
+                    <Catalog_Menu @handleFilter="handleFilter"></Catalog_Menu>
+                    <Catalog_Content :activeFilter="activeFilter"></Catalog_Content>
                 </div>
             </div>
         </section>
@@ -26,13 +26,10 @@ import Catalog_Content from './Catalog_Content.vue';
 import { onMounted, ref } from 'vue';
 import { useAllData } from '@/store/AllData';
 const AllData = useAllData()
-const selectedCategory = ref(AllData.selectedCategory.category)
-const categoryName = ref('выпечка')
-
-// const setCategory = (category, categoryTextName)=>{
-//     selectedCategory.value = category
-//     categoryName.value = categoryTextName
-// }
+const activeFilter = ref(null)
+const handleFilter = (filter) => {
+    activeFilter.value = filter
+}
 </script>
 
 <style lang="scss" scoped>

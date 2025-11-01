@@ -102,7 +102,7 @@ export const semiFinished = [
         title: "Фарш куриный",
         discount: true,
         favorite: false,
-        availability: 30,
+        availability: 0,
         price: "280 руб",
         oldPrice: "320 руб",
         imgUrl: img6,

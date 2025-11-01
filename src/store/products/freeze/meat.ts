@@ -83,7 +83,7 @@ export const meat = [
         title: "Свиные ребрышки",
         discount: true,
         favorite: false,
-        availability: 6,
+        availability: 0,
         price: "380 руб",
         oldPrice: "430 руб",
         imgUrl: img5,

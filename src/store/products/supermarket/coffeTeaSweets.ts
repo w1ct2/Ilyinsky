@@ -120,7 +120,7 @@ export const coffeeTeaSweets = [
         title: "Конфеты шоколадные Рот Фронт",
         discount: false,
         favorite: false,
-        availability: 22,
+        availability: 0,
         price: "320 руб",
         oldPrice: null,
         imgUrl: img7,

@@ -1,23 +1,29 @@
 <template>
     <form class="filters">
         <h4 class="filters__title">особенности</h4>
-        <div class="filters__container">
-            <input type="checkbox" class="filters__input" name="filters" id="filter-catalog-1">
-            <label for="filter-catalog-1" class="filters__label">Со скидкой</label>
-        </div>
-        <div class="filters__container">
-            <input type="checkbox" class="filters__input" name="filters" id="filter-catalog-2">
-            <label for="filter-catalog-2" class="filters__label">Не в наличии</label>
-        </div>
-        <div class="filters__container">
-            <input type="checkbox" class="filters__input" name="filters" id="filter-catalog-3">
-            <label for="filter-catalog-3" class="filters__label">Цена до 200руб</label>
+        <div class="filters__container" v-for="option in filterOptions" :key="option.value">
+            <input 
+                type="radio" 
+                :id="`filter-${option.value}`"
+                :value="option.value"
+                v-model="filter"
+                class="filters__input"
+                @change="$emit('handleFilter', filter)">
+            <label :for="`filter-${option.value}`" class="filters__label"> {{ option.label }}</label>
         </div>
     </form>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 
+const filter = ref(null)
+const filterOptions = ref([
+    { value: 'discount', label: 'Со скидкой' },
+    { value: 'availability', label: 'Не в наличии' },
+    { value: 'up-to-200', label: 'Цена до 200руб' },
+    { value: null, label: 'Без особенностей'}
+])
 </script>
 
 <style lang="scss" scoped>

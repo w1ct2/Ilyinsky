@@ -84,7 +84,7 @@ export const pastaCereals= [
         title: "Макароны Макфа ракушки",
         discount: false,
         favorite: false,
-        availability: 18,
+        availability: 0,
         price: "85 руб",
         oldPrice: null,
         imgUrl: img5,

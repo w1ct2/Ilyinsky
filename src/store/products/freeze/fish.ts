@@ -83,7 +83,7 @@ export const fishSeafood = [
         title: "Стейки форели",
         discount: false,
         favorite: false,
-        availability: 10,
+        availability: 0,
         price: "580 руб",
         oldPrice: null,
         imgUrl: img5,

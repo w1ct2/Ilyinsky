@@ -63,7 +63,7 @@ export const frozenVegetables = [
         title: "Цветная капуста",
         discount: false,
         favorite: false,
-        availability: 20,
+        availability: 0,
         price: "130 руб",
         oldPrice: null,
         imgUrl: img4,

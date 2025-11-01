@@ -47,7 +47,7 @@ export const khinkaliManty = [
         title: "Хинкали с бараниной",
         discount: false,
         favorite: false,
-        availability: 12,
+        availability: 0,
         price: "520 руб",
         oldPrice: null,
         imgUrl: img3,

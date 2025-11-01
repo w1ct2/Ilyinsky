@@ -101,7 +101,7 @@ export const soup = [
             title: "Том Ям с креветками",
             discount: true,
             favorite: false,
-            availability: 4,
+            availability: 0,
             price: "380 руб",
             oldPrice: "430 руб",
             imgUrl: img6,
