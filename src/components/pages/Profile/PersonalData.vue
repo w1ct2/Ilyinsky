@@ -28,7 +28,7 @@
                     class="personal-data__input"
                     placeholder="дд.мм.гг"
                     v-model="userBirthday"
-                    @input="handleInput($event)"
+                    @input="handleInputBirthday($event)"
                     :disabled="!isEditingBirthdate">
                     <button 
                         class="personal-data__button" 
@@ -41,8 +41,21 @@
             </div>
             <div class="personal-data__item">
                 <label for="" class="personal-data__label">Эл. почта</label>
-                <input type="text" class="personal-data__input">
-                <button class="personal-data__button">Сохранить</button>
+                <input 
+                    type="email" 
+                    class="personal-data__input"
+                    placeholder="xxxx@xxx.xx"
+                    @input="handleInputEmail($event)"
+                    v-model="userEmail"
+                    :disabled="!isEditingEmail">
+                    <button 
+                        class="personal-data__button" 
+                        @click="saveUserEmail"
+                        v-if="isEditingEmail">Сохранить</button>
+                    <button 
+                        class="personal-data__button" 
+                        @click="startEditingEmail"
+                        v-else>Изменить</button>
             </div>
         </form>
     </div>
@@ -55,10 +68,12 @@ const mainStore = useMainStore()
 const phoneNumber = ref(mainStore.mainPhoneUser)
 const userFullname = ref('')
 const userBirthday = ref('')
+const userEmail = ref('')
 const isEditingFullname = ref(false)
 const isEditingBirthdate = ref(false)
+const isEditingEmail = ref(false)
 
-const handleInput = (event)=>{
+const handleInputBirthday = (event)=>{
     let value = event.target.value.replace(/\D/g, '')
     if (value.length > 6) {
         value = value.slice(0, -1)
@@ -83,6 +98,16 @@ const handleInput = (event)=>{
     }
     userBirthday.value = formatted
 }
+const handleInputEmail = (event) => {
+    let value = event.target.value
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    userEmail.value = value
+    if (value !== '' && !emailRegex.test(value)) {
+        event.target.classList.add('personal-data__input--error')
+    } else {
+        event.target.classList.remove('personal-data__input--error')
+    }
+}
 onMounted(() => {
     userFullname.value = mainStore.userFullName || ''
     if (mainStore.userFullName) {
@@ -91,6 +116,11 @@ onMounted(() => {
     userBirthday.value = mainStore.userBirthdate || ''
     if (mainStore.userBirthdate) {
         isEditingBirthdate.value = false
+    } 
+    userEmail.value = mainStore.userEmail || ''
+    console.log(userEmail.value)
+    if (mainStore.userEmail) {
+        isEditingEmail.value = false
     }
 })
 const startEditingFullname = () => {
@@ -98,6 +128,9 @@ const startEditingFullname = () => {
 }
 const startEditingBirthdate = () => {
     isEditingBirthdate.value = true
+}
+const startEditingEmail = () => {
+    isEditingEmail.value = true
 }
 const saveUserFullname = () => {
     if (userFullname.value.trim()) {
@@ -110,6 +143,13 @@ const saveUserBirthdate = () => {
         mainStore.setBirthdate(userBirthday.value)
         isEditingBirthdate.value = false
     } else console.log('Введена некорректная дата');
+}
+const saveUserEmail = () => {
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    if (emailRegex.test(userEmail.value)) {
+        mainStore.setEmail(userEmail.value)
+        isEditingEmail.value = false
+    } else console.log('Введен неверный адрес электронной почты');
 }
 </script>
 
@@ -145,6 +185,9 @@ const saveUserBirthdate = () => {
         font-size: 20px;
         color: #000;
         padding: 0 25px;
+        &--error {
+            border: 1px solid red;
+        }
     }
     &__button {
         color: #888888;

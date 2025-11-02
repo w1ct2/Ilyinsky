@@ -49,6 +49,14 @@ export const useMainStore = defineStore('mainStore', ()=>{
         console.log('User birthdate is changed, date:', userBirthdate.value);
         
     }
+
+    const STORAGE_EMAIL_KEY = 'user_email'
+    const userEmail = ref(localStorage.getItem(STORAGE_EMAIL_KEY))
+    const setEmail = (email: string) => {
+        userEmail.value = email
+        localStorage.setItem(STORAGE_EMAIL_KEY, userEmail.value)
+        console.log('User email is changed, date:', userEmail.value);
+    }
     return {
         width, 
         isMobile1000, 
@@ -63,8 +71,10 @@ export const useMainStore = defineStore('mainStore', ()=>{
         userDeliveryMethod,
         userSelectedAddress,
         userBirthdate,
+        userEmail,
         setDeliveryMethod,
         setUserFullname,
-        setBirthdate
+        setBirthdate,
+        setEmail,
     }
 })
