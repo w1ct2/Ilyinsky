@@ -25,27 +25,30 @@ import Footer_Contacts from './Footer_Contacts.vue';
 import Footer_Form from './Footer_Form.vue';
 import Footer_Bottom from './Footer_Bottom.vue';
 
-import { useMainStore } from '@/store/MainStore'
 const links1 = ref([
     {
         id: 1,
         name: 'Кулинария',
-        url: '/catalog'
+        url: '/catalog',
+        category: 'bakery'
     },
     {
         id: 2,
         name: 'Супермаркет',
-        url: '/catalog'
+        url: '/catalog',
+        category: 'waterDrinks'
     },
     {
         id: 3,
         name: 'Заморозка',
-        url: '/catalog'
+        url: '/catalog',
+        category: 'dumplings'
     },
     {
         id: 4,
         name: 'Другое',
-        url: '/catalog'
+        url: '/catalog',
+        category: 'beautyHygiene'
     },
 ])
 const links2 = ref([
@@ -75,7 +78,6 @@ const links2 = ref([
         url: '/vacancies'
     },
 ])
-const mainStore = useMainStore()
 </script>
 
 <style lang="scss" scoped>

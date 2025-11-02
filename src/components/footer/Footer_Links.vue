@@ -5,7 +5,7 @@
             v-for="(link, index) in links"
             :key="link.id"
             class="footer-links__item">
-            <RouterLink :to="link.url">{{ link.name }}</RouterLink>
+            <RouterLink :to="link.url" @click="AllData.setCategory(link.category, link.name)">{{ link.name }}</RouterLink>
         </li>
     </ul>
 </template>
@@ -13,7 +13,8 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import { useMainStore } from '@/store/MainStore'
-const mainStore = useMainStore()
+import { useAllData } from '@/store/AllData'
+const AllData = useAllData()
 const props = defineProps({
     strong: {
         type: String

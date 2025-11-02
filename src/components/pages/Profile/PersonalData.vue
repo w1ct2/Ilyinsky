@@ -23,8 +23,21 @@
             </div>
             <div class="personal-data__item">
                 <label for="" class="personal-data__label">День рождения</label>
-                <input type="text" class="personal-data__input">
-                <button class="personal-data__button">Сохранить</button>
+                <input 
+                    type="text" 
+                    class="personal-data__input"
+                    placeholder="дд.мм.гг"
+                    v-model="userBirthday"
+                    @input="handleInput($event)"
+                    :disabled="!isEditingBirthdate">
+                    <button 
+                        class="personal-data__button" 
+                        @click="saveUserBirthdate"
+                        v-if="isEditingBirthdate">Сохранить</button>
+                    <button 
+                        class="personal-data__button" 
+                        @click="startEditingBirthdate"
+                        v-else>Изменить</button>
             </div>
             <div class="personal-data__item">
                 <label for="" class="personal-data__label">Эл. почта</label>
@@ -41,23 +54,62 @@ import { onMounted, ref } from 'vue'
 const mainStore = useMainStore()
 const phoneNumber = ref(mainStore.mainPhoneUser)
 const userFullname = ref('')
+const userBirthday = ref('')
 const isEditingFullname = ref(false)
+const isEditingBirthdate = ref(false)
 
+const handleInput = (event)=>{
+    let value = event.target.value.replace(/\D/g, '')
+    if (value.length > 6) {
+        value = value.slice(0, -1)
+    }
+    let formatted = value
+    if (value.length > 0) {
+        formatted = value.match(/.{1,2}/g).join('.')
+    }
+    if (value.length >=2) {
+        const day = parseInt(value.slice(0, 2))
+        if (day < 1 || day > 31) {
+            value = value.slice(0, 1)
+            formatted = value
+        }
+    }
+    if (value.length >= 4) {
+        const month = parseInt(value.slice(2, 4))
+        if (month < 1 || month > 12) {
+            value = value.slice(0, 2)
+            formatted = value.length > 0 ? value.match(/.{1,2}/g).join('.') : ''
+        }
+    }
+    userBirthday.value = formatted
+}
 onMounted(() => {
     userFullname.value = mainStore.userFullName || ''
     if (mainStore.userFullName) {
         isEditingFullname.value = false
     }
+    userBirthday.value = mainStore.userBirthdate || ''
+    if (mainStore.userBirthdate) {
+        isEditingBirthdate.value = false
+    }
 })
 const startEditingFullname = () => {
     isEditingFullname.value = true
 }
-
+const startEditingBirthdate = () => {
+    isEditingBirthdate.value = true
+}
 const saveUserFullname = () => {
     if (userFullname.value.trim()) {
         mainStore.setUserFullname(userFullname.value)
         isEditingFullname.value = false
     }
+}
+const saveUserBirthdate = () => {
+    if (userBirthday.value.length >= 8) {
+        mainStore.setBirthdate(userBirthday.value)
+        isEditingBirthdate.value = false
+    } else console.log('Введена некорректная дата');
 }
 </script>
 

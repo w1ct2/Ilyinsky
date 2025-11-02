@@ -40,6 +40,15 @@ export const useMainStore = defineStore('mainStore', ()=>{
         localStorage.setItem(STORAGE_DELIVERY_METHOD_KEY, userDeliveryMethod.value)
         console.log('Delivery method is changed, method:', userDeliveryMethod.value)
     }
+
+    const STORAGE_BIRTHDATE_KEY = 'user_birthday'
+    const userBirthdate = ref(localStorage.getItem(STORAGE_BIRTHDATE_KEY))
+    const setBirthdate = (date: string) => {
+        userBirthdate.value = date
+        localStorage.setItem(STORAGE_BIRTHDATE_KEY, userBirthdate.value)
+        console.log('User birthdate is changed, date:', userBirthdate.value);
+        
+    }
     return {
         width, 
         isMobile1000, 
@@ -53,7 +62,9 @@ export const useMainStore = defineStore('mainStore', ()=>{
         userFullName,
         userDeliveryMethod,
         userSelectedAddress,
+        userBirthdate,
         setDeliveryMethod,
         setUserFullname,
+        setBirthdate
     }
 })
