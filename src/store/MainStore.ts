@@ -5,6 +5,7 @@ export const useMainStore = defineStore('mainStore', ()=>{
     const { width } = useWindowSize()
     const isMobile1000 = computed(()=> width.value < 1000)
     const isMobile768 = computed(()=> width.value < 768)
+    const isMobile480 = computed(()=> width.value < 480)
 
     const isActiveBurgerMenu = ref(false)
     const activeBurgerMenu = ()=>{
@@ -75,6 +76,7 @@ export const useMainStore = defineStore('mainStore', ()=>{
         width, 
         isMobile1000, 
         isMobile768, 
+        isMobile480,
         isActiveBurgerMenu, 
         activeBurgerMenu, 
         mainPhoneUser,

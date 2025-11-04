@@ -30,6 +30,7 @@ import { usefullStuff } from './products/other/usefullStuff';
 import { cleaningLaundry } from './products/other/cleaningLaundry';
 import { beautyHygiene} from './products/other/beautyHygiene';
 import { jsx } from 'vue/jsx-runtime';
+import { useMainStore } from './MainStore';
 
 interface Product {
     id: number
@@ -48,6 +49,7 @@ interface Product {
 }
 
 export const useAllData = defineStore('alldata', ()=>{
+    const MainStore = useMainStore()
     const discountsData = ref(discounts)
     
     const bakeryData = ref(bakery)

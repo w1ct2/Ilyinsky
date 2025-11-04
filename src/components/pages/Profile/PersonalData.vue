@@ -1,5 +1,7 @@
 <template>
     <div class="personal-data">
+        <div class="personal-data__close-btn" @click="AllData.setActivePagePersonalAccount(null)"></div>
+        <h2 class="personal-data__title">Личные данные</h2>
         <form class="personal-data__form" @submit.prevent>
             <div class="personal-data__item">
                 <label for="" class="personal-data__label">Имя</label>
@@ -57,14 +59,21 @@
                         @click="startEditingEmail"
                         v-else>Изменить</button>
             </div>
+
+            <RouterLink 
+                class="personal-data__get-out" 
+                :to="'/home'"
+                @click="mainStore.getOut">Выход</RouterLink>
         </form>
     </div>
 </template>
 
 <script setup>
+import { useAllData } from '@/store/AllData'
 import { useMainStore } from '@/store/MainStore'
-import { onMounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 const mainStore = useMainStore()
+const AllData = useAllData()
 const phoneNumber = ref(mainStore.mainPhoneUser)
 const userFullname = ref('')
 const userBirthday = ref('')
@@ -122,6 +131,12 @@ onMounted(() => {
     if (mainStore.userEmail) {
         isEditingEmail.value = false
     }
+    if (mainStore.isMobile480) {
+        document.body.classList.add('no-scroll')
+    }
+})
+onUnmounted(()=>{
+    document.body.classList.remove('no-scroll')
 })
 const startEditingFullname = () => {
     isEditingFullname.value = true
@@ -160,6 +175,10 @@ const saveUserEmail = () => {
     margin-bottom: rem(110);
     display: flex;
     width: 100%;
+    position: relative;
+    &__title {
+        display: none;
+    }
     &__form {
         display: flex;
         flex-direction: column;
@@ -193,6 +212,70 @@ const saveUserEmail = () => {
         color: #888888;
         font-size: 20px;
         display: inline;
+    }
+    &__close-btn {
+        display: none;
+    }
+    &__get-out {
+        color: #888888;
+        margin-top: rem(20);
+        cursor: pointer;
+    }
+    @media (max-width: 480px) {
+        & {
+            background-color: #fff;
+            margin-top: 0;
+            margin-bottom: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+            padding: rem(40) rem(25);
+            flex-direction: column;
+            overflow-y: scroll;
+        }
+        &__item {
+            grid-template-columns: 1fr;
+        }
+        &__label {
+            grid-column: 1/2;
+            color: #000;
+        }
+        &__button {
+            font-size: 16px;
+            width: fit-content;
+        }
+        &__close-btn {
+            display: block;
+            position: absolute;
+            width: rem(16);
+            height: rem(16);
+            top: rem(15);
+            right: rem(15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &::after, &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: rem(3);
+                background-color: var(--red);
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
+            &::before {
+                transform: rotate(45deg);
+            }
+        }
+        &__title {
+            display: block;
+            font-size: 24px;
+            margin-bottom: rem(25);
+        }
     }
 }
 </style>

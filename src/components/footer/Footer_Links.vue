@@ -12,7 +12,6 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
-import { useMainStore } from '@/store/MainStore'
 import { useAllData } from '@/store/AllData'
 const AllData = useAllData()
 const props = defineProps({
@@ -39,6 +38,9 @@ const props = defineProps({
             cursor: pointer;
             color: #fff;
         }
+    }
+    @media (max-width: 768px) {
+        font-size: 14px;
     }
 }
 </style>

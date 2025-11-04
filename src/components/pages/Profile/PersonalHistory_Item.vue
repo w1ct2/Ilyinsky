@@ -149,5 +149,34 @@ const isActiveTrackingPage = ref(false)
             color: var(--red);
         }
     }
+    @media (max-width: 480px) { 
+        padding: rem(6) rem(14);
+        &__status {
+            font-size: 12px;
+            width: rem(68);
+            height: rem(17);
+            padding: 0;
+        }
+        &__number {
+            font-size: 12px;
+        }
+        &__method {
+            font-size: 15px;
+        }
+        &__address {
+            font-size: 12px;
+        }
+        &__price {
+            font-size: 17px;
+            & span {
+                font-size: 10px;
+            }
+        }
+        &__button {
+            font-size: 12px;
+            width: rem(110);
+            height: rem(30);
+        }
+    }
 }
 </style>
