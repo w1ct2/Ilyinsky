@@ -35,7 +35,6 @@ const props = defineProps({
     height: 100%;
     position: relative;
     display: flex;
-    // max-width: rem(860);
     padding: 50px;
     flex-direction: column;
     justify-content: end;
@@ -61,11 +60,23 @@ const props = defineProps({
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
+        z-index: 2;
     }
     &__img {
         position: absolute;
         right: 0;
         bottom: 0;
+    }
+    @media (max-width: 1000px) {
+        &__title {
+            font-size: 32px;
+            max-width: rem(400);
+            min-height: rem(140);
+        }
+        &__button {
+            font-size: 18px;
+        }
     }
     @media (max-width: 768px) {
         & {
@@ -74,16 +85,18 @@ const props = defineProps({
         &__title {
             font-size: 25px;
             max-width: rem(240);
+            min-height: 0;
         }
         &__button {
-            font-size: 16px;
+            font-size: 14px;
             width: rem(200);
             height: auto;
+            padding: rem(10);
         }
     }
     @media (max-width: 480px) {
         & {
-            padding: 25px;
+            padding: 15px;
         }
         &__title {
             font-size: 18px;
@@ -91,9 +104,9 @@ const props = defineProps({
             max-width: rem(180);
         }
         &__button {
-            font-size: 15px;
-            width: rem(130);
-            height: rem(40);
+            font-size: 12px;
+            width: fit-content;
+            height: rem(30);
         }
     }
 }

@@ -40,6 +40,7 @@ const totalQuantity = computed(()=>{
 })
 watch(totalPrice, (newVal)=>{
     emits('handleTotalPrice', newVal)
+    BasketData.setBasketTotalPrice(totalPrice.value)
 })
 watch(totalQuantity, (newVal)=>{
     emits('handleTotalQuantity', newVal)

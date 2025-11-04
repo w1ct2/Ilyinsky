@@ -28,7 +28,7 @@ const emits = defineEmits(['close-modal'])
 const mainStore = useMainStore()
 const title = ref(mainStore.userFullName)
 const getOut = ()=>{
-    localStorage.setItem('UserAuthorization', 'notAuth')
+    mainStore.getOut()
     emits('close-modal')
 }
 const AllData = useAllData()

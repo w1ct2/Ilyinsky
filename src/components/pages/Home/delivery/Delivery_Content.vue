@@ -47,9 +47,19 @@ const mainStore = useMainStore()
         font-size: 18px;
         line-height: 1.5;
     }
+    @media (max-width: 1000px) {
+        & {
+            font-size: 17px;
+        }
+    }
+    @media (max-width: 768px) {
+        & {
+            font-size: 16px;
+        }
+    }
     @media (max-width: 480px) {
         & {
-            font-size: 18px;
+            font-size: 14px;
         }
     }
 }

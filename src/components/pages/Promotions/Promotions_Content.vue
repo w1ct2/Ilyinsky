@@ -15,9 +15,7 @@
 </template>
 
 <script setup>
-import { useMainStore } from '@/store/MainStore'
 import Promotions_ContentItem from './Promotions_Content-Item.vue';
-const mainStore = useMainStore()
 const props = defineProps({
     title: {
         type: String, 
@@ -48,8 +46,13 @@ const props = defineProps({
         min-width: 0px;
         grid-template-columns: repeat(2, 1fr);
         width: 100%;
-    }    
+    }
+    @media (max-width: 768px) {
+        margin-top: rem(20);
+        margin-bottom: rem(100);
+    }
     @media (max-width: 480px) {
+        margin-bottom: rem(80);
         &__container {
             grid-template-columns: 1fr;
             gap: 30px;

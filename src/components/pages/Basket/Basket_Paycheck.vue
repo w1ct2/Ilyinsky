@@ -26,10 +26,11 @@
                 class="basket-paycheck__button"
                 v-if="activePage === 'list'"
                 @click="$emit('changePage')">Оформление</button>
-            <button 
+            <RouterLink 
+                :to="'/home'"
                 class="basket-paycheck__button"
                 v-else-if="activePage === 'registration'"
-                @click="removeBasketData(numberOrder, totalPrice, date)">Оформить</button>
+                @click="removeBasketData(numberOrder, totalPrice, date)">Оформить</RouterLink>
         </div>
         <div 
             class="basket-paycheck__regist-alert"
@@ -55,6 +56,7 @@ import { useRecentAddressesStore } from '@/store/RecentAddressesStore';
 import { computed, ref } from 'vue';
 import Basket_RegistrationEnding from './Basket_Registration-Ending.vue';
 import { useBasketData } from '@/store/BasketData';
+import { RouterLink } from 'vue-router';
 const MainStore = useMainStore()
 const AddressesStore = useAddressesStore()
 const RecentAddressesStore = useRecentAddressesStore()
@@ -62,7 +64,8 @@ const PersonalHistory = usePersonalHistory()
 const BasketData = useBasketData()
 const props = defineProps({
     totalPrice: {
-        type: Number
+        type: Number,
+        default: 0
     },
     totalProducts: {
         type: Number
@@ -88,6 +91,7 @@ const removeBasketData = (numberOrder, totalPrice, date) => {
     PersonalHistory.addToStorage(numberOrder, totalPrice, date);
     isActiveEndingPage.value = true
     BasketData.clearStorage()
+    localStorage.removeItem(BasketData.STORAGE_TOTAL_PRICE_KEY)
 }
 const date = formatDate()
 const numberOrder = ref(Date.now())

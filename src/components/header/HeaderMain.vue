@@ -11,7 +11,7 @@
                     </template>
                 </Header_Action>
                 <Header_Sections></Header_Sections>
-                <Header_SectionsMobile v-if="mainStore.isMobile1000"></Header_SectionsMobile>
+                <Header_BottomBar v-if="mainStore.isMobile1000"></Header_BottomBar>
             </div>
         </div>
     </nav>
@@ -23,7 +23,7 @@ import Header_Action from './Header_Action.vue';
 import Header_Sections from './Header_Sections.vue';
 import Header_BurgerBtn from './mobile/Header_BurgerBtn.vue';
 import Header_BurgerMenu from './mobile/Header_BurgerMenu.vue';
-import Header_SectionsMobile from './mobile/Header_Sections-Mobile.vue';
+import Header_BottomBar from '@/components/header/mobile/Header_BottomBar.vue'
 
 import { useMainStore } from '@/store/MainStore'
 const mainStore = useMainStore()

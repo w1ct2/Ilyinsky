@@ -6,8 +6,6 @@
 </template>
 
 <script setup>
-import { useMainStore } from '@/store/MainStore'
-const mainStore = useMainStore()
 const props = defineProps({
     title: {
         type: String,

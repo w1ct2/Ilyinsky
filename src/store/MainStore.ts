@@ -9,13 +9,19 @@ export const useMainStore = defineStore('mainStore', ()=>{
     const isActiveBurgerMenu = ref(false)
     const activeBurgerMenu = ()=>{
         isActiveBurgerMenu.value = !isActiveBurgerMenu.value
-        console.log("Catalog is open");
+        if (isActiveBurgerMenu.value) {
+            console.log("Catalog is open");
+            document.body.classList.add('no-scroll');
+        } else {
+            console.log("Catalog is closed");
+            document.body.classList.remove('no-scroll');
+        }
     }
-    const STORAGE_PHONE_KEY = ref('mainPhone')
-    const mainPhoneUser = ref(localStorage.getItem(STORAGE_PHONE_KEY.value))
+    const STORAGE_PHONE_KEY = 'user_phone'
+    const mainPhoneUser = ref(localStorage.getItem(STORAGE_PHONE_KEY))
     const setMainPhoneUser = (value: string)=>{
         mainPhoneUser.value = value
-        localStorage.setItem(STORAGE_PHONE_KEY.value, mainPhoneUser.value)
+        localStorage.setItem(STORAGE_PHONE_KEY, mainPhoneUser.value)
     }
 
     const STORAGE_AUTH_KEY = ref('UserAuthorization')
@@ -57,6 +63,14 @@ export const useMainStore = defineStore('mainStore', ()=>{
         localStorage.setItem(STORAGE_EMAIL_KEY, userEmail.value)
         console.log('User email is changed, date:', userEmail.value);
     }
+
+    const getOut = ()=> {
+        localStorage.removeItem(STORAGE_BIRTHDATE_KEY)
+        localStorage.removeItem(STORAGE_EMAIL_KEY)
+        localStorage.removeItem(STORAGE_FULLNAME_KEY)
+        localStorage.removeItem(STORAGE_PHONE_KEY)
+        localStorage.setItem('UserAuthorization', 'notAuth')
+    }
     return {
         width, 
         isMobile1000, 
@@ -76,5 +90,6 @@ export const useMainStore = defineStore('mainStore', ()=>{
         setUserFullname,
         setBirthdate,
         setEmail,
+        getOut,
     }
 })

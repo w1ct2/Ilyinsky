@@ -8,21 +8,21 @@
             <img :src="actions" alt="">
             <p>Акции</p>
         </RouterLink>
-        <div class="bottom-bar__basket">
+        <RouterLink class="bottom-bar__basket" :to="'/basket'">
             <div class="bottom-bar__basket-img">
                 <img :src="basket" alt="">
-                <span>23</span>
+                <span>{{ BasketData.basketData.length }}</span>
             </div>
-            <p>190 руб</p>
-        </div>
-        <div class="bottom-bar__item">
+            <p>{{ BasketData.basketTotalPrice }} руб</p>
+        </RouterLink>
+        <RouterLink class="bottom-bar__item" :to="'/personal-account'" @click="AllData.setActivePagePersonalAccount(2)">
             <img :src="favorites" alt="">
             <p>Избранное</p>
-        </div>
-        <div class="bottom-bar__item">
+        </RouterLink>
+        <RouterLink class="bottom-bar__item" :to="'/personal-account'" @click="AllData.setActivePagePersonalAccount(0)">
             <img :src="profile" alt="">
             <p>Профиль</p>
-        </div>
+        </RouterLink>
     </div>
 </template>
 
@@ -31,13 +31,16 @@ import favorites from '@/assets/img/bottomBar/favorites.svg'
 import actions from '@/assets/img/bottomBar/fire.svg'
 import profile from '@/assets/img/bottomBar/profile.svg'
 import basket from '@/assets/img/bottomBar/basket.svg'
-
+import { RouterLink } from 'vue-router'
 import { useMainStore } from '@/store/MainStore'
+import { useBasketData } from '@/store/BasketData'
+import { useAllData } from '@/store/AllData'
 const mainStore = useMainStore()
-
 const activeBurgerMenu = (n)=>{
     mainStore.activeBurgerMenu()
 }
+const BasketData = useBasketData()
+const AllData = useAllData()
 </script>
 
 <style lang="scss" scoped>
@@ -65,6 +68,7 @@ const activeBurgerMenu = (n)=>{
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        color: #fff;
         gap: 10px;
         &-img {
             position: relative;

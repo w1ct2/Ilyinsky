@@ -22,7 +22,6 @@ import { ref } from 'vue';
 import Basket_List from './Basket_List.vue';
 import Basket_Paycheck from '@/components/pages/Basket/Basket_Paycheck.vue'
 import Basket_Registration from './Basket_Registration.vue';
-
 const totalPrice = ref()
 const totalProducts = ref()
 const activePage = ref('list')

@@ -29,7 +29,27 @@ const props = defineProps({
 @import "@/scss/remFunction";
 .section {
     &__inner {
-        margin-top: 150px;
+        margin-top: rem(150);
+    }
+    @media (max-width: 1300px) {
+    &__inner {
+        margin-top: rem(120);
+    }
+    }
+    @media (max-width: 1000px) {
+    &__inner {
+        margin-top: rem(100);
+    }
+    }
+    @media (max-width: 768px) {
+    &__inner {
+        margin-top: rem(80);
+    }
+    }
+    @media (max-width: 480px) {
+    &__inner {
+        margin-top: rem(60);
+    }
     }
 }
 </style>

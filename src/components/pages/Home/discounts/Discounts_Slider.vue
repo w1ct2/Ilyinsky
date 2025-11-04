@@ -57,7 +57,7 @@ const updateSlides = ()=>{
     if (width <= 480) {
         slidesPerView.value = 2
     } else if (width <= 768) {
-        slidesPerView.value = 3
+        slidesPerView.value = 2.5
     } else {
         slidesPerView.value = 4
     }

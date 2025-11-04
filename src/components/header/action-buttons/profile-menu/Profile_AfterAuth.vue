@@ -41,7 +41,7 @@ const fruits = ref([
     right: 0;
     bottom: 0;
     top: 0;
-    z-index: 10;
+    z-index: 100;
     width: 100%;
     height: 100vh;
     background-color: rgba(0,0,0,.8);
@@ -106,6 +106,27 @@ const fruits = ref([
         &--10 {
             top: -80%;
             right: 15%;
+        }
+    }
+    @media (max-width: 1300px) {
+        &__title {
+            font-size: 34px;
+        }
+    }
+    @media (max-width: 1000px) {
+        &__title {
+            font-size: 30px;
+            letter-spacing: 0;
+        }
+    }
+    @media (max-width: 768px) {
+        &__title {
+            font-size: 26px;
+        }
+    }
+    @media (max-width: 480px) {
+        &__title {
+            font-size: 20px;
         }
     }
 }

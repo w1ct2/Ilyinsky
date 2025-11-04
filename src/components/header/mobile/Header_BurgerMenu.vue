@@ -4,11 +4,10 @@
             <Header_Action class="burger-menu__header"></Header_Action>
             <Header_BurgerCatalog :title="'каталог'" :labels="links1" class="catalog"></Header_BurgerCatalog>
             <Header_BurgerProfile :title="'профиль'" class="profile"></Header_BurgerProfile>
-            <Header_BurgerCatalog :title="'ильинский клуб'" :labels="links2" class="catalog"></Header_BurgerCatalog>
             <div class="burger-menu__bottom">
                 <img :src="phone" alt="">
                 <div class="burger-menu__bottom-title">
-                    <h4>+38 (000) 49-09-99</h4>
+                    <h4>+7 (000) 000-00-00</h4>
                     <p>Ежедневно c 09:00 до 21:00</p>
                 </div>
             </div>
@@ -20,7 +19,6 @@
 import phone from '@/assets/img/svg/phone1.svg'
 import Header_BurgerCatalog from './Header_BurgerCatalog.vue'
 import Header_BurgerProfile from './Header_BurgerProfile.vue'
-import { useMainStore } from '@/store/MainStore'
 import Header_Action from '../Header_Action.vue'
 const props = defineProps({
     isActive: {
@@ -35,58 +33,40 @@ const links1 = [
         url: "/promotions"
     },
     {
-        id: 2,
-        name: "Популярное",
-        url: ""
+        id: 4,
+        name: "Кулинария",
+        url: "/catalog",
+        category: 'bakery'
     },
     {
         id: 3,
         name: "Супермаркет",
-        url: ""
-    },
-    {
-        id: 4,
-        name: "Кулинария",
-        url: ""
+        url: "/catalog",
+        category: 'waterDrinks'
     },
     {
         id: 5,
         name: "Заморозка",
-        url: ""
+        url: "/catalog",
+        category: 'dumplings'
     },
     {
         id: 6,
         name: "Другое",
-        url: ""
+        url: "/catalog",
+        category: 'beautyHygiene'
     },
     {
         id: 7,
-        name: "Продукция от «Ильинского»",
-        url: ""
-    }
-];
-const links2 = [
-    {
-        id: 1,
-        url: '',
-        name: 'Доставка и оплата'
+        url: '/contacts',
+        name: 'Наши магазины и контакты'
     },
     {
-        id: 2,
-        url: '',
-        name: 'Программа лояльности'
-    },
-    {
-        id: 3,
-        url: '',
-        name: 'Политика конфиденциальности'
-    },
-    {
-        id: 4,
-        url: '',
+        id: 8,
+        url: '/vacancies',
         name: 'Вакансии'
     },
-]
+];
 </script>
 
 <style lang="scss" scoped>

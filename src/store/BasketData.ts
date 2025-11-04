@@ -18,6 +18,12 @@ interface Product {
 export const useBasketData = defineStore('basketData', ()=>{
     const STORAGE_BASKET_KEY = 'basket_data'
     const basketData: Ref<Product[]> = ref([])
+    const STORAGE_TOTAL_PRICE_KEY = 'basket_total_price'
+    const basketTotalPrice = ref(localStorage.getItem(STORAGE_TOTAL_PRICE_KEY) || 0)
+    const setBasketTotalPrice = (totalPrice: number) =>{
+        basketTotalPrice.value = totalPrice
+        localStorage.setItem(STORAGE_TOTAL_PRICE_KEY, basketTotalPrice.value.toString())
+    }
     const loadFromStorage = ()=>{
         const storedData = localStorage.getItem(STORAGE_BASKET_KEY)
         if (storedData) {
@@ -50,6 +56,9 @@ export const useBasketData = defineStore('basketData', ()=>{
         basketData,
         addToStorage,
         deleteFromStorage,
-        clearStorage
+        clearStorage,
+        basketTotalPrice, 
+        setBasketTotalPrice,
+        STORAGE_TOTAL_PRICE_KEY
     }
 })

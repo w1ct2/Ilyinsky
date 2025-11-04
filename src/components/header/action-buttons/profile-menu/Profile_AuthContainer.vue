@@ -42,6 +42,12 @@ const setTitle = computed(()=>{
     display: grid;
     grid-template-rows: auto 1fr; 
     box-shadow: 0px 2px 8px 0px #00000040;
+    @media (max-width: 1000px) {
+        position: fixed;
+        bottom: auto;
+        margin: 0 auto;
+        z-index: 100;
+    }
     &__title {
         color: #000;
         font-size: 22px;

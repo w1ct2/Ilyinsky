@@ -4,17 +4,18 @@
         <ul class="catalog__list">
             <li 
                 class="catalog__item"
-                v-for="(label, index) in labels"
+                v-for="(label) in labels"
                 :key="label.id"
-                ><router-link :to="label.url" @click="mainStore.activeBurgerMenu">{{ label.name }}</router-link>
+                ><router-link :to="label.url" @click="clickLink(label)">{{ label.name }}</router-link>
             </li>
         </ul>
     </div>
 </template>
-
 <script setup>
+import { useAllData } from '@/store/AllData'
 import { useMainStore } from '@/store/MainStore'
 const mainStore = useMainStore()
+const AllData = useAllData()
 const props = defineProps({
     title: {
         type: String
@@ -24,6 +25,12 @@ const props = defineProps({
         required: true
     }
 })
+const clickLink = (data)=>{
+    mainStore.activeBurgerMenu()
+    if (data.category) {
+        AllData.setCategory(data.category, data.name)
+    }
+}
 </script>
 
 <style lang="scss" scoped>

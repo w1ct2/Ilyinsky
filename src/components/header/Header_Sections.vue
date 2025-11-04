@@ -6,10 +6,16 @@
             @click="selectSection(index)"
             v-for="(item, index) in buttons"
             :key="item.id">
-            <RouterLink :to="item.url" @click="AllData.setCategory(item.category, item.name)">
+            <RouterLink 
+                :to="item.url" 
+                @click="AllData.setCategory(item.category, item.name)"
+                class="navigation-sections__item-icon">
                 <img :src="item.link" alt="">
             </RouterLink>
-            <RouterLink :to="item.url" @click="AllData.setCategory(item.category, item.name)">{{ item.name }}</RouterLink>
+            <RouterLink 
+                :to="item.url" 
+                @click="AllData.setCategory(item.category, item.name)"
+                class="navigation-sections__item-link">{{ item.name }}</RouterLink>
         </li>
     </ul>
 </template>
@@ -103,11 +109,14 @@ const selectSection = (index)=>{
         &--active {
             background-color: #FFE8BC;
         }
-        & img {
+        &-icon {
             width: 24px;
             height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        & a {
+        &-link {
             font-weight: 600;
             color: #0A0A0A;
             width: 100%;
@@ -127,10 +136,12 @@ const selectSection = (index)=>{
     @media (max-width: 768px) {
         margin-top: 10px;
         height: rem(40);
+        gap: rem(10);
         &__item {
             border-radius: 9px;
             font-size: 12px;
-            & img {
+            padding: 0 rem(10);
+            &-icon {
                 width: 20px;
                 height: 20px;
             }
@@ -142,7 +153,7 @@ const selectSection = (index)=>{
         &__item {
             border-radius: 8px;
             font-size: 10px;
-            & img {
+            &-icon {
                 width: 18px;
                 height: 18px;
             }

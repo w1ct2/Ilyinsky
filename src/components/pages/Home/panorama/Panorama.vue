@@ -27,11 +27,7 @@ import PanoramaSlider from '@/components/pages/Home/panorama/Panorama_Slider.vue
 import PanoramaItem from '@/components/pages/Home/panorama/Panorama_Item.vue'
 import img1 from '@/assets/img/Home_panorama/img1.png'
 import img2 from '@/assets/img/Home_panorama/img2.png'
-
-import { useMainStore } from '@/store/MainStore'
 import { ref } from 'vue'
-const mainStore = useMainStore()
-
 const item1Text = ref({
     color: '#3E5828',
     backgroundColor: '#A9D288',
@@ -43,13 +39,11 @@ const item2Text = ref({
     background: 'radial-gradient(62.38% 214.22% at 78.22% 32.11%, #FF0000 0%, #FF3103 100%)',
 })
 const item1Img = ref({
-    width: '70%',
     height: '100%',
     right: '0',
     bottom: '0'
 })
 const item2Img = ref({
-    width: '20%',
     height: '35%',
     right: '20px',
     top: '20px'
