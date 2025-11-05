@@ -24,8 +24,6 @@
 </template>
 
 <script setup>
-import { useMainStore } from '@/store/MainStore'
-const mainStore = useMainStore()
 </script>
 
 <style lang="scss" scoped>
@@ -37,16 +35,16 @@ const mainStore = useMainStore()
         width: 100%;
         min-width: 0;
         grid-template-columns: auto auto 1fr;
-        grid-template-rows: 1fr 55px;
-        column-gap: 35px;
-        row-gap: 15px;
-        max-width: 630px;
+        grid-template-rows: 1fr rem(55);
+        column-gap: rem(35);
+        row-gap: rem(15);
+        max-width: 6rem(30);
         & input[type="text"] {
             height: rem(36);
             background-color: #fff;
-            border-radius: 16px;
-            padding: 0 20px;
-            font-size: 20px;
+            border-radius: rem(16);
+            padding: 0 rem(20);
+            font-size: rem(20);
             &::placeholder {
                 color: #C3B4B4;
             }
@@ -54,21 +52,21 @@ const mainStore = useMainStore()
         & button {
             grid-column: 1/4;
             grid-row: 2/3;
-            border-radius: 30px;
-            border: 1px solid var(--red);
+            border-radius: rem(30);
+            border:rem( 1) solid var(--red);
             color: var(--red);
             height: 100%;
             width: fit-content;
-            font-size: 22px;
-            padding: 0 20px;
+            font-size: rem(22);
+            padding: 0 rem(20);
         }
     }
     &__checkbox {
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap:rem( 8);
         & label {
-            font-size: 22px;
+            font-size: rem(22);
             user-select: none;
         }
         & input {
@@ -105,51 +103,51 @@ const mainStore = useMainStore()
         width: 100%;
         height: rem(165);
         background-color: #FFECCA;
-        border: 1px solid #FFE7B9;
-        border-radius: 16px;
+        border:rem( 1) solid #FFE7B9;
+        border-radius: rem(16);
         color: #2E0505;
-        padding-left: 60px;
-        padding-right: 20px;
-        padding-top: 35px;
-        padding-bottom: 25px;
+        padding-left: rem(60);
+        padding-right: rem(20);
+        padding-top: rem(35);
+        padding-bottom: rem(25);
     }
     &__title {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: rem(15);
         height: 100%;
         max-width: rem(510);
         & h2 {
-            font-size: 38px;
+            font-size: rem(38);
             text-transform: uppercase;
         }
         & p {
-            font-size: 20px;
+            font-size: rem(20);
         }
     }
     @media (max-width: 1300px) {
         &__inner {
-            padding: 25px 30px;
+            padding: rem(25) rem(30);
         }
         &__title {
-            gap: 10px;
+            gap: rem(10);
             & h2 {
-                font-size: 30px;
+                font-size: rem(30);
             }
             & p {
-                font-size: 18px;
+                font-size: rem(18);
             }
         }
         &__container {
-            max-width: 470px;
-            grid-template-rows: 1fr 40px;
-            column-gap: 20px;
+            max-width: 4rem(70);
+            grid-template-rows: 1fr rem(40);
+            column-gap: rem(20);
             button {
-                font-size: 18px;
+                font-size: rem(18);
             }
         }
         &__checkbox label {
-            font-size: 20px;
+            font-size: rem(20);
         }
     }
     @media (max-width: 1000px) {
@@ -157,24 +155,24 @@ const mainStore = useMainStore()
             flex-direction: column;
             align-items: start;
             height: auto;
-            gap: 20px;
+            gap: rem(20);
         }
         &__container {
-            max-width: 600px;
+            max-width: 6rem(00);
         }
         &__title {
             & h2 {
-                font-size: 26px;
+                font-size: rem(26);
             }
             & p {
-                font-size: 16px;
+                font-size: rem(16);
             }
         }
         &__checkbox label {
-            font-size: 18px;
+            font-size: rem(18);
         }
         & input[type="text"] {
-            font-size: 18px;
+            font-size: rem(18);
         }
     }
     @media (max-width: 768px) {
@@ -187,43 +185,43 @@ const mainStore = useMainStore()
             & input[type="text"] {
                 grid-row: 2/3;
                 grid-column: 1/6;
-                max-width: 380px;
+                max-width: 3rem(80);
             }
         }
         &__title {
             & h2 {
-                font-size: 22px;
+                font-size: rem(22);
             }
             & p {
-                font-size: 14px;
+                font-size: rem(14);
             }
         }
         &__checkbox label {
-            font-size: 16px;
+            font-size: rem(16);
         }
         & input[type="text"] {
-            font-size: 16px;
+            font-size: rem(16);
         }
         &__container {
             button {
-                font-size: 16px;
+                font-size: rem(16);
             }
         }
     }
     @media (max-width: 480px) {
         &__inner {
-            padding: 15px;
-            border-radius: 11px;
+            padding: rem(15);
+            border-radius: rem(6);
         }
         &__checkbox label {
-            font-size: 14px;
+            font-size: rem(14);
         }
         & input[type="text"] {
-            font-size: 14px;
+            font-size: rem(14);
         }
         &__container {
             button {
-                font-size: 13px;
+                font-size: rem(13);
             }
         }
     }

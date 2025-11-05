@@ -44,12 +44,31 @@ const sortedData = computed(()=>{
     grid-template-columns: repeat(3, 1fr);
     gap: rem(25);
     height: fit-content;
+    // min-height: rem(600);
     &__alert {
         font-size: 24px;
         color: #6B6B6B;
         font-weight: 600;
         margin-left: rem(30);
         grid-column: 1/3;
+    }
+    @media (max-width: 1000px) {
+        & {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: rem(550);
+        }
+    }
+    @media (max-width: 768px) {
+        & {
+            grid-template-columns: repeat(3, 1fr);
+            max-width: none;
+        }
+    }
+    @media (max-width: 600px) {
+        & {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: rem(480);
+        }
     }
 }
 </style>

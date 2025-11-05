@@ -160,7 +160,7 @@ export const useAllData = defineStore('alldata', ()=>{
         selectedCategory.value.categoryTitle = categoryTitle
     }
 
-    const activePagePersonalAccount = ref(0)
+    const activePagePersonalAccount = ref<null | number>(null)
     const setActivePagePersonalAccount = (page: number) => {
         activePagePersonalAccount.value = page
     }

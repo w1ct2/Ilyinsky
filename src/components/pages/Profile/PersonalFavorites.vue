@@ -1,7 +1,7 @@
 <template>
     <div class="favorites">
         <div class="favorites__close-btn" @click="AllData.setActivePagePersonalAccount(null)"></div>
-        <h2 class="favorites__title">Избранное</h2>
+        <h2 class="favorites__title" @click="AllData.setActivePagePersonalAccount(null)">Избранное</h2>
         <ProductCard
             v-for="(card, index) in cards"
             :key="card.id"
@@ -53,6 +53,29 @@ onUnmounted(()=>{
     }
     &__title {
         display: none;
+        position: relative;
+        padding-left: rem(25);
+        cursor: pointer;
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            background-color: #000000;
+            height: 2px;
+            width: 7px;
+            left: 0;
+            display: flex;
+            align-items: center;
+        }
+        &::after {
+            transform: rotate(-45deg);
+            margin-top: 6.5px;
+            top: 7px;
+        }
+        &::before {
+            transform: rotate(45deg);
+            margin-bottom: 6.5px;
+            bottom: 7px;
+        }
     }
     &__close-btn {
         display: none;

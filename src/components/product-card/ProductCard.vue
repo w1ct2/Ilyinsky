@@ -220,12 +220,17 @@ const basketBtnIsClicked = ref(false)
     @media (max-width: 1000px) {
         & {
             padding: 12px;
-            height: rem(350);
+            height: rem(300);
+            grid-template-rows: 45% 20px 1fr auto;
         }
         &__title {
             font-size: 14px;
         }
         &__price {
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            grid-column: 1/2;
             &-title {
                 font-size: 16px;
             }
@@ -245,16 +250,18 @@ const basketBtnIsClicked = ref(false)
             height: 30px;
         }
         &__button {
-            height: rem(35);
-            font-size: 14px;
+            height: rem(30);
+            padding: 0 rem(12);
+            font-size: 12px;
+            grid-row: 4/5;
+            grid-column: 2/3;
         }
     }
     @media (max-width: 768px) {
         & {
             padding: 10px;
             border-radius: 16px;
-            height: rem(340);
-            grid-template-rows: 45% 15px auto 20px 40px;
+            height: rem(250);
         }
         &__availability-title {
             font-size: 9px;
@@ -276,10 +283,16 @@ const basketBtnIsClicked = ref(false)
                 font-size: 10px;
             }
         } 
+        &__button {
+            height: rem(25);
+            font-size: 11px;
+            padding: 0 rem(10);
+            margin: 0;
+        }
     }
     @media (max-width: 480px) {
         & {
-            height: rem(250);
+            height: rem(220);
         }
         &__favorite {
             width: 15px;
@@ -300,6 +313,12 @@ const basketBtnIsClicked = ref(false)
         }
         &__availability-price {
             font-size: 9px;
+        }
+        &__button {
+            height: rem(21);
+            font-size: 8px;
+            padding: 0 rem(7);
+            margin-left: auto;
         }
     }
 }

@@ -50,6 +50,7 @@ const props = defineProps({
         padding-left: rem(25);
         height: rem(32);
         cursor: pointer;
+        overflow: hidden;
     }
 }
 </style>

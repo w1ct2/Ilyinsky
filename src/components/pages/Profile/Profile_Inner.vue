@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted, ref } from 'vue';
+import { computed, onBeforeMount, onMounted, ref } from 'vue';
 import PersonalData from './PersonalData.vue';
 import PersonalHistory from './PersonalHistory.vue';
 import { useAllData } from '@/store/AllData';
@@ -41,11 +41,9 @@ const tabs = ref([
         title: 'Избранное'
     }
 ])
-onMounted(() => {
-    if (!MainStore.isMobile480) {
+onBeforeMount(() => {
+    if (!MainStore.isMobile480 && AllData.activePagePersonalAccount === null) {
         AllData.setActivePagePersonalAccount(0)
-    } else if (MainStore.isMobile480) {
-        AllData.setActivePagePersonalAccount(null)
     }
 })
 </script>

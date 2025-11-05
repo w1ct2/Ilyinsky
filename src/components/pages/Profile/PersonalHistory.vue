@@ -1,7 +1,7 @@
 <template>
     <div class="history">
         <div class="history__close-btn" @click="AllData.setActivePagePersonalAccount(null)"></div>
-        <h2 class="history__title">История заказов</h2>
+        <h2 class="history__title" @click="AllData.setActivePagePersonalAccount(null)">История заказов</h2>
         <article class="history__additionally">Если не понравился вкус или качество продукта — поможем по всем вопросам. Поддержка 8 800 999 99 99</article>
         <div class="history__container">
             <PersonalHistory_Item
@@ -52,6 +52,29 @@ onUnmounted(()=>{
     }
     &__title {
         display: none;
+        position: relative;
+        padding-left: rem(25);
+        cursor: pointer;
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            background-color: #000000;
+            height: 2px;
+            width: 7px;
+            left: 0;
+            display: flex;
+            align-items: center;
+        }
+        &::after {
+            transform: rotate(-45deg);
+            margin-top: 6.5px;
+            top: 7px;
+        }
+        &::before {
+            transform: rotate(45deg);
+            margin-bottom: 6.5px;
+            bottom: 7px;
+        }
     }
     @media (max-width: 1300px) {
         &__container {

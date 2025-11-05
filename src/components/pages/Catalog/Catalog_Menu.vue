@@ -53,13 +53,34 @@ const handleFilter = (filter)=>{
     flex-direction: column;
     gap: rem(30);
     max-width: rem(315);
-    width: 100vh;
+    width: 100%;
     &__all-data {
         color: #000;
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 600; 
         text-align: left;
         text-transform: uppercase;
+    }
+    @media (max-width: 1000px) {
+        & {
+            max-width: rem(270);
+        }
+    }
+    @media (max-width: 768px) {
+        & {
+            position: fixed;
+            background-color: #fff;
+            z-index: 100;
+            top: 0;
+            left: -100%;
+            padding: rem(20);
+            height: 100vh;
+            overflow-y: auto;
+            transition: all .5s ease;
+        }
+        &--active {
+            left: 0;
+        }
     }
 }
 </style>

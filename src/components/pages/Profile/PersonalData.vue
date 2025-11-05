@@ -1,7 +1,7 @@
 <template>
     <div class="personal-data">
         <div class="personal-data__close-btn" @click="AllData.setActivePagePersonalAccount(null)"></div>
-        <h2 class="personal-data__title">Личные данные</h2>
+        <h2 class="personal-data__title" @click="AllData.setActivePagePersonalAccount(null)">Личные данные</h2>
         <form class="personal-data__form" @submit.prevent>
             <div class="personal-data__item">
                 <label for="" class="personal-data__label">Имя</label>
@@ -59,7 +59,6 @@
                         @click="startEditingEmail"
                         v-else>Изменить</button>
             </div>
-
             <RouterLink 
                 class="personal-data__get-out" 
                 :to="'/home'"
@@ -178,6 +177,29 @@ const saveUserEmail = () => {
     position: relative;
     &__title {
         display: none;
+        position: relative;
+        padding-left: rem(25);
+        cursor: pointer;
+        &::after, &::before {
+            content: '';
+            position: absolute;
+            background-color: #000000;
+            height: 2px;
+            width: 7px;
+            left: 0;
+            display: flex;
+            align-items: center;
+        }
+        &::after {
+            transform: rotate(-45deg);
+            margin-top: 6.5px;
+            top: 7px;
+        }
+        &::before {
+            transform: rotate(45deg);
+            margin-bottom: 6.5px;
+            bottom: 7px;
+        }
     }
     &__form {
         display: flex;
