@@ -42,7 +42,7 @@
 import favorUnactive from '@/assets/img/discounts/favorActive.svg'
 import favorActive from '@/assets/img/discounts/favorUnactive.svg'
 import { useBasketData } from '@/store/BasketData'
-import { computed, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 const isActiveFavoriteUrl = computed(() => {
     return props.data.favorite ? favorActive : favorUnactive
 })
@@ -54,6 +54,12 @@ const props = defineProps({
 })
 const basketBtnIsClicked = ref(false)
 const BasketData = useBasketData()
+onMounted(()=> {
+    document.body.classList.add('no-scroll')
+})
+onUnmounted(()=>{
+    document.body.classList.remove('no-scroll')
+})
 </script>
 
 <style lang="scss" scoped>
@@ -69,7 +75,7 @@ const BasketData = useBasketData()
     &__img {
         width: 100%;
         height: 100%;
-        max-height: rem(490);
+        max-height: fit-content;
         border: 1px solid #FFD481;
         border-radius: rem(20);
         display: flex;
@@ -78,7 +84,7 @@ const BasketData = useBasketData()
         padding: 10px;
         & img {
             height: 100%;
-            max-height: rem(490);
+            max-height: fit-content;
         }
     }
     &__content {
@@ -148,6 +154,134 @@ const BasketData = useBasketData()
         font-size: 20px;
         margin-top: rem(15);
         line-height: 1.5;
+    }
+    @media (max-width: 1000px) {
+        &__inner {
+            padding: rem(30);
+            grid-template-columns: 1fr 2fr;
+            gap: rem(40);
+            color: #000;
+            margin: auto 0;
+            height: fit-content;
+        }
+        &__img {
+            height: auto;
+            & img {
+                height: auto;
+            }
+        }
+        &__title {
+            font-size: 26px;
+        }
+        &__availability-title {
+            margin-top: rem(20);
+        }
+        &__action {
+            margin: rem(25) 0;
+        }
+        &__price-title {
+            font-size: 26px;
+        }
+        &__basket {
+            font-size: 16px;
+            padding: 0 rem(15);
+        }
+        &__info {
+            font-size: 18px;
+        }
+    }
+    @media (max-width: 768px) {
+        &__inner {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 2fr;
+            gap: rem(30);
+            color: #000;
+            margin: auto 0;
+            height: 100%;
+            padding-top: rem(50);
+        }
+        &__img {
+            height: auto;
+            max-width: rem(320);
+            max-height: rem(320);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: rem(20);
+            & img {
+                height: auto;
+            }
+        }
+        &__title {
+            font-size: 22px;
+        }
+        &__availability-title {
+            font-size: 14px;
+        }
+        &__action {
+            margin: rem(25) 0;
+            display: grid;
+            align-items: start;
+            grid-template-columns: 1fr 1fr;
+            gap: rem(15);
+            width: fit-content;
+        }
+        &__price-title {
+            font-size: 22px;
+        }
+        &__price {
+            grid-column: 1/3;
+            & p {
+                font-size: 12px;
+            }
+        }
+        &__basket {
+            font-size: 15px;
+            padding: 0 rem(13);
+        }
+        &__info {
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 480px) {
+        &__inner {
+            gap: rem(20);
+        }
+        &__img {
+            height: auto;
+            max-width: rem(220);
+            max-height: rem(220);
+            padding: rem(10);
+            & img {
+                height: auto;
+            }
+        }
+        &__title {
+            font-size: 20px;
+        }
+        &__availability-title {
+            font-size: 12px;
+        }
+        &__action {
+            margin: rem(15) 0;
+            gap: rem(10);
+        }
+        &__price-title {
+            font-size: 16px;
+        }
+        &__price {
+            grid-column: 1/3;
+            & p {
+                font-size: 12px;
+            }
+        }
+        &__basket {
+            font-size: 15px;
+            padding: 0 rem(13);
+            height: rem(30);
+            margin: auto 0;
+            border-radius: rem(14);
+        }
     }
 }
 </style>

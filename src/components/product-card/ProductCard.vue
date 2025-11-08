@@ -34,16 +34,16 @@
         </div>
         <button 
             class="card__button" 
-            @click.stop="BasketData.addToStorage(dataCard); basketBtnIsClicked = true"
+            @click.stop="activateModal(dataCard)"
             :class="{'card__button--active': basketBtnIsClicked}">В корзину</button>
-        <Teleport to="body">
+        <!-- <Teleport to="body"> -->
             <ProductCard_Modal 
                 :data="dataCard" 
-                v-show="isActiveModal"
+                v-if="isActiveModal"
                 @close="isActiveModal = false"
                 @handleFavorite="toggleFavorite"
             ></ProductCard_Modal> 
-        </Teleport>
+        <!-- </Teleport> -->
     </div>
 </template>
 
@@ -72,6 +72,10 @@ const toggleFavorite = (id)=>{
     AllData.toggleFavorite(id)
 }
 const basketBtnIsClicked = ref(false)
+const activateModal = (data) => {
+    BasketData.addToStorage(data)
+    basketBtnIsClicked = true
+}
 </script>
 
 <style lang="scss" scoped>

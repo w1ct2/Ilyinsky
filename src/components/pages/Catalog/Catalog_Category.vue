@@ -52,5 +52,14 @@ const props = defineProps({
         cursor: pointer;
         overflow: hidden;
     }
+    @media (max-width: 768px) {
+        &__title {
+            font-size: 18px;
+        }
+        &__item {
+            font-size: 16px;
+            height: rem(25);
+        }
+    }
 }
 </style>

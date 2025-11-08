@@ -82,5 +82,12 @@ const handleFilter = (filter)=>{
             left: 0;
         }
     }
+    @media (max-width: 480px) {
+        & {
+            width: 100%;
+            right: 0;
+            max-width: none;
+        }
+    }
 }
 </style>

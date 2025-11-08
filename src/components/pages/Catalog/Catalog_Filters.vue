@@ -73,5 +73,13 @@ const filterOptions = ref([
             }
         }
     }
+    @media (max-width: 768px) {
+        &__title {
+            font-size: 18px;
+        }
+        &__label {
+            font-size: 16px;
+        }
+    }
 }
 </style>
