@@ -47,7 +47,7 @@ const AllData = useAllData()
 @import "@/scss/remFunction";
 .bottom-bar {
     position: fixed;
-    z-index: 100;
+    z-index: 15;
     bottom: 0;
     left: 0;
     right: 0;

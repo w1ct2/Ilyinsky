@@ -186,6 +186,7 @@ const activateModal = (data) => {
         margin-top: auto;
         margin-bottom: auto;
         padding: 0 15px;
+        white-space: nowrap;
         &:hover {
             background-color: var(--red);
             color: #fff;

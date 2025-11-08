@@ -25,8 +25,10 @@
             <span></span>
         </div>
         <SearchMenu 
-            v-show="isFocus"
-            :searchQuery="searchQuery"></SearchMenu>
+            v-if="isFocus"
+            @closeMenu="handleClose"
+            :searchQuery="searchQuery"
+            @update:searchQuery="handleSearchUpdate"></SearchMenu>
     </div>
 </template>
 
@@ -44,6 +46,9 @@ const handleClose = () => {
     searchQuery.value = ''
     document.body.classList.remove('no-scroll');
 };
+const handleSearchUpdate = (val) => {
+    searchQuery.value = val
+}
 onUnmounted(()=>{
     document.body.classList.remove('no-scroll')
 })
@@ -126,6 +131,12 @@ onUnmounted(()=>{
                 position: static;
                 fill: #FFFFFF;
                 max-width: rem(19);
+            }
+        }
+        &__close-btn {
+            position: static;
+            & span::after, & span::before { 
+                background-color: #fff;
             }
         }
     }

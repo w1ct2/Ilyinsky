@@ -19,7 +19,7 @@
         </ul>
         <button class="catalog__btn" @click="getOut">Выход</button>
         <teleport to="body">
-            <div class="modal-page" v-show="isActiveAuth" @click="isActiveAuth = false">
+            <div class="modal-page" v-if="isActiveAuth" @click="isActiveAuth = false">
                 <Profile_AuthContainer
                     @close-auth="handleCloseAuth"></Profile_AuthContainer>
             </div>
