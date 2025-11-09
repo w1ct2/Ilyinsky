@@ -26,11 +26,10 @@
                 class="basket-paycheck__button"
                 v-if="activePage === 'list'"
                 @click="$emit('changePage')">Оформление</button>
-            <RouterLink 
-                :to="'/home'"
+            <button 
                 class="basket-paycheck__button"
                 v-else-if="activePage === 'registration'"
-                @click="removeBasketData(numberOrder, totalPrice, date)">Оформить</RouterLink>
+                @click="removeBasketData(totalPrice, date)">Оформить</button>
         </div>
         <div 
             class="basket-paycheck__regist-alert"
@@ -40,10 +39,12 @@
             <p>В заказ будет добавлено необходимое количество пакетов и их стоимость.</p>
             <p>Мы вам позвоним, если товара нет в наличии. Будьте на связи.</p>
         </div>
-        <Basket_RegistrationEnding
-            v-show="isActiveEndingPage"
-            :numberOrder="numberOrder"
-            @closePage="isActiveEndingPage = false"></Basket_RegistrationEnding>
+        <Teleport to="body">
+            <Basket_RegistrationEnding
+                v-if="isActiveEndingPage"
+                :numberOrder="numberOrder"
+                @closePage="isActiveEndingPage = false"></Basket_RegistrationEnding>
+        </Teleport>
     </div>
 </template>
 
@@ -53,7 +54,7 @@ import { useAddressesStore } from '@/store/AddressesStore';
 import { useMainStore } from '@/store/MainStore';
 import { usePersonalHistory } from '@/store/PersonalHistory';
 import { useRecentAddressesStore } from '@/store/RecentAddressesStore';
-import { computed, ref } from 'vue';
+import { computed, ref, Teleport } from 'vue';
 import Basket_RegistrationEnding from './Basket_Registration-Ending.vue';
 import { useBasketData } from '@/store/BasketData';
 import { RouterLink } from 'vue-router';
@@ -87,15 +88,20 @@ const formatDate = (date = new Date()) => {
     const year = date.getFullYear();
     return `${day}.${month}.${year}`;
 }
-const removeBasketData = (numberOrder, totalPrice, date) => {
-    PersonalHistory.addToStorage(numberOrder, totalPrice, date);
-    isActiveEndingPage.value = true
+const removeBasketData = (totalPrice, date) => {
+    const orderNumber = generateOrderNumber(); 
+    PersonalHistory.addToStorage(orderNumber, totalPrice, date);
     BasketData.clearStorage()
     localStorage.removeItem(BasketData.STORAGE_TOTAL_PRICE_KEY)
+    numberOrder.value = orderNumber;
+    isActiveEndingPage.value = true;
 }
+const generateOrderNumber = () => {
+    return Date.now();
+}
+const numberOrder = ref(null)
 const date = formatDate()
-const numberOrder = ref(Date.now())
-const isActiveEndingPage = ref(0)
+const isActiveEndingPage = ref(false)
 </script>
 
 <style lang="scss" scoped>
@@ -176,6 +182,10 @@ const isActiveEndingPage = ref(0)
         border-radius: rem(30);
         margin-top: rem(25);
         font-size: 22px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     &__regist-alert {
         width: 100%;

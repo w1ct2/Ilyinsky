@@ -74,7 +74,7 @@ const toggleFavorite = (id)=>{
 const basketBtnIsClicked = ref(false)
 const activateModal = (data) => {
     BasketData.addToStorage(data)
-    basketBtnIsClicked = true
+    basketBtnIsClicked.value = true
 }
 </script>
 

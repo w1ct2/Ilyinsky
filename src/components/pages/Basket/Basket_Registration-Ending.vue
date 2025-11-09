@@ -1,5 +1,5 @@
 <template>
-    <div class="ending-page modal-page" @click="$emit('closePage')">
+    <div class="ending-page modal-page" @click.stop="$emit('closePage')">
         <div class="ending-page__inner modal-page__inner" @click.stop>
             <div class="modal-page__close-btn" @click="$emit('closePage')">
                 <span></span>
@@ -15,11 +15,16 @@
 
 <script setup>
 import img from '@/assets/img/svg/success.svg'
-import { RouterLink } from 'vue-router';
+import { onUnmounted} from 'vue';
+import { RouterLink, useRouter } from 'vue-router';
+const router = useRouter()
 const props = defineProps({
     numberOrder: {
         type: Number
     }
+})
+onUnmounted(()=>{
+    router.push('/home')
 })
 </script>
 
@@ -39,6 +44,7 @@ const props = defineProps({
         display: flex;
         align-items: center;
         gap: rem(30);
+        color: #000;
     }
     &__title {
         font-size: 24px;

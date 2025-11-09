@@ -2,7 +2,7 @@
     <div class="basket-list">
         <div class="basket-list__header">
             <h1 class="basket-list__title catalog-title">корзина</h1>
-            <button class="basket-list__clear-btn" @click="BasketData.clearStorage">Очистить</button>
+            <button class="basket-list__clear-btn" @click="BasketData.clearStorage" v-if="products.length">Очистить</button>
         </div>
         <div class="basket-list__content">
             <Basket_ListItem
@@ -53,6 +53,7 @@ watch(totalQuantity, (newVal)=>{
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-height: rem(600);
     &__header {
         display: flex;
         align-items: center;

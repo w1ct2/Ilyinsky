@@ -1,5 +1,5 @@
 <template>
-    <div class="card-modal modal-page" @click="$emit('close')">
+    <div class="card-modal modal-page" @click.stop="$emit('close')">
         <div class="card-modal__inner modal-page__inner" @click.stop>
             <div class="modal-page__close-btn" @click="$emit('close')"></div>
             <div class="card-modal__img">

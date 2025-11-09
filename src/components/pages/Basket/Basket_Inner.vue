@@ -8,6 +8,7 @@
                     v-if="activePage === 'list'"></Basket_List>
                 <Basket_Registration v-else-if="activePage === 'registration'"></Basket_Registration>
                 <Basket_Paycheck
+                    v-show="products.length > 0"
                     @changePage="activePage = 'registration'"
                     :totalPrice="totalPrice"
                     :totalProducts="totalProducts"
@@ -18,10 +19,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import Basket_List from './Basket_List.vue';
 import Basket_Paycheck from '@/components/pages/Basket/Basket_Paycheck.vue'
 import Basket_Registration from './Basket_Registration.vue';
+import { useBasketData } from '@/store/BasketData';
+const BasketData = useBasketData()
+const products = computed(()=> BasketData.basketData)
 const totalPrice = ref()
 const totalProducts = ref()
 const activePage = ref('list')
