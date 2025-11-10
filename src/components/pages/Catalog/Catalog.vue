@@ -24,7 +24,8 @@
                         <Catalog_Menu 
                             @handleFilter="handleFilter" 
                             :class="{'menu--active': isActiveMobileMenu}"
-                            @click.stop></Catalog_Menu>
+                            @click.stop
+                            @closeMenu="hideMenu"></Catalog_Menu>
                     </div>
                     <Catalog_Content :activeFilter="activeFilter"></Catalog_Content>
                 </div>

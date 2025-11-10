@@ -1,5 +1,6 @@
 <template>
     <aside class="menu">
+        <div class="modal-page__close-btn" @click="$emit('closeMenu')"></div>
         <Catalog_Filters @handleFilter="handleFilter"></Catalog_Filters>
         <Catalog_Category 
             :title="'Кулинария'"
@@ -88,6 +89,17 @@ const handleFilter = (filter)=>{
             right: 0;
             max-width: none;
         }
+        .modal-page__close-btn {
+            display: flex;
+        }
+    }
+}
+.modal-page__close-btn {
+    display: none;
+    width: rem(25);
+    height: rem(25);
+    &::after, &::before {
+        width: rem(11);
     }
 }
 </style>

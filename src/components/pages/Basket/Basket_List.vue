@@ -81,10 +81,16 @@ watch(totalQuantity, (newVal)=>{
         &__content {
             align-items: start;
         }
+        &__alert {
+            font-size: 20px;
+        }
     }
     @media (max-width: 768px) {
         &__content {
             gap: 0;
+        }
+        &__alert {
+            font-size: 16px;
         }
     }
 }

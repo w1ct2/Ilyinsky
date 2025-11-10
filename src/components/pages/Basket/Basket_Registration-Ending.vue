@@ -23,9 +23,9 @@ const props = defineProps({
         type: Number
     }
 })
-// onUnmounted(()=>{
-//     router.push('/home')
-// })
+onUnmounted(()=>{
+    router.push('/home')
+})
 </script>
 
 <style lang="scss" scoped>
