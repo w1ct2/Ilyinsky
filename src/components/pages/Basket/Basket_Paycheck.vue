@@ -64,7 +64,6 @@ import { useRecentAddressesStore } from '@/store/RecentAddressesStore';
 import { computed, ref, Teleport } from 'vue';
 import Basket_RegistrationEnding from './Basket_Registration-Ending.vue';
 import { useBasketData } from '@/store/BasketData';
-import { RouterLink } from 'vue-router';
 const MainStore = useMainStore()
 const AddressesStore = useAddressesStore()
 const RecentAddressesStore = useRecentAddressesStore()
@@ -210,6 +209,7 @@ const isActiveEndingPage = ref(false)
         border-radius: rem(16);
         padding: rem(30) rem(15);
         display: flex;
+        gap: rem(15);
         flex-direction: column;
         justify-content: space-between;
         background-repeat: no-repeat;
@@ -226,7 +226,10 @@ const isActiveEndingPage = ref(false)
         &__container {
             max-width: rem(480);
             max-height: rem(500);
-            margin: 0 auto;
+        }
+        &__regist-alert {
+            max-width: rem(480);
+            margin-top: rem(20);
         }
     }
     @media (max-width: 768px) {

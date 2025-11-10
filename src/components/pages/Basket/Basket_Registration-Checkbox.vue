@@ -60,5 +60,18 @@
             }
         }
     }
+    @media (max-width: 768px) {
+        &__item {
+            gap: rem(15);
+            & label {
+                font-size: 18px;
+            }
+        }
+    }   
+    @media (max-width: 480px) {
+        &__title {
+            font-size: 20px;
+        }
+    }
 }
 </style>

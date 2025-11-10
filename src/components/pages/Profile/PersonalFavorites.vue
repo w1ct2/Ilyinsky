@@ -44,6 +44,7 @@ onUnmounted(()=>{
     height: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: min-content; 
     gap: rem(25);
     &__else {
         font-size: 24px;
@@ -56,6 +57,7 @@ onUnmounted(()=>{
         position: relative;
         padding-left: rem(25);
         cursor: pointer;
+        max-height: rem(33);
         &::after, &::before {
             content: '';
             position: absolute;
@@ -85,11 +87,17 @@ onUnmounted(()=>{
             grid-template-columns: repeat(3, 1fr);
             max-width: rem(800);
         }
+        &__else {
+            font-size: 22px;
+        }
     }
     @media (max-width: 768px) {
         & {
             grid-template-columns: repeat(2, 1fr);
             max-width: rem(500);
+        }
+        &__else {
+            font-size: 20px;
         }
     }
     @media (max-width: 480px) {
@@ -106,6 +114,10 @@ onUnmounted(()=>{
             padding: rem(40) rem(25);
             overflow-y: scroll;
             grid-template-columns: repeat(2, 1fr);
+            gap: rem(15);
+        }
+        &__title {
+            padding-left: none;
         }
         &__close-btn {
             display: block;
@@ -136,6 +148,9 @@ onUnmounted(()=>{
             font-size: 24px;
             margin-bottom: rem(25);
             grid-column: 1/3;
+        }
+        &__else {
+            font-size: 16px;
         }
     }
 }

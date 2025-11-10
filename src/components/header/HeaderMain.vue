@@ -11,7 +11,7 @@
                     </template>
                 </Header_Action>
                 <Header_Sections></Header_Sections>
-                <Header_BottomBar v-if="mainStore.isMobile1000"></Header_BottomBar>
+                <Header_BottomBar class="bottom-bar"></Header_BottomBar>
             </div>
         </div>
     </nav>
@@ -39,6 +39,14 @@ const isActive = computed(() => mainStore.isActiveBurgerMenu)
         position: relative;
         flex-direction: column;
         max-width: rem(1290);
+    }
+}
+.bottom-bar {
+    display: none;
+}
+@media (max-width: 1000px) {
+    .bottom-bar {
+        display: flex;
     }
 }
 </style>

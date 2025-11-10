@@ -72,5 +72,24 @@
             outline: none;
         }
     }
+    @media (max-width: 768px) { 
+        &__title {
+            font-size: 20px;
+        }
+        &__p {
+            font-size: 18px;
+        }
+        &__form {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: rem(65) rem(65) rem(165);
+        }
+        &__input {
+            font-size: 18px;
+        }
+        &__textarea {
+            grid-column: 1/3;
+            font-size: 18px;
+        }
+    }
 }
 </style>

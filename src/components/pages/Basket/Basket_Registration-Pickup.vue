@@ -7,7 +7,6 @@
 
 <script setup>
 import { useRecentAddressesStore } from '@/store/RecentAddressesStore';
-
 const RecentAddressesStore = useRecentAddressesStore()
 </script>
 
@@ -26,6 +25,14 @@ const RecentAddressesStore = useRecentAddressesStore()
         font-size: 20px;
         & span {
             font-weight: 600;
+        }
+    }
+    @media (max-width: 768px) { 
+        &__title {
+            font-size: 20px;
+        }
+        &__p {
+            font-size: 18px;
         }
     }
 }

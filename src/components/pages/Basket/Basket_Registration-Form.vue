@@ -46,5 +46,26 @@ const MainStore = useMainStore()
         font-size: 18px;
         margin-top: rem(-10);
     }
+    @media (max-width: 768px) {
+        &-item {
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+        }
+        &-alert {
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 480px) {
+        &-title{
+            font-size: 20px;
+        }
+        &-info {
+            font-size: 18px;
+        }
+        &-link {
+            font-size: 12px;
+        }
+    }
 }
 </style>

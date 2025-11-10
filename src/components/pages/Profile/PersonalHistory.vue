@@ -84,7 +84,8 @@ onUnmounted(()=>{
     }
     @media (max-width: 768px) {
         &__container {
-            grid-template-columns: repeat(1, 1fr);
+            display: flex;
+            flex-direction: column-reverse;
             max-width: rem(440);
         }
     }

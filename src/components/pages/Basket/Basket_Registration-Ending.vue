@@ -23,9 +23,9 @@ const props = defineProps({
         type: Number
     }
 })
-onUnmounted(()=>{
-    router.push('/home')
-})
+// onUnmounted(()=>{
+//     router.push('/home')
+// })
 </script>
 
 <style lang="scss" scoped>
@@ -55,6 +55,55 @@ onUnmounted(()=>{
         color: #000;
         & span {
             text-decoration: underline;
+        }
+    }
+    @media (max-width: 1000px) {
+        &__title {
+            font-size: 22px;
+        }
+        &__inner {
+            max-height: rem(300);
+            border-radius: rem(16);
+        }
+    }
+    @media (max-width: 768px) {
+        &__inner {
+            padding: rem(20);
+        }
+        &__img {
+            width: rem(50);
+            height: rem(50);
+        }
+        &__header {
+            flex-direction: column;
+            align-items: start;
+        }
+        &__link {
+            font-size: 16px;
+        }
+        &__title {
+            font-size: 18px;
+        }
+        &__inner {
+            max-height: rem(350);
+            max-width: rem(300);
+        }
+    }
+    @media (max-width: 480px) {
+        &__inner {
+            padding: rem(15);
+            max-width: rem(230);
+            max-height: rem(310);
+        }
+        &__header {
+            gap: rem(15);
+        }
+        .modal-page__close-btn {
+            width: rem(25);
+            height: rem(25);
+            &::after, &::before {
+                width: rem(11);
+            }
         }
     }
 }
