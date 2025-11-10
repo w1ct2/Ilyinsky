@@ -48,5 +48,16 @@ const handleTotalQuantity = (products)=>{
         grid-template-columns: 2.07fr 1fr;
         gap: rem(20);
     }
+    @media (max-width: 1000px) {
+        margin-bottom: rem(100);
+        &__inner {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    @media (max-width: 768px) {
+        margin-bottom: rem(80);
+        margin-top: 0;
+    }
 }
 </style>

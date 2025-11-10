@@ -1,6 +1,6 @@
 <template>
     <div class="basket-paycheck">
-        <div class="basket-paycheck__container">
+        <div class="basket-paycheck__container" v-if="MainStore.isAuthUser === 'isAuth'">
             <h3 class="basket-paycheck__title">Доставка сегодня, 18:11</h3>
             <p class="basket-paycheck__address">{{ paycheckAddress }}</p>
             <div class="basket-paycheck__promo">
@@ -38,6 +38,13 @@
             <p>Стоимость заказа может измениться и будет списана только после того, как мы проверим наличие товара и соберём вашу покупку.</p>
             <p>В заказ будет добавлено необходимое количество пакетов и их стоимость.</p>
             <p>Мы вам позвоним, если товара нет в наличии. Будьте на связи.</p>
+        </div>
+        <div class="basket-paycheck__container basket-paycheck__container--alert" v-else-if="MainStore.isAuthUser !== 'isAuth'">
+            <h4 class="basket-paycheck__alert">
+                Для оформления заказа вам необходимо авторизоваться.
+            </h4>
+            <button 
+                class="basket-paycheck__button basket-paycheck__button--alert" disabled>Оформление</button>
         </div>
         <Teleport to="body">
             <Basket_RegistrationEnding
@@ -112,12 +119,16 @@ const isActiveEndingPage = ref(false)
     &__container {
         width: 100%;
         height: rem(630);
+        min-width: rem(360);
         background-color: #FFECCA;
         border: 1px solid #FFE7B9;
         border-radius: rem(16);
         display: flex;
         flex-direction: column;
         padding: rem(30) rem(25);
+        &--alert {
+            justify-content: space-between;
+        }
     }
     &__title {
         font-size: 20px;
@@ -186,6 +197,9 @@ const isActiveEndingPage = ref(false)
         display: flex;
         justify-content: center;
         align-items: center;
+        &--alert {
+            opacity: 0.5;
+        }
     }
     &__regist-alert {
         width: 100%;
@@ -202,6 +216,44 @@ const isActiveEndingPage = ref(false)
         background-position: right bottom;
         & p {
             font-size: 18px;
+        }
+    }
+    &__alert {
+        font-size: 22px;
+        font-weight: 600;
+    }
+    @media (max-width: 1000px) {
+        &__container {
+            max-width: rem(480);
+            max-height: rem(500);
+            margin: 0 auto;
+        }
+    }
+    @media (max-width: 768px) {
+        &__container {
+            padding: rem(20) rem(20);
+        }
+    }
+    @media (max-width: 480px) {
+        &__container {
+            min-height: rem(400);
+            height: auto;
+            max-height: none;
+            min-width: 0;
+        }
+        &__title {
+            font-size: 18px;
+        }
+        &__row-title {
+            font-size: 14px;
+        }
+        &__button {
+            width: fit-content;
+            padding: 0 rem(50);
+            font-size: 20px;
+        }
+        &__promo-btn {
+            display: none;
         }
     }
 }

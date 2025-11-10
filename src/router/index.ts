@@ -36,7 +36,15 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/personal-account',
     name: 'personal-account',
-    component: Profile 
+    component: Profile,
+    beforeEnter: (to, from, next) => {
+      const isAuth = localStorage.getItem('UserAuthorization')
+      if (isAuth !== 'isAuth') {
+        next('/error')
+      } else {
+        next()
+      }
+    }
   },
   {
     path: '/catalog',

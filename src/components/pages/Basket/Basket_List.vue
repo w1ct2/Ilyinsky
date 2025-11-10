@@ -74,5 +74,18 @@ watch(totalQuantity, (newVal)=>{
         font-weight: 600;
         margin-right: auto;
     }
+    @media (max-width: 1000px) {
+        & {
+            min-height: 0;
+        }
+        &__content {
+            align-items: start;
+        }
+    }
+    @media (max-width: 768px) {
+        &__content {
+            gap: 0;
+        }
+    }
 }
 </style>

@@ -3,10 +3,8 @@
         <div class="basket-item__img">
             <img :src="data.imgUrl">
         </div>
-        <div class="basket-item__header">
-            <h4 class="basket-item__title">{{ data.title }}</h4>
-            <p class="basket-item__availabilityTitle">{{ data.availabilityTitle }}</p>
-        </div>
+        <h4 class="basket-item__title">{{ data.title }}</h4>
+        <p class="basket-item__availabilityTitle">{{ data.availabilityTitle }}</p>
         <div class="basket-item__price">
             <h4 
                 :class="{'basket-item__price--active' : data.discount}" 
@@ -17,12 +15,13 @@
         </div>
         <Basket_ActionBlock 
             :data="data"
-            @quantityUpdate="handleQuantity"></Basket_ActionBlock>
+            @quantityUpdate="handleQuantity"
+            class="basket-item__action-block"></Basket_ActionBlock>
         <button class="basket-item__favorite" @click="toggleFavorite">
             <img :src="isActiveFavoriteUrl">
         </button>
         <div class="basket-item__finalPrice">
-            <h4 class="basket-item__price-title">{{ finishPrice }} руб</h4>
+            <h4 class="basket-item__price-title">{{ finishPrice }} <span>руб</span></h4>
             <p class="basket-item__finalPrice-quantity">{{ quantity }} шт</p>
         </div>
     </div>
@@ -91,7 +90,9 @@ onMounted(() => {
     width: 100%; 
     height: rem(130);
     border-radius: rem(20);
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(3, auto);
     padding: rem(7);
     &__img {
         display: flex;
@@ -110,7 +111,7 @@ onMounted(() => {
         margin-left: rem(40);
     }
     &__title {
-        width: 100vh;
+        width: 100%;
         max-width: rem(250);
         font-weight: 600;
         font-size: 20px;
@@ -118,6 +119,8 @@ onMounted(() => {
     &__availabilityTitle {
         font-size: 14px;
         color: #434343;
+        grid-row: 2/3;
+        grid-column: 2/3;
     }
     &__price {
         display: flex;
@@ -159,6 +162,127 @@ onMounted(() => {
         &-quantity {
             color: #434343;
             font-size: 14px;
+        }
+    }
+    @media (max-width: 1300px) {
+        & {
+            column-gap: rem(20);
+            row-gap: rem(8);
+            height: auto;
+            grid-template-columns: rem(100) repeat(2, auto);
+            // max-width: rem(760);
+            padding-right: rem(15);
+        }
+        &__img {
+            grid-column: 1/2;
+            grid-row: 1/3;
+            width: rem(100);
+            height: rem(100);
+        }
+        &__availabilityTitle { 
+            grid-column: 1/2;
+            grid-row: 3/4;
+            margin-left: rem(8);
+        }
+        &__price {
+            flex-direction: row-reverse;
+            margin-right: auto;
+            align-items: center;
+            gap: rem(8);
+            grid-row: 2/3;
+            grid-column: 2/3;
+            margin-left: 0;
+            & p {
+                margin-left: 0;
+            }
+        }
+        &__favorite {
+            grid-row: 3/4;
+            grid-column: 3/4;
+            margin-left: auto;
+        }
+        &__finalPrice {
+            grid-row: 2/3;
+        }
+        &__action-block {
+            margin-left: auto;
+        }
+    }
+    @media (max-width: 1000px) {
+        &__availabilityTitle { 
+            font-size: 12px;
+        }
+        &__title {
+            font-size: 18px;
+        }
+        &__price {
+            &-title {
+                font-size: 18px;
+            }
+        }
+        &__favorite {
+            grid-row: 3/4;
+            grid-column: 3/4;
+            margin-left: auto;
+        }
+        &__finalPrice {
+            grid-row: 2/3;
+        }
+        &__action-block {
+            margin-left: auto;
+        }
+    }
+    @media (max-width: 768px) {
+        & {
+            column-gap: rem(10);
+            border-radius: 0;
+            border-left: none;
+            border-right: none;
+        }
+        &__title {
+            grid-row: 1/3;
+        }
+        &__price {
+            grid-row: 3/4;
+        }
+        &__finalPrice {
+            grid-column: 3/4;
+        }
+    }
+    @media (max-width: 480px) {
+        &__img {
+            width: rem(90);
+            height: rem(90);
+        }
+        &__title {
+            font-size: 16px;
+            grid-row: 1/2;
+            grid-column: 2/4;
+        }
+        &__price {
+            grid-row: 2/3;
+            &-title {
+                font-size: 12px;
+                & span {
+                    font-size: 9px;
+                }
+            }
+        }
+        &__finalPrice {
+            grid-row: 3/4;
+            align-items: center;
+            justify-content: center;
+            &-quantity {
+                display: none;
+            }
+        }
+        &__action-block {
+            grid-row: 3/4;
+            grid-column: 2/3;
+            margin-left: 0;
+        }
+        &__favorite {
+            display: none;
         }
     }
 }

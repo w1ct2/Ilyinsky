@@ -33,7 +33,7 @@ export const useMainStore = defineStore('mainStore', ()=>{
         console.log('User is Authorized')
     }
     const STORAGE_FULLNAME_KEY = 'userFullname'
-    const userFullName = ref(localStorage.getItem(STORAGE_FULLNAME_KEY))
+    const userFullName = ref(localStorage.getItem(STORAGE_FULLNAME_KEY) || 'Имя Фамилия')
     const setUserFullname = (fullname: string)=> {
         userFullName.value = fullname
         localStorage.setItem(STORAGE_FULLNAME_KEY, userFullName.value)
