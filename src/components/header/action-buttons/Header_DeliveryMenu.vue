@@ -40,6 +40,7 @@ const setDeliveryMethod = (method) => {
         grid-template-rows: rem(82) auto;
         column-gap: rem(35);
         row-gap: rem(25);
+        overflow-y: scroll;
     }
     &__map {
         margin: -23px 0;
@@ -57,6 +58,25 @@ const setDeliveryMethod = (method) => {
         font-size: 20px;
         color: #6B6B6B;
         font-weight: 600;
+    }
+    @media (max-width: 1000px) {
+        &__inner {
+            grid-template-columns: 1fr;
+            grid-template-rows: 40vh auto 600px;
+        }
+        &__map {
+            grid-row: 1/2;
+            grid-column: 1/2;
+        }
+        &__map {
+            margin: 0;
+            margin-right: 0;
+            margin-top: rem(-30);
+            margin-left: rem(-30);
+            margin-right: rem(-30);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
     }
 }
 </style>

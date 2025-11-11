@@ -85,5 +85,13 @@ const selected2 = ref(selectOptions2.value[0]);
             border: 1px solid var(--red);
         }
     }
+    @media (max-width: 768px) {
+        &-field {
+            height: rem(60);
+            & :deep(.vs__dropdown-toggle) {
+                height: inherit;
+            }
+        }
+    }
 }
 </style>

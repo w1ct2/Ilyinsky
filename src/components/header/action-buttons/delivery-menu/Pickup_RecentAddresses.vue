@@ -41,13 +41,28 @@ const deleteAddress = (address) => {
     }
     &__item {
         display: flex;
+        align-items: center;
         gap: 20px;
+        & img {
+            max-height: rem(15);
+        }
         & p {
             cursor: pointer;
         }
     }
     &__delete {
         cursor: pointer;
+        max-height: rem(15);
+    }
+    @media (max-width: 768px) {
+        & {
+            gap: rem(25);
+        }
+    }
+    @media (max-width: 480px) {
+        & {
+            gap: rem(15);
+        }
     }
 }
 </style>

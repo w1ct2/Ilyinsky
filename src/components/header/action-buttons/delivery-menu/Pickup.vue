@@ -10,7 +10,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
 import Pickup_Select from './Pickup_Select.vue';
 import Pickup_InputContainer from './Pickup_InputContainer.vue';
 import Pickup_RecentAddresses from './Pickup_RecentAddresses.vue';
@@ -33,9 +32,21 @@ import Pickup_RecentAddresses from './Pickup_RecentAddresses.vue';
         cursor: pointer;
         margin-left: auto;
     }
+    @media (max-width: 1000px) {
+        & {
+            max-width: rem(480);
+        }
+    }
 }
 .title {
     font-size: 20px;
     font-weight: 500;
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
+    @media (max-width: 480px) {
+        font-size: 16px;
+        font-weight: 600;
+    }
 }
 </style>

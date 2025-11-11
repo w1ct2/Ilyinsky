@@ -177,11 +177,6 @@ const selected2 = ref(selectOptions2.value[0]);
             & :deep(.vs__open-indicator) { 
                 width: 20px;
             }
-            // & :deep(.vs__selected) { 
-            //     // justify-content: end !important;
-            //     text-align: end;
-            //     height: fit-content;
-            // }
             & :deep(.vs__selected-options) { 
                 flex-wrap: nowrap;
                 white-space: nowrap;
@@ -192,9 +187,46 @@ const selected2 = ref(selectOptions2.value[0]);
             }
         }
     }
+    @media (max-width: 1000px) {
+        & {
+            max-width: rem(480);
+        }
+    }
+    @media (max-width: 768px) {
+        &__input {
+            & input {
+                height: rem(40);
+                border-radius: rem(12);
+            }
+        }
+        &__addresses {
+            margin-bottom: rem(30); 
+        }
+        &__address {
+            gap: rem(15);
+        }
+        &__select-field {
+            height: rem(60);
+            & :deep(.vs__dropdown-toggle) {
+                height: inherit;
+            }
+        }
+    }
+    @media (max-width: 480px) { 
+        &__addresses {
+            gap: rem(15);
+        }
+    }
 }
 .title {
     font-size: 20px;
     font-weight: 500;
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
+    @media (max-width: 480px) { 
+        font-size: 16px;
+        font-weight: 600;
+    }
 }
 </style>

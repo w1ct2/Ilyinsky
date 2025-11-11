@@ -66,5 +66,19 @@ const setActiveAddress = (data) => {
         grid-column: 1/2;
         grid-row: 3/4;
     }
+    @media (max-width: 480px) {
+        & {
+            gap: rem(10);
+        }
+        &__title {
+            font-size: 20px;
+        }
+        &__p {
+            font-size: 18px;
+        }
+        &__time {
+            font-size: 16px;
+        }
+    }
 }
 </style>

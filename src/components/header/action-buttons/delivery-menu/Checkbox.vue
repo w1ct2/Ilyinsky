@@ -48,7 +48,7 @@ watch(deliveryMethod, (newVal)=>{
     & label {
         max-width: rem(220);
         width: 100%;
-        aspect-ratio: 220/85;
+        height: rem(85);
         background-color: #FFF8EB;
         border-radius: 16px;
         border: 1px solid #FFA90073;
@@ -64,6 +64,34 @@ watch(deliveryMethod, (newVal)=>{
         color: #fff;
         background-color: #FFA900;
         border: 1px solid #FFA900;
+    }
+    @media (max-width: 768px) {
+        & {
+            & label {
+                height: rem(75);
+            }
+        }
+        .title {
+            font-size: 18px;
+        }
+        .p {
+            font-size: 14px;
+        }
+    }
+    @media (max-width: 480px) {
+        & {
+            & label {
+                height: rem(65);
+                padding: rem(10) rem(15);
+                max-width: rem(170);
+            }
+        }
+        .title {
+            font-size: 16px;
+        }
+        .p {
+            font-size: 12px;
+        }
     }
 }
 .title {

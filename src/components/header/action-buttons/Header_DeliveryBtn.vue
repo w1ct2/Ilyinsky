@@ -32,7 +32,7 @@ const methodTitle = computed(()=>{
     }
 })
 const MainStore = useMainStore()
-const isActiveModal = ref(false)
+const isActiveModal = ref(true)
 const resetActiveModal = (method)=>{
     isActiveModal.value = false
 }

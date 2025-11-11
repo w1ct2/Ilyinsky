@@ -129,5 +129,21 @@ const searchValue = ref('')
             }
         }
     }
+    @media (max-width: 768px) {
+        &__input {
+            height: rem(40);
+            border-radius: rem(12);
+        }
+    }
+    @media (max-width: 480px) {
+        &__inner {
+            margin-top: auto;
+            height: 80vh;
+            padding: rem(25);
+        }
+        &__addresses {
+            gap: rem(15);
+        }
+    }
 }
 </style>

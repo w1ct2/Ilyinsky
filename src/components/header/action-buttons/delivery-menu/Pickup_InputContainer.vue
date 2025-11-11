@@ -140,5 +140,25 @@ const removeActiveAddress = ()=>{
             }
         }
     }
+    @media (max-width: 768px) {
+        & {
+            border-radius: rem(12);
+        }
+    }
+    @media (max-width: 480px) {
+        & {
+            height: auto;
+            & input {
+                height: rem(40);
+            }
+        }
+        &-container {
+            flex-direction: column;
+            align-items: start;
+        }
+        &__list {
+            height: rem(40);
+        }
+    }
 }
 </style>
