@@ -101,7 +101,6 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        height: rem(165);
         background-color: #FFECCA;
         border:rem( 1) solid #FFE7B9;
         border-radius: rem(16);

@@ -101,5 +101,46 @@ const props = defineProps({
             opacity: .7;
         }
     }
+    @media (max-width: 1000px) {
+        &__title {
+            font-size: 28px;
+        }
+    }
+    @media (max-width: 768px) {
+        &__line {
+            flex-direction: row;
+            margin-top: rem(60);
+        }
+        &__title {
+            font-size: 26px;
+        }
+        &__labels {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: space-between;
+            width: fit-content;
+        }
+        &__status {
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            justify-content: center;
+            align-items: center;
+            &::after {
+                height: 80%;
+                width: rem(4);
+                position: absolute;
+                left: auto;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    @media (max-width: 480px) {
+        &__title {
+            font-size: 24px;
+        }
+    }
 }
 </style>

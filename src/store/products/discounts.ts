@@ -1,99 +1,189 @@
-import card1 from '@/assets/img/discounts/card1.png'
-import card2 from '@/assets/img/discounts/card2.png'
+import img1 from '@/assets/products-img/cooking/desserts/tiramisu.png'
+import img2 from '@/assets/products-img/cooking/desserts/cheesecake.png'
+import img3 from '@/assets/products-img/cooking/desserts/napoleon.png'
+import img4 from '@/assets/products-img/cooking/hot-dish/french_chicken.png'
+import img5 from '@/assets/products-img/cooking/hot-dish/pork_meat.png'
+import img6 from '@/assets/products-img/cooking/soup/borshch.png'
+import img7 from '@/assets/products-img/cooking/soup/solyanka.png'
+import img8 from '@/assets/products-img/supermarket/snacks/kuraga.webp'
+import img9 from '@/assets/products-img/supermarket/snacks/kuraga.webp'
+
 interface DiscountItem {
     id: number
+    title: string
     discount: boolean
     favorite: boolean
-    imgUrl: string
     availability: number
-    readonly availabilityTitle: string
-    title: string
     price: string
     oldPrice: string | null
+    imgUrl: string
+    compound: string
+    shelfLife: string
+    nutritionalValue: string
+    readonly availabilityTitle: string
+    category: string
 }
 export const discounts: DiscountItem[] = [
         {
             id: 1,
-            discount: true, 
+            title: "Тирамису",
+            discount: false,
             favorite: false,
-            imgUrl: card1,
-            availability: 2,
-            get availabilityTitle():string {
-                if(this.availability){return `В наличии ${this.availability}`}
-                else return 'Нет в наличии'
-            },
-            title: 'Гранола Мюсли Bionova ягодные запечённые хрустящие, 400г',
-            price: '99,90 руб',
-            oldPrice: '129,00 руб'
+            availability: 6,
+            price: "280 руб",
+            oldPrice: null,
+            imgUrl: img1,
+            compound: "сыр маскарпоне, кофе, печенье савоярди, какао, яйцо, сахар",
+            shelfLife: "48 часов",
+            nutritionalValue: "Белки: 8г, Жиры: 22г, Углеводы: 35г (на 100г)",
+            category: 'dessert',
+            get availabilityTitle() {
+            if (this.availability) { return `В наличии ${this.availability}` }
+            else return 'Нет в наличии'
+            }
         },
         {
             id: 2,
-            discount: false, 
+            title: "Чизкейк Нью-Йорк",
+            discount: true,
             favorite: false,
-            imgUrl: card2,
-            availability: 33,
+            availability: 8,
+            price: "320 руб",
+            oldPrice: "370 руб",
+            imgUrl: img2,
+            compound: "сливочный сыр, песочное основание, сметана, яйцо, ваниль",
+            shelfLife: "72 часа",
+            nutritionalValue: "Белки: 7г, Жиры: 25г, Углеводы: 30г (на 100г)",
+            category: 'dessert',
             get availabilityTitle() {
-                if(this.availability){return `В наличии ${this.availability}`}
-                else return 'Нет в наличии'
-            },
-            title: 'Сок Ideas тыквенно-апельсиновый, 1л',
-            price: '70,90 руб',
-            oldPrice: null
+            if (this.availability) { return `В наличии ${this.availability}` }
+            else return 'Нет в наличии'
+            }
         },
         {
             id: 3,
-            discount: false, 
+            title: "Наполеон",
+            discount: false,
             favorite: false,
-            imgUrl: card1,
             availability: 0,
-            get availabilityTitle(): any {
-                if(this.availability){return `В наличии ${this.availability}`}
-                else return 'Нет в наличии'
-            },
-            title: 'Гранола Мюсли Bionova ягодные запечённые хрустящие, 400г',
-            price: '99,90 руб',
-            oldPrice: null
+            price: "250 руб",
+            oldPrice: null,
+            imgUrl: img3,
+            compound: "слоеное тесто, заварной крем, сливочное масло, сахарная пудра",
+            shelfLife: "48 часов",
+            nutritionalValue: "Белки: 6г, Жиры: 28г, Углеводы: 40г (на 100г)",
+            category: 'dessert',
+            get availabilityTitle() {
+            if (this.availability) { return `В наличии ${this.availability}` }
+            else return 'Нет в наличии'
+            }
         },
         {
             id: 4,
-            discount: false, 
+            title: "Курица по-французски",
+            discount: true,
             favorite: false,
-            imgUrl: card2,
-            availability: 3,
+            availability: 9,
+            price: "380 руб",
+            oldPrice: "430 руб",
+            imgUrl: img4,
+            compound: "куриное филе, сыр, помидоры, лук, майонез, специи",
+            shelfLife: "48 часов",
+            nutritionalValue: "Белки: 16г, Жиры: 18г, Углеводы: 8г (на 100г)",
+            category: 'hotDish',
             get availabilityTitle() {
-                if(this.availability){return `В наличии ${this.availability}`}
-                else return 'Нет в наличии'
-            },
-            title: 'Сок Ideas тыквенно-апельсиновый, 1л',
-            price: '70,90 руб',
-            oldPrice: null
+            if (this.availability) { return `В наличии ${this.availability}` }
+            else return 'Нет в наличии'
+            }
         },
         {
             id: 5,
-            discount: false, 
+            title: "Жаркое из свинины",
+            discount: false,
             favorite: false,
-            imgUrl: card2,
-            availability: 5,
+            availability: 6,
+            price: "350 руб",
+            oldPrice: null,
+            imgUrl: img5,
+            compound: "свинина, картофель, морковь, лук, чеснок, специи",
+            shelfLife: "48 часов",
+            nutritionalValue: "Белки: 14г, Жиры: 16г, Углеводы: 20г (на 100г)",
+            category: 'hotDish',
             get availabilityTitle() {
-                if(this.availability){return `В наличии ${this.availability}`}
-                else return 'Нет в наличии'
-            },
-            title: 'Сок Ideas тыквенно-апельсиновый, 1л',
-            price: '70,90 руб',
-            oldPrice: null
+            if (this.availability) { return `В наличии ${this.availability}` }
+            else return 'Нет в наличии'
+            }
         },
         {
             id: 6,
-            discount: true, 
+            title: "Борщ украинский",
+            discount: false,
             favorite: false,
-            imgUrl: card1,
-            availability: 2,
-            get availabilityTitle():string {
-                if(this.availability){return `В наличии ${this.availability}`}
-                else return 'Нет в наличии'
-            },
-            title: 'Гранола Мюсли Bionova ягодные запечённые хрустящие, 400г',
-            price: '99,90 руб',
-            oldPrice: '129,00 руб'
+            availability: 8,
+            price: "280 руб",
+            oldPrice: null,
+            imgUrl: img6,
+            compound: "говядина, свекла, капуста, картофель, морковь, лук, сметана",
+            shelfLife: "48 часов",
+            nutritionalValue: "Белки: 8г, Жиры: 6г, Углеводы: 12г (на 100г)",
+            category: 'soup',
+            get availabilityTitle() {
+            if (this.availability) { return `В наличии ${this.availability}` }
+            else return 'Нет в наличии'
+            }
+        },
+        {
+            id: 7,
+            title: "Солянка мясная",
+            discount: true,
+            favorite: false,
+            availability: 6,
+            price: "320 руб",
+            oldPrice: "370 руб",
+            imgUrl: img7,
+            compound: "говядина, ветчина, колбаса, огурцы, маслины, лимон, сметана",
+            shelfLife: "48 часов",
+            nutritionalValue: "Белки: 10г, Жиры: 9г, Углеводы: 8г (на 100г)",
+            category: 'soup',
+            get availabilityTitle() {
+            if (this.availability) { return `В наличии ${this.availability}` }
+            else return 'Нет в наличии'
+            }
+        },
+        {
+            id: 8,
+            title: "Курага узбекская",
+            discount: true,
+            favorite: false,
+            availability: 0,
+            price: "320 руб",
+            oldPrice: "380 руб",
+            imgUrl: img8,
+            compound: "абрикосы сушеные без косточки",
+            shelfLife: "12 месяцев",
+            nutritionalValue: "Белки: 5г, Жиры: 0.5г, Углеводы: 63г (на 100г)",
+            category: 'snacks',
+            get availabilityTitle() {
+            if (this.availability) { return `В наличии ${this.availability}` }
+            else return 'Нет в наличии'
+            }
+        },
+        {
+            id: 9,
+            title: "Орехи кешью жареные",
+            discount: false,
+            favorite: false,
+            availability: 12,
+            price: "450 руб",
+            oldPrice: null,
+            imgUrl: img9,
+            compound: "кешью жареный, соль",
+            shelfLife: "9 месяцев",
+            nutritionalValue: "Белки: 18г, Жиры: 44г, Углеводы: 30г (на 100г)",
+            category: 'snacks',
+            get availabilityTitle() {
+            if (this.availability) { return `В наличии ${this.availability}` }
+            else return 'Нет в наличии'
+            }
         },
     ]

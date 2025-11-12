@@ -1,12 +1,20 @@
 <template>
-    <div class="modal modal-page" @click="$emit('resetModal', false)">
+    <div class="modal modal-page" @click="$emit('resetModal')">
         <div class="modal__inner modal-page__inner" @click.stop>
+            <div class="modal-page__close-btn" @click="$emit('resetModal')"></div>
             <Checkbox @deliveryMethod="setDeliveryMethod"></Checkbox>
             <Delivery v-if="deliveryMethod === 'delivery'"></Delivery>
             <Pickup v-else-if="deliveryMethod === 'pickup'"></Pickup>
             <h4 class="modal__alert" v-else>Выберите способ получения заказа.</h4>
             <div class="modal__map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1122.7654519384569!2d37.624558076879!3d55.749279138561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a57b4d91759%3A0x8488b2e76e30a467!2z0JHQtdC60LvQtdC80LjRiNC10LLRgdC60LDRjyDQsdCw0YjQvdGP!5e0!3m2!1sru!2sru!4v1753793958761!5m2!1sru!2sru" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1122.7654519384569!2d37.624558076879!3d55.749279138561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a57b4d91759%3A0x8488b2e76e30a467!2z0JHQtdC60LvQtdC80LjRiNC10LLRgdC60LDRjyDQsdCw0YjQvdGP!5e0!3m2!1sru!2sru!4v1753793958761!5m2!1sru!2sru" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    :style="{ pointerEvents: MainStore.isMobile1000 ? 'none' : 'auto' }"></iframe>
             </div>
         </div>
     </div>
@@ -77,6 +85,14 @@ const setDeliveryMethod = (method) => {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
         }
+        .modal-page__close-btn {
+            display: flex;
+            position: fixed;
+            z-index: 100;
+        }
     }
+}
+.modal-page__close-btn {
+    display: none;
 }
 </style>
