@@ -2,9 +2,8 @@ import img1 from '@/assets/products-img/cooking/desserts/tiramisu.png'
 import img2 from '@/assets/products-img/cooking/desserts/cheesecake.png'
 import img3 from '@/assets/products-img/cooking/desserts/napoleon.png'
 import img4 from '@/assets/products-img/cooking/hot-dish/french_chicken.png'
-import img5 from '@/assets/products-img/cooking/hot-dish/pork_meat.png'
-import img6 from '@/assets/products-img/cooking/soup/borshch.png'
-import img7 from '@/assets/products-img/cooking/soup/solyanka.png'
+import img6 from '@/assets/products-img/cooking/soup/borshch.jpeg'
+import img7 from '@/assets/products-img/cooking/soup/solyanka.jpeg'
 import img8 from '@/assets/products-img/supermarket/snacks/kuraga.webp'
 import img9 from '@/assets/products-img/supermarket/snacks/kuraga.webp'
 
@@ -21,7 +20,6 @@ interface DiscountItem {
     shelfLife: string
     nutritionalValue: string
     readonly availabilityTitle: string
-    category: string
 }
 export const discounts: DiscountItem[] = [
         {
@@ -36,7 +34,6 @@ export const discounts: DiscountItem[] = [
             compound: "сыр маскарпоне, кофе, печенье савоярди, какао, яйцо, сахар",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 8г, Жиры: 22г, Углеводы: 35г (на 100г)",
-            category: 'dessert',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -54,7 +51,6 @@ export const discounts: DiscountItem[] = [
             compound: "сливочный сыр, песочное основание, сметана, яйцо, ваниль",
             shelfLife: "72 часа",
             nutritionalValue: "Белки: 7г, Жиры: 25г, Углеводы: 30г (на 100г)",
-            category: 'dessert',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -72,7 +68,6 @@ export const discounts: DiscountItem[] = [
             compound: "слоеное тесто, заварной крем, сливочное масло, сахарная пудра",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 6г, Жиры: 28г, Углеводы: 40г (на 100г)",
-            category: 'dessert',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -90,25 +85,6 @@ export const discounts: DiscountItem[] = [
             compound: "куриное филе, сыр, помидоры, лук, майонез, специи",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 16г, Жиры: 18г, Углеводы: 8г (на 100г)",
-            category: 'hotDish',
-            get availabilityTitle() {
-            if (this.availability) { return `В наличии ${this.availability}` }
-            else return 'Нет в наличии'
-            }
-        },
-        {
-            id: 5,
-            title: "Жаркое из свинины",
-            discount: false,
-            favorite: false,
-            availability: 6,
-            price: "350 руб",
-            oldPrice: null,
-            imgUrl: img5,
-            compound: "свинина, картофель, морковь, лук, чеснок, специи",
-            shelfLife: "48 часов",
-            nutritionalValue: "Белки: 14г, Жиры: 16г, Углеводы: 20г (на 100г)",
-            category: 'hotDish',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -126,7 +102,6 @@ export const discounts: DiscountItem[] = [
             compound: "говядина, свекла, капуста, картофель, морковь, лук, сметана",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 8г, Жиры: 6г, Углеводы: 12г (на 100г)",
-            category: 'soup',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -144,7 +119,6 @@ export const discounts: DiscountItem[] = [
             compound: "говядина, ветчина, колбаса, огурцы, маслины, лимон, сметана",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 10г, Жиры: 9г, Углеводы: 8г (на 100г)",
-            category: 'soup',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -162,7 +136,6 @@ export const discounts: DiscountItem[] = [
             compound: "абрикосы сушеные без косточки",
             shelfLife: "12 месяцев",
             nutritionalValue: "Белки: 5г, Жиры: 0.5г, Углеводы: 63г (на 100г)",
-            category: 'snacks',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'
@@ -180,7 +153,6 @@ export const discounts: DiscountItem[] = [
             compound: "кешью жареный, соль",
             shelfLife: "9 месяцев",
             nutritionalValue: "Белки: 18г, Жиры: 44г, Углеводы: 30г (на 100г)",
-            category: 'snacks',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
             else return 'Нет в наличии'

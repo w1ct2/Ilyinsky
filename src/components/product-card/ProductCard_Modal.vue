@@ -76,6 +76,8 @@ onUnmounted(()=>{
         width: 100%;
         height: 100%;
         max-height: fit-content;
+        min-width: rem(360);
+        min-height: rem(360);
         border: 1px solid #FFD481;
         border-radius: rem(20);
         display: flex;
@@ -83,8 +85,8 @@ onUnmounted(()=>{
         justify-content: center;
         padding: 10px;
         & img {
-            height: 100%;
-            max-height: fit-content;
+            height: auto;
+            width: 100%;
         }
     }
     &__content {

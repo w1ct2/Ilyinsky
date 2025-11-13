@@ -1,10 +1,9 @@
-import img1 from '@/assets/products-img/cooking/hot-dish/pyure.png'
+import img1 from '@/assets/products-img/cooking/hot-dish/pyure.jpeg'
 import img2 from '@/assets/products-img/cooking/hot-dish/french_chicken.png'
-import img3 from '@/assets/products-img/cooking/hot-dish/pork_meat.png'
 import img4 from '@/assets/products-img/cooking/hot-dish/salmon.png'
 import img5 from '@/assets/products-img/cooking/hot-dish/cabbage.png'
 import img6 from '@/assets/products-img/cooking/hot-dish/ratatouille.png'
-import img7 from '@/assets/products-img/cooking/hot-dish/teftelya.png'
+import img7 from '@/assets/products-img/cooking/hot-dish/teftelya.jpeg'
 import img8 from '@/assets/products-img/cooking/hot-dish/duck.png'
 export const hotDish = [
         {
@@ -37,24 +36,6 @@ export const hotDish = [
             compound: "куриное филе, сыр, помидоры, лук, майонез, специи",
             shelfLife: "48 часов",
             nutritionalValue: "Белки: 16г, Жиры: 18г, Углеводы: 8г (на 100г)",
-            category: 'hotDish',
-            get availabilityTitle() {
-            if (this.availability) { return `В наличии ${this.availability}` }
-            else return 'Нет в наличии'
-            }
-        },
-        {
-            id: 703,
-            title: "Жаркое из свинины",
-            discount: false,
-            favorite: false,
-            availability: 6,
-            price: "350 руб",
-            oldPrice: null,
-            imgUrl: img3,
-            compound: "свинина, картофель, морковь, лук, чеснок, специи",
-            shelfLife: "48 часов",
-            nutritionalValue: "Белки: 14г, Жиры: 16г, Углеводы: 20г (на 100г)",
             category: 'hotDish',
             get availabilityTitle() {
             if (this.availability) { return `В наличии ${this.availability}` }
