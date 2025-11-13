@@ -36,14 +36,14 @@
             class="card__button" 
             @click.stop="activateModal(dataCard)"
             :class="{'card__button--active': basketBtnIsClicked}">В корзину</button>
-        <!-- <Teleport to="body"> -->
+        <Teleport to="body">
             <ProductCard_Modal 
                 :data="dataCard" 
                 v-if="isActiveModal"
                 @close="isActiveModal = false"
                 @handleFavorite="toggleFavorite"
             ></ProductCard_Modal> 
-        <!-- </Teleport> -->
+        </Teleport>
     </div>
 </template>
 

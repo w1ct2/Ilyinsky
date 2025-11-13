@@ -86,7 +86,8 @@ onUnmounted(()=>{
         padding: 10px;
         & img {
             height: auto;
-            width: 100%;
+            width: auto;
+            max-height: 95%;
         }
     }
     &__content {
@@ -206,6 +207,8 @@ onUnmounted(()=>{
             height: auto;
             max-width: rem(320);
             max-height: rem(320);
+            min-width: rem(200);
+            min-height: rem(200);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -253,6 +256,8 @@ onUnmounted(()=>{
             height: auto;
             max-width: rem(220);
             max-height: rem(220);
+            min-width: rem(150);
+            min-height: rem(150);
             padding: rem(10);
             & img {
                 height: auto;
