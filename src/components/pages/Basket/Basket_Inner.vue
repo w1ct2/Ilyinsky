@@ -3,15 +3,11 @@
         <div class="container">
             <div class="basket-content__inner">
                 <Basket_List
-                    @handleTotalPrice="handleTotalPrice"
-                    @handleTotalQuantity="handleTotalQuantity"
                     v-if="activePage === 'list'"></Basket_List>
                 <Basket_Registration v-else-if="activePage === 'registration'"></Basket_Registration>
                 <Basket_Paycheck
                     v-show="products.length > 0"
                     @changePage="activePage = 'registration'"
-                    :totalPrice="totalPrice"
-                    :totalProducts="totalProducts"
                     :activePage="activePage"></Basket_Paycheck>
             </div>
         </div>
@@ -26,15 +22,7 @@ import Basket_Registration from './Basket_Registration.vue';
 import { useBasketData } from '@/store/BasketData';
 const BasketData = useBasketData()
 const products = computed(()=> BasketData.basketData)
-const totalPrice = ref()
-const totalProducts = ref()
 const activePage = ref('list')
-const handleTotalPrice = (price)=>{
-    totalPrice.value = price
-}
-const handleTotalQuantity = (products)=>{
-    totalProducts.value = products
-}
 </script>
 
 <style lang="scss" scoped>

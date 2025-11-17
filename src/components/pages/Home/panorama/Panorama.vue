@@ -94,7 +94,7 @@ const item2Img = ref({
         margin-top: 0;
         &__inner {
             grid-template-rows: 200px 90px;
-            gap: 20px;
+            gap: rem(10);
         }
     }
 }

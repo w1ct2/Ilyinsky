@@ -25,9 +25,9 @@ const props = defineProps({
     }
 })
 const emits = defineEmits(['quantityUpdate'])
-const quantity = ref(1)
-const quantityLimit = ref(false)
 const BasketData = useBasketData()
+const quantity = ref(1) 
+const quantityLimit = ref(false)
 const updateQuantity = (method) => {
     if (method === 'plus') {
         if (props.data.availability > quantity.value) {

@@ -11,9 +11,9 @@
         <RouterLink class="bottom-bar__basket" :to="'/basket'">
             <div class="bottom-bar__basket-img">
                 <img :src="basket" alt="">
-                <span>{{ BasketData.basketData.length }}</span>
+                <span>{{ BasketData.totalQuantity}}</span>
             </div>
-            <p>{{ BasketData.basketTotalPrice }} руб</p>
+            <p>{{ BasketData.totalPrice}} руб</p>
         </RouterLink>
         <RouterLink class="bottom-bar__item" :to="'/personal-account'" @click="AllData.setActivePagePersonalAccount(2)">
             <img :src="favorites" alt="">

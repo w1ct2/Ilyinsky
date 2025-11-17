@@ -8,7 +8,7 @@
                 <button class="basket-paycheck__promo-btn">Применить</button>
             </div>
             <div class="basket-paycheck__row">
-                <p class="basket-paycheck__row-title">Товары ({{ totalProducts }})</p>
+                <p class="basket-paycheck__row-title">Товары ({{ BasketData.totalQuantity }})</p>
             </div>
             <div class="basket-paycheck__row">
                 <p class="basket-paycheck__row-title">Промокод:</p>
@@ -20,7 +20,7 @@
             </div>
             <div class="basket-paycheck__row basket-paycheck__row--price">
                 <p class="basket-paycheck__row-title">К оплате:</p>
-                <h3 class="basket-paycheck__price">{{ totalPrice }} руб</h3>
+                <h3 class="basket-paycheck__price">{{ BasketData.totalPrice }} руб</h3>
             </div>
             <button 
                 class="basket-paycheck__button"
@@ -29,7 +29,7 @@
             <button 
                 class="basket-paycheck__button"
                 v-else-if="activePage === 'registration'"
-                @click="removeBasketData(totalPrice, date)">Оформить</button>
+                @click="removeBasketData(date)">Оформить</button>
         </div>
         <div 
             class="basket-paycheck__regist-alert"
@@ -70,13 +70,6 @@ const RecentAddressesStore = useRecentAddressesStore()
 const PersonalHistory = usePersonalHistory()
 const BasketData = useBasketData()
 const props = defineProps({
-    totalPrice: {
-        type: Number,
-        default: 0
-    },
-    totalProducts: {
-        type: Number
-    },
     activePage: {
         type: String
     }
@@ -94,9 +87,9 @@ const formatDate = (date = new Date()) => {
     const year = date.getFullYear();
     return `${day}.${month}.${year}`;
 }
-const removeBasketData = (totalPrice, date) => {
+const removeBasketData = (date) => {
     const orderNumber = generateOrderNumber(); 
-    PersonalHistory.addToStorage(orderNumber, totalPrice, date);
+    PersonalHistory.addToStorage(orderNumber, BasketData.totalPrice, date);
     BasketData.clearStorage()
     localStorage.removeItem(BasketData.STORAGE_TOTAL_PRICE_KEY)
     numberOrder.value = orderNumber;

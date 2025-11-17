@@ -10,13 +10,14 @@
                 :class="{'basket-item__price--active' : data.discount}" 
                 class="basket-item__price-title">
                 {{ data.price }}
-            </h4>
+            </h4> 
             <p v-if="data.discount">{{ data.oldPrice }}</p>
         </div>
         <Basket_ActionBlock 
+            @quantityUpdate="handleQuantity" 
             :data="data"
-            @quantityUpdate="handleQuantity"
-            class="basket-item__action-block"></Basket_ActionBlock>
+            class="basket-item__action-block">
+        </Basket_ActionBlock>
         <button class="basket-item__favorite" @click="toggleFavorite">
             <img :src="isActiveFavoriteUrl">
         </button>
@@ -33,53 +34,56 @@ import favorActive from '@/assets/img/discounts/favorUnactive.svg'
 import { computed, onMounted, ref, watch } from 'vue'
 import Basket_ActionBlock from './Basket_ActionBlock.vue'
 import { useAllData } from '@/store/AllData'
+import { useBasketData } from '@/store/BasketData'
 const AllData = useAllData()
+const BasketData = useBasketData()
 const isFavoriteProduct = ref(false)
 const isActiveFavoriteUrl = computed(() => {
     return isFavoriteProduct.value ? favorActive : favorUnactive
 })
-
+const toggleFavorite = ()=>{
+    AllData.toggleFavorite(props.data.id),
+    isFavoriteProduct.value = !isFavoriteProduct.value
+}
 const props = defineProps({
     data: {
         type: Object,
     }
 })
-const emits = defineEmits(['finishPriceChange', 'quantityProductsChange'])
+
+
+
+const priceCard = ref(parseInt(props.data.price))
 const quantity = ref(1)
 const handleQuantity = (newVal) => {
     quantity.value = newVal
 }
-const toggleFavorite = ()=>{
-    AllData.toggleFavorite(props.data.id),
-    isFavoriteProduct.value = !isFavoriteProduct.value
-}
-const priceCard = ref(parseInt(props.data.price))
 const finishPrice = computed(()=>{
     return priceCard.value * quantity.value
 })
-watch(finishPrice, (newVal)=>{
-    emits('finishPriceChange', {
+watch(finishPrice, (newVal) => {
+    BasketData.updateFinishPrice({
         id: props.data.id,
         finishPrice: newVal,
     })
 })
-watch(quantity, (newVal)=>{
-    emits('quantityProductsChange', {
+
+watch(quantity, (newVal) => {
+    BasketData.updateQuantityProduct({
         id: props.data.id,
         quantity: newVal
     })
 })
 onMounted(() => {
-    emits('finishPriceChange', {
+    BasketData.updateFinishPrice({
         id: props.data.id,
         finishPrice: finishPrice.value,
     })
-    emits('quantityProductsChange', {
+    BasketData.updateQuantityProduct({
         id: props.data.id,
         quantity: quantity.value
     })
 })
-
 </script>
 
 <style lang="scss" scoped>
@@ -103,6 +107,9 @@ onMounted(() => {
         height: 100%;
         max-width: rem(130);
         border-radius: rem(20);
+        & img {
+            max-height: 100%;
+        }
     }
     &__header {
         display: flex;

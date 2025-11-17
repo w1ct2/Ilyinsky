@@ -70,5 +70,10 @@ const sortedData = computed(()=>{
             max-width: rem(480);
         }
     }
+    @media (max-width: 480px) {
+        & {
+            gap: rem(15);
+        }
+    }
 }
 </style>
