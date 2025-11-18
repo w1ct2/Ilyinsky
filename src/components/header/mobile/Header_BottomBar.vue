@@ -15,14 +15,20 @@
             </div>
             <p>{{ BasketData.totalPrice}} руб</p>
         </RouterLink>
-        <RouterLink class="bottom-bar__item" :to="'/personal-account'" @click="AllData.setActivePagePersonalAccount(2)">
-            <img :src="favorites" alt="">
+        <a 
+            class="bottom-bar__item" 
+            @click="linkJump(2)"
+            :class="{'bottom-bar__item--disabled' : mainStore.isAuthUser !== 'isAuth'}">
+            <img :src="favorites">
             <p>Избранное</p>
-        </RouterLink>
-        <RouterLink class="bottom-bar__item" :to="'/personal-account'" @click="AllData.setActivePagePersonalAccount(0)">
-            <img :src="profile" alt="">
+        </a>
+        <a 
+            class="bottom-bar__item" 
+            @click="linkJump(0)"
+            :class="{'bottom-bar__item--disabled' : mainStore.isAuthUser !== 'isAuth'}">
+            <img :src="profile">
             <p>Профиль</p>
-        </RouterLink>
+        </a>
     </div>
 </template>
 
@@ -31,16 +37,25 @@ import favorites from '@/assets/img/bottomBar/favorites.svg'
 import actions from '@/assets/img/bottomBar/fire.svg'
 import profile from '@/assets/img/bottomBar/profile.svg'
 import basket from '@/assets/img/bottomBar/basket.svg'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 import { useMainStore } from '@/store/MainStore'
 import { useBasketData } from '@/store/BasketData'
 import { useAllData } from '@/store/AllData'
+const router = useRouter()
 const mainStore = useMainStore()
 const activeBurgerMenu = (n)=>{
     mainStore.activeBurgerMenu()
 }
 const BasketData = useBasketData()
 const AllData = useAllData()
+const linkJump = (page)=>{
+    if (mainStore.isAuthUser==='isAuth') {
+        AllData.setActivePagePersonalAccount(page)
+        router.push('/personal-account')
+    } else {
+        console.log('Пользователь не авторизован');
+    }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -107,6 +122,9 @@ const AllData = useAllData()
         color: #6B6B6B;
         font-size: 14px;
         min-width: rem(70);
+        &--disabled {
+            opacity: .5;
+        }
         & span {
             background-color: #FFD481;
             width: 18px;

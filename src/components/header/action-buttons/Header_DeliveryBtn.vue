@@ -67,7 +67,6 @@ const resetActiveModal = (method)=>{
             transition: all .6s ease;
             position: absolute;
             top: 10px;
-            // outline: 1px solid red;
         }
     }
     &__title {
@@ -105,6 +104,8 @@ const resetActiveModal = (method)=>{
             margin-left: 0;
         }
         &__icon {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
             & p {
                 font-size: 14px;
             }

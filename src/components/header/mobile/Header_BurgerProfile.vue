@@ -3,17 +3,27 @@
         <h2 class="catalog__title">{{ title }}</h2>
         <ul class="catalog__list">
             <li class="catalog__item" v-if="MainStore.isAuthUser === 'isAuth'">
-                <RouterLink :to="'/personal-account'" @click="isClickedLink(0)">Личный кабинет</RouterLink>
+                <RouterLink :to="'/personal-account'" @click="isClickedLink(0)" class="catalog__link">Личный кабинет</RouterLink>
             </li>
             <li class="catalog__item" v-else>
                 <button @click="startAuthorization">Авторизуйтесь</button>
             </li>
             <li class="catalog__item">
-                <RouterLink :to="'/personal-account'" @click="isClickedLink(1)">Заказы</RouterLink>
+                <a 
+                    @click="isClickedLink(1)" 
+                    :class="{'catalog__link--disabled' : MainStore.isAuthUser !== 'isAuth'}"
+                    :disabled="MainStore.isAuthUser !== 'isAuth'">
+                    Заказы
+                </a>
                 <span>{{ PersonalHistory.history.length }}</span>
             </li>
             <li class="catalog__item">
-                <RouterLink :to="'/personal-account'" @click="isClickedLink(2)">Избранное</RouterLink>
+                <a 
+                    @click="isClickedLink(2)" 
+                    :class="{'catalog__link--disabled' : MainStore.isAuthUser !== 'isAuth'}"
+                    :disabled="MainStore.isAuthUser !== 'isAuth'">
+                    Избранное
+                </a>
                 <span>{{ AllData.favoriteData.length }}</span>
             </li>
         </ul>
@@ -51,8 +61,12 @@ const props = defineProps({
 const isActiveAuth = ref(false)
 const authAlert = ref(false)
 const isClickedLink = (page)=> {
-    AllData.setActivePagePersonalAccount(page)
-    MainStore.activeBurgerMenu()
+    if (MainStore.isAuthUser === 'isAuth') {
+        AllData.setActivePagePersonalAccount(page)
+        MainStore.activeBurgerMenu()
+    } else {
+        console.log('Пользователь не авторизован');
+    }
 }
 const getOut = ()=>{
     MainStore.getOut()
@@ -104,13 +118,17 @@ const handleCloseAuth = () => {
         justify-content: space-between;
         position: relative;
         cursor: pointer;
-        & a {
-            color: #000;
-        }
+        color: #000;
         & span {
             color: var(--red);
             font-size: 14px;
         }
+    }
+    &__link {
+        color: #000;
+    }
+    &__link--disabled {
+        color: #dadada;
     }
     &__btn {
         opacity: .5;

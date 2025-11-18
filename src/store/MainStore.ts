@@ -70,6 +70,7 @@ export const useMainStore = defineStore('mainStore', ()=>{
         localStorage.removeItem(STORAGE_EMAIL_KEY)
         localStorage.removeItem(STORAGE_FULLNAME_KEY)
         localStorage.removeItem(STORAGE_PHONE_KEY)
+        localStorage.removeItem('user_order_history')
         localStorage.setItem('UserAuthorization', 'notAuth')
     }
     return {
